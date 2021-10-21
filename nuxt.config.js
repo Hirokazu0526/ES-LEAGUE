@@ -4,6 +4,7 @@ require("dotenv").config();
 const { API_KEY } = process.env;
 
 export default {
+  srcDir: 'src/',
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -26,6 +27,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    'reseter.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
