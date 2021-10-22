@@ -44,7 +44,7 @@ export default {
 }
 .bar {
   width: 20px;
-  height: 1px;
+  height: 2px;
   display: block;
   position: absolute;
   left: 50%;
@@ -64,16 +64,16 @@ export default {
     display: block;
     position: absolute;
     left: 50%;
+    top: -10px;
     transform: translateX(-50%);
-    font-size: 200px;
-    font-weight: bold;
+    font-size: 40px;
     color: #fff;
   }
 }
 .menu {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 1;
   width: 100vw;
   height: 100vh;
