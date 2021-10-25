@@ -24,14 +24,18 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  router: {
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'reseter.css'
+    'reseter.css',
+    '~/assets/styles/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/global.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -56,6 +60,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'vue-scrollto/nuxt'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -71,6 +76,11 @@ export default {
         }
       }
     }
+  },
+  // トランジション設定
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   },
   
   env: {
