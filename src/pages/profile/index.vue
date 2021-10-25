@@ -21,12 +21,7 @@
 </template>
 
 <script>
-import esButton from '~/components/integration/atoms/es-button.vue'
-
 export default {
-  components: {
-    esButton,
-  },
   async asyncData({ $microcms }) {
     const playersList = await $microcms.get({
       endpoint: 'player-details',
