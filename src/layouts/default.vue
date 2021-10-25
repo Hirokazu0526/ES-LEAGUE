@@ -1,35 +1,31 @@
 <template>
   <div>
-    <div class="header">
-      header
-      <humberger class="header__btn" />
-    </div>
-
-    <Nuxt />
+    <esLeaguHeader class="header" />
+    <Nuxt class="nuxt" />
     <div class="footer">footer</div>
   </div>
 </template>
 
 <script>
-import humberger from '~/components/integration/atoms/humberger.vue'
+import esLeaguHeader from '~/components/integration/organisms/header.vue'
+
 export default {
   components: {
-    humberger,
+    esLeaguHeader,
   },
 }
 </script>
 
 <style lang="scss" scoped>
+* {
+  background-color: #022c60;
+}
 .header {
-  height: 80px;
-  background-color: rgb(87, 87, 87);
-  position: relative;
-  &__btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: block;
-  }
+  position: fixed;
+  width: 100vw;
+}
+.nuxt {
+  padding-top: 80px;
 }
 .footer {
   height: 80px;
