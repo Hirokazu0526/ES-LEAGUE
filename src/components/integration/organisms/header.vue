@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <nuxt-link to="/">
+    <nuxt-link v-scroll-to="{ el: '#logo', offset: -30 }" to>
       <img
         id="logo"
         class="header__logo"
