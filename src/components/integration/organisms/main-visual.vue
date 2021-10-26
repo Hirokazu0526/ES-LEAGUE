@@ -16,6 +16,7 @@ export default {}
 .es-Laegue-mainVisual {
   &__img {
     width: 100%;
+    vertical-align: top;
   }
 }
 </style>
