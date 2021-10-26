@@ -1,5 +1,6 @@
 <template>
   <div class="es-League">
+    <main-visual />
     <div class="es-League__profileLink">
       <nuxt-link to="/profile">profile</nuxt-link>
     </div>
@@ -34,9 +35,10 @@
 import { mapGetters } from 'vuex'
 import infoList from '~/components/integration/organisms/infoList.vue'
 import Sponsor from '~/components/integration/organisms/sponsor.vue'
+import MainVisual from '~/components/integration/organisms/main-visual.vue'
 
 export default {
-  components: { infoList, Sponsor },
+  components: { infoList, Sponsor, MainVisual },
   async asyncData({ $microcms }) {
     // const [playersList, teamList] = await Promise.all([
     //   $microcms.get({ endpoint: 'player-details' }),
@@ -61,7 +63,6 @@ export default {
 
 <style scoped lang="scss">
 .es-League {
-  margin: 0 16px;
   color: #fff;
   &__profileLink {
     margin: 10px 0;
