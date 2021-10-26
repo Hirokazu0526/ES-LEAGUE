@@ -1,25 +1,14 @@
 <template>
   <div class="es-League">
     <main-visual />
+    <next-match />
+    <live id="live" />
     <div class="es-League__profileLink">
       <nuxt-link to="/profile">profile</nuxt-link>
     </div>
 
-    <div>
-      <ul class="esleague-playerList">
-        <li
-          v-for="list in teamList"
-          :key="list.id"
-          class="esleague-playerList__item"
-        >
-          <p>{{ list.teamName }}</p>
-          <div v-html="list.text">></div>
-          <br />
-        </li>
-      </ul>
-    </div>
     <div class="block">
-      <p id="live">Live</p>
+      <p>Live</p>
       <nuxt-link v-scroll-to="{ el: '#logo', offset: -30 }" to>
         <span>Topへ移動</span>
       </nuxt-link>
@@ -34,20 +23,13 @@
 <script>
 import { mapGetters } from 'vuex'
 import infoList from '~/components/integration/organisms/infoList.vue'
-import Sponsor from '~/components/integration/organisms/sponsor.vue'
-import MainVisual from '~/components/integration/organisms/main-visual.vue'
+import sponsor from '~/components/integration/organisms/sponsor.vue'
+import mainVisual from '~/components/integration/organisms/main-visual.vue'
+import nextMatch from '~/components/integration/organisms/next-match.vue'
+import live from '~/components/integration/organisms/live.vue'
 
 export default {
-  components: { infoList, Sponsor, MainVisual },
-  async asyncData({ $microcms }) {
-    // const [playersList, teamList] = await Promise.all([
-    //   $microcms.get({ endpoint: 'player-details' }),
-    //   $microcms.get({ endpoint: 'team-details' }),
-    // ])
-    // return { playersList: playersList.contents, teamList: teamList.contents }
-    const teamList = await $microcms.get({ endpoint: 'team-details' })
-    return { teamList: teamList.contents }
-  },
+  components: { infoList, sponsor, mainVisual, nextMatch, live },
   data() {
     return {}
   },
@@ -71,12 +53,6 @@ export default {
       color: #fff;
       background-color: dimgray;
     }
-  }
-}
-.esleague-playerList {
-  &__item {
-    color: white;
-    list-style: none;
   }
 }
 .block {
