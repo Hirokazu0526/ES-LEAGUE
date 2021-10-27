@@ -3,6 +3,8 @@
     <main-visual />
     <next-match />
     <live id="live" />
+    <about-es />
+    <player-card />
     <div class="es-League__profileLink">
       <nuxt-link to="/profile">profile</nuxt-link>
     </div>
@@ -22,14 +24,24 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import infoList from '~/components/integration/organisms/infoList.vue'
+import infoList from '~/components/integration/organisms/info-list.vue'
 import sponsor from '~/components/integration/organisms/sponsor.vue'
 import mainVisual from '~/components/integration/organisms/main-visual.vue'
 import nextMatch from '~/components/integration/organisms/next-match.vue'
 import live from '~/components/integration/organisms/live.vue'
+import playerCard from '~/components/integration/organisms/player-card.vue'
+import aboutEs from '~/components/integration/organisms/about-es.vue'
 
 export default {
-  components: { infoList, sponsor, mainVisual, nextMatch, live },
+  components: {
+    infoList,
+    sponsor,
+    mainVisual,
+    nextMatch,
+    live,
+    playerCard,
+    aboutEs,
+  },
   data() {
     return {}
   },
