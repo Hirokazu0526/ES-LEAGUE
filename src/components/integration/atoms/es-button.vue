@@ -2,8 +2,12 @@
   <div class="button">
     <nuxt-link
       :to="url"
-      :class="{ color, arrow: arrow, border: border }"
-      :style="{ height: `${height}px` }"
+      :class="[color, { arrow: arrow }, { border: border }]"
+      :style="[
+        { height: `${height}px` },
+        { width: `${width}px` },
+        { borderRadius: `${borderRadius}px` },
+      ]"
     >
       <slot />
     </nuxt-link>
@@ -38,6 +42,16 @@ export default {
       required: false,
       default: 38,
     },
+    width: {
+      type: Number,
+      required: false,
+      default: 120,
+    },
+    borderRadius: {
+      type: Number,
+      required: false,
+      default: 0,
+    },
   },
 }
 </script>
@@ -55,7 +69,7 @@ export default {
     position: relative;
     margin: 0 auto;
     background-color: #344152;
-    border-radius: 8px;
+    border-radius: 0px;
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -64,18 +78,20 @@ export default {
     &:hover {
       color: #fff;
     }
-    &:after {
-      content: '>';
-      width: 14px;
-      height: 14px;
-      position: absolute;
-      top: 0px;
-      right: 10px;
-      bottom: 0px;
-      margin: auto;
-      margin-left: 5px;
-      font-size: 14px;
-      line-height: 14px;
+    &.arrow {
+      &:after {
+        content: '>';
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        bottom: 0px;
+        margin: auto;
+        margin-left: 5px;
+        font-size: 14px;
+        line-height: 14px;
+      }
     }
     &.border {
       border: 1px solid #3895ff;
