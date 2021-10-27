@@ -50,6 +50,7 @@ export default {}
     &.bronze {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto auto;
+      margin-bottom: 0px;
     }
   }
   &__logo {
