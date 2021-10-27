@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-live">
-    <h3 class="es-League-live__title">
+    <h3 class="es-League-live__title live">
       LIVE STREAMING<br /><span>ライブ配信</span>
     </h3>
     <div class="es-League-live__info">
@@ -14,6 +14,17 @@
         allowfullscreen
       ></iframe>
     </div>
+    <h3 class="es-League-live__title howto">
+      HOW TO WATCH<br /><span>観戦方法</span>
+    </h3>
+    <es-button
+      url="/howto"
+      :arrow="true"
+      color="white"
+      :border-radius="8"
+      class="es-League-live__btn"
+      >詳しく見る</es-button
+    >
   </div>
 </template>
 
@@ -27,12 +38,21 @@ export default {}
   &__title {
     text-align: center;
     font-size: 24px;
-    color: #ff1d1d;
+    color: #fff;
     & span {
       margin-top: 5px;
       display: block;
       font-size: 18px;
+      color: #fff;
+    }
+    &.live {
       color: #ff1d1d;
+      & span {
+        color: #ff1d1d;
+      }
+    }
+    &.howto {
+      margin-top: 37px;
     }
   }
   &__info {
@@ -48,6 +68,9 @@ export default {}
       width: 100%;
       height: 100%;
     }
+  }
+  &__btn {
+    margin: 15px auto 0;
   }
 }
 </style>
