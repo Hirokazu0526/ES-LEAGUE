@@ -46,16 +46,15 @@ export default {
 <style lang="scss" scoped>
 .es-League-TabList {
   position: relative;
-  display: flex;
+  display: grid;
   gap: 1px;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 16px;
   &__tabItem {
     font-size: 14px;
     font-weight: bold;
-    width: 90px;
     color: #666666;
     border: 1px solid #3895ff;
     border-bottom: none;
