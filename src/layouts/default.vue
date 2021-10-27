@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="es-League">
     <esLeaguHeader class="header" />
     <Nuxt class="nuxt" />
     <div class="footer">footer</div>
@@ -17,8 +17,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-* {
-  background-color: #022c60;
+.es-League {
+  background: linear-gradient(#000d1d, #022c60);
 }
 .header {
   position: fixed;
@@ -29,6 +29,7 @@ export default {
 }
 .footer {
   height: 80px;
-  background-color: rgb(87, 87, 87);
+  background-color: #000d1d;
+  color: #fff;
 }
 </style>
