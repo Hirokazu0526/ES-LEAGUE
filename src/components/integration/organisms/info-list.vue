@@ -1,14 +1,20 @@
 <template>
   <div class="es-League-info">
-    <tab-list
-      :tab="tab"
-      class="es-League-info__tab"
-      @onClickTab="updateTabContents"
-    />
-    <div class="es-League-info__tabContents">
-      <news v-if="tab === 'news'" />
-      <blog v-else-if="tab === 'blog'" />
-      <etc v-else-if="tab === 'etc'" />
+    <h3 class="es-League-info__title">
+      NEWS<br />
+      <span>お知らせ</span>
+    </h3>
+    <div class="es-League-info__wrapper">
+      <tab-list
+        :tab="tab"
+        class="es-League-info__tab"
+        @onClickTab="updateTabContents"
+      />
+      <div class="es-League-info__tabContents">
+        <news v-if="tab === 'news'" />
+        <blog v-else-if="tab === 'blog'" />
+        <etc v-else-if="tab === 'etc'" />
+      </div>
     </div>
   </div>
 </template>
@@ -57,7 +63,20 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-info {
-  margin: 10px 16px 10px;
+  padding: 40px 0;
+  background-color: #344152;
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    & span {
+      margin-top: 5px;
+      display: block;
+      font-size: 18px;
+    }
+  }
+  &__wrapper {
+    margin: 20px 16px;
+  }
   &__tabContents {
     background-color: #8b8b8b;
     color: #fff;
