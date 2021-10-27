@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <nuxt-link v-scroll-to="{ el: '#logo', offset: -30 }" to>
+    <nuxt-link to="/">
       <img
         id="logo"
         class="header__logo"
@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   height: 80px;
-  background-color: #030012;
+  background-color: #000d1d;
   padding: 12px 0;
   display: flex;
   justify-content: space-around;
