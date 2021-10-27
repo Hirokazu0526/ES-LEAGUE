@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import tabList from '~/components/integration/organisms/tabList.vue'
+import tabList from '~/components/integration/organisms/tab-list.vue'
 import news from '~/components/integration/organisms/news.vue'
 import blog from '~/components/integration/organisms/blog.vue'
 import etc from '~/components/integration/organisms/etc.vue'
