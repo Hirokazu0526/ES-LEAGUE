@@ -4,18 +4,15 @@
     <next-match />
     <live id="live" />
     <about-es />
-    <player-card />
-    <div class="es-League__profileLink">
-      <nuxt-link to="/profile">profile</nuxt-link>
-    </div>
+    <player-card :res-data="resData" />
 
-    <div class="block">
+    <!-- <div class="block">
       <p>Live</p>
       <nuxt-link v-scroll-to="{ el: '#logo', offset: -30 }" to>
         <span>Topへ移動</span>
       </nuxt-link>
-    </div>
-    <div v-if="isDay6">trueです</div>
+    </div> -->
+    <!-- <div v-if="isDay6">trueです</div> -->
 
     <info-list />
     <sponsor />
@@ -42,6 +39,12 @@ export default {
     playerCard,
     aboutEs,
   },
+  async asyncData({ $microcms }) {
+    const Data = await $microcms.get({
+      endpoint: 'player-details',
+    })
+    return { resData: Data }
+  },
   data() {
     return {}
   },
@@ -58,14 +61,6 @@ export default {
 <style scoped lang="scss">
 .es-League {
   color: #fff;
-  &__profileLink {
-    margin: 10px 0;
-    a {
-      padding: 5px;
-      color: #fff;
-      background-color: dimgray;
-    }
-  }
 }
 .block {
   height: 200px;
