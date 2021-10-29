@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="esleague-playerList">
     <div>profile</div>
     <div class="anime">
-      <ul class="esleague-playerList">
+      <ul>
         <li
-          v-for="list in playersList"
-          :key="list.id"
+          v-for="content in contents"
+          :key="content.id"
           class="esleague-playerList__item"
         >
-          氏名：{{ list.name }}<br />
-          ポシション：{{ list.position[0] }}<br />
-          誕生日：{{ list.birth }}
+          <nuxt-link :to="`/profile/${content.id}`">
+            {{ content.name }}
+          </nuxt-link>
         </li>
       </ul>
     </div>
@@ -23,10 +23,10 @@
 <script>
 export default {
   async asyncData({ $microcms }) {
-    const playersList = await $microcms.get({
+    const Data = await $microcms.get({
       endpoint: 'player-details',
     })
-    return { playersList: playersList.contents }
+    return Data
   },
   mounted() {
     this.setAnimation()
@@ -48,6 +48,11 @@ export default {
 .esleague-playerList {
   &__item {
     list-style: none;
+    margin-bottom: 10px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
   &__btn {
     margin: 10px auto;
