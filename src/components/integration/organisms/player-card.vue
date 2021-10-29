@@ -6,7 +6,7 @@
     <div class="es-League-card__listWrapper">
       <ul class="es-League-card__list">
         <li class="es-League-card__item">
-          <nuxt-link to="/profile">
+          <nuxt-link to="/profile/ltex82bj2">
             <img
               src="~/assets/img/takano.jpg"
               alt=""
@@ -54,6 +54,13 @@
 import esButton from '../atoms/es-button.vue'
 export default {
   components: { esButton },
+  props: {
+    resData: {
+      type: Object,
+      require: false,
+      default: undefined,
+    },
+  },
 }
 </script>
 
@@ -85,6 +92,7 @@ export default {
     flex-direction: column;
     background-color: #fff;
     padding-bottom: 10px;
+    color: #000;
     a {
       color: #000;
       text-decoration: none;
