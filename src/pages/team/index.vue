@@ -4,12 +4,12 @@
     <div class="anime">
       <ul>
         <li
-          v-for="teamList in teamLists"
-          :key="teamList.id"
+          v-for="item in getTeamList"
+          :key="item.id"
           class="es-League-teamList__item"
         >
-          <nuxt-link :to="`/team/${teamList.id}`">
-            {{ teamList.teamName }}
+          <nuxt-link :to="`/team/${item.id}`">
+            {{ item.teamName }}
           </nuxt-link>
         </li>
       </ul>
@@ -19,10 +19,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  async asyncData({ $microcms }) {
-    const teamList = await $microcms.get({ endpoint: 'team-details' })
-    return { teamLists: teamList.contents }
+  computed: {
+    ...mapGetters(['getTeamList']),
   },
 }
 </script>
