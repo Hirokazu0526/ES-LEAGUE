@@ -50,6 +50,19 @@ export default {
       return moment(this.birth).format('YYYY/MM/DD')
     },
   },
+  mounted() {
+    this.setAnimation()
+  },
+  methods: {
+    setAnimation() {
+      this.$anime({
+        targets: '.es-League-profile__ability',
+        scale: 1.5,
+        duration: 2000,
+        easing: 'easeInOutQuad',
+      })
+    },
+  },
 }
 </script>
 
@@ -78,7 +91,17 @@ export default {
       margin: 0 auto;
     }
   }
+  &__ability {
+    background-image: url(~/assets/img/pentagon.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 53px;
+    height: 51px;
+    display: block;
+    margin: 10px auto;
+  }
   &__info {
+    margin: 40px 0 0;
     padding: 0px 16px;
     text-align: left;
   }
