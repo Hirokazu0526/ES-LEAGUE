@@ -1,11 +1,11 @@
 <template>
   <section class="es-League-news">
     <ul class="es-League-news__list">
-      <li v-for="item in items" :key="item.id" class="es-League-news__item">
-        <nuxt-link :to="item.url">
+      <li v-for="item in newsLists" :key="item.id" class="es-League-news__item">
+        <nuxt-link :to="`/news/${item.id}`">
           <div class="es-League-news__title">
             <span>{{ item.date }}</span>
-            <h3>{{ item.title }}</h3>
+            <h3>{{ item.newsTitle }}</h3>
           </div>
         </nuxt-link>
       </li>
@@ -14,42 +14,17 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
-    return {
-      items: [
-        {
-          id: 1,
-          date: '2021年12月15日',
-          title: '最新のニュース1',
-          url: '/news',
-        },
-        {
-          id: 2,
-          date: '2021年12月15日',
-          title: '最新のニュース2',
-          url: '/news',
-        },
-        {
-          id: 3,
-          date: '2021年12月15日',
-          title: '最新のニュース3',
-          url: '/news',
-        },
-        {
-          id: 4,
-          date: '2021年12月15日',
-          title: '最新のニュース4',
-          url: '/news',
-        },
-        {
-          id: 5,
-          date: '2021年12月15日',
-          title: '最新のニュース5',
-          url: '/news',
-        },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    ...mapGetters(['getNewsList']),
+    newsLists() {
+      return this.getNewsList.slice(0, 5)
+    },
   },
 }
 </script>
