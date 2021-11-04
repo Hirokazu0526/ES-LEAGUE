@@ -4,18 +4,10 @@
     <next-match />
     <live id="live" />
     <about-es />
-    <player-card :res-data="resData" />
-
-    <!-- <div class="block">
-      <p>Live</p>
-      <nuxt-link v-scroll-to="{ el: '#logo', offset: -30 }" to>
-        <span>Topへ移動</span>
-      </nuxt-link>
-    </div> -->
-    <!-- <div v-if="isDay6">trueです</div> -->
-
+    <player-card :player-data="getPlayerList" />
     <info-list />
     <sponsor />
+    <sns />
   </div>
 </template>
 
@@ -28,6 +20,7 @@ import nextMatch from '~/components/integration/organisms/next-match.vue'
 import live from '~/components/integration/organisms/live.vue'
 import playerCard from '~/components/integration/organisms/player-card.vue'
 import aboutEs from '~/components/integration/organisms/about-es.vue'
+import sns from '~/components/integration/organisms/sns.vue'
 
 export default {
   components: {
@@ -38,23 +31,11 @@ export default {
     live,
     playerCard,
     aboutEs,
-  },
-  async asyncData({ $microcms }) {
-    const Data = await $microcms.get({
-      endpoint: 'player-details',
-    })
-    return { resData: Data }
-  },
-  data() {
-    return {}
+    sns,
   },
   computed: {
-    ...mapGetters(['isDay6']),
+    ...mapGetters(['getPlayerList']),
   },
-  watch: {},
-  created() {},
-  mounted() {},
-  methods: {},
 }
 </script>
 
