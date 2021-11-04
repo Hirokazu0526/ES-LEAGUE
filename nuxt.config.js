@@ -2,6 +2,7 @@ import Sass from 'sass'
 import Fiber from 'fibers'
 require("dotenv").config();
 const { API_KEY } = process.env;
+const { API_URL } = process.env;
 
 export default {
   srcDir: 'src/',
@@ -84,6 +85,10 @@ export default {
   },
   
   env: {
-    API_KEY
+    API_KEY 
   },
+  privateRuntimeConfig: {
+    apiKey: API_KEY,
+    apiUrl: API_URL
+   }
 }
