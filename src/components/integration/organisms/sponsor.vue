@@ -29,6 +29,7 @@ export default {}
   background-color: #fff;
   margin: 0 calc(50% - 50vw);
   width: 100vw;
+  padding: 40px 0;
   &__title {
     color: #666666;
     font-weight: bold;
