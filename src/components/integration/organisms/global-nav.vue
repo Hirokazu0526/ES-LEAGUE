@@ -8,7 +8,7 @@
             src="~/assets/img/site-logo.png"
             alt="セパタクローボール"
           />
-          日程/結果
+          Schedule<br />Result
         </nuxt-link>
       </li>
       <li class="es-League__item">
@@ -22,7 +22,7 @@
             src="~/assets/img/site-logo.png"
             alt="セパタクローボール"
           />
-          ライブ配信
+          Live<br />Streaming
         </nuxt-link>
       </li>
       <li class="es-League__item">
@@ -32,7 +32,7 @@
             src="~/assets/img/site-logo.png"
             alt="セパタクローボール"
           />
-          セパとは
+          What's<br />Sepaktakraw
         </nuxt-link>
       </li>
     </ul>
@@ -45,6 +45,9 @@ export default {}
 
 <style lang="scss" scoped>
 .es-League {
+  &__nav {
+    font-family: 'Alegreya SC';
+  }
   &__navList {
     display: flex;
     justify-content: space-around;
@@ -53,6 +56,7 @@ export default {}
   }
   &__item {
     display: block;
+    text-align: center;
   }
   &__link {
     display: flex;
