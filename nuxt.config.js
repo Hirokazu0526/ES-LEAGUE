@@ -53,6 +53,7 @@ export default {
     options: {
       serviceDomain: process.env.SERVICE_DOMAIN,
       apiKey: process.env.API_KEY,
+      apiUrl: process.env.API_URL,
     },
     mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
   },
@@ -61,11 +62,21 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'vue-scrollto/nuxt'
+    'vue-scrollto/nuxt',
+    'nuxt-webfontloader',
   ],
+  webfontloader: {
+    google: {
+      families: ['Alegreya SC', 'Red Rose:400,700', 'Noto+Sans+JP:400,700'] 
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: { proxy: true },
+
+  // proxy: {
+  //   '/api/': { target: 'http://192.168.1.8:3000/', pathRewrite: {'^/api/': ''} }
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -85,10 +96,11 @@ export default {
   },
   
   env: {
-    API_KEY 
+    API_KEY ,
+    API_URL
   },
   privateRuntimeConfig: {
     apiKey: API_KEY,
-    apiUrl: API_URL
+    apiUrl: API_URL,
    }
 }
