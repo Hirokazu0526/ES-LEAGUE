@@ -45,7 +45,9 @@ export default {
     const res = await this.$axios.$get(
       `https://es-league.microcms.io/api/v1/player-details/${path}?draftKey=${draftKey}`,
       {
-        headers: { 'X-API-KEY': '02926e8f-7a98-407d-a496-2c66e01d02f7' },
+        headers: {
+          'X-MICROCMS-API-KEY': '6f5f8298ae11472da2dee970abc8407d9cdf',
+        },
       }
     )
     this.data = res
