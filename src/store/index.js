@@ -58,16 +58,16 @@ export const state = () => ({
     // },
     async nuxtServerInit({ commit }, { $config }) {
       const resNews = await this.$axios.$get(`${$config.apiUrl}news`, {
-       headers: { "X-API-KEY": $config.apiKey }
+       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
       const resBlogs = await this.$axios.$get(`${$config.apiUrl}blog`, {
-       headers: { "X-API-KEY": $config.apiKey }
+       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
       const resPlayers = await this.$axios.$get(`${$config.apiUrl}player-details`, {
-       headers: { "X-API-KEY": $config.apiKey }
+       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
       const resTeams = await this.$axios.$get(`${$config.apiUrl}team-details`, {
-       headers: { "X-API-KEY": $config.apiKey }
+       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
       commit("setNewsLists", resNews.contents);
       commit("setBlogLists", resBlogs.contents);
