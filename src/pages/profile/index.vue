@@ -14,9 +14,7 @@
         </li>
       </ul>
     </div>
-    <es-button url="/" :arrow="true" class="esleague-playerList__btn"
-      >Home</es-button
-    >
+    <es-button url="/" class="esleague-playerList__btn">Home</es-button>
   </div>
 </template>
 

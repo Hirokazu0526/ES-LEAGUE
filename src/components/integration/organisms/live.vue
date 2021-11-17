@@ -17,14 +17,7 @@
     <h3 class="es-League-live__title howto">
       HOW TO WATCH<br /><span>観戦方法</span>
     </h3>
-    <es-button
-      url="/howto"
-      :arrow="true"
-      color="white"
-      :border-radius="8"
-      class="es-League-live__btn"
-      >詳しく見る</es-button
-    >
+    <es-button url="/howto" class="es-League-live__btn">詳しく見る</es-button>
   </div>
 </template>
 

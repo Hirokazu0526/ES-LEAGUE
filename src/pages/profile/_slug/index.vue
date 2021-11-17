@@ -20,17 +20,10 @@
       </p>
     </div>
 
-    <es-button
-      url="/profile"
-      color="white"
-      :border-radius="8"
-      class="es-League-profile__btn player"
+    <es-button url="/profile" class="es-League-profile__btn player"
       >選手一覧へ</es-button
     >
-    <es-button
-      url="/team"
-      :border-radius="8"
-      class="es-League-profile__btn team"
+    <es-button url="/team" class="es-League-profile__btn team"
       >チーム一覧へ</es-button
     >
   </div>

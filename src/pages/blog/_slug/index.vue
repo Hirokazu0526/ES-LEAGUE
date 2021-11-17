@@ -6,11 +6,7 @@
     <h1 class="es-League-profile__name">{{ blogTitle }}</h1>
     <div v-html="blogText"></div>
 
-    <es-button
-      url="/blog"
-      color="white"
-      :border-radius="8"
-      class="es-League-profile__btn player"
+    <es-button url="/blog" class="es-League-profile__btn player"
       >ブログ一覧へ</es-button
     >
   </div>

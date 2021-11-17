@@ -17,11 +17,7 @@
     <es-button url="/team" :border-radius="8" class="es-League-team__btn team"
       >チーム一覧へ</es-button
     >
-    <es-button
-      url="/profile"
-      color="white"
-      :border-radius="8"
-      class="es-League-team__btn player"
+    <es-button url="/profile" class="es-League-team__btn player"
       >選手一覧へ</es-button
     >
   </div>

@@ -5,11 +5,7 @@
     <p class="es-League-profile__text number">{{ formatData }}</p>
     <h1 class="es-League-profile__name">{{ newsTitle }}</h1>
     <p>{{ newsText }}</p>
-    <es-button
-      url="/news"
-      color="white"
-      :border-radius="8"
-      class="es-League-profile__btn player"
+    <es-button url="/news" class="es-League-profile__btn player"
       >ニュース一覧へ</es-button
     >
   </div>
