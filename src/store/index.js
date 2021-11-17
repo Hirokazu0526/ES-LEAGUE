@@ -9,6 +9,11 @@ export const state = () => ({
   blogLists: [],
   playerLists: [],
   teamLists: [],
+  userName: '',
+  userKana: '',
+  userPhoneNumber: '',
+  userEmail: '',
+  userContent: '',
   });
   
   export const mutations = {
@@ -24,7 +29,6 @@ export const state = () => ({
         const itemDate = moment(item.date).format('YYYY年MM月DD日')
         item.date = itemDate
       }
-      
     },
     setBlogLists(state, blogLists) {
       state.blogLists = blogLists
@@ -46,16 +50,31 @@ export const state = () => ({
         const itemDate = moment(item.date).format('YYYY年MM月DD日')
         item.date = itemDate
       }
+    },
+    setUserName(state, userName) {
+      state.userName = userName
+    },
+    setUserKana(state, userKana) {
+      state.userKana = userKana
+    },
+    setUserPhoneNumber(state, userPhoneNumber) {
+      state.userPhoneNumber = userPhoneNumber
+    },
+    setUserEmail(state, userEmail) {
+      state.userEmail = userEmail
+    },
+    setUserContent(state, userContent) {
+      state.userContent = userContent
+    },
+    setUserDataClear(state) {
+      state.userName = ''
+      state.userKana = ''
+      state.userPhoneNumber = ''
+      state.userEmail = ''
+      state.userContent = ''
     }
-    
   }
   export const actions = {
-    // async getTeamLists({commit}, {$microcms}) {
-    //   const newsLists = await $microcms.get({
-    //     endoPoint: 'news'
-    //   })
-    //   return commit('setNewsLists', newsLists)
-    // },
     async nuxtServerInit({ commit }, { $config }) {
       const resNews = await this.$axios.$get(`${$config.apiUrl}news`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
@@ -73,7 +92,22 @@ export const state = () => ({
       commit("setBlogLists", resBlogs.contents);
       commit("setPlayerLists", resPlayers.contents);
       commit("setTeamLists", resTeams.contents);
-     }
+     },
+     getUserName({ commit }, userName) {
+      commit('setUserName', userName)
+    },
+     getUserKana({ commit }, userKana) {
+      commit('setUserKana', userKana)
+    },
+     getUserPhoneNumber({ commit }, userPhoneNumber) {
+      commit('setUserPhoneNumber', userPhoneNumber)
+    },
+     getUserEmail({ commit }, userEmail) {
+      commit('setUserEmail', userEmail)
+    },
+     getUserContent({ commit }, userContent) {
+      commit('setUserContent', userContent)
+    },
   }
 
   export const getters = {
@@ -92,5 +126,20 @@ export const state = () => ({
     },
     getTeamList(state) {
       return state.teamLists
-    }
+    },
+    hasUserName(state) {
+      return state.userName
+    },
+    hasUserKana(state) {
+      return state.userKana
+    },
+    hasUserPhoneNumber(state) {
+      return state.userPhoneNumber
+    },
+    hasUserEmail(state) {
+      return state.userEmail
+    },
+    hasUserContent(state) {
+      return state.userContent
+    },
   }
