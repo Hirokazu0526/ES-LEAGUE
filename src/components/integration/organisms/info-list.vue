@@ -64,14 +64,16 @@ export default {
 <style lang="scss" scoped>
 .es-League-info {
   padding: 40px 0;
-  background-color: #344152;
+  background-color: #fff;
   &__title {
     text-align: center;
     font-size: 24px;
+    color: #030012;
     & span {
       margin-top: 5px;
       display: block;
       font-size: 18px;
+      color: #030012;
     }
   }
   &__wrapper {

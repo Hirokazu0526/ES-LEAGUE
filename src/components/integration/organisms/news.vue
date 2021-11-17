@@ -36,7 +36,7 @@ export default {
     padding: 5px 10px;
     line-height: 30px;
     &:nth-child(2n-1) {
-      background-color: #3895ff;
+      background-color: #030012;
     }
     a {
       text-decoration: none;

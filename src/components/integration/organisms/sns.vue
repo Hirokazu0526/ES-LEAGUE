@@ -32,6 +32,7 @@ export default {}
 <style lang="scss" scoped>
 .es-League-sns {
   padding: 40px 0;
+  background-color: #00091a;
   &__title {
     text-align: center;
     font-size: 24px;

@@ -33,7 +33,6 @@ export default {}
 <style lang="scss" scoped>
 .es-League-schedule {
   padding-top: 20px;
-  background-color: #344152;
   &__title {
     text-align: center;
     font-size: 24px;
