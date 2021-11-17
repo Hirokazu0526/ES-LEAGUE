@@ -56,19 +56,23 @@ export default {
     font-size: 14px;
     font-weight: bold;
     color: #666666;
-    border: 1px solid #3895ff;
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
     padding: 10px 20px;
     text-align: center;
     list-style: none;
-    background-color: #fff;
+    background: linear-gradient(135deg, transparent 25px, #b6b6b6 20px);
+    background-position: bottom right;
+    background-size: 100%;
+    background-repeat: no-repeat;
     a {
       text-decoration: none;
+      margin-left: 10px;
     }
     &.selected {
       color: #fff;
-      background-color: #3895ff;
+      background: linear-gradient(135deg, transparent 25px, #030012 20px);
+      background-position: bottom right;
+      background-size: 100%;
+      background-repeat: no-repeat;
     }
   }
 }
