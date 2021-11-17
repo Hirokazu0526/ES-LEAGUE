@@ -19,7 +19,8 @@
     "nuxt-microcms-module": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
     "reseter.css": "^2.0.0",
-    "vue-scrollto": "^2.20.0"
+    "vue-scrollto": "^2.20.0",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
