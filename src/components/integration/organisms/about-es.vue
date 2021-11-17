@@ -1,8 +1,5 @@
 <template>
   <div class="es-League-aboutEs">
-    <h3 class="es-League-aboutEs__title">
-      About ES LEAGUE<br /><span>ES リーグについて</span>
-    </h3>
     <div class="es-League-aboutEs__logo">
       <img src="" alt="" />
       <p class="es-League-aboutEs__text">
@@ -23,7 +20,7 @@ export default {}
 .es-League-aboutEs {
   margin-top: 40px;
   padding: 20px 0;
-  background-color: #344152;
+  background-color: #fff;
   &__title {
     text-align: center;
     font-size: 24px;
@@ -34,8 +31,6 @@ export default {}
     }
   }
   &__logo {
-    margin-top: 20px;
-    background-color: #000;
     height: 125px;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -49,7 +44,7 @@ export default {}
     padding-left: 2em;
     line-height: 30px;
     a {
-      color: #fff;
+      color: #030012;
       text-decoration: none;
     }
   }
