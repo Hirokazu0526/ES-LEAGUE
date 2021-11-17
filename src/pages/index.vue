@@ -6,6 +6,7 @@
     <about-es />
     <player-card :player-data="getPlayerList" />
     <info-list />
+    <movie />
     <sponsor />
     <sns />
   </div>
@@ -21,6 +22,7 @@ import live from '~/components/integration/organisms/live.vue'
 import playerCard from '~/components/integration/organisms/player-card.vue'
 import aboutEs from '~/components/integration/organisms/about-es.vue'
 import sns from '~/components/integration/organisms/sns.vue'
+import movie from '~/components/integration/organisms/movie.vue'
 
 export default {
   components: {
@@ -32,6 +34,7 @@ export default {
     playerCard,
     aboutEs,
     sns,
+    movie,
   },
   computed: {
     ...mapGetters(['getPlayerList']),
@@ -42,12 +45,5 @@ export default {
 <style scoped lang="scss">
 .es-League {
   color: #fff;
-}
-.block {
-  height: 200px;
-  background-color: rgb(211, 164, 164);
-  p {
-    padding-top: 100px;
-  }
 }
 </style>
