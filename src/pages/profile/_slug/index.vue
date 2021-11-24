@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-profile">
-    <h3 class="es-League-profile__title">PLAYERS</h3>
+    <h2 class="es-League-profile__title">PLAYERS</h2>
 
     <img :src="image.url" :alt="name" class="es-League-profile__name" />
     <h1 class="es-League-profile__name">{{ name }}</h1>
@@ -20,11 +20,11 @@
       </p>
     </div>
 
-    <es-button url="/profile" class="es-League-profile__btn player"
-      >選手一覧へ</es-button
-    >
-    <es-button url="/team" class="es-League-profile__btn team"
+    <es-button :url="`/team/${team.id}`" class="es-League-profile__btn team"
       >チーム一覧へ</es-button
+    >
+    <es-button url="/" color="navy" class="es-League-profile__btn team"
+      >TOPへ</es-button
     >
   </div>
 </template>
@@ -62,7 +62,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-profile {
   margin: 0px 16px;
-  padding: 80px 0px;
+  padding: 95px 0px;
   text-align: center;
   color: #fff;
 
