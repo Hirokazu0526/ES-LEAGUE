@@ -1,9 +1,9 @@
 <template>
   <div class="es-League-info">
-    <h3 class="es-League-info__title">
+    <h2 class="es-League-info__title">
       NEWS<br />
       <span>お知らせ</span>
-    </h3>
+    </h2>
     <div class="es-League-info__wrapper">
       <tab-list
         :tab="tab"
