@@ -1,6 +1,6 @@
 <template>
   <section class="es-League-news">
-    <h3 class="es-League-news__title">お知らせ</h3>
+    <h2 class="es-League-news__title">お知らせ</h2>
     <ul class="es-League-news__list">
       <li
         v-for="item in getNewsList"
@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-news {
-  padding: 80px 0px 40px;
+  padding: 95px 0px 40px;
   &__title {
     margin: 21px 0 45px;
     text-align: center;

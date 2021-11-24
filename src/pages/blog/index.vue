@@ -1,6 +1,6 @@
 <template>
   <section class="es-League-blog">
-    <h3 class="es-League-blog__title">ブログ</h3>
+    <h2 class="es-League-blog__title">ブログ</h2>
     <ul class="es-League-blog__list">
       <li
         v-for="item in getBlogList"
@@ -31,7 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-blog {
-  padding: 80px 0px 40px;
+  padding: 95px 0px 40px;
   &__title {
     margin: 21px 0 45px;
     text-align: center;

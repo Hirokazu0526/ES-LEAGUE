@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-profile">
-    <h3 class="es-League-profile__title">PLAYERS</h3>
+    <h2 class="es-League-profile__title">PLAYERS</h2>
 
     <p class="es-League-profile__text number">{{ formatData }}</p>
     <h1 class="es-League-profile__name">{{ blogTitle }}</h1>
@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-profile {
   margin: 0px 16px;
-  padding: 80px 0px;
+  padding: 95px 0px;
   text-align: center;
   color: #fff;
 

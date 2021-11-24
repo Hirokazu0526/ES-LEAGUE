@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-teamList">
-    <h3 class="es-League-teamList__title">TEAM</h3>
+    <h2 class="es-League-teamList__title">TEAM</h2>
     <div class="anime">
       <ul>
         <li
@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-teamList {
   margin: 0px 16px;
-  padding: 80px 0px;
+  padding: 95px 0px;
   text-align: center;
   color: #fff;
   &__title {
