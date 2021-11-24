@@ -12,6 +12,16 @@
       <p class="es-League-team__text teamIntroduction">
         チーム紹介：<br />{{ text }}
       </p>
+      <div>
+        <ul>
+          <li v-for="member in temaMember" :key="member.id">
+            <nuxt-link :to="`/profile/${member.id}`">
+              <img :src="member.image.url" alt="" />
+              <p>{{ member.name }}</p>
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <es-button url="/team" :border-radius="8" class="es-League-team__btn team"
@@ -24,6 +34,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   async asyncData({ params, $microcms }) {
     const data = await $microcms.get({
@@ -31,13 +43,23 @@ export default {
     })
     return data
   },
+  computed: {
+    ...mapGetters(['getPlayerList']),
+    temaMember() {
+      const members = this.getPlayerList
+      const memberInfo = members.filter((member) => {
+        return member.team.teamName === this.teamName
+      })
+      return memberInfo
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .es-League-team {
   margin: 0px 16px;
-  padding: 80px 0px;
+  padding: 95px 0px;
   text-align: center;
   color: #fff;
 
