@@ -47,7 +47,7 @@ export default {
 .es-League-footer {
   width: 100%;
   height: 240px;
-  background: url(~/assets/img/background-footer.png) 0% 0%;
+  background: url(~/assets/img/background-footer.png) 0% 0% no-repeat;
   background-size: 100%;
   padding: 40px 16px 20px;
   &__list {
