@@ -62,9 +62,8 @@ export default {
     &:hover {
       color: #fff;
     }
-    &.white {
-      color: rgb(28, 38, 61);
-      background-color: #fff;
+    &.navy {
+      background: linear-gradient(-45deg, transparent 27px, #011e43 20px);
     }
     &:hover {
       cursor: pointer;
