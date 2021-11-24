@@ -28,7 +28,7 @@ export default {
   z-index: 100;
 }
 .nuxt {
-  padding-top: 80px;
+  padding-top: 95px;
   position: relative;
   background: url(~/assets/img/background-line.png) 0% 20%;
   background-size: 100%;
