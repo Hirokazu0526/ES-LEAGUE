@@ -1,7 +1,12 @@
 <template>
   <div class="es-League-aboutEs">
-    <div class="es-League-aboutEs__logo">
-      <img src="" alt="" />
+    <div class="es-League-aboutEs__container">
+      <img
+        id="logo"
+        class="es-League-aboutEs__logo"
+        src="~/assets/img/es_logo.svg"
+        alt="ES LEAGUE LOGO"
+      />
       <p class="es-League-aboutEs__text">
         <nuxt-link to="/about">
           ES LEAGUE に<br />
@@ -30,7 +35,7 @@ export default {}
       font-size: 18px;
     }
   }
-  &__logo {
+  &__container {
     height: 125px;
     display: grid;
     grid-template-columns: 1fr 2fr;
