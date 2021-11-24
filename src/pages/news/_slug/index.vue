@@ -1,13 +1,15 @@
 <template>
-  <div class="es-League-profile">
-    <h3 class="es-League-profile__title">PLAYERS</h3>
+  <div class="es-League-news">
+    <h2 class="es-League-news__title">お知らせ</h2>
+    <div class="es-League-news__contanier">
+      <p class="es-League-news__date">{{ formatData }}</p>
+      <h3 class="es-League-news__newsTitle">{{ newsTitle }}</h3>
+      <div class="es-League-news__newsText" v-html="newsText"></div>
 
-    <p class="es-League-profile__text number">{{ formatData }}</p>
-    <h1 class="es-League-profile__name">{{ newsTitle }}</h1>
-    <p>{{ newsText }}</p>
-    <es-button url="/news" class="es-League-profile__btn player"
-      >ニュース一覧へ</es-button
-    >
+      <es-button url="/news" class="es-League-news__btn"
+        >ニュース一覧へ</es-button
+      >
+    </div>
   </div>
 </template>
 
@@ -29,9 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.es-League-profile {
+.es-League-news {
   margin: 0px 16px;
-  padding: 80px 0px;
+  padding: 95px 0px 40px;
   text-align: center;
   color: #fff;
 
@@ -42,7 +44,7 @@ export default {
     position: relative;
     &:after {
       content: '';
-      width: 120px;
+      width: 96px;
       height: 2px;
       background-color: #fff;
       display: block;
@@ -53,16 +55,29 @@ export default {
       margin: 0 auto;
     }
   }
-  &__info {
-    padding: 0px 16px;
+  &__contanier {
+    padding: 20px 16px 30px;
+    color: #000;
+    background: linear-gradient(-45deg, transparent 27px, #fff 20px);
+    background-position: bottom right;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  &__date {
+    text-align: left;
+    font-size: 12px;
+  }
+  &__newsTitle {
+    font-size: 20px;
+    margin: 20px 0 0;
+  }
+  &__newsText {
+    margin-top: 20px;
+    font-size: 16px;
     text-align: left;
   }
-  &__text {
-    font-size: 18px;
-    margin: 10px 0;
-  }
   &__btn {
-    margin: 15px auto 0;
+    margin: 30px auto 0;
   }
 }
 </style>
