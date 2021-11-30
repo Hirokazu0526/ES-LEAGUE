@@ -46,6 +46,7 @@ export default {
   computed: {
     ...mapGetters(['getPlayerList']),
     temaMember() {
+      // チーム名とプレーヤーリストを比べて選手を抽出
       const members = this.getPlayerList
       const memberInfo = members.filter((member) => {
         return member.team.teamName === this.teamName
