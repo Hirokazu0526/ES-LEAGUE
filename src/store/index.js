@@ -9,6 +9,7 @@ export const state = () => ({
   blogLists: [],
   playerLists: [],
   teamLists: [],
+  competitionLists: [],
   userName: '',
   userKana: '',
   userPhoneNumber: '',
@@ -51,6 +52,17 @@ export const state = () => ({
         item.date = itemDate
       }
     },
+    setCompetitionLists(state, competitionLists) {
+      state.competitionLists = competitionLists
+      for (const item of state.competitionLists) {
+        const itemDate = moment.tz(item.date, state.TZ || TZ).format('YYYY.MM.DD ddd.')
+        item.date = itemDate
+      }
+      state.competitionLists.sort(function(a, b) {
+        return (a.date < b.date) ? -1 : 1;  // オブジェクトの昇順ソート
+      });
+      
+    },
     setUserName(state, userName) {
       state.userName = userName
     },
@@ -88,10 +100,14 @@ export const state = () => ({
       const resTeams = await this.$axios.$get(`${$config.apiUrl}team-details`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
+      const resCompetitions = await this.$axios.$get(`${$config.apiUrl}schedule_result`, {
+       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+      });
       commit("setNewsLists", resNews.contents);
       commit("setBlogLists", resBlogs.contents);
       commit("setPlayerLists", resPlayers.contents);
       commit("setTeamLists", resTeams.contents);
+      commit("setCompetitionLists", resCompetitions.contents);
      },
      getUserName({ commit }, userName) {
       commit('setUserName', userName)
@@ -115,6 +131,37 @@ export const state = () => ({
       const now = state.currentTime
       return [20].includes(moment.tz(now, state.TZ || TZ).date())
     },
+    // 第1週目の期間
+    // ※TODO:リリース時点では期間を修正すること
+    firstWeek(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2021-11-15', '2022-02-28', undefined, '[]')
+      
+    },
+    // 第2週目の期間
+    secondWeek(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-03-01', '2022-03-31', undefined, '[]')
+      
+    },
+    // 第3週目の期間
+    thirdWeek(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-04-01', '2022-04-30', undefined, '[]')
+      
+    },
+    // 第4週目の期間
+    fourthWeek(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-05-01', '2022-05-31', undefined, '[]')
+      
+    },
+    // 第5週目の期間
+    fifthWeek(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-06-01', '2022-06-30', undefined, '[]')
+      
+    },
     getNewsList(state) {
       return state.newsLists
     },
@@ -126,6 +173,9 @@ export const state = () => ({
     },
     getTeamList(state) {
       return state.teamLists
+    },
+    getCompetitionList(state) {
+      return state.competitionLists
     },
     hasUserName(state) {
       return state.userName
