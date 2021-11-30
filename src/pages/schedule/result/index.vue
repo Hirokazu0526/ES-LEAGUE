@@ -1,35 +1,93 @@
 <template>
   <div class="es-League-schedule-result">
-    <h2 class="es-League-schedule-result__title">日程・結果</h2>
-    <div class="es-League-schedule-result__contanier">
-      <h3 class="es-League-schedule-result__matchDate">2022.02.11 Sat.</h3>
-      <nuxt-link to="/stadium" class="es-League-schedule-result__stadium"
-        >墨田区総合体育館</nuxt-link
-      >
+    <h2 v-if="isThisWeek" class="es-League-schedule-result__title">
+      日程・結果
+    </h2>
+    <div v-if="isThisWeek" class="es-League-schedule-result__contanier">
+      <h3 class="es-League-schedule-result__matchDate">
+        {{ isThisWeek.date }}
+      </h3>
+      <nuxt-link to="/stadium" class="es-League-schedule-result__stadium">{{
+        isThisWeek.stadium
+      }}</nuxt-link>
       <div class="es-League-schedule-result__resultList">
         <ul class="es-League-schedule-result__list">
-          <li
-            v-for="list in resultList"
-            :key="list.id"
-            class="es-League-schedule-result__item"
-          >
+          <li class="es-League-schedule-result__item">
             <div class="es-League-schedule-result__team">
               <p class="es-League-schedule-result__temaName">
-                {{ list.team1 }}
+                {{ isThisWeek.competition.coat1H }}
               </p>
-              <p class="es-League-schedule-result__score">{{ list.score1 }}</p>
+              <p class="es-League-schedule-result__score">
+                {{ isThisWeek.results.coat1.getSet_H }}
+              </p>
             </div>
             <div class="es-League-schedule-result__decoration">
               <p class="es-League-schedule-result__versus">VS</p>
-              <nuxt-link :to="list.url" class="es-League-schedule-result__link"
-                >試合詳細</nuxt-link
+              <nuxt-link
+                :to="`/match/${isThisWeek.id}?fields=coat1`"
+                class="es-League-schedule-result__link"
+                >詳細</nuxt-link
               >
             </div>
             <div class="es-League-schedule-result__team">
               <p class="es-League-schedule-result__temaName">
-                {{ list.team2 }}
+                {{ isThisWeek.competition.coat1A }}
               </p>
-              <p class="es-League-schedule-result__score">{{ list.score2 }}</p>
+              <p class="es-League-schedule-result__score">
+                {{ isThisWeek.results.coat1.getSet_A }}
+              </p>
+            </div>
+          </li>
+          <li class="es-League-schedule-result__item">
+            <div class="es-League-schedule-result__team">
+              <p class="es-League-schedule-result__temaName">
+                {{ isThisWeek.competition.coat2H }}
+              </p>
+              <p class="es-League-schedule-result__score">
+                {{ isThisWeek.results.coat2.getSet_H }}
+              </p>
+            </div>
+            <div class="es-League-schedule-result__decoration">
+              <p class="es-League-schedule-result__versus">VS</p>
+              <nuxt-link
+                :to="`/match/${isThisWeek.id}?fields=coat2`"
+                class="es-League-schedule-result__link"
+                >詳細</nuxt-link
+              >
+            </div>
+            <div class="es-League-schedule-result__team">
+              <p class="es-League-schedule-result__temaName">
+                {{ isThisWeek.competition.coat2A }}
+              </p>
+              <p class="es-League-schedule-result__score">
+                {{ isThisWeek.results.coat2.getSet_A }}
+              </p>
+            </div>
+          </li>
+          <li class="es-League-schedule-result__item">
+            <div class="es-League-schedule-result__team">
+              <p class="es-League-schedule-result__temaName">
+                {{ isThisWeek.competition.coat3H }}
+              </p>
+              <p class="es-League-schedule-result__score">
+                {{ isThisWeek.results.coat3.getSet_H }}
+              </p>
+            </div>
+            <div class="es-League-schedule-result__decoration">
+              <p class="es-League-schedule-result__versus">VS</p>
+              <nuxt-link
+                :to="`/match/${isThisWeek.id}?fields=coat3`"
+                class="es-League-schedule-result__link"
+                >詳細</nuxt-link
+              >
+            </div>
+            <div class="es-League-schedule-result__team">
+              <p class="es-League-schedule-result__temaName">
+                {{ isThisWeek.competition.coat3A }}
+              </p>
+              <p class="es-League-schedule-result__score">
+                {{ isThisWeek.results.coat3.getSet_A }}
+              </p>
             </div>
           </li>
         </ul>
@@ -44,41 +102,41 @@
     <div class="es-League-schedule-result__contanier transparency">
       <ul>
         <li
-          v-for="item in matchSchedule"
+          v-for="item in getCompetitionList"
           :key="item.id"
           class="es-League-schedule-result__scheduleList"
         >
           <h3 class="es-League-schedule-result__matchDate">{{ item.date }}</h3>
-          <nuxt-link :to="item.url" class="es-League-schedule-result__stadium"
+          <nuxt-link to="/stadium" class="es-League-schedule-result__stadium"
             >{{ item.stadium }} >></nuxt-link
           >
           <div class="es-League-schedule-result__matchInfo">
             <ul>
               <li class="es-League-schedule-result__matchList">
                 <p class="es-League-schedule-result__temaName">
-                  {{ item.team1 }}
+                  {{ item.competition.coat1H }}
                 </p>
                 <p class="es-League-schedule-result__versus">VS</p>
                 <p class="es-League-schedule-result__temaName">
-                  {{ item.team2 }}
+                  {{ item.competition.coat1A }}
                 </p>
               </li>
               <li class="es-League-schedule-result__matchList">
                 <p class="es-League-schedule-result__temaName">
-                  {{ item.team3 }}
+                  {{ item.competition.coat2H }}
                 </p>
                 <p class="es-League-schedule-result__versus">VS</p>
                 <p class="es-League-schedule-result__temaName">
-                  {{ item.team4 }}
+                  {{ item.competition.coat2A }}
                 </p>
               </li>
               <li class="es-League-schedule-result__matchList">
                 <p class="es-League-schedule-result__temaName">
-                  {{ item.team5 }}
+                  {{ item.competition.coat3H }}
                 </p>
                 <p class="es-League-schedule-result__versus">VS</p>
                 <p class="es-League-schedule-result__temaName">
-                  {{ item.team6 }}
+                  {{ item.competition.coat3A }}
                 </p>
               </li>
             </ul>
@@ -90,99 +148,37 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
-    return {
-      resultList: [
-        {
-          id: 1,
-          team1: 'TEAM A',
-          score1: 3,
-          team2: 'TEAM B',
-          score2: 1,
-          url: '/',
-        },
-        {
-          id: 2,
-          team1: 'TEAM C',
-          score1: 2,
-          team2: 'TEAM D',
-          score2: 2,
-          url: '/',
-        },
-        {
-          id: 3,
-          team1: 'TEAM a',
-          score1: 1,
-          team2: 'TEAM b',
-          score2: 3,
-          url: '/',
-        },
-      ],
-      matchSchedule: [
-        {
-          id: 1,
-          date: '2022.03.19 Sat.',
-          stadium: '墨田区総合体育館',
-          team1: 'TEAM A',
-          team2: 'TEAM B',
-          team3: 'TEAM C',
-          team4: 'TEAM D',
-          team5: 'TEAM a',
-          team6: 'TEAM b',
-          url: '/',
-        },
-        {
-          id: 2,
-          date: '2022.04.19 Sat.',
-          stadium: '墨田区総合体育館',
-          team1: 'TEAM B',
-          team2: 'TEAM C',
-          team3: 'TEAM D',
-          team4: 'TEAM E',
-          team5: 'TEAM b',
-          team6: 'TEAM c',
-          url: '/',
-        },
-        {
-          id: 3,
-          date: '2022.05.19 Sat.',
-          stadium: '墨田区総合体育館',
-          team1: 'TEAM A',
-          team2: 'TEAM C',
-          team3: 'TEAM B',
-          team4: 'TEAM E',
-          team5: 'TEAM a',
-          team6: 'TEAM c',
-          url: '/',
-        },
-        {
-          id: 4,
-          date: '2022.06.19 Sat.',
-          stadium: '墨田区総合体育館',
-          team1: 'TEAM A',
-          team2: 'TEAM D',
-          team3: 'TEAM C',
-          team4: 'TEAM E',
-          team5: 'TEAM a',
-          team6: 'TEAM b',
-          url: '/',
-        },
-        {
-          id: 5,
-          date: '2022.07.19 Sat.',
-          stadium: '墨田区総合体育館',
-          team1: 'TEAM A',
-          team2: 'TEAM E',
-          team3: 'TEAM B',
-          team4: 'TEAM D',
-          team5: 'TEAM a',
-          team6: 'TEAM c',
-          url: '/',
-        },
-      ],
-    }
+    return {}
   },
+  computed: {
+    ...mapGetters([
+      'getCompetitionList',
+      'firstWeek',
+      'secondWeek',
+      'thirdWeek',
+      'fourthWeek',
+      'fifthWeek',
+    ]),
+    isThisWeek() {
+      if (this.firstWeek) {
+        return this.getCompetitionList[0]
+      } else if (this.secondWeek) {
+        return this.getCompetitionList[1]
+      } else if (this.thirdWeek) {
+        return this.getCompetitionList[2]
+      } else if (this.fourthWeek) {
+        return this.getCompetitionList[3]
+      } else if (this.fifthWeek) {
+        return this.getCompetitionList[4]
+      }
+      return ''
+    },
+  },
+  methods: {},
 }
 </script>
 
@@ -249,7 +245,7 @@ export default {
   }
   &__item {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 110px 1fr;
     padding: 20px 0;
     border-bottom: 1px solid #000;
     &:last-child {
@@ -261,20 +257,33 @@ export default {
     font-size: 23px;
     font-weight: bold;
   }
+  &__versus {
+    font-size: 23px;
+    font-weight: bold;
+  }
 
   &__score {
     margin-top: 8px;
+    font-size: 23px;
+    font-weight: bold;
   }
   &__link {
     display: block;
-    color: #000;
+    width: 90px;
+    font-size: 14px;
+    color: #fff;
     text-decoration: none;
-    margin-top: 8px;
+    padding: 5px 22px 5px 0px;
+    margin: 8px 0 0 20px;
+    background: linear-gradient(-45deg, transparent 27px, #011e43 20px);
+    background-position: bottom right;
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 
   &__scheduleList {
     list-style: none;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   &__matchInfo {
