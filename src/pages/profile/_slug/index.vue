@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     formatData() {
-      return moment(this.birth).format('YYYY/MM/DD')
+      return moment(this.birth).format('YYYY年M月D日')
     },
   },
   mounted() {
