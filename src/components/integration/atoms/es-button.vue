@@ -60,13 +60,10 @@ export default {
     background-size: 100%;
     background-repeat: no-repeat;
     &:hover {
-      color: #fff;
+      cursor: pointer;
     }
     &.navy {
       background: linear-gradient(-45deg, transparent 27px, #011e43 20px);
-    }
-    &:hover {
-      cursor: pointer;
     }
   }
 }
