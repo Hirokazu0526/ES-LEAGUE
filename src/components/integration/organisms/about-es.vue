@@ -9,7 +9,7 @@
       />
       <p class="es-League-aboutEs__text">
         <nuxt-link to="/about">
-          ES LEAGUE に<br />
+          <span class="es-League-aboutEs__title">ES LEAGUE</span> に<br />
           込められた想い >>
         </nuxt-link>
       </p>
@@ -28,7 +28,7 @@ export default {}
   background-color: #fff;
   &__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     & span {
       margin-top: 5px;
       display: block;
@@ -37,14 +37,15 @@ export default {}
   }
   &__container {
     height: 125px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    margin-left: 20px;
   }
   &__text {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: 'Noto Serif JP', serif;
     text-indent: -1em;
     padding-left: 2em;
     line-height: 30px;
@@ -52,6 +53,14 @@ export default {}
       color: #030012;
       text-decoration: none;
     }
+  }
+  &__title {
+    font-size: 28px;
+    font-family: 'HNewYork';
+  }
+
+  &__logo {
+    width: 53px;
   }
 }
 </style>
