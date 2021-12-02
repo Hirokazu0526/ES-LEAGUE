@@ -21,6 +21,7 @@ export default {
 <style lang="scss" scoped>
 .es-League {
   background-color: #00091a;
+  font-family: 'HNewYork';
 }
 .header {
   position: fixed;

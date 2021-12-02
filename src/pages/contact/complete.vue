@@ -31,7 +31,7 @@ export default {}
   &__title {
     margin: 21px 0 45px;
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     position: relative;
     color: #fff;
     &:after {

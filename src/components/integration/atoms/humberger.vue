@@ -99,7 +99,7 @@ export default {
   text-align: center;
   color: #fff;
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 32px;
   & a {
     color: #fff;
     text-decoration: none;

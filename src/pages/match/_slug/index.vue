@@ -189,7 +189,7 @@ export default {
   &__title {
     margin: 21px 0 45px;
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     position: relative;
     &:after {
       content: '';
@@ -215,7 +215,7 @@ export default {
   }
 
   &__date {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
   }
 
@@ -246,13 +246,13 @@ export default {
   }
 
   &__versus {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
   }
 
   &__teamName {
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
   }
 
@@ -266,7 +266,7 @@ export default {
   }
 
   &__sectionTitle {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 15px;
   }
@@ -277,7 +277,7 @@ export default {
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
   }
 

@@ -35,7 +35,7 @@ export default {}
     font-weight: bold;
     text-align: center;
     padding: 10px 0;
-    font-size: 24px;
+    font-size: 32px;
   }
   &__items {
     display: grid;

@@ -192,7 +192,7 @@ export default {
   &__title {
     margin: 21px 0 45px;
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     position: relative;
     &:after {
       content: '';
@@ -223,7 +223,7 @@ export default {
     }
   }
   &__matchDate {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
   }
   &__stadium {

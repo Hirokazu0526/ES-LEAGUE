@@ -28,7 +28,7 @@ export default {
   padding: 20px 16px 40px;
   &__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     color: #fff;
     & span {
       margin-top: 5px;

@@ -3,7 +3,7 @@
     <h3 class="es-League-schedule__title">
       NEXT MATCH<br /><span>試合予定</span>
     </h3>
-    <p class="es-League-schedule__date">2021.03.25 Sat.</p>
+    <p class="es-League-schedule__date">2022.02.11 FRI.</p>
     <div class="es-League-schedule__teamList">
       <ul class="es-League-schedule__info">
         <li class="es-League-schedule__infoItem">
@@ -35,7 +35,7 @@ export default {}
   padding-top: 20px;
   &__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     & span {
       margin-top: 5px;
       display: block;

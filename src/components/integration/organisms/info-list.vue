@@ -67,7 +67,7 @@ export default {
   background-color: #fff;
   &__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     color: #030012;
     & span {
       margin-top: 5px;

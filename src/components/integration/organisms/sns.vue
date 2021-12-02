@@ -35,7 +35,7 @@ export default {}
   background-color: #00091a;
   &__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     & span {
       margin-top: 5px;
       display: block;

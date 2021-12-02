@@ -45,9 +45,6 @@ export default {}
 
 <style lang="scss" scoped>
 .es-League {
-  &__nav {
-    font-family: 'Alegreya SC';
-  }
   &__navList {
     display: flex;
     justify-content: space-around;

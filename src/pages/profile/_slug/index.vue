@@ -21,7 +21,7 @@
     </div>
 
     <es-button :url="`/team/${team.id}`" class="es-League-profile__btn team"
-      >チーム一覧へ</es-button
+      >チーム情報</es-button
     >
     <es-button url="/" color="navy" class="es-League-profile__btn team"
       >TOPへ</es-button
@@ -69,7 +69,7 @@ export default {
   &__title {
     margin: 21px 0 45px;
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     position: relative;
     &:after {
       content: '';
@@ -104,6 +104,32 @@ export default {
   }
   &__btn {
     margin: 15px auto 0;
+  }
+  &__back {
+    text-align: center;
+    width: 150px;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 38px;
+      position: relative;
+      margin-left: 10px;
+      padding: 0 15px 0 0;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      background: linear-gradient(-45deg, transparent 27px, #a37b30 20px);
+      background-position: bottom right;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
 </style>

@@ -70,7 +70,7 @@ export default {
   padding: 40px 0;
   &__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 32px;
     & span {
       margin-top: 5px;
       display: block;
