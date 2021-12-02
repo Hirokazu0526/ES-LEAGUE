@@ -1,7 +1,7 @@
 <template>
   <div class="es-Laegue-mainVisual">
     <img
-      src="~/assets/img/kv001.png"
+      src="~/assets/img/thumbnail.png"
       alt=""
       class="es-Laegue-mainVisual__img"
     />
