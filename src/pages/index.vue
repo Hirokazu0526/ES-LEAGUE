@@ -2,7 +2,8 @@
   <div class="es-League">
     <main-visual />
     <next-match />
-    <live id="live" />
+    <pv />
+    <live v-if="!firstWeek" id="live" />
     <about-es />
     <player-card :player-data="getPlayerList" />
     <info-list />
@@ -23,6 +24,7 @@ import playerCard from '~/components/integration/organisms/player-card.vue'
 import aboutEs from '~/components/integration/organisms/about-es.vue'
 import sns from '~/components/integration/organisms/sns.vue'
 import movie from '~/components/integration/organisms/movie.vue'
+import pv from '~/components/integration/organisms/pv.vue'
 
 export default {
   components: {
@@ -35,9 +37,10 @@ export default {
     aboutEs,
     sns,
     movie,
+    pv,
   },
   computed: {
-    ...mapGetters(['getPlayerList']),
+    ...mapGetters(['getPlayerList', 'firstWeek']),
   },
 }
 </script>
