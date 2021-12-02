@@ -9,3 +9,8 @@
 ul {
   margin: 0;
 }
+
+@font-face {
+  font-family: 'HNewYork'; // <-好きな名前をつけれます。
+  src: url('~/assets/font/Andrew_Footit_Hudson_NY_Serif.otf') format('opentype');
+}

@@ -68,7 +68,7 @@ export default {
   ],
   webfontloader: {
     google: {
-      families: ['Alegreya SC', 'Red Rose:400,700', 'Noto+Sans+JP:400,700'] 
+      families: ['Noto+Sans+JP:400,700'] 
     }
   },
 
