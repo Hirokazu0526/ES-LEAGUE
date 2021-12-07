@@ -10,6 +10,7 @@ export const state = () => ({
   playerLists: [],
   teamLists: [],
   competitionLists: [],
+  rankingData: [],
   userName: '',
   userKana: '',
   userPhoneNumber: '',
@@ -46,7 +47,7 @@ export const state = () => ({
       }
     },
     setTeamLists(state, teamLists) {
-      state.teamLists = teamLists
+      state.teamLists = teamLists.reverse()
       for (const item of state.teamLists) {
         const itemDate = moment(item.date).format('YYYY年MM月DD日')
         item.date = itemDate
@@ -62,6 +63,15 @@ export const state = () => ({
         return (a.date < b.date) ? -1 : 1;  // オブジェクトの昇順ソート
       });
       
+    },
+    setRankingData(state, rankingData) {
+      state.rankingData = rankingData
+      state.rankingData.forEach(function(item) {
+        item.ranking = 0
+      })
+      state.rankingData.sort(function(a, b) {
+        return (a.winningPoint > b.winningPoint) ? -1: 1;
+      })
     },
     setUserName(state, userName) {
       state.userName = userName
@@ -84,8 +94,11 @@ export const state = () => ({
       state.userPhoneNumber = ''
       state.userEmail = ''
       state.userContent = ''
-    }
+    },
   }
+
+
+
   export const actions = {
     async nuxtServerInit({ commit }, { $config }) {
       const resNews = await this.$axios.$get(`${$config.apiUrl}news`, {
@@ -103,11 +116,15 @@ export const state = () => ({
       const resCompetitions = await this.$axios.$get(`${$config.apiUrl}schedule_result`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
+      const resRankingData = await this.$axios.$get(`${$config.apiUrl}rank`, {
+       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+      });
       commit("setNewsLists", resNews.contents);
       commit("setBlogLists", resBlogs.contents);
       commit("setPlayerLists", resPlayers.contents);
       commit("setTeamLists", resTeams.contents);
       commit("setCompetitionLists", resCompetitions.contents);
+      commit("setRankingData", resRankingData.contents);
      },
      getUserName({ commit }, userName) {
       commit('setUserName', userName)
@@ -176,6 +193,9 @@ export const state = () => ({
     },
     getCompetitionList(state) {
       return state.competitionLists
+    },
+    getRankingData(state) {
+      return state.rankingData
     },
     hasUserName(state) {
       return state.userName
