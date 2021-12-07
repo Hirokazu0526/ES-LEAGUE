@@ -94,7 +94,7 @@
       </div>
       <h3 class="es-League-schedule-result__newsTitle"></h3>
 
-      <es-button url="/news" class="es-League-schedule-result__btn"
+      <es-button url="/rank" class="es-League-schedule-result__btn"
         >順位表</es-button
       >
     </div>
