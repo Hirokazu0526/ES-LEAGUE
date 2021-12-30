@@ -1,33 +1,96 @@
 <template>
-  <div class="es-League-schedule">
+  <div v-if="isThisWeek" class="es-League-schedule">
     <h3 class="es-League-schedule__title">
       NEXT MATCH<br /><span>試合予定</span>
     </h3>
-    <p class="es-League-schedule__date">2022.02.11 FRI.</p>
-    <div class="es-League-schedule__teamList">
-      <ul class="es-League-schedule__info">
-        <li class="es-League-schedule__infoItem">
-          <p>TEAM A</p>
-          <span>x</span>
-          <p>TEAM B</p>
-        </li>
-        <li class="es-League-schedule__infoItem">
-          <p>TEAM C</p>
-          <span>x</span>
-          <p>TEAM D</p>
-        </li>
-        <li class="es-League-schedule__infoItem">
-          <p>TEAM a</p>
-          <span>x</span>
-          <p>TEAM b</p>
-        </li>
-      </ul>
+    <div class="es-League-schedule__contanier">
+      <h3 class="es-League-schedule__matchDate">
+        {{ isThisWeek.date }}
+      </h3>
+      <nuxt-link to="/stadium" class="es-League-schedule__stadium">{{
+        isThisWeek.stadium
+      }}</nuxt-link>
+      <div class="es-League-schedule__resultList">
+        <ul class="es-League-schedule__list">
+          <li class="es-League-schedule__item">
+            <div class="es-League-schedule__team">
+              <p class="es-League-schedule__temaName">
+                {{ isThisWeek.competition.coat1H }}
+              </p>
+            </div>
+            <div class="es-League-schedule__decoration">
+              <p class="es-League-schedule__versus">VS</p>
+            </div>
+            <div class="es-League-schedule__team">
+              <p class="es-League-schedule__temaName">
+                {{ isThisWeek.competition.coat1A }}
+              </p>
+            </div>
+          </li>
+          <li class="es-League-schedule__item">
+            <div class="es-League-schedule__team">
+              <p class="es-League-schedule__temaName">
+                {{ isThisWeek.competition.coat2H }}
+              </p>
+            </div>
+            <div class="es-League-schedule__decoration">
+              <p class="es-League-schedule__versus">VS</p>
+            </div>
+            <div class="es-League-schedule__team">
+              <p class="es-League-schedule__temaName">
+                {{ isThisWeek.competition.coat2A }}
+              </p>
+            </div>
+          </li>
+          <li class="es-League-schedule__item">
+            <div class="es-League-schedule__team">
+              <p class="es-League-schedule__temaName">
+                {{ isThisWeek.competition.coat3H }}
+              </p>
+            </div>
+            <div class="es-League-schedule__decoration">
+              <p class="es-League-schedule__versus">VS</p>
+            </div>
+            <div class="es-League-schedule__team">
+              <p class="es-League-schedule__temaName">
+                {{ isThisWeek.competition.coat3A }}
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters([
+      'getCompetitionList',
+      'firstWeek',
+      'secondWeek',
+      'thirdWeek',
+      'fourthWeek',
+      'fifthWeek',
+    ]),
+    isThisWeek() {
+      if (!this.firstWeek) {
+        return this.getCompetitionList[0]
+      } else if (!this.secondWeek) {
+        return this.getCompetitionList[1]
+      } else if (this.thirdWeek) {
+        return this.getCompetitionList[2]
+      } else if (this.fourthWeek) {
+        return this.getCompetitionList[3]
+      } else if (this.fifthWeek) {
+        return this.getCompetitionList[4]
+      }
+      return ''
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -36,41 +99,55 @@ export default {}
   &__title {
     text-align: center;
     font-size: 32px;
+    color: #000000;
+    font-family: 'HNewYork';
     & span {
       margin-top: 5px;
       display: block;
       font-size: 18px;
     }
   }
-  &__date {
+  &__contanier {
+    padding: 10px 16px 30px;
+    color: #000;
     text-align: center;
-    margin-top: 15px;
-    font-size: 18px;
+  }
+  &__matchDate {
+    font-size: 28px;
     font-weight: bold;
   }
-  &__teamList {
-    margin-top: 10px;
-  }
-  &__info {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  &__infoItem {
+  &__stadium {
     display: block;
-    text-align: center;
     font-size: 14px;
     font-weight: bold;
-    padding: 13px 0;
-    background-color: #050101;
-    border-right: 1px solid #fff;
+    text-decoration: none;
+    color: #000;
+  }
+  &__resultList {
+    margin-top: 15px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 110px 1fr;
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
     &:last-child {
-      background-color: #ad6666;
-      border-right: none;
+      border-bottom: none;
     }
-    & span {
-      display: block;
-      margin: 5px 0;
-    }
+  }
+
+  &__temaName {
+    font-size: 23px;
+    font-weight: bold;
+  }
+  &__versus {
+    font-size: 23px;
+    font-weight: bold;
   }
 }
 </style>
