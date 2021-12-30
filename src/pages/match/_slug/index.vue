@@ -1,6 +1,8 @@
 <template>
   <div class="es-League-match-result">
-    <h2 class="es-League-match-result__title">試合詳細</h2>
+    <h2 class="es-League-match-result__title">
+      Match Results<br /><span>試合結果</span>
+    </h2>
 
     <div class="es-League-match-result__container">
       <h3 class="es-League-match-result__date">{{ formatData }}</h3>
@@ -10,20 +12,24 @@
       <div class="es-League-match-result__teamInfo">
         <div class="es-League-match-result__team">
           <div class="es-League-match-result__homeTeamImage">
-            <img
-              :src="homeTeamImage"
-              alt=""
-              class="es-League-match-result__teamImage"
-            />
+            <nuxt-link :to="homeTeamUrl">
+              <img
+                :src="homeTeamImage"
+                alt=""
+                class="es-League-match-result__teamImage"
+              />
+            </nuxt-link>
             <p class="es-League-match-result__teamName">{{ homeTeam }}</p>
           </div>
           <div><span class="es-League-match-result__versus">VS</span></div>
           <div class="es-League-match-result__awayTeamImage">
-            <img
-              :src="awayTeamImage"
-              alt=""
-              class="es-League-match-result__teamImage"
-            />
+            <nuxt-link :to="awayTeamUrl">
+              <img
+                :src="awayTeamImage"
+                alt=""
+                class="es-League-match-result__teamImage"
+              />
+            </nuxt-link>
             <p class="es-League-match-result__teamName">{{ awayTeam }}</p>
           </div>
         </div>
@@ -64,41 +70,57 @@
 
         <div class="es-League-match-result__member">
           <h3 class="es-League-match-result__sectionTitle">MEMBER</h3>
-          <div class="es-League-match-result__temaMember">
-            <ul class="es-League-match-result__temaMemberList">
-              <li v-for="member in homeTemaMember" :key="member.id">
-                <nuxt-link :to="`/profile/${member.id}`">
-                  <img
-                    :src="member.image.url"
-                    alt=""
-                    class="es-League-match-result__memberImage"
-                  />
+          <div class="es-League-match-result__teamMember">
+            <ul class="es-League-match-result__teamMemberList">
+              <li
+                v-for="member in homeTeamMember"
+                :key="member.id"
+                class="es-League-match-result__teamMemberItem"
+              >
+                <nuxt-link
+                  :to="`/profile/${member.id}`"
+                  class="es-League-match-result__teamMemberLink"
+                >
+                  <span class="es-League-match-result__playerNumber">{{
+                    member.number
+                  }}</span>
+                  <p class="es-League-match-result__playerName">
+                    {{ member.name }}
+                  </p>
                 </nuxt-link>
               </li>
             </ul>
             <div></div>
-            <ul class="es-League-match-result__temaMemberList">
-              <li v-for="member in awayTemaMember" :key="member.id">
-                <nuxt-link :to="`/profile/${member.id}`">
-                  <img
-                    :src="member.image.url"
-                    alt=""
-                    class="es-League-match-result__memberImage"
-                  />
+            <ul class="es-League-match-result__teamMemberList">
+              <li
+                v-for="member in awayTeamMember"
+                :key="member.id"
+                class="es-League-match-result__teamMemberItem"
+              >
+                <nuxt-link
+                  :to="`/profile/${member.id}`"
+                  class="es-League-match-result__teamMemberLink"
+                >
+                  <span class="es-League-match-result__playerNumber">{{
+                    member.number
+                  }}</span>
+                  <p class="es-League-match-result__playerName">
+                    {{ member.name }}
+                  </p>
                 </nuxt-link>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <es-button url="/schedule/result" class="es-League-match-result__btn team"
-        >日程・結果</es-button
+      <es-button url="/rank" class="es-League-match-result__btn"
+        >順位表</es-button
       >
       <es-button
-        url="/rank"
+        url="/schedule/result"
         color="navy"
-        class="es-League-match-result__btn team"
-        >順位表</es-button
+        class="es-League-match-result__btn"
+        >戻る</es-button
       >
     </div>
   </div>
@@ -151,7 +173,7 @@ export default {
         return this.competition.coat3A
       }
     },
-    homeTemaMember() {
+    homeTeamMember() {
       // プレーヤーリストを参照してhomeチームのメンバーを抽出
       const members = this.getPlayerList
       const memberInfo = members.filter((member) => {
@@ -159,7 +181,7 @@ export default {
       })
       return memberInfo
     },
-    awayTemaMember() {
+    awayTeamMember() {
       // プレーヤーリストを参照してawayチームのメンバーを抽出
       const members = this.getPlayerList
       const memberInfo = members.filter((member) => {
@@ -169,11 +191,19 @@ export default {
     },
     homeTeamImage() {
       // homeチームメンバーの情報からチームユニを抽出
-      return this.homeTemaMember[0].team.image.url
+      return this.homeTeamMember[0].team.image.url
     },
     awayTeamImage() {
       // awayチームメンバーの情報からチームユニを抽出
-      return this.awayTemaMember[0].team.image.url
+      return this.awayTeamMember[0].team.image.url
+    },
+    homeTeamUrl() {
+      const id = this.homeTeamMember[0].team.id
+      return `/team/${id}`
+    },
+    awayTeamUrl() {
+      const id = this.awayTeamMember[0].team.id
+      return `/team/${id}`
     },
   },
 }
@@ -184,45 +214,33 @@ export default {
   margin: 0px 16px;
   padding: 95px 0px;
   text-align: center;
-  color: #fff;
+  color: #000;
 
   &__title {
-    margin: 21px 0 45px;
+    margin: 20px 0;
     text-align: center;
     font-size: 32px;
-    position: relative;
-    &:after {
-      content: '';
-      width: 120px;
-      height: 2px;
-      background-color: #fff;
+    color: #000000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
       display: block;
-      position: absolute;
-      bottom: -10px;
-      left: 0px;
-      right: 0px;
-      margin: 0 auto;
+      font-size: 18px;
     }
   }
 
   &__container {
     padding: 20px 16px 30px;
     color: #000;
-    background: linear-gradient(-45deg, transparent 27px, #fff 20px);
-    background-position: bottom right;
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
 
   &__date {
     font-size: 32px;
-    font-weight: bold;
   }
 
   &__stadium {
     display: block;
     font-size: 14px;
-    font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
     color: #000;
@@ -235,7 +253,7 @@ export default {
 
   &__team {
     display: grid;
-    grid-template-columns: 1fr 50px 1fr;
+    grid-template-columns: 1fr 100px 1fr;
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
@@ -247,18 +265,15 @@ export default {
 
   &__versus {
     font-size: 32px;
-    font-weight: bold;
   }
 
   &__teamName {
     margin-top: 10px;
     font-size: 32px;
-    font-weight: bold;
   }
 
   &__totalScore {
     font-size: 30px;
-    font-weight: bold;
   }
 
   &__teamScore {
@@ -267,8 +282,9 @@ export default {
 
   &__sectionTitle {
     font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    padding: 10px 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
   }
 
   &__score {
@@ -276,34 +292,59 @@ export default {
     grid-template-columns: 1fr 50px 1fr;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
+    padding: 10px 0;
     font-size: 32px;
-    font-weight: bold;
+    border-bottom: 1px dashed #000;
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   &__member {
     margin: 30px 0;
   }
 
-  &__temaMember {
+  &__teamMember {
     display: grid;
     grid-template-columns: 1fr 50px 1fr;
     align-items: center;
     justify-content: center;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+    }
   }
 
-  &__temaMemberList {
+  &__teamMemberList {
     list-style: none;
     text-decoration: none;
-    color: #fff;
+    color: #000;
+  }
+  &__teamMemberItem {
+    padding: 15px 0;
+  }
+  &__teamMemberLink {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
   }
 
-  &__memberImage {
-    width: 120px;
+  &__playerNumber {
+    text-align: left;
+  }
+  &__playerName {
+    display: inline-block;
   }
 
   &__btn {
-    margin: 15px auto 0;
   }
 }
 </style>
