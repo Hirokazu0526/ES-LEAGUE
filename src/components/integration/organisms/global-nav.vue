@@ -12,11 +12,7 @@
         </nuxt-link>
       </li>
       <li class="es-League__item">
-        <nuxt-link
-          v-scroll-to="{ el: '#live', offset: -80 }"
-          to
-          class="es-League__link"
-        >
+        <nuxt-link v-scroll-to="'#live'" to="/#live" class="es-League__link">
           <img
             class="es-League__icon"
             src="~/assets/img/site-logo.png"
