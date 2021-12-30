@@ -51,7 +51,7 @@ export default {
       }
     )
     this.data = res
-    this.url = res.image.url
+    this.url = res.imageSquare.url
     this.position = res.position[0]
   },
 }
