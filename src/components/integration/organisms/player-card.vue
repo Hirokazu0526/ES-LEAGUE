@@ -14,7 +14,7 @@
             />
             <h4 class="es-League-card__playerName">高野征也</h4>
             <p class="es-League-card__text">
-              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張り、安定感抜群の大黒柱。高野のプレーを見逃すな。
+              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張る。
             </p>
           </nuxt-link>
         </li>
@@ -27,7 +27,7 @@
             />
             <h4 class="es-League-card__playerName">高野征也</h4>
             <p class="es-League-card__text">
-              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張り、安定感抜群の大黒柱。高野のプレーを見逃すな。
+              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張る。
             </p>
           </nuxt-link>
         </li>
@@ -40,7 +40,7 @@
             />
             <h4 class="es-League-card__playerName">高野征也</h4>
             <p class="es-League-card__text">
-              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張り、安定感抜群の大黒柱。高野のプレーを見逃すな。
+              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張る。
             </p>
           </nuxt-link>
         </li>
@@ -71,6 +71,8 @@ export default {
   &__title {
     text-align: center;
     font-size: 32px;
+    color: #000;
+    font-family: 'HNewYork';
     & span {
       margin-top: 5px;
       display: block;
@@ -90,11 +92,12 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #000;
     padding-bottom: 10px;
-    color: #000;
+    color: #fff;
+    border: 1px solid #bebebe;
     a {
-      color: #000;
+      color: #fff;
       text-decoration: none;
     }
   }
