@@ -10,7 +10,8 @@ export const state = () => ({
   playerLists: [],
   teamLists: [],
   competitionLists: [],
-  rankingData: [],
+  menRankingData: [],
+  womenRankingData: [],
   userName: '',
   userKana: '',
   userPhoneNumber: '',
@@ -64,14 +65,62 @@ export const state = () => ({
       });
       
     },
-    setRankingData(state, rankingData) {
-      state.rankingData = rankingData
-      state.rankingData.forEach(function(item) {
+    setMenRankingData(state, rankingData) {
+      state.menRankingData = rankingData
+      const getRankingData = state.menRankingData
+      const menRanking = getRankingData.filter((rank) => rank.gender === 'men')
+      menRanking.forEach(function(item) {
         item.ranking = 0
       })
-      state.rankingData.sort(function(a, b) {
+      menRanking.sort(function(a, b) {
         return (a.winningPoint > b.winningPoint) ? -1: 1;
       })
+      menRanking.forEach(function (item, index, arry) {
+        // 前の配列を格納
+        const beforeArry = arry[index - 1]
+
+        // 前の配列がundefinedでばい場合に勝ち点を比べる
+        if (beforeArry !== undefined) {
+          if (item.winningPoint === beforeArry.winningPoint) {
+            // 同じであればindexの値が順位
+            item.ranking = index
+          } else {
+            // 違う場合はindexに+1をした値が順位
+            item.ranking = index + 1
+          }
+        } else {
+          // 配列の最初は1位
+          item.ranking = 1
+        }
+      })
+      state.menRankingData = menRanking
+    },
+    setWomenRankingData(state, rankingData) {
+      state.womenRankingData = rankingData
+      const getRankingData = state.womenRankingData
+      const womenRanking = getRankingData.filter(
+        (rank) => rank.gender === 'women'
+      )
+      womenRanking.forEach(function(item) {
+        item.ranking = 0
+      })
+      womenRanking.sort(function(a, b) {
+        return (a.winningPoint > b.winningPoint) ? -1: 1;
+      })
+      womenRanking.forEach(function (item, index, arry) {
+        const beforeArry = arry[index - 1]
+
+        if (beforeArry !== undefined) {
+          if (item.winningPoint === beforeArry.winningPoint) {
+            item.ranking = index
+          } else {
+            item.ranking = index + 1
+          }
+        } else {
+          item.ranking = 1
+        }
+      })
+      state.womenRankingData =  womenRanking
     },
     setUserName(state, userName) {
       state.userName = userName
@@ -124,7 +173,8 @@ export const state = () => ({
       commit("setPlayerLists", resPlayers.contents);
       commit("setTeamLists", resTeams.contents);
       commit("setCompetitionLists", resCompetitions.contents);
-      commit("setRankingData", resRankingData.contents);
+      commit("setMenRankingData", resRankingData.contents);
+      commit("setWomenRankingData", resRankingData.contents);
      },
      getUserName({ commit }, userName) {
       commit('setUserName', userName)
@@ -194,8 +244,11 @@ export const state = () => ({
     getCompetitionList(state) {
       return state.competitionLists
     },
-    getRankingData(state) {
-      return state.rankingData
+    getMenRankingData(state) {
+      return state.menRankingData
+    },
+    getWomenRankingData(state) {
+      return state.womenRankingData
     },
     hasUserName(state) {
       return state.userName
