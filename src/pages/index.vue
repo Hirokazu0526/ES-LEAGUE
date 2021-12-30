@@ -3,13 +3,13 @@
     <main-visual />
     <next-match />
     <pv />
-    <live v-if="!firstWeek" id="live" />
+    <live v-if="firstWeek" id="live" />
     <about-es />
     <player-card :player-data="getPlayerList" />
     <info-list />
     <movie />
     <sponsor />
-    <sns />
+    <!-- <sns /> -->
   </div>
 </template>
 
@@ -22,7 +22,7 @@ import nextMatch from '~/components/integration/organisms/next-match.vue'
 import live from '~/components/integration/organisms/live.vue'
 import playerCard from '~/components/integration/organisms/player-card.vue'
 import aboutEs from '~/components/integration/organisms/about-es.vue'
-import sns from '~/components/integration/organisms/sns.vue'
+// import sns from '~/components/integration/organisms/sns.vue'
 import movie from '~/components/integration/organisms/movie.vue'
 import pv from '~/components/integration/organisms/pv.vue'
 
@@ -35,12 +35,20 @@ export default {
     live,
     playerCard,
     aboutEs,
-    sns,
+    // sns,
     movie,
     pv,
   },
   computed: {
     ...mapGetters(['getPlayerList', 'firstWeek']),
+  },
+  mounted() {
+    // ここから追加
+    const hash = this.$route.hash
+    if (hash && hash.match(/^#.+$/)) {
+      this.$scrollTo(hash, 0, { offset: -80 })
+    }
+    // ここまで追加
   },
 }
 </script>
