@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-rank">
-    <h2 class="es-League-rank__title">順位表</h2>
+    <h2 class="es-League-rank__title">RANKING</h2>
     <div class="es-League-rank__contanier">
       <div class="es-League-rank__menInfo">
         <h3 class="es-League-rank__gender">MEN</h3>
@@ -14,9 +14,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in menData" :key="item.index">
+            <tr v-for="item in getMenRankingData" :key="item.index" class="men">
               <th>{{ item.ranking }}</th>
-              <td>{{ item.team }}</td>
+
+              <td>
+                <nuxt-link :to="`/team/${item.teamInfo.id}`">{{
+                  item.team
+                }}</nuxt-link>
+              </td>
+
               <td>{{ item.getSet - item.lostSet }}</td>
               <td>{{ item.winningPoint }}</td>
             </tr>
@@ -35,9 +41,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in womenData" :key="item.index">
+            <tr
+              v-for="item in getWomenRankingData"
+              :key="item.index"
+              class="women"
+            >
               <th>{{ item.ranking }}</th>
-              <td>{{ item.team }}</td>
+
+              <td>
+                <nuxt-link :to="`/team/${item.teamInfo.id}`"
+                  >{{ item.team }}
+                </nuxt-link>
+              </td>
+
               <td>{{ item.getSet - item.lostSet }}</td>
               <td>{{ item.winningPoint }}</td>
             </tr>
@@ -59,52 +75,8 @@ export default {
     return {}
   },
   computed: {
-    ...mapGetters(['getRankingData']),
-    menData() {
-      const getRankingData = this.getRankingData
-      const menRanking = getRankingData.filter((rank) => rank.gender === 'men')
-      menRanking.forEach(function (item, index, arry) {
-        // 前の配列を格納
-        const beforeArry = arry[index - 1]
-
-        // 前の配列がundefinedでばい場合に勝ち点を比べる
-        if (beforeArry !== undefined) {
-          if (item.winningPoint === beforeArry.winningPoint) {
-            // 同じであればindexの値が順位
-            item.ranking = index
-          } else {
-            // 違う場合はindexに+1をした値が順位
-            item.ranking = index + 1
-          }
-        } else {
-          // 配列の最初は1位
-          item.ranking = 1
-        }
-      })
-      return menRanking
-    },
-    womenData() {
-      const getRankingData = this.getRankingData
-      const womenRanking = getRankingData.filter(
-        (rank) => rank.gender === 'women'
-      )
-      womenRanking.forEach(function (item, index, arry) {
-        const beforeArry = arry[index - 1]
-
-        if (beforeArry !== undefined) {
-          if (item.winningPoint === beforeArry.winningPoint) {
-            item.ranking = index
-          } else {
-            item.ranking = index + 1
-          }
-        } else {
-          item.ranking = 1
-        }
-      })
-      return womenRanking
-    },
+    ...mapGetters(['getMenRankingData', 'getWomenRankingData']),
   },
-  methods: {},
 }
 </script>
 
@@ -165,8 +137,25 @@ export default {
       tr {
         color: #000000;
         background: #fff;
-        &:nth-child(2n + 1) {
-          background: #a8a8a8;
+        &.men {
+          &:nth-child(2n) {
+            background: #9aa3af;
+          }
+          &:last-child {
+            border-bottom: 2px solid #001229;
+          }
+        }
+        &.women {
+          &:nth-child(2n) {
+            background: #ffa5b5;
+          }
+          &:last-child {
+            border-bottom: 2px solid #e0435e;
+          }
+        }
+        a {
+          color: #000000;
+          text-decoration: none;
         }
       }
       th {
