@@ -8,22 +8,22 @@
     >
       <a>news</a>
     </li>
-    <li
+    <!-- <li
       ref="news"
       class="es-League-TabList__tabItem"
       :class="{ selected: tab === 'blog' }"
       @click="onClickTab('blog')"
     >
       <a>blog</a>
-    </li>
-    <li
+    </li> -->
+    <!-- <li
       ref="news"
       class="es-League-TabList__tabItem"
       :class="{ selected: tab === 'etc' }"
       @click="onClickTab('etc')"
     >
       <a>etc</a>
-    </li>
+    </li> -->
   </ul>
 </template>
 
@@ -48,7 +48,8 @@ export default {
   position: relative;
   display: grid;
   gap: 1px;
-  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
   width: 100%;
