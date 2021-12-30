@@ -4,7 +4,8 @@
       <li v-for="item in newsLists" :key="item.id" class="es-League-news__item">
         <nuxt-link :to="`/news/${item.id}`">
           <div class="es-League-news__title">
-            <span>{{ item.date }}</span>
+            <span class="es-League-news__date">{{ item.date }}</span>
+            <span class="es-League-news__category">{{ item.category[0] }}</span>
             <h3>{{ item.newsTitle }}</h3>
           </div>
         </nuxt-link>
@@ -42,6 +43,17 @@ export default {
       text-decoration: none;
       color: #fff;
     }
+  }
+  &__date {
+    padding: 5px 0;
+  }
+  &__category {
+    background-color: #fff;
+    color: #000;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-left: 5px;
   }
 }
 </style>
