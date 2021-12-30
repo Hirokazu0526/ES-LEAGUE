@@ -63,7 +63,12 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'vue-scrollto/nuxt',
+    ['vue-scrollto/nuxt', {
+      /* オプション色々あります。公式サイトから確認できます。 */
+      duration: 500,
+      offset: -80,
+      easing: "ease-in"
+    }],
     'nuxt-webfontloader',
   ],
   webfontloader: {
