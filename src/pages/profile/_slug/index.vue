@@ -2,7 +2,7 @@
   <div class="es-League-profile">
     <h2 class="es-League-profile__title">PLAYERS</h2>
 
-    <img :src="image.url" :alt="name" class="es-League-profile__name" />
+    <img :src="imageSquare.url" :alt="name" class="es-League-profile__name" />
     <h1 class="es-League-profile__name">{{ name }}</h1>
     <div class="es-League-profile__info">
       <p class="es-League-profile__text position">
@@ -20,6 +20,7 @@
       </p>
     </div>
 
+    <button @click="$router.go(-1)">戻る</button>
     <es-button :url="`/team/${team.id}`" class="es-League-profile__btn team"
       >チーム情報</es-button
     >
@@ -64,7 +65,7 @@ export default {
   margin: 0px 16px;
   padding: 95px 0px;
   text-align: center;
-  color: #fff;
+  color: #000;
 
   &__title {
     margin: 21px 0 45px;
