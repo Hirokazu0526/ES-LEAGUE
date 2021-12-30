@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-pv">
-    <h3 class="es-League-pv__title">OFFICAL PV<br /></h3>
+    <h3 class="es-League-pv__title">OFFICAL PV<br /><span>公式動画</span></h3>
     <div class="es-League-pv__info">
       <iframe
         width="560"
@@ -21,12 +21,17 @@ export default {}
 
 <style lang="scss" scoped>
 .es-League-pv {
-  margin: 30px 0;
   padding: 20px 16px 0;
   &__title {
     text-align: center;
     font-size: 32px;
-    color: #fff;
+    color: #000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
+      display: block;
+      font-size: 18px;
+    }
   }
   &__info {
     margin-top: 15px;

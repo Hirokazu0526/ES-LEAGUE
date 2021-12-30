@@ -1,6 +1,8 @@
 <template>
   <div class="es-League-sponsor">
-    <h3 class="es-League-sponsor__title">SPONSOR</h3>
+    <h3 class="es-League-sponsor__title">
+      SPONSOR<br /><span>スポンサー</span>
+    </h3>
     <div class="es-League-sponsor__list">
       <div class="es-League-sponsor__items gold">
         <h4 class="es-League-sponsor__logo">SARAYA</h4>
@@ -29,13 +31,18 @@ export default {}
   background-color: #fff;
   margin: 0 calc(50% - 50vw);
   width: 100vw;
-  padding: 40px 0;
   &__title {
-    color: #666666;
     font-weight: bold;
     text-align: center;
     padding: 10px 0;
     font-size: 32px;
+    color: #000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
+      display: block;
+      font-size: 18px;
+    }
   }
   &__items {
     display: grid;

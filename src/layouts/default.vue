@@ -2,7 +2,7 @@
   <div class="es-League">
     <esLeaguHeader class="header" />
     <Nuxt class="nuxt" />
-    <esLeaguFooter />
+    <esLeaguFooter class="footer" />
   </div>
 </template>
 
@@ -20,8 +20,10 @@ export default {
 
 <style lang="scss" scoped>
 .es-League {
-  background-color: #00091a;
-  font-family: 'HNewYork';
+  background-color: #fff;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Sans',
+    'Hiragino Kaku Gothic ProN', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+  // font-family: 'HNewYork';
 }
 .header {
   position: fixed;
@@ -31,12 +33,9 @@ export default {
 .nuxt {
   padding-top: 95px;
   position: relative;
-  background: url(~/assets/img/background-line.png) 0% 20%;
-  background-size: 100%;
-  z-index: 10;
+  background-color: #fff;
 }
 .footer {
-  height: 80px;
   background-color: #000d1d;
   color: #fff;
 }

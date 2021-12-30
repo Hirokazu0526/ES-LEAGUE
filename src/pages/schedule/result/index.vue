@@ -1,7 +1,7 @@
 <template>
   <div class="es-League-schedule-result">
     <h2 v-if="isThisWeek" class="es-League-schedule-result__title">
-      日程・結果
+      result<br /><span>結果</span>
     </h2>
     <div v-if="isThisWeek" class="es-League-schedule-result__contanier">
       <h3 class="es-League-schedule-result__matchDate">
@@ -98,7 +98,9 @@
         >順位表</es-button
       >
     </div>
-    <h2 class="es-League-schedule-result__title">スケジュール</h2>
+    <h2 class="es-League-schedule-result__title">
+      schedule<br /><span>日程</span>
+    </h2>
     <div class="es-League-schedule-result__contanier transparency">
       <ul>
         <li
@@ -187,49 +189,30 @@ export default {
   margin: 0px 16px;
   padding: 95px 0px 40px;
   text-align: center;
-  color: #fff;
+  color: #000;
 
   &__title {
-    margin: 21px 0 45px;
+    margin: 20px 0;
     text-align: center;
     font-size: 32px;
-    position: relative;
-    &:after {
-      content: '';
-      width: 120px;
-      height: 2px;
-      background-color: #fff;
+    color: #000000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
       display: block;
-      position: absolute;
-      bottom: -10px;
-      left: 0px;
-      right: 0px;
-      margin: 0 auto;
+      font-size: 18px;
     }
   }
   &__contanier {
-    padding: 20px 16px 30px;
+    padding: 10px 16px 30px;
     color: #000;
-    background: linear-gradient(-45deg, transparent 27px, #fff 20px);
-    background-position: bottom right;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    &.transparency {
-      background: none;
-      color: #fff;
-      a {
-        color: #fff;
-      }
-    }
   }
   &__matchDate {
     font-size: 32px;
-    font-weight: bold;
   }
   &__stadium {
     display: block;
     font-size: 14px;
-    font-weight: bold;
     text-decoration: none;
     color: #000;
     cursor: pointer;
@@ -246,6 +229,7 @@ export default {
   &__item {
     display: grid;
     grid-template-columns: 1fr 110px 1fr;
+    justify-items: center;
     padding: 20px 0;
     border-bottom: 1px solid #000;
     &:last-child {
@@ -255,17 +239,14 @@ export default {
 
   &__temaName {
     font-size: 23px;
-    font-weight: bold;
   }
   &__versus {
     font-size: 23px;
-    font-weight: bold;
   }
 
   &__score {
     margin-top: 8px;
     font-size: 23px;
-    font-weight: bold;
   }
   &__link {
     display: block;
@@ -273,12 +254,9 @@ export default {
     font-size: 14px;
     color: #fff;
     text-decoration: none;
-    padding: 5px 22px 5px 0px;
-    margin: 8px 0 0 20px;
-    background: linear-gradient(-45deg, transparent 27px, #011e43 20px);
-    background-position: bottom right;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    padding: 5px 22px;
+    background-color: #000;
+    margin-top: 8px;
   }
 
   &__scheduleList {
@@ -294,7 +272,10 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
     list-style: none;
     padding: 10px 0;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
+    &:first-child {
+      border-top: 1px solid #000;
+    }
   }
 
   &__btn {

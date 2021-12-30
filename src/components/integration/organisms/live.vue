@@ -31,12 +31,13 @@ export default {}
   &__title {
     text-align: center;
     font-size: 32px;
-    color: #fff;
+    color: #000;
+    font-family: 'HNewYork';
     & span {
       margin-top: 5px;
       display: block;
       font-size: 18px;
-      color: #fff;
+      color: #000;
     }
     &.live {
       color: #ff1d1d;

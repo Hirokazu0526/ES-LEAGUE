@@ -25,16 +25,16 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-movie {
-  padding: 20px 16px 40px;
+  padding: 0px 16px 40px;
   &__title {
     text-align: center;
     font-size: 32px;
-    color: #fff;
+    color: #000;
+    font-family: 'HNewYork';
     & span {
       margin-top: 5px;
       display: block;
       font-size: 18px;
-      color: #fff;
     }
   }
   &__item {
