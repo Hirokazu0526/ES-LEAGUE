@@ -48,17 +48,13 @@ export default {
     width: 100%;
     height: 38px;
     position: relative;
-    margin-left: 10px;
-    padding: 0 15px 0 0;
+    padding: 0;
     color: white;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background: linear-gradient(-45deg, transparent 27px, #a37b30 20px);
-    background-position: bottom right;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-color: #000;
     &:hover {
       cursor: pointer;
     }
