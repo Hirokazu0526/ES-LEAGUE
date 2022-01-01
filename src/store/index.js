@@ -57,7 +57,8 @@ export const state = () => ({
     setCompetitionLists(state, competitionLists) {
       state.competitionLists = competitionLists
       for (const item of state.competitionLists) {
-        const itemDate = moment.tz(item.date, state.TZ || TZ).format('YYYY.MM.DD ddd.')
+        moment.locale("ja")
+        const itemDate = moment.tz(item.date, state.TZ || TZ).format('YYYY.M.D(ddd)')
         item.date = itemDate
       }
       state.competitionLists.sort(function(a, b) {
