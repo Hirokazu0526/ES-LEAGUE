@@ -64,7 +64,9 @@ export default {
           this.$store.commit('setUserDataClear')
           this.$router.push('/contact/complete')
         })
-        .catch(() => {})
+        .catch((error) => {
+          console.log(error)
+        })
     },
     back() {
       history.back()

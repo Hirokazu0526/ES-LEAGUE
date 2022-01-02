@@ -11,9 +11,8 @@ export default {
   components: { NuxtError },
   props: {
     error: {
-      type: String,
-      required: false,
-      default: '',
+      type: Object,
+      default: null,
     },
   },
 }

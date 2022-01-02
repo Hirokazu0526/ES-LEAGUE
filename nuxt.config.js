@@ -126,6 +126,10 @@ export default {
             payload: profile
           }))
         )
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+        })
       await axios
         .get('https://es-league.microcms.io/api/v1/team-details?limit=100', {
           headers: { 'X-MICROCMS-API-KEY': apiKey }
@@ -136,6 +140,10 @@ export default {
             payload: content
           }))
         )
+        .catch(error => {
+          console.log(error)
+          this.errored = true
+        })
       await axios
       .get('https://es-league.microcms.io/api/v1/news?limit=100', {
         headers: { 'X-MICROCMS-API-KEY': apiKey }
@@ -146,6 +154,10 @@ export default {
           payload: content
         }))
       )
+      .catch(error => {
+        console.log(error)
+        this.errored = true
+      })
       return generates
     }
   }
