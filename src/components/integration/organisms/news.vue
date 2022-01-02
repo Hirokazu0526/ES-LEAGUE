@@ -1,0 +1,101 @@
+<template>
+  <section class="es-League-news">
+    <ul class="es-League-news__list">
+      <li v-for="item in newsLists" :key="item.id" class="es-League-news__item">
+        <nuxt-link :to="`/news/${item.categoryId[0]}/${item.id}`">
+          <div class="es-League-news__itemWrapper">
+            <img
+              src="~/assets/img/news-logo.png"
+              class="es-League-news__itemImage"
+              alt=""
+            />
+            <div class="es-League-news__dateInfo">
+              <p class="es-League-news__date">
+                {{ item.date
+                }}<span class="es-League-news__category">{{
+                  item.category[0]
+                }}</span>
+              </p>
+
+              <h3 class="es-League-news__title">{{ item.newsTitle }}</h3>
+            </div>
+            <link-arrow class="es-League-news__linkArrow" />
+          </div>
+        </nuxt-link>
+      </li>
+    </ul>
+    <es-button url="/news" arrow="right" class="es-League-news__btn"
+      >お知らせ一覧</es-button
+    >
+  </section>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+import linkArrow from '~/components/integration/atoms/link-arrow.vue'
+
+export default {
+  components: { linkArrow },
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapGetters(['getNewsList']),
+    newsLists() {
+      return this.getNewsList.slice(0, 5)
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.es-League-news {
+  &__itemWrapper {
+    display: grid;
+    grid-template-columns: 64px 1fr 20px;
+    gap: 7px;
+  }
+  &__item {
+    list-style: none;
+    padding: 5px 10px;
+    line-height: 30px;
+    background-color: #eeeeee;
+    margin-bottom: 2px;
+    a {
+      text-decoration: none;
+      color: #030012;
+    }
+  }
+  &__itemImage {
+    width: 64px;
+    height: 64px;
+  }
+  &__dateInfo {
+    padding-top: 5px;
+  }
+  &__date {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  &__title {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 12px;
+    word-break: break-all;
+  }
+  &__category {
+    background-color: #fff;
+    color: #a37b30;
+    padding: 3px 8px;
+    border: 1px solid #a37b30;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  &__linkArrow {
+    margin: auto 0;
+  }
+  &__btn {
+    margin: 16px auto 0;
+  }
+}
+</style>
