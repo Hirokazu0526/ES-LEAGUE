@@ -1,37 +1,37 @@
 <template>
-  <div>
+  <div class="esleague-playerList">
     <div>profile</div>
     <div class="anime">
-      <ul class="esleague-playerList">
+      <ul>
         <li
-          v-for="list in playersList"
-          :key="list.id"
+          v-for="content in contents"
+          :key="content.id"
           class="esleague-playerList__item"
         >
-          氏名：{{ list.name }}<br />
-          ポシション：{{ list.position[0] }}<br />
-          誕生日：{{ list.birth }}
+          <nuxt-link :to="`/profile/${content.id}`">
+            {{ content.name }}
+          </nuxt-link>
         </li>
       </ul>
     </div>
-    <es-button url="/" :arrow="true" class="esleague-playerList__btn"
-      >Home</es-button
-    >
+    <es-button url="/" class="esleague-playerList__btn">Home</es-button>
   </div>
 </template>
 
 <script>
-import esButton from '~/components/integration/atoms/es-button.vue'
-
 export default {
-  components: {
-    esButton,
-  },
-  async asyncData({ $microcms }) {
-    const playersList = await $microcms.get({
-      endpoint: 'player-details',
-    })
-    return { playersList: playersList.contents }
+  async asyncData({ $microcms, error }) {
+    try {
+      const Data = await $microcms.get({
+        endpoint: 'player-details',
+      })
+      return Data
+    } catch (err) {
+      error({
+        statusCode: err.response.status,
+        message: err.response.data.message,
+      })
+    }
   },
   mounted() {
     this.setAnimation()
@@ -53,6 +53,11 @@ export default {
 .esleague-playerList {
   &__item {
     list-style: none;
+    margin-bottom: 10px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
   &__btn {
     margin: 10px auto;

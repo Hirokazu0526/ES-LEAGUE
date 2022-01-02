@@ -1,38 +1,41 @@
 <template>
-  <div>
-    <div class="header">
-      header
-      <humberger class="header__btn" />
-    </div>
-
-    <Nuxt />
-    <div class="footer">footer</div>
+  <div class="es-League">
+    <esLeaguHeader class="header" />
+    <Nuxt class="nuxt" />
+    <esLeaguFooter class="footer" />
   </div>
 </template>
 
 <script>
-import humberger from '~/components/integration/atoms/humberger.vue'
+import esLeaguHeader from '~/components/integration/organisms/header.vue'
+import esLeaguFooter from '~/components/integration/organisms/footer.vue'
+
 export default {
   components: {
-    humberger,
+    esLeaguHeader,
+    esLeaguFooter,
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.es-League {
+  background-color: #fff;
+  font-family: '游ゴシック体', 'YuGothic', '游ゴシック', 'Yu Gothic', sans-serif;
+  // font-family: 'HNewYork';
+}
 .header {
-  height: 80px;
-  background-color: rgb(87, 87, 87);
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+}
+.nuxt {
+  padding-top: 95px;
   position: relative;
-  &__btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: block;
-  }
+  background-color: #fff;
 }
 .footer {
-  height: 80px;
-  background-color: rgb(87, 87, 87);
+  background-color: #000d1d;
+  color: #fff;
 }
 </style>

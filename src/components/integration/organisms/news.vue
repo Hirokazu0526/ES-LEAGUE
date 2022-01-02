@@ -1,15 +1,7 @@
 <template>
   <section class="es-League-news">
-    <h2 class="es-League-news__title">
-      INFOMATION<br />
-      <span>お知らせ</span>
-    </h2>
     <ul class="es-League-news__list">
-      <li
-        v-for="item in getNewsList"
-        :key="item.id"
-        class="es-League-news__item"
-      >
+      <li v-for="item in newsLists" :key="item.id" class="es-League-news__item">
         <nuxt-link :to="`/news/${item.categoryId[0]}/${item.id}`">
           <div class="es-League-news__itemWrapper">
             <img
@@ -25,15 +17,15 @@
                 }}</span>
               </p>
 
-              <h3 class="es-League-news__itemTitle">{{ item.newsTitle }}</h3>
+              <h3 class="es-League-news__title">{{ item.newsTitle }}</h3>
             </div>
             <link-arrow class="es-League-news__linkArrow" />
           </div>
         </nuxt-link>
       </li>
     </ul>
-    <es-button url="/" :border-radius="8" class="es-League-news__btn team"
-      >TOPページへ</es-button
+    <es-button url="/news" arrow="right" class="es-League-news__btn"
+      >お知らせ一覧</es-button
     >
   </section>
 </template>
@@ -44,31 +36,20 @@ import linkArrow from '~/components/integration/atoms/link-arrow.vue'
 
 export default {
   components: { linkArrow },
+  data() {
+    return {}
+  },
   computed: {
     ...mapGetters(['getNewsList']),
+    newsLists() {
+      return this.getNewsList.slice(0, 5)
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .es-League-news {
-  padding: 95px 0px 40px;
-  &__title {
-    margin: 20px 0;
-    text-align: center;
-    font-size: 32px;
-    color: #000;
-    font-family: 'HNewYork';
-    & span {
-      margin-top: 5px;
-      display: block;
-      font-size: 18px;
-      color: #030012;
-    }
-  }
-  &__list {
-    margin: 0 16px;
-  }
   &__itemWrapper {
     display: grid;
     grid-template-columns: 64px 1fr 20px;
@@ -96,7 +77,7 @@ export default {
     font-size: 12px;
     margin-bottom: 10px;
   }
-  &__itemTitle {
+  &__title {
     font-size: 12px;
     font-weight: normal;
     line-height: 12px;
@@ -114,7 +95,7 @@ export default {
     margin: auto 0;
   }
   &__btn {
-    margin: 40px auto 0;
+    margin: 16px auto 0;
   }
 }
 </style>

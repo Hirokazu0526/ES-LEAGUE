@@ -1,54 +1,60 @@
 <template>
-  <div>
-    <div>
-      <nuxt-link to="/profile">profile</nuxt-link>
-    </div>
-
-    <div>
-      <ul class="esleague-playerList">
-        <li
-          v-for="list in teamList"
-          :key="list.id"
-          class="esleague-playerList__item"
-        >
-          <p>{{ list.teamName }}</p>
-          <div v-html="list.text">></div>
-          <br />
-        </li>
-      </ul>
-    </div>
-    <div v-if="isDay6">trueです</div>
+  <div class="es-League">
+    <main-visual />
+    <next-match />
+    <player-card :player-data="getPlayerList" />
+    <pv />
+    <live v-if="!firstWeek" id="live" />
+    <about-es />
+    <info-list />
+    <!-- <movie /> -->
+    <sponsor />
+    <!-- <sns /> -->
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import infoList from '~/components/integration/organisms/info-list.vue'
+import sponsor from '~/components/integration/organisms/sponsor.vue'
+import mainVisual from '~/components/integration/organisms/main-visual.vue'
+import nextMatch from '~/components/integration/organisms/next-match.vue'
+import live from '~/components/integration/organisms/live.vue'
+import playerCard from '~/components/integration/organisms/player-card.vue'
+import aboutEs from '~/components/integration/organisms/about-es.vue'
+// import sns from '~/components/integration/organisms/sns.vue'
+// import movie from '~/components/integration/organisms/movie.vue'
+import pv from '~/components/integration/organisms/pv.vue'
 
 export default {
-  async asyncData({ $microcms }) {
-    // const [playersList, teamList] = await Promise.all([
-    //   $microcms.get({ endpoint: 'player-details' }),
-    //   $microcms.get({ endpoint: 'team-details' }),
-    // ])
-    // return { playersList: playersList.contents, teamList: teamList.contents }
-    const teamList = await $microcms.get({ endpoint: 'team-details' })
-    return { teamList: teamList.contents }
+  components: {
+    infoList,
+    sponsor,
+    mainVisual,
+    nextMatch,
+    live,
+    playerCard,
+    aboutEs,
+    // sns,
+    // movie,
+    pv,
   },
   computed: {
-    ...mapGetters(['isDay6']),
+    ...mapGetters(['getPlayerList', 'firstWeek']),
   },
-  // created() {
-  //   this.$store.dispatch('getPlayersList')
-  // },
-  mounted() {},
-  methods: {},
+  mounted() {
+    // ここから追加
+    const hash = this.$route.hash
+    if (hash && hash.match(/^#.+$/)) {
+      this.$scrollTo(hash, 0, { offset: -80 })
+    }
+    // ここまで追加
+  },
 }
 </script>
 
 <style scoped lang="scss">
-.esleague-playerList {
-  &__item {
-    list-style: none;
-  }
+.es-League {
+  color: #fff;
 }
 </style>

@@ -15,10 +15,18 @@
       </template>
     </div>
     <div class="menu" :class="{ 'is-active': open }">
-      <div class="menu__item">TOP</div>
-      <div class="menu__item">ABOUT</div>
-      <div class="menu__item">BLOG</div>
-      <div class="menu__item">CONTACT</div>
+      <div class="menu__item" @click="open = !open">
+        <nuxt-link to="/">TOP</nuxt-link>
+      </div>
+      <div class="menu__item" @click="open = !open">
+        <nuxt-link to="/about">ABOUT</nuxt-link>
+      </div>
+      <div class="menu__item" @click="open = !open">
+        <nuxt-link to="/">#####</nuxt-link>
+      </div>
+      <div class="menu__item" @click="open = !open">
+        <nuxt-link to="/contact">CONTACT</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -36,15 +44,15 @@ export default {
 <style lang="scss" scoped>
 .burger-btn {
   display: block;
-  width: 39px;
-  height: 39px;
+  width: 45px;
+  height: 45px;
   position: relative;
   z-index: 3;
   border: none;
 }
 .bar {
-  width: 20px;
-  height: 1px;
+  width: 35px;
+  height: 2px;
   display: block;
   position: absolute;
   left: 50%;
@@ -64,16 +72,16 @@ export default {
     display: block;
     position: absolute;
     left: 50%;
+    top: -15px;
     transform: translateX(-50%);
-    font-size: 200px;
-    font-weight: bold;
+    font-size: 55px;
     color: #fff;
   }
 }
 .menu {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 1;
   width: 100vw;
   height: 100vh;
@@ -81,7 +89,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #555;
+  background: #030012;
+  opacity: 0.9;
 }
 .menu__item {
   width: 100%;
@@ -90,6 +99,14 @@ export default {
   text-align: center;
   color: #fff;
   box-sizing: border-box;
+  font-size: 32px;
+  & a {
+    color: #fff;
+    text-decoration: none;
+    &:active {
+      color: #fff;
+    }
+  }
 }
 
 /*----------------------------
