@@ -1,6 +1,6 @@
 <template>
   <div class="esleague-playerList">
-    <div>profile</div>
+    <div>profile2</div>
     <div class="anime">
       <ul>
         <li
