@@ -34,7 +34,8 @@ export default {
     & span {
       margin-top: 5px;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
+      font-family: '游ゴシック体', 'YuGothic';
     }
   }
   &__item {

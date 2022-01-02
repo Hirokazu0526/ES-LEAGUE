@@ -5,57 +5,99 @@
     </h3>
     <div class="es-League-schedule__contanier">
       <h3 class="es-League-schedule__matchDate">
-        {{ isThisWeek.date }}
+        <span class="left">{{ isThisWeek.clause }}</span
+        >{{ isThisWeek.date
+        }}<span class="right">{{ isThisWeek.startTime }}</span>
       </h3>
-      <nuxt-link to="/stadium" class="es-League-schedule__stadium">{{
-        isThisWeek.stadium
-      }}</nuxt-link>
+      <p class="es-League-schedule__stadium">
+        {{ isThisWeek.stadium }}(<a :href="isThisWeek.access" target="_blank"
+          >会場アクセス<img
+            src="~/assets/img/external-link.svg"
+            alt=""
+            class="es-League-schedule__linkImg"
+          /> </a
+        >)
+      </p>
+
       <div class="es-League-schedule__resultList">
         <ul class="es-League-schedule__list">
           <li class="es-League-schedule__item">
             <div class="es-League-schedule__team">
+              <img
+                :src="coat1HImage"
+                alt=""
+                class="es-League-schedule__teamImage"
+              />
               <p class="es-League-schedule__temaName">
                 {{ isThisWeek.competition.coat1H }}
               </p>
             </div>
-            <div class="es-League-schedule__decoration">
-              <p class="es-League-schedule__versus">VS</p>
-            </div>
             <div class="es-League-schedule__team">
+              <img
+                :src="coat1AImage"
+                alt=""
+                class="es-League-schedule__teamImage"
+              />
               <p class="es-League-schedule__temaName">
                 {{ isThisWeek.competition.coat1A }}
               </p>
             </div>
+            <link-arrow
+              :url="`/match/${isThisWeek.id}?fields=coat1`"
+              class="es-League-schedule__linkArrow"
+            />
           </li>
           <li class="es-League-schedule__item">
             <div class="es-League-schedule__team">
+              <img
+                :src="coat2HImage"
+                alt=""
+                class="es-League-schedule__teamImage"
+              />
               <p class="es-League-schedule__temaName">
                 {{ isThisWeek.competition.coat2H }}
               </p>
             </div>
-            <div class="es-League-schedule__decoration">
-              <p class="es-League-schedule__versus">VS</p>
-            </div>
             <div class="es-League-schedule__team">
+              <img
+                :src="coat2AImage"
+                alt=""
+                class="es-League-schedule__teamImage"
+              />
               <p class="es-League-schedule__temaName">
                 {{ isThisWeek.competition.coat2A }}
               </p>
             </div>
+            <link-arrow
+              :url="`/match/${isThisWeek.id}?fields=coat2`"
+              class="es-League-schedule__linkArrow"
+            />
           </li>
           <li class="es-League-schedule__item">
             <div class="es-League-schedule__team">
+              <img
+                :src="coat3HImage"
+                alt=""
+                class="es-League-schedule__teamImage"
+              />
               <p class="es-League-schedule__temaName">
                 {{ isThisWeek.competition.coat3H }}
               </p>
             </div>
-            <div class="es-League-schedule__decoration">
-              <p class="es-League-schedule__versus">VS</p>
-            </div>
             <div class="es-League-schedule__team">
+              <img
+                :src="coat3AImage"
+                alt=""
+                class="es-League-schedule__teamImage"
+              />
               <p class="es-League-schedule__temaName">
                 {{ isThisWeek.competition.coat3A }}
               </p>
             </div>
+            <link-arrow
+              :url="`/match/${isThisWeek.id}?fields=coat3`"
+              class="es-League-schedule__linkArrow"
+            />
           </li>
         </ul>
       </div>
@@ -65,7 +107,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import linkArrow from '~/components/integration/atoms/link-arrow.vue'
+
 export default {
+  components: { linkArrow },
+  data() {
+    return {}
+  },
   computed: {
     ...mapGetters([
       'getCompetitionList',
@@ -74,9 +122,10 @@ export default {
       'thirdWeek',
       'fourthWeek',
       'fifthWeek',
+      'getTeamList',
     ]),
     isThisWeek() {
-      if (!this.firstWeek) {
+      if (this.firstWeek) {
         return this.getCompetitionList[0]
       } else if (!this.secondWeek) {
         return this.getCompetitionList[1]
@@ -89,6 +138,48 @@ export default {
       }
       return ''
     },
+    coat1HImage() {
+      const teamLists = this.getTeamList
+      const imageList = teamLists.filter((list) => {
+        return list.teamName === this.isThisWeek.competition.coat1H
+      })
+      return imageList[0].image.url
+    },
+    coat1AImage() {
+      const teamLists = this.getTeamList
+      const imageList = teamLists.filter((list) => {
+        return list.teamName === this.isThisWeek.competition.coat1A
+      })
+      return imageList[0].image.url
+    },
+    coat2HImage() {
+      const teamLists = this.getTeamList
+      const imageList = teamLists.filter((list) => {
+        return list.teamName === this.isThisWeek.competition.coat2H
+      })
+      return imageList[0].image.url
+    },
+    coat2AImage() {
+      const teamLists = this.getTeamList
+      const imageList = teamLists.filter((list) => {
+        return list.teamName === this.isThisWeek.competition.coat2A
+      })
+      return imageList[0].image.url
+    },
+    coat3HImage() {
+      const teamLists = this.getTeamList
+      const imageList = teamLists.filter((list) => {
+        return list.teamName === this.isThisWeek.competition.coat3H
+      })
+      return imageList[0].image.url
+    },
+    coat3AImage() {
+      const teamLists = this.getTeamList
+      const imageList = teamLists.filter((list) => {
+        return list.teamName === this.isThisWeek.competition.coat3A
+      })
+      return imageList[0].image.url
+    },
   },
 }
 </script>
@@ -96,6 +187,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-schedule {
   padding-top: 20px;
+  margin-bottom: 34px;
   &__title {
     text-align: center;
     font-size: 32px;
@@ -104,50 +196,81 @@ export default {
     & span {
       margin-top: 5px;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
+      font-family: '游ゴシック体', 'YuGothic';
     }
   }
   &__contanier {
-    padding: 10px 16px 30px;
+    padding: 24px 16px 0px;
     color: #000;
     text-align: center;
   }
   &__matchDate {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: medium;
+    span.left {
+      margin-right: 10px;
+    }
+    span.right {
+      margin-left: 10px;
+    }
   }
   &__stadium {
     display: block;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: normal;
     text-decoration: none;
     color: #000;
+    margin-top: 6px;
+    a {
+      color: #0033cc;
+      position: relative;
+    }
+  }
+  &__linkImg {
+    width: 13px;
+    height: 13px;
+    vertical-align: top;
+    margin: 0 2px;
   }
   &__resultList {
     margin-top: 15px;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
   }
   &__list {
     list-style: none;
   }
   &__item {
     display: grid;
-    grid-template-columns: 1fr 110px 1fr;
-    padding: 10px 0;
-    border-bottom: 1px solid #000;
+    grid-template-rows: 1fr 1fr;
+    padding: 8px 9px 8px 16px;
+    background-color: #eeeeee;
+    row-gap: 8px;
+    margin-bottom: 2px;
+    position: relative;
+  }
+  &__team {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     &:last-child {
-      border-bottom: none;
+      margin-bottom: 0;
     }
+  }
+  &__teamImage {
+    width: 31px;
+    height: 28px;
+    margin-right: 8px;
   }
 
   &__temaName {
-    font-size: 23px;
+    font-size: 14px;
     font-weight: bold;
   }
-  &__versus {
-    font-size: 23px;
-    font-weight: bold;
+  &__linkArrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
   }
 }
 </style>

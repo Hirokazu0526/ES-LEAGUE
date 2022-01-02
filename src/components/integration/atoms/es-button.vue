@@ -2,7 +2,8 @@
   <div class="button">
     <nuxt-link
       :to="url"
-      :class="color"
+      :class="[color, arrow]"
+      class="button__link"
       :style="[{ height: `${height}px` }, { width: `${width}px` }]"
     >
       <slot />
@@ -19,6 +20,11 @@ export default {
       default: '',
     },
     color: {
+      type: String,
+      required: false,
+      default: 'right',
+    },
+    arrow: {
       type: String,
       required: false,
       default: '',
@@ -41,25 +47,45 @@ export default {
 .button {
   text-align: center;
   width: 150px;
-  a {
+  &__link {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 38px;
-    position: relative;
     padding: 0;
     color: white;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    background-color: #000;
+    background-color: #a37b30;
+    border-radius: 2px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 4px;
+      height: 13px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &.right::after {
+      right: 8px;
+      background: url(~/assets/img/arrow-right.svg);
+    }
+    &.left::after {
+      right: 8px;
+      background: url(~/assets/img/arrow-left.svg);
+    }
     &:hover {
       cursor: pointer;
     }
     &.navy {
-      background: linear-gradient(-45deg, transparent 27px, #011e43 20px);
+      background-color: #011e43;
+    }
+    &.gray {
+      background-color: #666666;
     }
   }
 }

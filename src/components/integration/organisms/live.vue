@@ -36,13 +36,16 @@ export default {}
     & span {
       margin-top: 5px;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
+      font-family: '游ゴシック体', 'YuGothic';
       color: #000;
     }
     &.live {
       color: #ff1d1d;
       & span {
         color: #ff1d1d;
+        font-size: 16px;
+        font-family: '游ゴシック体', 'YuGothic';
       }
     }
     &.howto {

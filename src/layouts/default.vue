@@ -21,8 +21,7 @@ export default {
 <style lang="scss" scoped>
 .es-League {
   background-color: #fff;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Sans',
-    'Hiragino Kaku Gothic ProN', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+  font-family: '游ゴシック体', 'YuGothic', '游ゴシック', 'Yu Gothic', sans-serif;
   // font-family: 'HNewYork';
 }
 .header {

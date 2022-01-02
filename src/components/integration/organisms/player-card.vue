@@ -8,45 +8,47 @@
         <li class="es-League-card__item">
           <nuxt-link to="/profile/ltex82bj2">
             <img
-              src="~/assets/img/takano.jpg"
+              src="~/assets/dummy/naito_dummy.png"
               alt=""
               class="es-League-card__img"
             />
-            <h4 class="es-League-card__playerName">高野征也</h4>
-            <p class="es-League-card__text">
-              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張る。
-            </p>
+            <span class="es-League-card__playerNumber">10</span>
+            <p class="es-League-card__playerPosition">アタッカー</p>
+            <h4 class="es-League-card__playerName">内藤 利貴</h4>
+            <p class="es-League-card__playerKana">Naito Toshitaka</p>
           </nuxt-link>
         </li>
         <li class="es-League-card__item">
-          <nuxt-link to="/profile">
+          <nuxt-link to="/profile/ltex82bj2">
             <img
-              src="~/assets/img/takano.jpg"
+              src="~/assets/dummy/naito_dummy.png"
               alt=""
               class="es-League-card__img"
             />
-            <h4 class="es-League-card__playerName">高野征也</h4>
-            <p class="es-League-card__text">
-              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張る。
-            </p>
+            <p class="es-League-card__playerNumber">10</p>
+            <p class="es-League-card__playerPosition">アタッカー</p>
+            <h4 class="es-League-card__playerName">内藤 利貴</h4>
+            <p class="es-League-card__playerKana">Naito Toshitaka</p>
           </nuxt-link>
         </li>
         <li class="es-League-card__item">
-          <nuxt-link to="/profile">
+          <nuxt-link to="/profile/ltex82bj2">
             <img
-              src="~/assets/img/takano.jpg"
+              src="~/assets/dummy/naito_dummy.png"
               alt=""
               class="es-League-card__img"
             />
-            <h4 class="es-League-card__playerName">高野征也</h4>
-            <p class="es-League-card__text">
-              セパタクロー日本代表キャプテン。闘志あふれるプレーでチームを引っ張る。
-            </p>
+            <p class="es-League-card__playerNumber">10</p>
+            <p class="es-League-card__playerPosition">アタッカー</p>
+            <h4 class="es-League-card__playerName">内藤 利貴</h4>
+            <p class="es-League-card__playerKana">Naito Toshitaka</p>
           </nuxt-link>
         </li>
       </ul>
     </div>
-    <es-button url="/profile" class="es-League-card__btn">選手一覧</es-button>
+    <es-button url="/profile" arrow="right" class="es-League-card__btn"
+      >選手一覧</es-button
+    >
   </div>
 </template>
 
@@ -66,8 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-card {
-  margin: 0 16px;
-  padding: 40px 0;
+  margin: 0 16px 34px;
   &__title {
     text-align: center;
     font-size: 32px;
@@ -76,7 +77,8 @@ export default {
     & span {
       margin-top: 5px;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
+      font-family: '游ゴシック体', 'YuGothic';
     }
   }
   &__listWrapper {
@@ -92,32 +94,50 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #000;
-    padding-bottom: 10px;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     border: 1px solid #bebebe;
+    text-align: center;
+    position: relative;
+    &:after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-left: 20px solid transparent;
+      border-bottom: 20px solid #a37b30;
+      content: '';
+    }
     a {
-      color: #fff;
+      display: block;
+      color: #000;
       text-decoration: none;
+      padding-bottom: 10px;
     }
   }
   &__img {
     width: 100%;
   }
-  &__playerName {
-    padding: 0 9px;
-    font-size: 14px;
-    margin-top: 5px;
-    text-align: center;
+  &__playerNumber {
+    font-size: 30px;
+    font-family: 'HNewYork';
   }
-  &__text {
+  &__playerPosition {
     font-size: 10px;
-    padding: 0 9px;
-    margin-top: 5px;
-    word-break: break-all;
+    font-weight: medium;
+    margin-bottom: 5px;
+  }
+  &__playerName {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+  &__playerKana {
+    font-size: 10px;
+    font-weight: medium;
   }
   &__btn {
-    margin: 15px auto 0;
+    margin: 16px auto 0;
   }
 }
 </style>
