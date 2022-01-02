@@ -21,7 +21,7 @@ export default {}
 
 <style lang="scss" scoped>
 .es-League-pv {
-  padding: 20px 16px 0;
+  padding: 0px 16px;
   &__title {
     text-align: center;
     font-size: 32px;
@@ -30,7 +30,8 @@ export default {}
     & span {
       margin-top: 5px;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
+      font-family: '游ゴシック体', 'YuGothic';
     }
   }
   &__info {
