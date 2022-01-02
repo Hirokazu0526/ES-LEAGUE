@@ -22,7 +22,7 @@
         <nuxt-link to="/about">ABOUT</nuxt-link>
       </div>
       <div class="menu__item" @click="open = !open">
-        <nuxt-link to="/blog">BLOG</nuxt-link>
+        <nuxt-link to="/">#####</nuxt-link>
       </div>
       <div class="menu__item" @click="open = !open">
         <nuxt-link to="/contact">CONTACT</nuxt-link>
