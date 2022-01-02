@@ -6,7 +6,6 @@ export const state = () => ({
   TZ: process.env.TZ || 'Asia/Tokyo',
   route: {},
   newsLists: [],
-  blogLists: [],
   playerLists: [],
   teamLists: [],
   competitionLists: [],
@@ -29,13 +28,6 @@ export const state = () => ({
     setNewsLists(state, newsLists) {
       state.newsLists = newsLists
       for (const item of state.newsLists) {
-        const itemDate = moment(item.date).format('YYYY年MM月DD日')
-        item.date = itemDate
-      }
-    },
-    setBlogLists(state, blogLists) {
-      state.blogLists = blogLists
-      for (const item of state.blogLists) {
         const itemDate = moment(item.date).format('YYYY年MM月DD日')
         item.date = itemDate
       }
@@ -154,9 +146,6 @@ export const state = () => ({
       const resNews = await this.$axios.$get(`${$config.apiUrl}news`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
-      const resBlogs = await this.$axios.$get(`${$config.apiUrl}blog`, {
-       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
-      });
       const resPlayers = await this.$axios.$get(`${$config.apiUrl}player-details`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
@@ -170,7 +159,6 @@ export const state = () => ({
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
       commit("setNewsLists", resNews.contents);
-      commit("setBlogLists", resBlogs.contents);
       commit("setPlayerLists", resPlayers.contents);
       commit("setTeamLists", resTeams.contents);
       commit("setCompetitionLists", resCompetitions.contents);
@@ -232,9 +220,6 @@ export const state = () => ({
     },
     getNewsList(state) {
       return state.newsLists
-    },
-    getBlogList(state) {
-      return state.blogLists
     },
     getPlayerList(state) {
       return state.playerLists
