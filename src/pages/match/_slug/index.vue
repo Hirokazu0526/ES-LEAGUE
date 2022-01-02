@@ -61,11 +61,6 @@
             <span>3rd</span>
             <p>{{ matchData.thirdSet_A }}</p>
           </div>
-          <div class="es-League-match-result__score">
-            <p>{{ matchData.fourthSet_H }}</p>
-            <span>4th</span>
-            <p>{{ matchData.fourthSet_A }}</p>
-          </div>
         </div>
 
         <div class="es-League-match-result__member">
