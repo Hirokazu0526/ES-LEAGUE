@@ -1,5 +1,7 @@
 import Sass from 'sass'
 import Fiber from 'fibers'
+import axios from 'axios'
+
 require("dotenv").config();
 const { API_KEY } = process.env;
 const { API_URL } = process.env;
@@ -108,5 +110,43 @@ export default {
   privateRuntimeConfig: {
     apiKey: API_KEY,
     apiUrl: API_URL,
-   }
+  },
+
+  generate: {
+    async routes() {
+      const apiKey = API_KEY
+      const generates = []
+      await axios
+        .get('https://es-league.microcms.io/api/v1/player-details?limit=100', {
+          headers: { 'X-MICROCMS-API-KEY': apiKey }
+        })
+        .then((res) =>
+          res.data.contents.map((profile) => ({
+            route: `/profile/${profile.id}`,
+            payload: profile
+          }))
+        )
+      await axios
+        .get('https://es-league.microcms.io/api/v1/team-details?limit=100', {
+          headers: { 'X-MICROCMS-API-KEY': apiKey }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/team/${content.id}`,
+            payload: content
+          }))
+        )
+      await axios
+      .get('https://es-league.microcms.io/api/v1/news?limit=100', {
+        headers: { 'X-MICROCMS-API-KEY': apiKey }
+      })
+      .then((res) =>
+        res.data.contents.map((content) => ({
+          route: [`/info/${content.id}`, `/report/${content.id}`, `/event/${content.id}`],
+          payload: content
+        }))
+      )
+      return generates
+    }
+  }
 }
