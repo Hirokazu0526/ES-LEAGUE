@@ -10,7 +10,7 @@
         class="es-League-info__tab"
         @onClickTab="updateTabContents"
       /> -->
-      <div class="es-League-info__tabContents">
+      <div class="es-League-info__contents">
         <news />
         <!-- <news v-if="tab === 'news'" /> -->
         <!-- <blog v-else-if="tab === 'blog'" /> -->
@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-info {
-  background-color: #fff;
+  margin: 0 16px 34px;
   &__title {
     text-align: center;
     font-size: 32px;
@@ -75,17 +75,14 @@ export default {
     & span {
       margin-top: 5px;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
+      font-family: '游ゴシック', 'YuGothic';
       color: #030012;
     }
   }
   &__wrapper {
-    margin: 20px 16px;
+    margin-top: 24px;
     min-height: 386px;
-  }
-  &__tabContents {
-    background-color: #8b8b8b;
-    color: #fff;
   }
 }
 </style>
