@@ -126,8 +126,7 @@ export default {
             payload: profile
           }))
         )
-        .catch(error => {
-          console.log(error)
+        .catch(() => {
           this.errored = true
         })
       await axios
@@ -140,9 +139,7 @@ export default {
             payload: content
           }))
         )
-        .catch(error => {
-          console.log(error)
-          this.errored = true
+        .catch(() => {
         })
       await axios
       .get('https://es-league.microcms.io/api/v1/news?limit=100', {
@@ -154,9 +151,7 @@ export default {
           payload: content
         }))
       )
-      .catch(error => {
-        console.log(error)
-        this.errored = true
+      .catch(() => {
       })
       return generates
     }
