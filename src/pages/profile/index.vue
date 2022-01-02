@@ -20,11 +20,18 @@
 
 <script>
 export default {
-  async asyncData({ $microcms }) {
-    const Data = await $microcms.get({
-      endpoint: 'player-details',
-    })
-    return Data
+  async asyncData({ $microcms, error }) {
+    try {
+      const Data = await $microcms.get({
+        endpoint: 'player-details',
+      })
+      return Data
+    } catch (err) {
+      error({
+        statusCode: err.response.status,
+        message: err.response.data.message,
+      })
+    }
   },
   mounted() {
     this.setAnimation()

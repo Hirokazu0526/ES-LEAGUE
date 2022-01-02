@@ -16,11 +16,18 @@
 <script>
 import moment from 'moment-timezone'
 export default {
-  async asyncData({ params, $microcms }) {
-    const data = await $microcms.get({
-      endpoint: `news/${params.slug}`,
-    })
-    return data
+  async asyncData({ params, $microcms, error }) {
+    try {
+      const data = await $microcms.get({
+        endpoint: `news/${params.slug}`,
+      })
+      return data
+    } catch (err) {
+      error({
+        statusCode: err.response.status,
+        message: err.response.data.message,
+      })
+    }
   },
   computed: {
     formatData() {

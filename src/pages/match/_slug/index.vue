@@ -126,11 +126,18 @@ import moment from 'moment-timezone'
 import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData({ params, $microcms }) {
-    const data = await $microcms.get({
-      endpoint: `schedule_result/${params.slug}`,
-    })
-    return data
+  async asyncData({ params, $microcms, error }) {
+    try {
+      const data = await $microcms.get({
+        endpoint: `schedule_result/${params.slug}`,
+      })
+      return data
+    } catch (err) {
+      error({
+        statusCode: err.response.status,
+        message: err.response.data.message,
+      })
+    }
   },
   computed: {
     ...mapGetters(['getPlayerList', 'getTeamList']),

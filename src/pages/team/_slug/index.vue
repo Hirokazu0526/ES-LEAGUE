@@ -61,11 +61,18 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData({ params, $microcms }) {
-    const data = await $microcms.get({
-      endpoint: `team-details/${params.slug}`,
-    })
-    return data
+  async asyncData({ params, $microcms, error }) {
+    try {
+      const data = await $microcms.get({
+        endpoint: `team-details/${params.slug}`,
+      })
+      return data
+    } catch (err) {
+      error({
+        statusCode: err.response.status,
+        message: err.response.data.message,
+      })
+    }
   },
   computed: {
     ...mapGetters(['getPlayerList']),
