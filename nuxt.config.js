@@ -6,6 +6,8 @@ require("dotenv").config();
 const { API_KEY } = process.env;
 const { API_URL } = process.env;
 
+const baseDir = process.env.BASE_DIR || '/'
+
 export default {
   srcDir: 'src/',
   // Target: https://go.nuxtjs.dev/config-target
@@ -28,6 +30,7 @@ export default {
     ]
   },
   router: {
+    base: baseDir,
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
