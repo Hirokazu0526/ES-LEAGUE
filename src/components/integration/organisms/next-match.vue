@@ -22,78 +22,87 @@
       <div class="es-League-schedule__resultList">
         <ul class="es-League-schedule__list">
           <li class="es-League-schedule__item">
-            <div class="es-League-schedule__team">
-              <img
-                :src="coat1HImage"
-                alt=""
-                class="es-League-schedule__teamImage"
-              />
-              <p class="es-League-schedule__temaName">
-                {{ isThisWeek.competition.coat1H }}
-              </p>
+            <div class="es-League-schedule__teamInfo">
+              <div class="es-League-schedule__team">
+                <img
+                  :src="coat1HImage"
+                  alt=""
+                  class="es-League-schedule__teamImage"
+                />
+                <p class="es-League-schedule__temaName">
+                  {{ isThisWeek.competition.coat1H }}
+                </p>
+              </div>
+              <div class="es-League-schedule__team">
+                <img
+                  :src="coat1AImage"
+                  alt=""
+                  class="es-League-schedule__teamImage"
+                />
+                <p class="es-League-schedule__temaName">
+                  {{ isThisWeek.competition.coat1A }}
+                </p>
+              </div>
             </div>
-            <div class="es-League-schedule__team">
-              <img
-                :src="coat1AImage"
-                alt=""
-                class="es-League-schedule__teamImage"
-              />
-              <p class="es-League-schedule__temaName">
-                {{ isThisWeek.competition.coat1A }}
-              </p>
-            </div>
+            <div></div>
             <link-arrow
               :url="`/match/${isThisWeek.id}?fields=coat1`"
               class="es-League-schedule__linkArrow"
             />
           </li>
           <li class="es-League-schedule__item">
-            <div class="es-League-schedule__team">
-              <img
-                :src="coat2HImage"
-                alt=""
-                class="es-League-schedule__teamImage"
-              />
-              <p class="es-League-schedule__temaName">
-                {{ isThisWeek.competition.coat2H }}
-              </p>
+            <div class="es-League-schedule__teamInfo">
+              <div class="es-League-schedule__team">
+                <img
+                  :src="coat2HImage"
+                  alt=""
+                  class="es-League-schedule__teamImage"
+                />
+                <p class="es-League-schedule__temaName">
+                  {{ isThisWeek.competition.coat2H }}
+                </p>
+              </div>
+              <div class="es-League-schedule__team">
+                <img
+                  :src="coat2AImage"
+                  alt=""
+                  class="es-League-schedule__teamImage"
+                />
+                <p class="es-League-schedule__temaName">
+                  {{ isThisWeek.competition.coat2A }}
+                </p>
+              </div>
             </div>
-            <div class="es-League-schedule__team">
-              <img
-                :src="coat2AImage"
-                alt=""
-                class="es-League-schedule__teamImage"
-              />
-              <p class="es-League-schedule__temaName">
-                {{ isThisWeek.competition.coat2A }}
-              </p>
-            </div>
+            <div></div>
             <link-arrow
               :url="`/match/${isThisWeek.id}?fields=coat2`"
               class="es-League-schedule__linkArrow"
             />
           </li>
           <li class="es-League-schedule__item">
-            <div class="es-League-schedule__team">
-              <img
-                :src="coat3HImage"
-                alt=""
-                class="es-League-schedule__teamImage"
-              />
-              <p class="es-League-schedule__temaName">
-                {{ isThisWeek.competition.coat3H }}
-              </p>
+            <div class="es-League-schedule__teamInfo">
+              <div class="es-League-schedule__team">
+                <img
+                  :src="coat3HImage"
+                  alt=""
+                  class="es-League-schedule__teamImage"
+                />
+                <p class="es-League-schedule__temaName">
+                  {{ isThisWeek.competition.coat3H }}
+                </p>
+              </div>
+              <div class="es-League-schedule__team">
+                <img
+                  :src="coat3AImage"
+                  alt=""
+                  class="es-League-schedule__teamImage"
+                />
+                <p class="es-League-schedule__temaName">
+                  {{ isThisWeek.competition.coat3A }}
+                </p>
+              </div>
             </div>
-            <div class="es-League-schedule__team">
-              <img
-                :src="coat3AImage"
-                alt=""
-                class="es-League-schedule__teamImage"
-              />
-              <p class="es-League-schedule__temaName">
-                {{ isThisWeek.competition.coat3A }}
-              </p>
-            </div>
+            <div></div>
             <link-arrow
               :url="`/match/${isThisWeek.id}?fields=coat3`"
               class="es-League-schedule__linkArrow"
@@ -197,7 +206,7 @@ export default {
       margin-top: 5px;
       display: block;
       font-size: 16px;
-      font-family: '游ゴシック体', 'YuGothic';
+      font-family: 'YuGothic', '游ゴシック';
     }
   }
   &__contanier {
@@ -241,12 +250,15 @@ export default {
   }
   &__item {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 50px 20px;
     padding: 8px 9px 8px 16px;
     background-color: #eeeeee;
-    row-gap: 8px;
     margin-bottom: 2px;
-    position: relative;
+  }
+  &__teamInfo {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 8px;
   }
   &__team {
     display: flex;
@@ -267,10 +279,7 @@ export default {
     font-weight: bold;
   }
   &__linkArrow {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
+    margin: auto 0;
   }
 }
 </style>
