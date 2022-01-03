@@ -11,7 +11,7 @@ const baseDir = process.env.BASE_DIR || '/'
 export default {
   srcDir: 'src/',
   // Target: https://go.nuxtjs.dev/config-target
-  mode: 'universal',
+  ssr: true,
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
