@@ -1,17 +1,16 @@
 <template>
   <div class="es-League-match-result">
     <h2 class="es-League-match-result__title">
-      Match Results<br /><span>試合結果</span>
+      MATCH detail<br /><span>試合結果</span>
     </h2>
 
     <div class="es-League-match-result__container">
+      <p class="es-League-match-result__clause">{{ clause }}</p>
       <h3 class="es-League-match-result__date">{{ formatData }}</h3>
-      <nuxt-link to="/stadium" class="es-League-match-result__stadium">{{
-        stadium
-      }}</nuxt-link>
-      <div class="es-League-match-result__teamInfo">
+      <p class="es-League-match-result__stadium">{{ stadium }}</p>
+      <div class="es-League-match-result__matchInfo">
         <div class="es-League-match-result__team">
-          <div class="es-League-match-result__homeTeamImage">
+          <div class="es-League-match-result__teamInfo">
             <nuxt-link :to="homeTeamUrl">
               <img
                 :src="homeTeamImage"
@@ -21,8 +20,8 @@
             </nuxt-link>
             <p class="es-League-match-result__teamName">{{ homeTeam }}</p>
           </div>
-          <div><span class="es-League-match-result__versus">VS</span></div>
-          <div class="es-League-match-result__awayTeamImage">
+          <div class="es-League-match-result__versus"><span>VS</span></div>
+          <div class="es-League-match-result__teamInfo">
             <nuxt-link :to="awayTeamUrl">
               <img
                 :src="awayTeamImage"
@@ -35,12 +34,16 @@
         </div>
 
         <div class="es-League-match-result__team">
-          <div class="es-League-match-result__totalScore">
-            <p>{{ matchData.getSet_H }}</p>
+          <div>
+            <p class="es-League-match-result__totalScore">
+              {{ matchData.getSet_H }}
+            </p>
           </div>
-          <div></div>
-          <div class="es-League-match-result__totalScore">
-            <p>{{ matchData.getSet_A }}</p>
+          <div class="es-League-match-result__hyphen">ー</div>
+          <div>
+            <p class="es-League-match-result__totalScore">
+              {{ matchData.getSet_A }}
+            </p>
           </div>
         </div>
 
@@ -108,15 +111,18 @@
           </div>
         </div>
       </div>
-      <es-button url="/rank" class="es-League-match-result__btn"
-        >順位表</es-button
-      >
-      <es-button
-        url="/schedule/result"
-        color="navy"
-        class="es-League-match-result__btn"
-        >戻る</es-button
-      >
+      <div class="es-League-match-result__btnWrapper">
+        <es-button
+          url="/schedule/result"
+          color="gray"
+          arrow="left"
+          class="es-League-match-result__btn"
+          >戻る</es-button
+        >
+        <es-button url="/rank" class="es-League-match-result__btn"
+          >順位表</es-button
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -143,7 +149,8 @@ export default {
     ...mapGetters(['getPlayerList', 'getTeamList']),
     formatData() {
       // 日付を修正
-      return moment(this.date).format('YYYY.MM.DD ddd.')
+      moment.locale('ja')
+      return moment(this.date).format('YYYY.MM.DD(ddd)')
     },
     matchData() {
       // URLパラメータを見て試合データを取得
@@ -158,11 +165,14 @@ export default {
     homeTeam() {
       // URLパラメータを見てhomeチーム名を取得
       if (this.$route.query.fields === 'coat1') {
-        return this.competition.coat1H.teamName
+        const res = this.competition.coat1H.teamName.split(' ').join('\n')
+        return res
       } else if (this.$route.query.fields === 'coat2') {
-        return this.competition.coat2H.teamName
+        const res = this.competition.coat2H.teamName.split(' ').join('\n')
+        return res
       } else {
-        return this.competition.coat3H.teamName
+        const res = this.competition.coat3H.teamName.split(' ').join('\n')
+        return res
       }
     },
     awayTeam() {
@@ -179,7 +189,7 @@ export default {
       // プレーヤーリストを参照してhomeチームのメンバーを抽出
       const members = this.getPlayerList
       const memberInfo = members.filter((member) => {
-        return member.team.teamName === this.homeTeam
+        return member.team.teamName === this.homeTeam.split('\n').join(' ')
       })
       return memberInfo
     },
@@ -214,7 +224,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-match-result {
   margin: 0px 16px;
-  padding: 95px 0px;
+  padding: 95px 0px 60px;
   text-align: center;
   color: #000;
 
@@ -234,24 +244,34 @@ export default {
   }
 
   &__container {
-    padding: 20px 16px 30px;
+    padding: 20px 0 0;
     color: #000;
   }
 
+  &__clause {
+    display: inline-block;
+    padding: 4px 21px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
   &__date {
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: bold;
   }
 
   &__stadium {
     display: block;
     font-size: 14px;
-    cursor: pointer;
+    font-weight: bold;
     margin-top: 10px;
     color: #000;
     text-decoration: none;
   }
 
-  &__teamInfo {
+  &__matchInfo {
     margin-top: 30px;
   }
 
@@ -261,23 +281,45 @@ export default {
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
+    padding: 0 29px;
+  }
+
+  &__teamInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 150px;
   }
 
   &__teamImage {
-    width: 120px;
+    width: 96px;
   }
 
   &__versus {
-    font-size: 32px;
+    margin-bottom: 40px;
+    span {
+      font-size: 24px;
+      font-family: 'HNewYork';
+    }
   }
 
   &__teamName {
     margin-top: 10px;
-    font-size: 32px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+    white-space: break-spaces;
   }
 
   &__totalScore {
-    font-size: 30px;
+    font-size: 48px;
+    font-family: 'HNewYork';
+  }
+
+  &__hyphen {
+    font-size: 20px;
+    font-weight: bold;
   }
 
   &__teamScore {
@@ -285,7 +327,7 @@ export default {
   }
 
   &__sectionTitle {
-    font-size: 32px;
+    font-size: 22px;
     padding: 10px 0;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
@@ -297,15 +339,19 @@ export default {
     align-items: center;
     justify-content: center;
     padding: 10px 0;
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: bold;
     border-bottom: 1px dashed #000;
     &:last-child {
       border-bottom: none;
     }
+    span {
+      font-weight: normal;
+    }
   }
 
   &__member {
-    margin: 30px 0;
+    margin: 15px 0;
   }
 
   &__teamMember {
@@ -335,17 +381,32 @@ export default {
   }
   &__teamMemberLink {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     text-decoration: none;
     color: #000;
+    padding-left: 16px;
+    margin-bottom: 14px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__playerNumber {
     text-align: left;
+    font-size: 18px;
+    font-weight: bold;
   }
   &__playerName {
     display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  &__btnWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
   }
 
   &__btn {
