@@ -1,54 +1,56 @@
 <template>
   <div class="es-League-footer">
-    <ul class="es-League-footer__list">
-      <li class="es-League-footer__listItem">
-        <nuxt-link to="/contact">
-          <p class="es-League-footer__listTitle">お問い合わせ</p>
-        </nuxt-link>
-      </li>
-      <li class="es-League-footer__listItem">
-        <nuxt-link to="/">
-          <p class="es-League-footer__listTitle">プライバシーポリシー</p>
-        </nuxt-link>
-      </li>
-      <li class="es-League-footer__listItem">
-        <nuxt-link to="/contact">
-          <p class="es-League-footer__listTitle">体験しよう！</p>
-        </nuxt-link>
-      </li>
-      <li class="es-League-footer__listItem">
-        <nuxt-link to="/">
-          <p class="es-League-footer__listTitle">??????????</p>
-        </nuxt-link>
-      </li>
-      <li class="es-League-footer__listItem">
-        <a href="http://jstaf.jp/" target="_blank">
-          <p class="es-League-footer__listTitle">
-            一般社団法人<br />日本セパタクロー協会
-          </p>
-        </a>
-      </li>
-    </ul>
-    <div class="es-League-footer__snsList">
-      <a
-        href="https://twitter.com/es_league_japan"
-        target="_blank"
-        class="es-League-footer__icon twitter"
-      ></a>
-      <a href="" class="es-League-footer__icon facebook"></a>
-      <a
-        href="https://www.instagram.com/es_league_japan/"
-        target="_blank"
-        class="es-League-footer__icon instagram"
-      ></a>
-      <a
-        href="https://www.tiktok.com/@es_league?lang=ja"
-        target="_blank"
-        class="es-League-footer__icon tiktok"
-      ></a>
-    </div>
-    <div class="es-League-footer__copyRight">
-      <small>© 2022 ES LEAGUE All Rights Reserved.</small>
+    <div class="es-League-footer__bg">
+      <ul class="es-League-footer__list">
+        <li class="es-League-footer__listItem">
+          <nuxt-link to="/contact">
+            <p class="es-League-footer__listTitle">お問い合わせ</p>
+          </nuxt-link>
+        </li>
+        <li class="es-League-footer__listItem">
+          <nuxt-link to="/">
+            <p class="es-League-footer__listTitle">プライバシーポリシー</p>
+          </nuxt-link>
+        </li>
+        <li class="es-League-footer__listItem">
+          <nuxt-link to="/contact">
+            <p class="es-League-footer__listTitle">体験しよう！</p>
+          </nuxt-link>
+        </li>
+        <li class="es-League-footer__listItem">
+          <nuxt-link to="/">
+            <p class="es-League-footer__listTitle">??????????</p>
+          </nuxt-link>
+        </li>
+        <li class="es-League-footer__listItem">
+          <a href="http://jstaf.jp/" target="_blank">
+            <p class="es-League-footer__listTitle">
+              一般社団法人<br />日本セパタクロー協会
+            </p>
+          </a>
+        </li>
+      </ul>
+      <div class="es-League-footer__snsList">
+        <a
+          href="https://twitter.com/es_league_japan"
+          target="_blank"
+          class="es-League-footer__icon twitter"
+        ></a>
+        <a href="" class="es-League-footer__icon facebook"></a>
+        <a
+          href="https://www.instagram.com/es_league_japan/"
+          target="_blank"
+          class="es-League-footer__icon instagram"
+        ></a>
+        <a
+          href="https://www.tiktok.com/@es_league?lang=ja"
+          target="_blank"
+          class="es-League-footer__icon tiktok"
+        ></a>
+      </div>
+      <div class="es-League-footer__copyRight">
+        <small>© 2022 ES LEAGUE All Rights Reserved.</small>
+      </div>
     </div>
   </div>
 </template>
@@ -63,11 +65,15 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-footer {
-  width: 100%;
-  height: 370px;
-  background: url(~/assets/img/esleague_long_white.svg) 0% -70px no-repeat;
-  background-size: 70%;
-  padding: 27px 16px 20px;
+  background-color: #000d1d;
+  color: #fff;
+  &__bg {
+    width: 100%;
+    height: 370px;
+    background: url(~/assets/img/esleague_long_white.svg) 0% -70px no-repeat;
+    background-size: 70%;
+    padding: 27px 16px 20px;
+  }
   &__list {
     list-style: none;
   }

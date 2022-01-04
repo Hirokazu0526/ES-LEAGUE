@@ -1,17 +1,19 @@
 <template>
   <div class="header">
-    <nuxt-link to="/">
-      <h1>
-        <img
-          id="logo"
-          class="header__logo"
-          src="~/assets/img/es_logo.svg"
-          alt="ES LEAGUE LOGO"
-        />
-      </h1>
-    </nuxt-link>
-    <global-nav />
-    <humberger class="header__btn" />
+    <div class="header__container">
+      <nuxt-link to="/">
+        <h1>
+          <img
+            id="logo"
+            class="header__logo"
+            src="~/assets/img/es_logo.svg"
+            alt="ES LEAGUE LOGO"
+          />
+        </h1>
+      </nuxt-link>
+      <global-nav />
+      <humberger class="header__btn" />
+    </div>
   </div>
 </template>
 
@@ -28,13 +30,14 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: 95px;
-  background-color: #000d1d;
-  padding: 12px 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 100;
+  &__container {
+    height: 95px;
+    background-color: #000d1d;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
   h1 {
     margin: 3px 0 0;

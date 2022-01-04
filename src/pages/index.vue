@@ -56,5 +56,6 @@ export default {
 <style scoped lang="scss">
 .es-League {
   color: #fff;
+  padding-top: 95px;
 }
 </style>
