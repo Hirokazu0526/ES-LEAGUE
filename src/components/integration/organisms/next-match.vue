@@ -206,7 +206,7 @@ export default {
       margin-top: 5px;
       display: block;
       font-size: 16px;
-      font-family: 'YuGothic', '游ゴシック';
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic;
     }
   }
   &__contanier {
