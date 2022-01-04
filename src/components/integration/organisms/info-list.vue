@@ -1,7 +1,7 @@
 <template>
   <div class="es-League-info">
     <h2 class="es-League-info__title">
-      INFOMATION<br />
+      NEWS<br />
       <span>お知らせ</span>
     </h2>
     <div class="es-League-info__wrapper">
