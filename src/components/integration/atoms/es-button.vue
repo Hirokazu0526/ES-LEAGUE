@@ -37,7 +37,7 @@ export default {
     width: {
       type: Number,
       required: false,
-      default: 150,
+      default: 160,
     },
   },
 }
@@ -46,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 .button {
   text-align: center;
-  width: 150px;
+  width: 160px;
   &__link {
     display: flex;
     justify-content: center;
@@ -75,7 +75,7 @@ export default {
       background: url(~/assets/img/arrow-right.svg);
     }
     &.left::after {
-      right: 8px;
+      left: 8px;
       background: url(~/assets/img/arrow-left.svg);
     }
     &:hover {
