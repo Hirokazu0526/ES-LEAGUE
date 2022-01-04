@@ -158,21 +158,21 @@ export default {
     homeTeam() {
       // URLパラメータを見てhomeチーム名を取得
       if (this.$route.query.fields === 'coat1') {
-        return this.competition.coat1H
+        return this.competition.coat1H.teamName
       } else if (this.$route.query.fields === 'coat2') {
-        return this.competition.coat2H
+        return this.competition.coat2H.teamName
       } else {
-        return this.competition.coat3H
+        return this.competition.coat3H.teamName
       }
     },
     awayTeam() {
       // URLパラメータを見てawayチーム名を取得
       if (this.$route.query.fields === 'coat1') {
-        return this.competition.coat1A
+        return this.competition.coat1A.teamName
       } else if (this.$route.query.fields === 'coat2') {
-        return this.competition.coat2A
+        return this.competition.coat2A.teamName
       } else {
-        return this.competition.coat3A
+        return this.competition.coat3A.teamName
       }
     },
     homeTeamMember() {

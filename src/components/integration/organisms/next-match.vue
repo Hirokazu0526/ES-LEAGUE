@@ -25,22 +25,22 @@
             <div class="es-League-schedule__teamInfo">
               <div class="es-League-schedule__team">
                 <img
-                  :src="coat1HImage"
+                  :src="isThisWeek.competition.coat1H.image.url"
                   alt=""
                   class="es-League-schedule__teamImage"
                 />
                 <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat1H }}
+                  {{ isThisWeek.competition.coat1H.teamName }}
                 </p>
               </div>
               <div class="es-League-schedule__team">
                 <img
-                  :src="coat1AImage"
+                  :src="isThisWeek.competition.coat1A.image.url"
                   alt=""
                   class="es-League-schedule__teamImage"
                 />
                 <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat1A }}
+                  {{ isThisWeek.competition.coat1A.teamName }}
                 </p>
               </div>
             </div>
@@ -54,22 +54,22 @@
             <div class="es-League-schedule__teamInfo">
               <div class="es-League-schedule__team">
                 <img
-                  :src="coat2HImage"
+                  :src="isThisWeek.competition.coat2H.image.url"
                   alt=""
                   class="es-League-schedule__teamImage"
                 />
                 <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat2H }}
+                  {{ isThisWeek.competition.coat2H.teamName }}
                 </p>
               </div>
               <div class="es-League-schedule__team">
                 <img
-                  :src="coat2AImage"
+                  :src="isThisWeek.competition.coat2A.image.url"
                   alt=""
                   class="es-League-schedule__teamImage"
                 />
                 <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat2A }}
+                  {{ isThisWeek.competition.coat2A.teamName }}
                 </p>
               </div>
             </div>
@@ -83,22 +83,22 @@
             <div class="es-League-schedule__teamInfo">
               <div class="es-League-schedule__team">
                 <img
-                  :src="coat3HImage"
+                  :src="isThisWeek.competition.coat3H.image.url"
                   alt=""
                   class="es-League-schedule__teamImage"
                 />
                 <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat3H }}
+                  {{ isThisWeek.competition.coat3H.teamName }}
                 </p>
               </div>
               <div class="es-League-schedule__team">
                 <img
-                  :src="coat3AImage"
+                  :src="isThisWeek.competition.coat3A.image.url"
                   alt=""
                   class="es-League-schedule__teamImage"
                 />
                 <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat3A }}
+                  {{ isThisWeek.competition.coat3A.teamName }}
                 </p>
               </div>
             </div>
@@ -131,7 +131,6 @@ export default {
       'thirdWeek',
       'fourthWeek',
       'fifthWeek',
-      'getTeamList',
     ]),
     isThisWeek() {
       if (this.firstWeek) {
@@ -146,48 +145,6 @@ export default {
         return this.getCompetitionList[4]
       }
       return ''
-    },
-    coat1HImage() {
-      const teamLists = this.getTeamList
-      const imageList = teamLists.filter((list) => {
-        return list.teamName === this.isThisWeek.competition.coat1H
-      })
-      return imageList[0].image.url
-    },
-    coat1AImage() {
-      const teamLists = this.getTeamList
-      const imageList = teamLists.filter((list) => {
-        return list.teamName === this.isThisWeek.competition.coat1A
-      })
-      return imageList[0].image.url
-    },
-    coat2HImage() {
-      const teamLists = this.getTeamList
-      const imageList = teamLists.filter((list) => {
-        return list.teamName === this.isThisWeek.competition.coat2H
-      })
-      return imageList[0].image.url
-    },
-    coat2AImage() {
-      const teamLists = this.getTeamList
-      const imageList = teamLists.filter((list) => {
-        return list.teamName === this.isThisWeek.competition.coat2A
-      })
-      return imageList[0].image.url
-    },
-    coat3HImage() {
-      const teamLists = this.getTeamList
-      const imageList = teamLists.filter((list) => {
-        return list.teamName === this.isThisWeek.competition.coat3H
-      })
-      return imageList[0].image.url
-    },
-    coat3AImage() {
-      const teamLists = this.getTeamList
-      const imageList = teamLists.filter((list) => {
-        return list.teamName === this.isThisWeek.competition.coat3A
-      })
-      return imageList[0].image.url
     },
   },
 }

@@ -1,94 +1,138 @@
 <template>
   <div class="es-League-schedule-result">
     <h2 v-if="isThisWeek" class="es-League-schedule-result__title">
-      result<br /><span>結果</span>
+      result<br /><span>試合結果</span>
     </h2>
     <div v-if="isThisWeek" class="es-League-schedule-result__contanier">
       <h3 class="es-League-schedule-result__matchDate">
-        {{ isThisWeek.date }}
+        <span class="left">{{ isThisWeek.clause }}</span
+        >{{ isThisWeek.date
+        }}<span class="right">{{ isThisWeek.startTime }}</span>
       </h3>
-      <nuxt-link to="/stadium" class="es-League-schedule-result__stadium">{{
-        isThisWeek.stadium
-      }}</nuxt-link>
+      <p class="es-League-schedule-result__stadium">
+        {{ isThisWeek.stadium }}(<a :href="isThisWeek.access" target="_blank"
+          >会場アクセス<img
+            src="~/assets/img/external-link.svg"
+            alt=""
+            class="es-League-schedule-result__linkImg"
+          /> </a
+        >)
+      </p>
       <div class="es-League-schedule-result__resultList">
         <ul class="es-League-schedule-result__list">
           <li class="es-League-schedule-result__item">
-            <div class="es-League-schedule-result__team">
-              <p class="es-League-schedule-result__temaName">
-                {{ isThisWeek.competition.coat1H }}
-              </p>
-              <p class="es-League-schedule-result__score">
-                {{ isThisWeek.results.coat1.getSet_H }}
-              </p>
+            <div class="es-League-schedule-result__teamInfo">
+              <div class="es-League-schedule-result__team">
+                <img
+                  :src="isThisWeek.competition.coat1H.image.url"
+                  alt=""
+                  class="es-League-schedule-result__teamImage"
+                />
+                <p class="es-League-schedule-result__temaName">
+                  {{ isThisWeek.competition.coat1H.teamName }}
+                </p>
+                <div class="es-League-schedule-result__scoreWrapper">
+                  <span class="es-League-schedule-result__score">{{
+                    isThisWeek.results.coat1.getSet_H
+                  }}</span>
+                </div>
+              </div>
+              <div class="es-League-schedule-result__team">
+                <img
+                  :src="isThisWeek.competition.coat1A.image.url"
+                  alt=""
+                  class="es-League-schedule-result__teamImage"
+                />
+                <p class="es-League-schedule-result__temaName">
+                  {{ isThisWeek.competition.coat1A.teamName }}
+                </p>
+                <div class="es-League-schedule-result__scoreWrapper">
+                  <span class="es-League-schedule-result__score">{{
+                    isThisWeek.results.coat1.getSet_A
+                  }}</span>
+                </div>
+              </div>
             </div>
-            <div class="es-League-schedule-result__decoration">
-              <p class="es-League-schedule-result__versus">VS</p>
-              <nuxt-link
-                :to="`/match/${isThisWeek.id}?fields=coat1`"
-                class="es-League-schedule-result__link"
-                >詳細</nuxt-link
-              >
-            </div>
-            <div class="es-League-schedule-result__team">
-              <p class="es-League-schedule-result__temaName">
-                {{ isThisWeek.competition.coat1A }}
-              </p>
-              <p class="es-League-schedule-result__score">
-                {{ isThisWeek.results.coat1.getSet_A }}
-              </p>
-            </div>
+            <link-arrow
+              :url="`/match/${isThisWeek.id}?fields=coat1`"
+              class="es-League-schedule-result__linkArrow"
+            />
           </li>
           <li class="es-League-schedule-result__item">
-            <div class="es-League-schedule-result__team">
-              <p class="es-League-schedule-result__temaName">
-                {{ isThisWeek.competition.coat2H }}
-              </p>
-              <p class="es-League-schedule-result__score">
-                {{ isThisWeek.results.coat2.getSet_H }}
-              </p>
+            <div class="es-League-schedule-result__teamInfo">
+              <div class="es-League-schedule-result__team">
+                <img
+                  :src="isThisWeek.competition.coat2H.image.url"
+                  alt=""
+                  class="es-League-schedule-result__teamImage"
+                />
+                <p class="es-League-schedule-result__temaName">
+                  {{ isThisWeek.competition.coat2H.teamName }}
+                </p>
+                <div class="es-League-schedule-result__scoreWrapper">
+                  <span class="es-League-schedule-result__score">{{
+                    isThisWeek.results.coat2.getSet_H
+                  }}</span>
+                </div>
+              </div>
+              <div class="es-League-schedule-result__team">
+                <img
+                  :src="isThisWeek.competition.coat2A.image.url"
+                  alt=""
+                  class="es-League-schedule-result__teamImage"
+                />
+                <p class="es-League-schedule-result__temaName">
+                  {{ isThisWeek.competition.coat2A.teamName }}
+                </p>
+                <div class="es-League-schedule-result__scoreWrapper">
+                  <span class="es-League-schedule-result__score">{{
+                    isThisWeek.results.coat2.getSet_A
+                  }}</span>
+                </div>
+              </div>
             </div>
-            <div class="es-League-schedule-result__decoration">
-              <p class="es-League-schedule-result__versus">VS</p>
-              <nuxt-link
-                :to="`/match/${isThisWeek.id}?fields=coat2`"
-                class="es-League-schedule-result__link"
-                >詳細</nuxt-link
-              >
-            </div>
-            <div class="es-League-schedule-result__team">
-              <p class="es-League-schedule-result__temaName">
-                {{ isThisWeek.competition.coat2A }}
-              </p>
-              <p class="es-League-schedule-result__score">
-                {{ isThisWeek.results.coat2.getSet_A }}
-              </p>
-            </div>
+            <link-arrow
+              :url="`/match/${isThisWeek.id}?fields=coat2`"
+              class="es-League-schedule-result__linkArrow"
+            />
           </li>
           <li class="es-League-schedule-result__item">
-            <div class="es-League-schedule-result__team">
-              <p class="es-League-schedule-result__temaName">
-                {{ isThisWeek.competition.coat3H }}
-              </p>
-              <p class="es-League-schedule-result__score">
-                {{ isThisWeek.results.coat3.getSet_H }}
-              </p>
+            <div class="es-League-schedule-result__teamInfo">
+              <div class="es-League-schedule-result__team">
+                <img
+                  :src="isThisWeek.competition.coat3H.image.url"
+                  alt=""
+                  class="es-League-schedule-result__teamImage"
+                />
+                <p class="es-League-schedule-result__temaName">
+                  {{ isThisWeek.competition.coat3H.teamName }}
+                </p>
+                <div class="es-League-schedule-result__scoreWrapper">
+                  <span class="es-League-schedule-result__score">{{
+                    isThisWeek.results.coat3.getSet_H
+                  }}</span>
+                </div>
+              </div>
+              <div class="es-League-schedule-result__team">
+                <img
+                  :src="isThisWeek.competition.coat3A.image.url"
+                  alt=""
+                  class="es-League-schedule-result__teamImage"
+                />
+                <p class="es-League-schedule-result__temaName">
+                  {{ isThisWeek.competition.coat3A.teamName }}
+                </p>
+                <div class="es-League-schedule-result__scoreWrapper">
+                  <span class="es-League-schedule-result__score">{{
+                    isThisWeek.results.coat3.getSet_A
+                  }}</span>
+                </div>
+              </div>
             </div>
-            <div class="es-League-schedule-result__decoration">
-              <p class="es-League-schedule-result__versus">VS</p>
-              <nuxt-link
-                :to="`/match/${isThisWeek.id}?fields=coat3`"
-                class="es-League-schedule-result__link"
-                >詳細</nuxt-link
-              >
-            </div>
-            <div class="es-League-schedule-result__team">
-              <p class="es-League-schedule-result__temaName">
-                {{ isThisWeek.competition.coat3A }}
-              </p>
-              <p class="es-League-schedule-result__score">
-                {{ isThisWeek.results.coat3.getSet_A }}
-              </p>
-            </div>
+            <link-arrow
+              :url="`/match/${isThisWeek.id}?fields=coat3`"
+              class="es-League-schedule-result__linkArrow"
+            />
           </li>
         </ul>
       </div>
@@ -108,38 +152,95 @@
           :key="item.id"
           class="es-League-schedule-result__scheduleList"
         >
-          <h3 class="es-League-schedule-result__matchDate">{{ item.date }}</h3>
-          <nuxt-link to="/stadium" class="es-League-schedule-result__stadium"
-            >{{ item.stadium }} >></nuxt-link
-          >
+          <h3 class="es-League-schedule-result__matchDate">
+            <span class="left">{{ item.clause }}</span
+            >{{ item.date }}<span class="right">{{ item.startTime }}</span>
+          </h3>
+          <p class="es-League-schedule-result__stadium">
+            {{ item.stadium }}(<a :href="item.access" target="_blank"
+              >会場アクセス<img
+                src="~/assets/img/external-link.svg"
+                alt=""
+                class="es-League-schedule-result__linkImg"
+              /> </a
+            >)
+          </p>
           <div class="es-League-schedule-result__matchInfo">
-            <ul>
-              <li class="es-League-schedule-result__matchList">
-                <p class="es-League-schedule-result__temaName">
-                  {{ item.competition.coat1H }}
-                </p>
-                <p class="es-League-schedule-result__versus">VS</p>
-                <p class="es-League-schedule-result__temaName">
-                  {{ item.competition.coat1A }}
-                </p>
+            <ul class="es-League-schedule-result__list">
+              <li class="es-League-schedule-result__item">
+                <div class="es-League-schedule-result__teamInfo">
+                  <div class="es-League-schedule-result__team">
+                    <img
+                      :src="item.competition.coat1H.image.url"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <p class="es-League-schedule-result__temaName">
+                      {{ item.competition.coat1H.teamName }}
+                    </p>
+                  </div>
+                  <div class="es-League-schedule-result__team">
+                    <img
+                      :src="item.competition.coat1A.image.url"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <p class="es-League-schedule-result__temaName">
+                      {{ item.competition.coat1A.teamName }}
+                    </p>
+                  </div>
+                </div>
+                <div></div>
               </li>
-              <li class="es-League-schedule-result__matchList">
-                <p class="es-League-schedule-result__temaName">
-                  {{ item.competition.coat2H }}
-                </p>
-                <p class="es-League-schedule-result__versus">VS</p>
-                <p class="es-League-schedule-result__temaName">
-                  {{ item.competition.coat2A }}
-                </p>
+              <li class="es-League-schedule-result__item">
+                <div class="es-League-schedule-result__teamInfo">
+                  <div class="es-League-schedule-result__team">
+                    <img
+                      :src="item.competition.coat2H.image.url"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <p class="es-League-schedule-result__temaName">
+                      {{ item.competition.coat2H.teamName }}
+                    </p>
+                  </div>
+                  <div class="es-League-schedule-result__team">
+                    <img
+                      :src="item.competition.coat2A.image.url"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <p class="es-League-schedule-result__temaName">
+                      {{ item.competition.coat2A.teamName }}
+                    </p>
+                  </div>
+                </div>
+                <div></div>
               </li>
-              <li class="es-League-schedule-result__matchList">
-                <p class="es-League-schedule-result__temaName">
-                  {{ item.competition.coat3H }}
-                </p>
-                <p class="es-League-schedule-result__versus">VS</p>
-                <p class="es-League-schedule-result__temaName">
-                  {{ item.competition.coat3A }}
-                </p>
+              <li class="es-League-schedule-result__item">
+                <div class="es-League-schedule-result__teamInfo">
+                  <div class="es-League-schedule-result__team">
+                    <img
+                      :src="item.competition.coat3H.image.url"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <p class="es-League-schedule-result__temaName">
+                      {{ item.competition.coat3H.teamName }}
+                    </p>
+                  </div>
+                  <div class="es-League-schedule-result__team">
+                    <img
+                      :src="item.competition.coat3A.image.url"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <p class="es-League-schedule-result__temaName">
+                      {{ item.competition.coat3A.teamName }}
+                    </p>
+                  </div>
+                </div>
+                <div></div>
               </li>
             </ul>
           </div>
@@ -151,8 +252,10 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import linkArrow from '~/components/integration/atoms/link-arrow.vue'
 
 export default {
+  components: { linkArrow },
   data() {
     return {}
   },
@@ -200,74 +303,112 @@ export default {
     & span {
       margin-top: 5px;
       display: block;
-      font-size: 18px;
+      font-size: 16px;
       font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
         sans-serif;
+      font-weight: medium;
     }
   }
-  &__contanier {
-    padding: 10px 16px 30px;
-    color: #000;
-  }
   &__matchDate {
-    font-size: 32px;
+    font-size: 16px;
+    font-weight: medium;
   }
   &__stadium {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: normal;
     text-decoration: none;
     color: #000;
-    cursor: pointer;
-    margin-top: 10px;
+    margin-top: 6px;
+    a {
+      color: #0033cc;
+      position: relative;
+    }
+  }
+  &__linkImg {
+    width: 13px;
+    height: 13px;
+    vertical-align: top;
+    margin: 0 2px;
   }
   &__resultList {
-    margin-top: 30px;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
+    margin-top: 15px;
   }
   &__list {
     list-style: none;
   }
+  &__teamInfo {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 8px;
+  }
+
   &__item {
     display: grid;
-    grid-template-columns: 1fr 110px 1fr;
-    justify-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #000;
+    grid-template-columns: 1fr 20px;
+    padding: 8px 9px 8px 16px;
+    background-color: #eeeeee;
+    margin-bottom: 2px;
+  }
+
+  &__team {
+    display: grid;
+    grid-template-columns: 31px 1fr 28px;
+    align-items: center;
+    column-gap: 5px;
+    margin-right: 16px;
     &:last-child {
-      border-bottom: none;
+      margin-bottom: 0;
     }
+  }
+  &__teamImage {
+    width: 31px;
+    height: 28px;
+    margin-right: 8px;
   }
 
   &__temaName {
-    font-size: 23px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 210px;
+    text-align: left;
   }
-  &__versus {
-    font-size: 23px;
+
+  &__scoreWrapper {
+    background-color: #000000;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-left: 4px solid transparent;
+      border-bottom: 4px solid #eeeeee;
+      content: '';
+    }
   }
 
   &__score {
-    margin-top: 8px;
-    font-size: 23px;
-  }
-  &__link {
-    display: block;
-    width: 90px;
-    font-size: 14px;
+    font-family: 'HNewYork';
     color: #fff;
-    text-decoration: none;
-    padding: 5px 22px;
-    background-color: #000;
-    margin-top: 8px;
+    font-size: 22px;
+  }
+  &__linkArrow {
+    margin: auto 0;
   }
 
   &__scheduleList {
     list-style: none;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   &__matchInfo {
-    margin-top: 20px;
+    margin-top: 14px;
   }
   &__matchList {
     display: grid;
@@ -281,7 +422,7 @@ export default {
   }
 
   &__btn {
-    margin: 30px auto 0;
+    margin: 30px auto 60px;
   }
 }
 </style>
