@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-footer {
-  background-color: #000d1d;
+  background-color: #000000;
   color: #fff;
   &__bg {
     width: 100%;

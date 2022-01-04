@@ -64,6 +64,8 @@ export default {
       display: block;
       font-size: 18px;
       color: #030012;
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+        sans-serif;
     }
   }
   &__list {

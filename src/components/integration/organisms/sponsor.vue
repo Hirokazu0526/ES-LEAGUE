@@ -4,33 +4,75 @@
       SPONSOR<br /><span>スポンサー</span>
     </h3>
     <div class="es-League-sponsor__list">
-      <div class="es-League-sponsor__items gold">
-        <h4 class="es-League-sponsor__logo">SARAYA</h4>
-      </div>
-      <div class="es-League-sponsor__items silver">
-        <h4 class="es-League-sponsor__logo">LibGate</h4>
-        <h4 class="es-League-sponsor__logo">SVOLME</h4>
-        <h4 class="es-League-sponsor__logo">世田谷自然食品</h4>
-        <h4 class="es-League-sponsor__logo">BVD</h4>
-        <h4 class="es-League-sponsor__logo">ANYTIME<br />FITNESS</h4>
-      </div>
-      <div class="es-League-sponsor__items bronze">
-        <h4 class="es-League-sponsor__logo">XYOU</h4>
-        <h4 class="es-League-sponsor__logo">リバティー<br />エステート</h4>
-      </div>
+      <ul>
+        <li
+          v-for="item in logoLists"
+          :key="item.id"
+          class="es-League-sponsor__listItem"
+        >
+          <img
+            :src="item.imgUrl"
+            :alt="item.alt"
+            :class="item.name"
+            class="es-League-sponsor__itemImg"
+          />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      logoLists: [
+        {
+          id: 1,
+          name: 'saraya',
+          imgUrl: require('~/assets/img/saraya.svg'),
+          alt: 'SARAYA',
+        },
+        {
+          id: 2,
+          name: 'libgate',
+          imgUrl: require('~/assets/img/libgate.svg'),
+          alt: 'LibGate',
+        },
+        {
+          id: 3,
+          name: 'bvd',
+          imgUrl: require('~/assets/img/bvd.svg'),
+          alt: 'BVD',
+        },
+        {
+          id: 4,
+          name: 'svolme',
+          imgUrl: require('~/assets/img/svolme.svg'),
+          alt: 'SVOLME',
+        },
+        {
+          id: 5,
+          name: 'xyou',
+          imgUrl: require('~/assets/img/xyou.svg'),
+          alt: 'XYOU',
+        },
+        {
+          id: 6,
+          name: 'liberty',
+          imgUrl: require('~/assets/img/liberty.svg'),
+          alt: 'リバティーエステート',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
 .es-League-sponsor {
-  background-color: #fff;
-  margin: 0 calc(50% - 50vw);
-  width: 100vw;
+  padding-top: 20px;
+  margin: 0 16px 80px;
   &__title {
     font-weight: bold;
     text-align: center;
@@ -42,29 +84,29 @@ export default {}
       margin-top: 5px;
       display: block;
       font-size: 18px;
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+        sans-serif;
     }
   }
-  &__items {
-    display: grid;
-    gap: 10px;
-    margin-bottom: 10px;
-    &.gold {
-      grid-template-columns: 1fr;
-    }
-    &.silver {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto auto;
-    }
-    &.bronze {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto auto;
-      margin-bottom: 0px;
+
+  &__list {
+    margin-top: 24px;
+  }
+
+  &__listItem {
+    margin-bottom: 16px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999999;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
-  &__logo {
-    text-align: center;
-    color: #666666;
-    padding: 5px 10px;
+
+  &__itemImg {
+    display: block;
   }
 }
 </style>

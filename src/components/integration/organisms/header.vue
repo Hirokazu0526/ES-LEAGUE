@@ -32,7 +32,7 @@ export default {
 .header {
   &__container {
     height: 95px;
-    background-color: #000d1d;
+    background-color: #000000;
     padding: 12px 0;
     display: flex;
     justify-content: space-around;
