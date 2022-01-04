@@ -22,6 +22,7 @@ export default {}
 <style lang="scss" scoped>
 .es-League-pv {
   padding: 0px 16px;
+  margin-bottom: 34px;
   &__title {
     text-align: center;
     font-size: 32px;
