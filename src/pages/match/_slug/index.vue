@@ -1,7 +1,7 @@
 <template>
   <div class="es-League-match-result">
     <h2 class="es-League-match-result__title">
-      MATCH detail<br /><span>試合結果</span>
+      MATCH DETAIL<br /><span>試合結果</span>
     </h2>
 
     <div class="es-League-match-result__container">
@@ -229,7 +229,7 @@ export default {
   color: #000;
 
   &__title {
-    margin: 20px 0;
+    margin: 24px 0;
     text-align: center;
     font-size: 32px;
     color: #000000;
@@ -406,10 +406,8 @@ export default {
   &__btnWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-items: center;
     column-gap: 16px;
-  }
-
-  &__btn {
   }
 }
 </style>
