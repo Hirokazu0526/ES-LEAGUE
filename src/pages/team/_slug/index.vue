@@ -134,29 +134,31 @@ export default {
       font-weight: bold;
       color: #fff;
       padding: 3px 0px;
+      width: 200px;
+      margin: 10px auto;
       &.green {
-        color: green;
+        background-color: green;
       }
       &.red {
-        color: #8b0000;
+        background-color: #8b0000;
       }
       &.blue {
-        color: blue;
+        background-color: blue;
       }
       &.black {
-        color: black;
+        background-color: black;
       }
       &.yellow {
-        color: yellow;
+        background-color: yellow;
       }
       &.orange {
-        color: orange;
+        background-color: orange;
       }
       &.pink {
-        color: pink;
+        background-color: pink;
       }
       &.skyblue {
-        color: skyblue;
+        background-color: skyblue;
       }
     }
     &.teamIntroduction {
