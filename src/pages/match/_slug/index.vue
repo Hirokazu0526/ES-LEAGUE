@@ -178,11 +178,11 @@ export default {
     awayTeam() {
       // URLパラメータを見てawayチーム名を取得
       if (this.$route.query.fields === 'coat1') {
-        return this.competition.coat1A.teamName
+        return this.competition.coat1A.teamName.split(' ').join('\n')
       } else if (this.$route.query.fields === 'coat2') {
-        return this.competition.coat2A.teamName
+        return this.competition.coat2A.teamName.split(' ').join('\n')
       } else {
-        return this.competition.coat3A.teamName
+        return this.competition.coat3A.teamName.split(' ').join('\n')
       }
     },
     homeTeamMember() {
@@ -197,7 +197,7 @@ export default {
       // プレーヤーリストを参照してawayチームのメンバーを抽出
       const members = this.getPlayerList
       const memberInfo = members.filter((member) => {
-        return member.team.teamName === this.awayTeam
+        return member.team.teamName === this.awayTeam.split('\n').join(' ')
       })
       return memberInfo
     },
