@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-rank">
-    <h2 class="es-League-rank__title">RANKING</h2>
+    <h2 class="es-League-rank__title">RANKING<br /><span>順位表</span></h2>
     <div class="es-League-rank__contanier">
       <div class="es-League-rank__menInfo">
         <h3 class="es-League-rank__gender">MEN</h3>
@@ -17,7 +17,7 @@
             <tr v-for="item in getMenRankingData" :key="item.index" class="men">
               <th>{{ item.ranking }}</th>
 
-              <td>
+              <td class="es-League-rank__width">
                 <nuxt-link :to="`/team/${item.teamInfo.id}`">{{
                   item.team
                 }}</nuxt-link>
@@ -48,7 +48,7 @@
             >
               <th>{{ item.ranking }}</th>
 
-              <td>
+              <td class="es-League-rank__width">
                 <nuxt-link :to="`/team/${item.teamInfo.id}`"
                   >{{ item.team }}
                 </nuxt-link>
@@ -60,9 +60,12 @@
           </tbody>
         </table>
       </div>
-      <es-button url="/schedule/result" class="es-League-rank__btn"
-        >日程・結果</es-button
-      >
+      <div class="es-League-rank__btnWrapper">
+        <back-button />
+        <es-button url="/schedule/result" class="es-League-rank__btn"
+          >日程・結果</es-button
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -85,28 +88,25 @@ export default {
   margin: 0px 16px;
   padding: 95px 0px 40px;
   text-align: center;
-  color: #fff;
+  color: #000;
 
   &__title {
-    margin: 21px 0 45px;
+    margin: 20px 0;
     text-align: center;
     font-size: 32px;
-    position: relative;
-    &:after {
-      content: '';
-      width: 120px;
-      height: 2px;
-      background-color: #fff;
+    color: #000000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
       display: block;
-      position: absolute;
-      bottom: -10px;
-      left: 0px;
-      right: 0px;
-      margin: 0 auto;
+      font-size: 16px;
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+        sans-serif;
+      font-weight: medium;
     }
   }
   &__contanier {
-    padding: 20px 16px 30px;
+    padding: 0px 0 30px;
     color: #000;
     background: linear-gradient(-45deg, transparent 27px, #fff 20px);
     background-position: bottom right;
@@ -121,7 +121,7 @@ export default {
   }
   &__list {
     text-align: center;
-    margin: 10px auto 20px;
+    margin: 10px auto 35px;
     width: 100%;
     font-size: 16px;
     border-collapse: collapse;
@@ -129,8 +129,15 @@ export default {
     thead {
       background: #001229;
       color: #fff;
+      font-size: 14px;
       &.women {
         background: #e0435e;
+      }
+      th {
+        border-right: 1px solid #fff;
+        &:last-child {
+          border-right: none;
+        }
       }
     }
     tbody {
@@ -139,7 +146,7 @@ export default {
         background: #fff;
         &.men {
           &:nth-child(2n) {
-            background: #9aa3af;
+            background: #e4e4e4;
           }
           &:last-child {
             border-bottom: 2px solid #001229;
@@ -147,7 +154,7 @@ export default {
         }
         &.women {
           &:nth-child(2n) {
-            background: #ffa5b5;
+            background: #ffe1e7;
           }
           &:last-child {
             border-bottom: 2px solid #e0435e;
@@ -156,22 +163,30 @@ export default {
         a {
           color: #000000;
           text-decoration: none;
+          display: block;
         }
       }
       th {
-        font-size: 18px;
+        font-size: 14px;
       }
       td {
         padding: 5px;
-        font-size: 18px;
+        font-size: 12px;
       }
     }
     th {
       padding: 8px 10px;
     }
   }
-  &__btn {
-    margin: 15px auto 0;
+  &__width {
+    min-width: 135px;
+    text-align: left;
+  }
+  &__btnWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    justify-items: center;
   }
 }
 </style>
