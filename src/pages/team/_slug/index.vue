@@ -1,19 +1,22 @@
 <template>
   <div class="es-League-team">
-    <h2 class="es-League-team__title">TEAM</h2>
+    <h2 class="es-League-team__title">
+      TEAM DETAIL<br /><span>チーム紹介</span>
+    </h2>
 
     <div class="es-League-team__info">
       <img :src="image.url" :alt="teamName" class="es-League-team__uniform" />
       <p class="es-League-team__teamName">{{ teamName }}</p>
-      <p class="es-League-team__text slogan">スローガン：{{ slogan }}</p>
-      <p class="es-League-team__text teamcolor">
-        チームカラー：{{ teamcolor }}
+      <h3 class="es-League-team__sectionTitle">SLOGAN</h3>
+      <p class="es-League-team__text slogan">{{ slogan }}</p>
+      <h3 class="es-League-team__sectionTitle">TEAM COLOR</h3>
+      <p class="es-League-team__text teamcolor" :class="`${teamcolor}`">
+        {{ teamcolor }}
       </p>
-      <p class="es-League-team__text teamIntroduction">
-        チーム紹介：<br />{{ text }}
-      </p>
+      <h3 class="es-League-team__sectionTitle">INTRODUCTION</h3>
+      <p class="es-League-team__text teamIntroduction">{{ text }}</p>
       <div class="es-League-team__memberInfo">
-        <h3 class="es-League-team__infoTitle">MEMBER</h3>
+        <h3 class="es-League-team__sectionTitle">MEMBER</h3>
         <ul class="es-League-team__memberList">
           <li
             v-for="member in temaMember"
@@ -33,7 +36,7 @@
             </nuxt-link>
           </li>
         </ul>
-        <h3 class="es-League-team__infoTitle">SPONSOR</h3>
+        <h3 class="es-League-team__sectionTitle">SPONSOR</h3>
         <div
           class="es-League-team__sponsorArea"
           :class="{ bvd: sponsor === 'BVD' }"
@@ -47,13 +50,10 @@
       </div>
     </div>
 
-    <button @click="$router.go(-1)">戻る</button>
-    <es-button url="/team" :border-radius="8" class="es-League-team__btn team"
-      >チーム一覧へ</es-button
-    >
-    <es-button url="/profile" color="navy" class="es-League-team__btn player"
-      >選手一覧へ</es-button
-    >
+    <div class="es-League-team__btnWrapper">
+      <back-button />
+      <es-button url="/team" class="es-League-team__btn">チーム一覧</es-button>
+    </div>
   </div>
 </template>
 
@@ -96,31 +96,30 @@ export default {
   color: #000;
 
   &__title {
-    margin: 21px 0 45px;
+    margin: 24px 0;
     text-align: center;
     font-size: 32px;
-    position: relative;
-    &:after {
-      content: '';
-      width: 159px;
-      height: 2px;
-      background-color: #fff;
+    color: #000000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
       display: block;
-      position: absolute;
-      bottom: -10px;
-      left: 0px;
-      right: 0px;
-      margin: 0 auto;
+      font-size: 18px;
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+        sans-serif;
     }
   }
+
   &__uniform {
     margin: 0 auto;
     display: block;
+    width: 147px;
   }
   &__teamName {
-    font-size: 45px;
+    font-size: 24px;
+    font-weight: bold;
     text-align: center;
-    margin: 10px 0;
+    margin: 10px 0 40px;
   }
   &__info {
     padding: 0px 16px;
@@ -130,13 +129,49 @@ export default {
     font-size: 18px;
     margin: 10px 0;
     line-height: 1.5;
+    text-align: center;
+    &.teamcolor {
+      font-weight: bold;
+      color: #fff;
+      padding: 3px 0px;
+      &.green {
+        color: green;
+      }
+      &.red {
+        color: #8b0000;
+      }
+      &.blue {
+        color: blue;
+      }
+      &.black {
+        color: black;
+      }
+      &.yellow {
+        color: yellow;
+      }
+      &.orange {
+        color: orange;
+      }
+      &.pink {
+        color: pink;
+      }
+      &.skyblue {
+        color: skyblue;
+      }
+    }
+    &.teamIntroduction {
+      text-align: left;
+    }
   }
   &__memberInfo {
-    margin: 30px 0 50px;
+    margin: 0px 0 50px;
   }
-  &__infoTitle {
-    font-size: 30px;
+  &__sectionTitle {
+    font-size: 22px;
+    padding: 10px 0;
     text-align: center;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
   }
   &__memberList {
     list-style: none;
@@ -161,6 +196,7 @@ export default {
   &__memberName {
     margin-top: 10px;
     text-align: center;
+    font-weight: bold;
   }
   &__sponsorArea {
     width: 310px;
@@ -173,8 +209,11 @@ export default {
       height: 110px;
     }
   }
-  &__btn {
-    margin: 15px auto 0;
+  &__btnWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    justify-items: center;
   }
 }
 </style>
