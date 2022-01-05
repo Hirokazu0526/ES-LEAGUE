@@ -295,7 +295,7 @@ export default {
   color: #000;
 
   &__title {
-    margin: 20px 0;
+    margin: 24px 0;
     text-align: center;
     font-size: 32px;
     color: #000000;
