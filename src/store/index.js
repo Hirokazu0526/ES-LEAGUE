@@ -38,6 +38,9 @@ export const state = () => ({
         const itemDate = moment(item.birth).format('YYYY年MM月DD日')
         item.date = itemDate
       }
+      state.playerLists.sort(function(a, b) {
+        return (a.number < b.number) ? -1 : 1;  // オブジェクトの昇順ソート
+      });
     },
     setTeamLists(state, teamLists) {
       state.teamLists = teamLists.reverse()
