@@ -136,6 +136,7 @@ export default {
     position: relative;
     margin: 24px 0 0;
     height: 365px;
+    overflow: hidden;
   }
 
   &__image {
@@ -180,7 +181,7 @@ export default {
       color: black;
     }
     &.yellow {
-      color: yellow;
+      color: rgb(235, 235, 36);
     }
     &.orange {
       color: orange;
@@ -214,7 +215,7 @@ export default {
     column-gap: 21px;
     align-items: center;
     justify-content: center;
-    padding: 10px 16px;
+    padding: 10px 10px 10px 16px;
     font-size: 24px;
     font-weight: bold;
     border-bottom: 1px dashed #000;

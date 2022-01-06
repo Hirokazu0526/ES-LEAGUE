@@ -356,17 +356,18 @@ export default {
 
   &__teamMember {
     display: grid;
-    grid-template-columns: 1fr 50px 1fr;
-    align-items: center;
+    grid-template-columns: 1fr 16px 1fr;
+    align-items: start;
     justify-content: center;
     position: relative;
     &::after {
       position: absolute;
       content: '';
       width: 1px;
-      height: 70%;
+      height: 85%;
       left: 50%;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%);
       background: #000;
     }
   }
