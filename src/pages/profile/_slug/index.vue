@@ -169,28 +169,28 @@ export default {
     font-size: 80px;
     font-family: 'HNewYork';
     &.green {
-      color: green;
+      color: #00a39c;
     }
     &.red {
-      color: #8b0000;
+      color: #7a0100;
     }
     &.blue {
-      color: blue;
+      color: #16409c;
     }
     &.black {
-      color: black;
+      color: #241816;
     }
     &.yellow {
-      color: rgb(235, 235, 36);
+      color: #ebeb24;
     }
     &.orange {
-      color: orange;
+      color: #e77427;
     }
     &.pink {
-      color: pink;
+      color: #dc3773;
     }
     &.skyblue {
-      color: skyblue;
+      color: #a0c8d8;
     }
   }
   &__position {

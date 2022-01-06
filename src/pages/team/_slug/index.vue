@@ -137,28 +137,28 @@ export default {
       width: 200px;
       margin: 10px auto;
       &.green {
-        background-color: green;
+        background-color: #00a39c;
       }
       &.red {
-        background-color: #8b0000;
+        background-color: #7a0100;
       }
       &.blue {
-        background-color: blue;
+        background-color: #16409c;
       }
       &.black {
-        background-color: black;
+        background-color: #241816;
       }
       &.yellow {
-        background-color: yellow;
+        background-color: #ebeb24;
       }
       &.orange {
-        background-color: orange;
+        background-color: #e77427;
       }
       &.pink {
-        background-color: pink;
+        background-color: #dc3773;
       }
       &.skyblue {
-        background-color: skyblue;
+        background-color: #a0c8d8;
       }
     }
     &.teamIntroduction {
