@@ -28,8 +28,8 @@ export default {
     ],
     link: [
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/png', href: '/android-chrome-192x192.png' },
-      { rel: 'apple-touch-icon', type: 'image/png', href: '/apple-touch-icon-180x180.png' },
+      { rel: 'icon', type: 'image/png', href: '/android-touch-icon.png' },
+      { rel: 'apple-touch-icon', type: 'image/png', href: '/apple-touch-icon.png' },
     ]
   },
   router: {
