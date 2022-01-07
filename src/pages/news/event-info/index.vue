@@ -1,34 +1,34 @@
 <template>
-  <section class="es-League-newsReport">
-    <h2 class="es-League-newsReport__title">
-      Match Report<br />
-      <span>試合レポート</span>
+  <section class="es-League-newsEvent">
+    <h2 class="es-League-newsEvent__title">
+      NEWS<br />
+      <span>お知らせ</span>
     </h2>
-    <div class="es-League-newsReport__contents">
+    <div class="es-League-newsEvent__contents">
       <news :news-data="reportCategory" />
     </div>
-    <div class="es-League-newsReport__categoryLists">
-      <p class="es-League-newsReport__categoryTitle">カテゴリ</p>
-      <div class="es-League-newsReport__categoryWrapper">
+    <div class="es-League-newsEvent__categoryLists">
+      <p class="es-League-newsEvent__categoryTitle">カテゴリ</p>
+      <div class="es-League-newsEvent__categoryWrapper">
         <es-button
           v-if="infoLinkBtn.length"
           url="/news/info"
           color="gray"
           arrow="right"
-          class="es-League-newsReport__categoryBtn"
+          class="es-League-newsEvent__categoryBtn"
           >お知らせ</es-button
         >
         <es-button
-          v-if="eventLinkBtn.length"
-          url="/news/event-info"
+          v-if="reportLinkBtn.length"
+          url="/news/report"
           color="gray"
           arrow="right"
-          class="es-League-newsReport__categoryBtn"
-          >イベント</es-button
+          class="es-League-newsEvent__categoryBtn"
+          >試合レポート</es-button
         >
       </div>
     </div>
-    <es-button url="/news" arrow="right" class="es-League-newsReport__btn"
+    <es-button url="/news" arrow="right" class="es-League-newsEvent__btn"
       >ニュース一覧</es-button
     >
   </section>
@@ -43,10 +43,10 @@ export default {
   computed: {
     ...mapGetters(['getNewsList']),
     reportCategory() {
-      // レポートのリストを抽出
+      // プレーヤーリストを参照してhomeチームのメンバーを抽出
       const lists = this.getNewsList
       const categoryList = lists.filter((list) => {
-        return list.category[0] === '試合レポート'
+        return list.category[0] === 'イベント'
       })
       return categoryList
     },
@@ -58,11 +58,11 @@ export default {
       })
       return categoryList
     },
-    eventLinkBtn() {
+    reportLinkBtn() {
       // レポートのリストを抽出
       const lists = this.getNewsList
       const categoryList = lists.filter((list) => {
-        return list.category[0] === 'イベント'
+        return list.category[0] === '試合レポート'
       })
       return categoryList
     },
@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.es-League-newsReport {
+.es-League-newsEvent {
   padding: 95px 0px 40px;
   &__title {
     margin: 20px 0;

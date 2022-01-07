@@ -1,38 +1,68 @@
 <template>
-  <section class="es-League-news">
-    <h2 class="es-League-news__title">
-      NEWS<br />
+  <section class="es-League-newsInfomation">
+    <h2 class="es-League-newsInfomation__title">
+      INFOMATION<br />
       <span>お知らせ</span>
     </h2>
-    <ul class="es-League-news__list">
-      <li
-        v-for="item in reportCategory"
-        :key="item.id"
-        class="es-League-news__item"
-      >
-        <nuxt-link :to="`/news/report/${item.id}`">
-          <span class="es-League-news__itemDate">{{ item.date }}</span>
-          <p class="es-League-news__itemTitle">{{ item.newsTitle }}</p>
-        </nuxt-link>
-      </li>
-    </ul>
-    <es-button url="/" :border-radius="8" class="es-League-news__btn team"
-      >TOPページへ</es-button
+    <div class="es-League-newsInfomation__contents">
+      <news :news-data="reportCategory" />
+    </div>
+    <div class="es-League-newsInfomation__categoryLists">
+      <p class="es-League-newsInfomation__categoryTitle">カテゴリ</p>
+      <div class="es-League-newsInfomation__categoryWrapper">
+        <es-button
+          v-if="reportLinkBtn.length"
+          url="/news/report"
+          color="gray"
+          arrow="right"
+          class="es-League-newsInfomation__categoryBtn"
+          >試合レポート</es-button
+        >
+        <es-button
+          v-if="eventLinkBtn.length"
+          url="/news/event-info"
+          color="gray"
+          arrow="right"
+          class="es-League-newsInfomation__categoryBtn"
+          >イベント</es-button
+        >
+      </div>
+    </div>
+    <es-button url="/news" arrow="right" class="es-League-newsInfomation__btn"
+      >ニュース一覧</es-button
     >
   </section>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import news from '~/components/integration/organisms/news.vue'
 
 export default {
+  components: { news },
   computed: {
     ...mapGetters(['getNewsList']),
     reportCategory() {
-      // プレーヤーリストを参照してhomeチームのメンバーを抽出
+      // プレーヤーリストを参照してお知らせを抽出
       const lists = this.getNewsList
       const categoryList = lists.filter((list) => {
         return list.category[0] === 'お知らせ'
+      })
+      return categoryList
+    },
+    reportLinkBtn() {
+      // レポートのリストを抽出
+      const lists = this.getNewsList
+      const categoryList = lists.filter((list) => {
+        return list.category[0] === '試合レポート'
+      })
+      return categoryList
+    },
+    eventLinkBtn() {
+      // レポートのリストを抽出
+      const lists = this.getNewsList
+      const categoryList = lists.filter((list) => {
+        return list.category[0] === 'イベント'
       })
       return categoryList
     },
@@ -41,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.es-League-news {
+.es-League-newsInfomation {
   padding: 95px 0px 40px;
   &__title {
     margin: 20px 0;
@@ -58,29 +88,33 @@ export default {
         sans-serif;
     }
   }
-  &__list {
+  &__contents {
     margin: 0 16px;
   }
-  &__item {
-    list-style: none;
-    padding: 8px 0 8px 16px;
-    background-color: #bababa;
-    &:nth-child(2n) {
-      background-color: #fff;
-    }
-    a {
-      text-decoration: none;
-      color: #344152;
-    }
-  }
-  &__itemDate {
+  &__category {
+    background-color: #fff;
+    color: #a37b30;
+    padding: 3px 8px;
+    border: 1px solid #a37b30;
     font-size: 12px;
-    font-weight: bold;
+    margin-left: 5px;
   }
-  &__itemTitle {
-    font-size: 15px;
+  &__categoryLists {
+    margin: 50px 16px;
+  }
+  &__categoryTitle {
+    font-size: 16px;
     font-weight: bold;
-    margin-top: 5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 7px;
+  }
+  &__categoryWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
   }
   &__btn {
     margin: 40px auto 0;
