@@ -12,17 +12,14 @@
         </h1>
       </nuxt-link>
       <global-nav />
-      <humberger class="header__btn" />
     </div>
   </div>
 </template>
 
 <script>
-import humberger from '~/components/integration/atoms/humberger.vue'
 import globalNav from '~/components/integration/organisms/global-nav.vue'
 export default {
   components: {
-    humberger,
     globalNav,
   },
 }
