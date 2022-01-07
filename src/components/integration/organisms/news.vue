@@ -1,7 +1,7 @@
 <template>
   <section class="es-League-news">
     <ul class="es-League-news__list">
-      <li v-for="item in newsLists" :key="item.id" class="es-League-news__item">
+      <li v-for="item in newsData" :key="item.id" class="es-League-news__item">
         <nuxt-link :to="`/news/${item.categoryId[0]}/${item.id}`">
           <div class="es-League-news__itemWrapper">
             <img
@@ -24,27 +24,30 @@
         </nuxt-link>
       </li>
     </ul>
-    <es-button url="/news" arrow="right" class="es-League-news__btn"
-      >お知らせ一覧</es-button
-    >
   </section>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 import linkArrow from '~/components/integration/atoms/link-arrow.vue'
 
 export default {
   components: { linkArrow },
+  props: {
+    newsData: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {}
   },
-  computed: {
-    ...mapGetters(['getNewsList']),
-    newsLists() {
-      return this.getNewsList.slice(0, 5)
-    },
-  },
+  // computed: {
+  //   ...mapGetters(['getNewsList']),
+  //   newsLists() {
+  //     return this.getNewsList.slice(0, 5)
+  //   },
+  // },
 }
 </script>
 
@@ -93,9 +96,6 @@ export default {
   }
   &__linkArrow {
     margin: auto 0;
-  }
-  &__btn {
-    margin: 16px auto 0;
   }
 }
 </style>
