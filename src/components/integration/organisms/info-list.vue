@@ -2,23 +2,33 @@
   <div class="es-League-info">
     <h2 class="es-League-info__title">
       NEWS<br />
-      <span>お知らせ</span>
+      <span>ニュース</span>
     </h2>
     <div class="es-League-info__wrapper">
       <div class="es-League-info__contents">
-        <news />
+        <news :news-data="newsLists" />
       </div>
+      <es-button url="/news" arrow="right" class="es-League-info__btn"
+        >ニュース一覧</es-button
+      >
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import news from '~/components/integration/organisms/news.vue'
 
 export default {
   components: { news },
   data() {
     return {}
+  },
+  computed: {
+    ...mapGetters(['getNewsList']),
+    newsLists() {
+      return this.getNewsList.slice(0, 5)
+    },
   },
 }
 </script>
@@ -43,6 +53,9 @@ export default {
   &__wrapper {
     margin-top: 24px;
     min-height: 386px;
+  }
+  &__btn {
+    margin: 16px auto 0;
   }
 }
 </style>
