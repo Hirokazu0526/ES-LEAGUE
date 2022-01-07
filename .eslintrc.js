@@ -16,5 +16,9 @@ module.exports = {
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
+  rules: {
+    rules: {
+      'vue/no-v-html': 'off'
+    }
+  }
 }
