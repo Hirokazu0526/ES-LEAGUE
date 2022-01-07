@@ -1,7 +1,7 @@
 <template>
   <div class="es-League-profile">
     <h2 class="es-League-profile__title">
-      PLAYER DETAIL <br /><span>選手詳細</span>
+      PLAYER DETAIL<br /><span>選手詳細</span>
     </h2>
 
     <div class="es-League-profile__visualWrapper">
