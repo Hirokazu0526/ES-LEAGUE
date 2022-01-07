@@ -29,7 +29,9 @@
       </button>
       <button
         class="es-League-confirmation__submitButton right"
+        :class="{ isProcessing: processing }"
         type="submit"
+        :disabled="isProcessing()"
         @click.prevent="formSubmit"
       >
         送信
@@ -42,6 +44,11 @@
 import { mapState } from 'vuex'
 
 export default {
+  data() {
+    return {
+      processing: false,
+    }
+  },
   computed: {
     ...mapState([
       'userName',
@@ -53,6 +60,7 @@ export default {
   },
   methods: {
     async formSubmit() {
+      this.startProcessing()
       const apiUrl = process.env.API_URL
       const apiKey = process.env.API_KEY
       const inputData = {
@@ -71,11 +79,21 @@ export default {
           },
         })
         .then(() => {
+          this.endProcessing()
           this.inputData = {}
           this.$store.commit('setUserDataClear')
           this.$router.push('/contact/complete')
         })
         .catch(() => {})
+    },
+    startProcessing() {
+      this.processing = true
+    },
+    endProcessing() {
+      this.processing = false
+    },
+    isProcessing() {
+      return this.processing
     },
     back() {
       history.back()
@@ -152,6 +170,9 @@ export default {
     background-color: #a37b30;
     border-radius: 2px;
     position: relative;
+    &.isProcessing {
+      background-color: #857a67;
+    }
     &::after {
       position: absolute;
       content: '';
