@@ -75,7 +75,7 @@ export const state = () => ({
         // 前の配列を格納
         const beforeArry = arry[index - 1]
 
-        // 前の配列がundefinedでばい場合に勝ち点を比べる
+        // 前の配列がundefinedでない場合に勝ち点を比べる
         if (beforeArry !== undefined) {
           if (item.winningPoint === beforeArry.winningPoint) {
             // 同じであればindexの値が順位
