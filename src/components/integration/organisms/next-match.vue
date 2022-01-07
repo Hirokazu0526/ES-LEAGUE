@@ -21,92 +21,98 @@
 
       <div class="es-League-schedule__resultList">
         <ul class="es-League-schedule__list">
-          <li class="es-League-schedule__item">
-            <div class="es-League-schedule__teamInfo">
-              <div class="es-League-schedule__team">
-                <img
-                  :src="isThisWeek.competition.coat1H.image.url"
-                  alt=""
-                  class="es-League-schedule__teamImage"
-                />
-                <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat1H.teamName }}
-                </p>
+          <li>
+            <nuxt-link
+              :to="`/match/${isThisWeek.id}?fields=coat1`"
+              class="es-League-schedule__item"
+            >
+              <div class="es-League-schedule__teamInfo">
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.coat1H.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.coat1H.teamName }}
+                  </p>
+                </div>
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.coat1A.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.coat1A.teamName }}
+                  </p>
+                </div>
               </div>
-              <div class="es-League-schedule__team">
-                <img
-                  :src="isThisWeek.competition.coat1A.image.url"
-                  alt=""
-                  class="es-League-schedule__teamImage"
-                />
-                <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat1A.teamName }}
-                </p>
-              </div>
-            </div>
-            <div></div>
-            <link-arrow
-              :url="`/match/${isThisWeek.id}?fields=coat1`"
-              class="es-League-schedule__linkArrow"
-            />
+              <div></div>
+              <link-arrow class="es-League-schedule__linkArrow" />
+            </nuxt-link>
           </li>
-          <li class="es-League-schedule__item">
-            <div class="es-League-schedule__teamInfo">
-              <div class="es-League-schedule__team">
-                <img
-                  :src="isThisWeek.competition.coat2H.image.url"
-                  alt=""
-                  class="es-League-schedule__teamImage"
-                />
-                <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat2H.teamName }}
-                </p>
+          <li>
+            <nuxt-link
+              :to="`/match/${isThisWeek.id}?fields=coat2`"
+              class="es-League-schedule__item"
+            >
+              <div class="es-League-schedule__teamInfo">
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.coat2H.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.coat2H.teamName }}
+                  </p>
+                </div>
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.coat2A.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.coat2A.teamName }}
+                  </p>
+                </div>
               </div>
-              <div class="es-League-schedule__team">
-                <img
-                  :src="isThisWeek.competition.coat2A.image.url"
-                  alt=""
-                  class="es-League-schedule__teamImage"
-                />
-                <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat2A.teamName }}
-                </p>
-              </div>
-            </div>
-            <div></div>
-            <link-arrow
-              :url="`/match/${isThisWeek.id}?fields=coat2`"
-              class="es-League-schedule__linkArrow"
-            />
+              <div></div>
+              <link-arrow class="es-League-schedule__linkArrow" />
+            </nuxt-link>
           </li>
-          <li class="es-League-schedule__item">
-            <div class="es-League-schedule__teamInfo">
-              <div class="es-League-schedule__team">
-                <img
-                  :src="isThisWeek.competition.coat3H.image.url"
-                  alt=""
-                  class="es-League-schedule__teamImage"
-                />
-                <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat3H.teamName }}
-                </p>
+          <li>
+            <nuxt-link
+              :to="`/match/${isThisWeek.id}?fields=coat3`"
+              class="es-League-schedule__item"
+            >
+              <div class="es-League-schedule__teamInfo">
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.coat3H.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.coat3H.teamName }}
+                  </p>
+                </div>
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.coat3A.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.coat3A.teamName }}
+                  </p>
+                </div>
               </div>
-              <div class="es-League-schedule__team">
-                <img
-                  :src="isThisWeek.competition.coat3A.image.url"
-                  alt=""
-                  class="es-League-schedule__teamImage"
-                />
-                <p class="es-League-schedule__temaName">
-                  {{ isThisWeek.competition.coat3A.teamName }}
-                </p>
-              </div>
-            </div>
-            <div></div>
-            <link-arrow
-              :url="`/match/${isThisWeek.id}?fields=coat3`"
-              class="es-League-schedule__linkArrow"
-            />
+              <div></div>
+              <link-arrow class="es-League-schedule__linkArrow" />
+            </nuxt-link>
           </li>
         </ul>
       </div>
@@ -212,6 +218,8 @@ export default {
     padding: 8px 9px 8px 16px;
     background-color: #eeeeee;
     margin-bottom: 2px;
+    text-decoration: none;
+    color: #000;
   }
   &__teamInfo {
     display: grid;
