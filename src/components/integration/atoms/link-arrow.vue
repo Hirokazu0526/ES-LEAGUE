@@ -1,24 +1,9 @@
 <template>
-  <div class="link-arrow">
-    <nuxt-link :to="url" :class="color"> </nuxt-link>
-  </div>
+  <div class="link-arrow"></div>
 </template>
 
 <script>
-export default {
-  props: {
-    url: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    color: {
-      type: String,
-      required: false,
-      default: '',
-    },
-  },
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
