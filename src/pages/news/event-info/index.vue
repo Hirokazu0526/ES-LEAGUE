@@ -1,8 +1,8 @@
 <template>
   <section class="es-League-newsEvent">
     <h2 class="es-League-newsEvent__title">
-      NEWS<br />
-      <span>お知らせ</span>
+      EVENT<br />
+      <span>イベント</span>
     </h2>
     <div class="es-League-newsEvent__contents">
       <news :news-data="reportCategory" />
