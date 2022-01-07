@@ -1,6 +1,8 @@
 <template>
   <div class="es-League-complete">
-    <h2 class="es-League-complete__title">お問い合わせ</h2>
+    <h2 class="es-League-complete__title">
+      CONTACT<br /><span>お問い合わせ</span>
+    </h2>
     <div class="es-League-complete__container">
       <div class="es-League-complete__contents">
         <h3 class="es-League-complete__message">送信完了</h3>
@@ -14,7 +16,9 @@
         </p>
       </div>
 
-      <es-button url="/" class="es-League-complete__btn">TOPへ戻る</es-button>
+      <es-button url="/" class="es-League-complete__btn" arrow="right"
+        >TOPへ戻る</es-button
+      >
     </div>
   </div>
 </template>
@@ -26,25 +30,20 @@ export default {}
 <style lang="scss" scoped>
 .es-League-complete {
   margin: 0px 16px;
-  padding: 95px 0px;
+  padding: 95px 0px 40px;
 
   &__title {
-    margin: 21px 0 45px;
+    margin: 24px 0;
     text-align: center;
     font-size: 32px;
-    position: relative;
-    color: #fff;
-    &:after {
-      content: '';
-      width: 144px;
-      height: 2px;
-      background-color: #fff;
+    color: #000000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
       display: block;
-      position: absolute;
-      bottom: -10px;
-      left: 0px;
-      right: 0px;
-      margin: 0 auto;
+      font-size: 18px;
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+        sans-serif;
     }
   }
   &__container {
@@ -54,7 +53,7 @@ export default {}
     background-position: bottom right;
     background-size: 100%;
     background-repeat: no-repeat;
-    padding: 45px 16px 40px;
+    padding: 0px 16px;
     text-align: center;
   }
   &__contents {
@@ -70,8 +69,9 @@ export default {}
   &__attention {
     display: inline-block;
     margin: 20px auto 0;
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
+    line-height: 1.5;
   }
   &__btn {
     margin: auto;

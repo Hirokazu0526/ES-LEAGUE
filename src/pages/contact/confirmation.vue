@@ -1,6 +1,8 @@
 <template>
-  <div class="es-League-confirmation" style="color: #fff">
-    <h2 class="es-League-confirmation__title">お問い合わせ</h2>
+  <div class="es-League-confirmation">
+    <h2 class="es-League-confirmation__title">
+      CONTACT<br /><span>お問い合わせ</span>
+    </h2>
     <div class="es-League-confirmation__container">
       <div class="es-League-confirmation__contents">
         <h3 class="es-League-confirmation__subject">お名前</h3>
@@ -14,10 +16,19 @@
         <h3 class="es-League-confirmation__subject">お問い合わせ内容</h3>
         <p class="es-League-confirmation__content">{{ userContent }}</p>
       </div>
-
-      <button class="submitButton gold" @click="back">戻る</button>
+    </div>
+    <p class="es-League-confirmation__caution">
+      内容を確認し<br />問題なければ送信してください。
+    </p>
+    <div class="es-League-confirmation__btnWrapper">
       <button
-        class="submitButton navy"
+        class="es-League-confirmation__submitButton left gray"
+        @click="back"
+      >
+        修正する
+      </button>
+      <button
+        class="es-League-confirmation__submitButton right"
         type="submit"
         @click.prevent="formSubmit"
       >
@@ -76,25 +87,20 @@ export default {
 <style lang="scss" scoped>
 .es-League-confirmation {
   margin: 0px 16px;
-  padding: 95px 0px;
+  padding: 95px 0px 40px;
 
   &__title {
-    margin: 21px 0 45px;
+    margin: 24px 0;
     text-align: center;
     font-size: 32px;
-    position: relative;
-    color: #fff;
-    &:after {
-      content: '';
-      width: 144px;
-      height: 2px;
-      background-color: #fff;
+    color: #000000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
       display: block;
-      position: absolute;
-      bottom: -10px;
-      left: 0px;
-      right: 0px;
-      margin: 0 auto;
+      font-size: 18px;
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+        sans-serif;
     }
   }
 
@@ -105,41 +111,72 @@ export default {
     background-position: bottom right;
     background-size: 100%;
     background-repeat: no-repeat;
-    padding: 30px 16px 40px;
-  }
-  &__contents {
-    margin-bottom: 30px;
+    padding: 10px 16px;
   }
   &__subject {
     font-size: 18px;
   }
   &__content {
     font-size: 18px;
+    min-height: 18px;
     margin-top: 10px;
     margin-bottom: 15px;
   }
-}
-
-.submitButton {
-  display: block;
-  text-align: center;
-  width: 150px;
-  height: 38px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 10px 15px 10px 0;
-  background-position: bottom right;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  margin: auto;
-  &.gold {
-    background: linear-gradient(-45deg, transparent 27px, #a37b30 20px);
+  &__caution {
+    margin: 10px 16px 30px;
+    text-align: center;
+    line-height: 1.5;
   }
-  &.navy {
-    margin-top: 15px;
-    background: linear-gradient(-45deg, transparent 27px, #011e43 20px);
+
+  &__btnWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    justify-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__submitButton {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    padding: 0;
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #a37b30;
+    border-radius: 2px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 4px;
+      height: 13px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &.right::after {
+      right: 8px;
+      background: url(~/assets/img/arrow-right.svg);
+    }
+    &.left::after {
+      left: 8px;
+      background: url(~/assets/img/arrow-left.svg);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &.navy {
+      background-color: #011e43;
+    }
+    &.gray {
+      background-color: #666666;
+    }
   }
 }
 </style>

@@ -1,9 +1,14 @@
 <template>
   <div class="es-League-contact">
-    <h2 class="es-League-contact__title">お問い合わせ</h2>
+    <h2 class="es-League-contact__title">
+      CONTACT<br /><span>お問い合わせ</span>
+    </h2>
+    <p class="es-League-contact__text">
+      ES LEAGUEに関するお問い合わせは<br />下記からお願いたします。
+    </p>
     <form class="es-League-contact__form">
       <div class="es-League-contact__container">
-        <label class="es-League-contact__label">名前</label><br />
+        <label class="es-League-contact__label required">名前</label><br />
         <input
           v-model="userName"
           type="text"
@@ -14,8 +19,7 @@
         <p v-if="$v.userName.$error" class="error">お名前を入力してください</p>
       </div>
       <div class="es-League-contact__container">
-        <label class="es-League-contact__label">ふりがな(全角ひらがな)</label
-        ><br />
+        <label class="es-League-contact__label">ふりがな</label><br />
         <input
           v-model="userKana"
           type="text"
@@ -24,14 +28,14 @@
           :class="{ error: $v.userKana.$error, 'form-control': true }"
           @input="$v.userKana.$touch()"
         />
-        <div v-if="$v.userKana.$error">
+        <!-- <div v-if="$v.userKana.$error">
           <span v-if="!$v.userKana.required" class="error"
             >ふりがなが入力されていません。</span
           >
           <span v-if="!$v.userKana.mustKana" class="error"
             >全角ひらがなで入力してください</span
           >
-        </div>
+        </div> -->
       </div>
       <div class="es-League-contact__container">
         <label class="es-League-contact__label"
@@ -48,17 +52,18 @@
           }"
           @input="$v.userPhoneNumber.$touch()"
         />
-        <div v-if="$v.userPhoneNumber.$error">
+        <!-- <div v-if="$v.userPhoneNumber.$error">
           <span v-if="!$v.userPhoneNumber.required" class="error"
             >電話番号が入力されていません。</span
           >
           <span v-if="!$v.userPhoneNumber.numeric" class="error"
             >数字で入力してください</span
           >
-        </div>
+        </div> -->
       </div>
       <div class="es-League-contact__container">
-        <label class="es-League-contact__label">メールアドレス</label><br />
+        <label class="es-League-contact__label required">メールアドレス</label
+        ><br />
         <input
           v-model="userEmail"
           type="email"
@@ -77,7 +82,8 @@
         </div>
       </div>
       <div class="es-League-contact__container">
-        <label class="es-League-contact__label">お問い合わせ内容</label><br />
+        <label class="es-League-contact__label required">お問い合わせ内容</label
+        ><br />
         <textarea
           v-model="userContent"
           name="content"
@@ -90,19 +96,20 @@
           お問い合わせ内容を入力してください
         </p>
       </div>
-      <button class="submitButton gold" @click.prevent="confirmation">
-        確認画面へ
-      </button>
-      <button type="submit" class="submitButton navy" @click.prevent="cancel">
-        TOPへ
+      <button
+        class="es-League-contact__submitButton right"
+        @click.prevent="confirmation"
+      >
+        内容を確認する
       </button>
     </form>
   </div>
 </template>
 
 <script>
-import { required, email, numeric, helpers } from 'vuelidate/lib/validators'
-const mustKana = helpers.regex('mustKana', /^[あ-ん゛゜ぁ-ぉゃ-ょー「」、]+/)
+import { required, email } from 'vuelidate/lib/validators'
+// import { required, email, numeric, helpers } from 'vuelidate/lib/validators'
+// const mustKana = helpers.regex('mustKana', /^[あ-ん゛゜ぁ-ぉゃ-ょー「」、]+/)
 
 export default {
   data() {
@@ -149,18 +156,8 @@ export default {
         this.$store.dispatch('getUserContent', value)
       },
     },
-    // isChecked() {},
   },
   methods: {
-    // isInput() {},
-    // checked() {
-    //   const obj = this.error
-    //   for (const property in obj) {
-    //     if (!obj[property]) {
-    //       obj[property] = true
-    //     }
-    //   }
-    // },
     confirmation() {
       this.$v.$touch()
       if (!this.$v.$invalid) {
@@ -177,12 +174,12 @@ export default {
       required,
     },
     userKana: {
-      required,
-      mustKana,
+      // required,
+      // mustKana,
     },
     userPhoneNumber: {
-      required,
-      numeric,
+      // required,
+      // numeric,
     },
     userEmail: {
       required,
@@ -198,25 +195,26 @@ export default {
 <style lang="scss" scoped>
 .es-League-contact {
   margin: 0px 16px;
-  padding: 95px 0px;
+  padding: 95px 0px 40px;
+
+  &__text {
+    text-align: center;
+    padding: 10px 16px;
+    line-height: 1.5;
+  }
 
   &__title {
-    margin: 21px 0 45px;
+    margin: 24px 0;
     text-align: center;
     font-size: 32px;
-    position: relative;
-    color: #fff;
-    &:after {
-      content: '';
-      width: 144px;
-      height: 2px;
-      background-color: #fff;
+    color: #000000;
+    font-family: 'HNewYork';
+    & span {
+      margin-top: 5px;
       display: block;
-      position: absolute;
-      bottom: -10px;
-      left: 0px;
-      right: 0px;
-      margin: 0 auto;
+      font-size: 18px;
+      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+        sans-serif;
     }
   }
   &__form {
@@ -226,7 +224,7 @@ export default {
     background-position: bottom right;
     background-size: 100%;
     background-repeat: no-repeat;
-    padding: 30px 16px 40px;
+    padding: 10px 16px;
   }
   &__container {
     margin-bottom: 15px;
@@ -238,13 +236,55 @@ export default {
     display: inline-block;
     font-size: 18px;
     position: relative;
-    &::after {
+    &.required::after {
       position: absolute;
       content: '※必須';
       bottom: -1px;
       right: -45px;
       font-size: 14px;
       color: red;
+    }
+  }
+  &__submitButton {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    padding: 0;
+    margin: 0 auto;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #a37b30;
+    border-radius: 2px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      width: 4px;
+      height: 13px;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &.right::after {
+      right: 8px;
+      background: url(~/assets/img/arrow-right.svg);
+    }
+    &.left::after {
+      left: 8px;
+      background: url(~/assets/img/arrow-left.svg);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &.navy {
+      background-color: #011e43;
+    }
+    &.gray {
+      background-color: #666666;
     }
   }
 }
@@ -266,27 +306,5 @@ textarea {
   margin-top: 5px;
   font-size: 16px;
   resize: none;
-}
-.submitButton {
-  display: block;
-  text-align: center;
-  width: 150px;
-  height: 38px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 10px 15px 10px 0;
-  background-position: bottom right;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: none;
-  margin: auto;
-  &.gold {
-    background: linear-gradient(-45deg, transparent 27px, #a37b30 20px);
-  }
-  &.navy {
-    margin-top: 15px;
-    background: linear-gradient(-45deg, transparent 27px, #011e43 20px);
-  }
 }
 </style>
