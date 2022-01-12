@@ -8,7 +8,7 @@
             src="~/assets/img/site-logo.png"
             alt="セパタクローボール"
           />
-          Schedule<br />Result
+          日程<br />結果
         </nuxt-link>
       </li>
       <li class="es-League__item">
@@ -18,7 +18,7 @@
             src="~/assets/img/site-logo.png"
             alt="セパタクローボール"
           />
-          Live<br />Streaming
+          チーム<br />紹介
         </nuxt-link>
       </li>
       <li class="es-League__item">
@@ -28,7 +28,7 @@
             src="~/assets/img/site-logo.png"
             alt="セパタクローボール"
           />
-          What's<br />Sepaktakraw
+          セパタクロー<br />とは
         </nuxt-link>
       </li>
     </ul>
