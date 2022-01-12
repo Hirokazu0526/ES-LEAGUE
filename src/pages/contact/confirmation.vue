@@ -13,8 +13,14 @@
         <p class="es-League-confirmation__content">{{ userPhoneNumber }}</p>
         <h3 class="es-League-confirmation__subject">メールアドレス</h3>
         <p class="es-League-confirmation__content">{{ userEmail }}</p>
+        <h3 class="es-League-confirmation__subject">カテゴリー</h3>
+        <p class="es-League-confirmation__content">{{ contactCategory }}</p>
         <h3 class="es-League-confirmation__subject">お問い合わせ内容</h3>
         <p class="es-League-confirmation__content">{{ userContent }}</p>
+        <h3 class="es-League-confirmation__subject">
+          プライバシーポリシーに同意する
+        </h3>
+        <p class="es-League-confirmation__content">{{ policy }}</p>
       </div>
     </div>
     <p class="es-League-confirmation__caution">
@@ -55,8 +61,17 @@ export default {
       'userKana',
       'userPhoneNumber',
       'userEmail',
+      'contactCategory',
       'userContent',
+      'isChecked',
     ]),
+    policy() {
+      if (this.isChecked) {
+        return '同意する'
+      } else {
+        return ''
+      }
+    },
   },
   methods: {
     async formSubmit() {
@@ -68,7 +83,9 @@ export default {
         nameKana: this.userKana,
         phoneNumber: this.userPhoneNumber,
         email: this.userEmail,
+        category: this.contactCategory,
         content: this.userContent,
+        isChecked: this.policy,
       }
 
       await this.$axios

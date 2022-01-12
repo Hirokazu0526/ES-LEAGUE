@@ -82,6 +82,17 @@
         </div>
       </div>
       <div class="es-League-contact__container">
+        <p>
+          <label for="category">カテゴリー</label>
+          <select id="category" v-model="contactCategory">
+            <option :value="null" disabled>選択してください</option>
+            <option v-for="item in items" :key="item.index" :value="item.value">
+              {{ item.text }}
+            </option>
+          </select>
+        </p>
+      </div>
+      <div class="es-League-contact__container">
         <label class="es-League-contact__label required">お問い合わせ内容</label
         ><br />
         <textarea
@@ -96,6 +107,21 @@
           お問い合わせ内容を入力してください
         </p>
       </div>
+      <p>プライバシーポリシー</p>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div class="es-League-contact__policy" v-html="getPolicy"></div>
+      <div class="es-League-contact__container">
+        <input
+          id="isCheck"
+          v-model="policyChecked"
+          type="checkbox"
+          :class="{ error: $v.policyChecked.$error, 'form-control': true }"
+        />
+        <label for="isCheck">個人情報に関して同意する(必須)</label>
+        <div v-if="$v.policyChecked.$error">
+          <span class="error">送信するには同意する必要があります。</span>
+        </div>
+      </div>
       <button
         class="es-League-contact__submitButton right"
         @click.prevent="confirmation"
@@ -107,15 +133,29 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { required, email } from 'vuelidate/lib/validators'
 // import { required, email, numeric, helpers } from 'vuelidate/lib/validators'
 // const mustKana = helpers.regex('mustKana', /^[あ-ん゛゜ぁ-ぉゃ-ょー「」、]+/)
+const isChecked = (value) => {
+  return value === true
+}
 
 export default {
   data() {
-    return {}
+    return {
+      items: [
+        { text: '一般のお問い合わせ', value: '一般のお問い合わせ' },
+        {
+          text: 'プレスに関するお問い合わせ',
+          value: 'プレスに関するお問い合わせ',
+        },
+        { text: 'その他', value: 'その他' },
+      ],
+    }
   },
   computed: {
+    ...mapGetters(['getPolicy']),
     userName: {
       get() {
         return this.$store.getters.hasUserName
@@ -148,12 +188,28 @@ export default {
         this.$store.dispatch('getUserEmail', value)
       },
     },
+    contactCategory: {
+      get() {
+        return this.$store.getters.hasContactCategory
+      },
+      set(value) {
+        this.$store.dispatch('getContactCategory', value)
+      },
+    },
     userContent: {
       get() {
         return this.$store.getters.hasUserContent
       },
       set(value) {
         this.$store.dispatch('getUserContent', value)
+      },
+    },
+    policyChecked: {
+      get() {
+        return this.$store.getters.isChecked
+      },
+      set(value) {
+        this.$store.dispatch('getIsChecked', value)
       },
     },
   },
@@ -187,6 +243,9 @@ export default {
     },
     userContent: {
       required,
+    },
+    policyChecked: {
+      isChecked,
     },
   },
 }
@@ -245,6 +304,18 @@ export default {
       color: red;
     }
   }
+  &__policy {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000;
+    height: 150px;
+    overflow-y: scroll;
+  }
+  ::v-deep .es-League-contact__policy {
+    h4 {
+      margin-top: 10px;
+    }
+  }
   &__submitButton {
     width: 160px;
     display: flex;
@@ -252,7 +323,7 @@ export default {
     align-items: center;
     height: 38px;
     padding: 0;
-    margin: 0 auto;
+    margin: 20px auto 0;
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -291,6 +362,7 @@ export default {
 .error {
   color: #8a0421;
   border-color: #dd0f3b;
+
   // background-color: #ffd9d9;
 }
 input[type='text'],
