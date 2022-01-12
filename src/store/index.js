@@ -15,7 +15,10 @@ export const state = () => ({
   userKana: '',
   userPhoneNumber: '',
   userEmail: '',
+  contactCategory: null,
   userContent: '',
+  policy: '',
+  isChecked: false,
   });
   
   export const mutations = {
@@ -133,12 +136,24 @@ export const state = () => ({
     setUserContent(state, userContent) {
       state.userContent = userContent
     },
+    setContactCategory(state, contactCategory) {
+      state.contactCategory = contactCategory
+    },
+    setIsChecked(state, isChecked) {
+      state.isChecked = isChecked
+    },
+
     setUserDataClear(state) {
       state.userName = ''
       state.userKana = ''
       state.userPhoneNumber = ''
       state.userEmail = ''
+      state.contactCategory = ''
       state.userContent = ''
+      state.isChecked = false
+    },
+    setPolicy(state, policy) {
+      state.policy = policy
     },
   }
 
@@ -161,12 +176,16 @@ export const state = () => ({
       const resRankingData = await this.$axios.$get(`${$config.apiUrl}rank`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
+      const resPolicy = await this.$axios.$get(`${$config.apiUrl}policy`, {
+       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+      });
       commit("setNewsLists", resNews.contents);
       commit("setPlayerLists", resPlayers.contents);
       commit("setTeamLists", resTeams.contents);
       commit("setCompetitionLists", resCompetitions.contents);
       commit("setMenRankingData", resRankingData.contents);
       commit("setWomenRankingData", resRankingData.contents);
+      commit("setPolicy", resPolicy.body);
      },
      getUserName({ commit }, userName) {
       commit('setUserName', userName)
@@ -180,8 +199,14 @@ export const state = () => ({
      getUserEmail({ commit }, userEmail) {
       commit('setUserEmail', userEmail)
     },
+     getContactCategory({ commit }, contactCategory) {
+      commit('setContactCategory', contactCategory)
+    },
      getUserContent({ commit }, userContent) {
       commit('setUserContent', userContent)
+    },
+     getIsChecked({ commit }, isChecked) {
+      commit('setIsChecked', isChecked)
     },
   }
 
@@ -251,7 +276,16 @@ export const state = () => ({
     hasUserEmail(state) {
       return state.userEmail
     },
+    hasContactCategory(state) {
+      return state.contactCategory
+    },
     hasUserContent(state) {
       return state.userContent
+    },
+    isChecked(state) {
+      return state.isChecked
+    },
+    getPolicy(state) {
+      return state.policy
     },
   }
