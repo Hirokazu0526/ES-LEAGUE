@@ -7,6 +7,7 @@
     <div class="es-League-news__contanier">
       <p class="es-League-news__date">{{ formatData }}</p>
       <h3 class="es-League-news__newsTitle">{{ newsTitle }}</h3>
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="es-League-news__newsText" v-html="newsText"></div>
     </div>
     <div class="es-League-news__btnWrapper">
