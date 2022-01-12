@@ -30,15 +30,13 @@ export default {
   &__container {
     height: 80px;
     background-color: #000000;
-    padding: 12px 0;
-    display: flex;
-    justify-content: space-around;
+    padding: 5px 5px 5px 10px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    justify-items: stretch;
     align-items: center;
   }
 
-  h1 {
-    margin: 3px 0 0;
-  }
   &__logo {
     width: 34px;
     height: 61px;
