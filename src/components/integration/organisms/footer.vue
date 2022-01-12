@@ -7,16 +7,11 @@
             <p class="es-League-footer__listTitle">お問い合わせ</p>
           </nuxt-link>
         </li>
-        <li class="es-League-footer__listItem">
-          <nuxt-link to="/">
-            <p class="es-League-footer__listTitle">プライバシーポリシー</p>
-          </nuxt-link>
-        </li>
-        <li class="es-League-footer__listItem">
+        <!-- <li class="es-League-footer__listItem">
           <nuxt-link to="/contact">
             <p class="es-League-footer__listTitle">体験しよう！</p>
           </nuxt-link>
-        </li>
+        </li> -->
         <li class="es-League-footer__listItem">
           <nuxt-link to="/">
             <p class="es-League-footer__listTitle">??????????</p>
@@ -68,6 +63,8 @@ export default {
   background-color: #000000;
   color: #fff;
   &__bg {
+    display: grid;
+    grid-template-rows: 1fr 110px 40px;
     width: 100%;
     height: 370px;
     background: url(~/assets/img/esleague_long_white.svg) 0% -70px no-repeat;
