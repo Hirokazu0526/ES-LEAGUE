@@ -28,7 +28,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   &__container {
-    height: 95px;
+    height: 80px;
     background-color: #000000;
     padding: 12px 0;
     display: flex;
@@ -40,8 +40,8 @@ export default {
     margin: 3px 0 0;
   }
   &__logo {
-    width: 48px;
-    height: 84px;
+    width: 34px;
+    height: 61px;
   }
   &__btn {
     display: block;

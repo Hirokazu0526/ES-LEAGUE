@@ -310,7 +310,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-schedule-result {
   margin: 0px 16px;
-  padding: 95px 0px 40px;
+  padding: 80px 0px 40px;
   text-align: center;
   color: #000;
 

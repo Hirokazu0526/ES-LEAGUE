@@ -258,7 +258,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-contact {
   margin: 0px 16px;
-  padding: 95px 0px 40px;
+  padding: 80px 0px 40px;
 
   &__text {
     text-align: center;

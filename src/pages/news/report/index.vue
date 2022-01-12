@@ -72,7 +72,7 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-newsReport {
-  padding: 95px 0px 40px;
+  padding: 80px 0px 40px;
   &__title {
     margin: 20px 0;
     text-align: center;

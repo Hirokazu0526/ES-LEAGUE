@@ -122,7 +122,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-confirmation {
   margin: 0px 16px;
-  padding: 95px 0px 40px;
+  padding: 80px 0px 40px;
 
   &__title {
     margin: 24px 0;

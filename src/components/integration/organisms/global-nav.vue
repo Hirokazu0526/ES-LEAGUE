@@ -5,14 +5,15 @@
         <nuxt-link to="/schedule/result" class="es-League__link">
           <img
             class="es-League__icon"
-            src="~/assets/img/site-logo.png"
+            src="~/assets/img/header/calendar.svg"
             alt="セパタクローボール"
           />
-          日程<br />結果
+          日程・結果
         </nuxt-link>
       </li>
       <li class="es-League__item">
-        <nuxt-link v-scroll-to="'#live'" to="/#live" class="es-League__link">
+        <!-- <nuxt-link v-scroll-to="'#live'" to="/#live" class="es-League__link"> -->
+        <nuxt-link to="/team" class="es-League__link">
           <img
             class="es-League__icon"
             src="~/assets/img/site-logo.png"
