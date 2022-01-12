@@ -107,19 +107,23 @@
           お問い合わせ内容を入力してください
         </p>
       </div>
-      <p>プライバシーポリシー</p>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="es-League-contact__policy" v-html="getPolicy"></div>
-      <div class="es-League-contact__container">
+      <p>
+        <nuxt-link to="/policy" target="_blank"
+          >個人情報のお取り扱いについて</nuxt-link
+        >に同意の上、内容を確認するボタンを押して次に進んでください。
+      </p>
+      <div class="es-League-contact__container policyBg">
         <input
           id="isCheck"
           v-model="policyChecked"
           type="checkbox"
           :class="{ error: $v.policyChecked.$error, 'form-control': true }"
         />
-        <label for="isCheck">個人情報に関して同意する(必須)</label>
+        <label for="isCheck" class="es-League-contact__label"
+          >規約に同意する</label
+        >
         <div v-if="$v.policyChecked.$error">
-          <span class="error">送信するには同意する必要があります。</span>
+          <span class="error">内容を確認するには同意する必要があります。</span>
         </div>
       </div>
       <button
@@ -290,6 +294,11 @@ export default {
     &:last-of-type {
       margin-bottom: 30px;
     }
+    &.policyBg {
+      background-color: #bbbbbb;
+      padding: 10px 5px;
+      margin-top: 10px;
+    }
   }
   &__label {
     display: inline-block;
@@ -297,23 +306,15 @@ export default {
     position: relative;
     &.required::after {
       position: absolute;
-      content: '※必須';
-      bottom: -1px;
-      right: -45px;
+      content: '必須';
+      display: block;
+      bottom: -3px;
+      right: -40px;
       font-size: 14px;
-      color: red;
-    }
-  }
-  &__policy {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #000;
-    height: 150px;
-    overflow-y: scroll;
-  }
-  ::v-deep .es-League-contact__policy {
-    h4 {
-      margin-top: 10px;
+      color: #fff;
+      background-color: red;
+      padding: 2px 5px;
+      border-radius: 2px;
     }
   }
   &__submitButton {
