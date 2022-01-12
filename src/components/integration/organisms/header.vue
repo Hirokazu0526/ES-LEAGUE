@@ -30,10 +30,10 @@ export default {
   &__container {
     height: 80px;
     background-color: #000000;
-    padding: 5px 5px 5px 10px;
+    padding: 5px 15px;
     display: grid;
     grid-template-columns: 40px 1fr;
-    justify-items: stretch;
+    justify-items: center;
     align-items: center;
   }
 

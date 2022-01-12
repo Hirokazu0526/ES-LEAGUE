@@ -44,7 +44,8 @@ export default {}
 .es-League {
   &__navList {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 65px 65px 107px;
+    gap: 20px;
     justify-items: stretch;
     align-items: center;
   }
