@@ -6,7 +6,7 @@
           <img
             class="es-League__icon"
             src="~/assets/img/header/calendar.svg"
-            alt="セパタクローボール"
+            alt="カレンダー"
           />
           日程・結果
         </nuxt-link>
@@ -16,20 +16,20 @@
         <nuxt-link to="/team" class="es-League__link">
           <img
             class="es-League__icon"
-            src="~/assets/img/site-logo.png"
-            alt="セパタクローボール"
+            src="~/assets/img/header/shorts.svg"
+            alt="ユニフォーム"
           />
-          チーム<br />紹介
+          チーム紹介
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <nuxt-link to="/about" class="es-League__link">
           <img
             class="es-League__icon"
-            src="~/assets/img/site-logo.png"
+            src="~/assets/img/header/site-logo.svg"
             alt="セパタクローボール"
           />
-          セパタクロー<br />とは
+          セパタクローとは
         </nuxt-link>
       </li>
     </ul>
@@ -43,10 +43,10 @@ export default {}
 <style lang="scss" scoped>
 .es-League {
   &__navList {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: stretch;
     align-items: center;
-    gap: 10px;
   }
   &__item {
     display: block;
@@ -60,6 +60,7 @@ export default {}
     height: 100%;
     text-decoration: none;
     color: #fff;
+    font-size: 13px;
   }
   &__icon {
     width: 24px;
