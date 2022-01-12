@@ -65,7 +65,7 @@
         <li>
           <accordion>
             <template #title>
-              <h3 class="es-League-about__listTitle">得点・勝敗</h3>
+              <h3 class="es-League-about__itemTitle">得点・勝敗</h3>
             </template>
             <template #body>
               <p class="es-League-about__itemText">
@@ -82,7 +82,7 @@
         <li>
           <accordion>
             <template #title>
-              <h3 class="es-League-about__listTitle">ポジション・コート</h3>
+              <h3 class="es-League-about__itemTitle">ポジション・コート</h3>
             </template>
             <template #body>
               <p class="es-League-about__itemText">
@@ -108,7 +108,7 @@
         <li>
           <accordion>
             <template #title>
-              <h3 class="es-League-about__listTitle">用具</h3>
+              <h3 class="es-League-about__itemTitle">用具</h3>
             </template>
             <template #body>
               <div class="es-League-about__goodsItem">
@@ -150,10 +150,75 @@
         <li>
           <accordion>
             <template #title>
-              <h3 class="es-League-about__listTitle">技</h3>
+              <h3 class="es-League-about__itemTitle">技</h3>
             </template>
             <template #body>
-              <p class="es-League-about__itemText"></p>
+              <div class="es-League-about__technic">
+                <ul class="es-League-about__technicList">
+                  <li class="es-League-about__technicItem">
+                    <p class="es-League-about__itechnicTitle">アタック</p>
+                    <img
+                      src="~/assets/img/about/attack.JPG"
+                      class="es-League-about__itechnicImage"
+                      alt="アタック"
+                    />
+                    <p class="es-League-about__itemText">
+                      アタックは主にサッカーのオーバーヘッドシュートのような「ローリングアタック」と足をハサミのようにして打つ「シザースアタック」の2種類がある。<br />
+                      ネット際でのアタッカーの攻防は、とてもアクロバティックで相手のブロックやレシーブを交わすためにコースをついたり、緩急をつけて攻撃する。
+                    </p>
+                  </li>
+                  <li class="es-League-about__technicItem">
+                    <p class="es-League-about__itechnicTitle">サーブ</p>
+                    <img
+                      src="~/assets/img/about/serve.JPG"
+                      class="es-League-about__itechnicImage"
+                      alt="アタック"
+                    />
+                    <p class="es-League-about__itemText">
+                      サーブは主に足の内側で蹴る「インサイドサーブ」、足の甲で蹴る「インステップサーブ」、インサイドとインフロントの中間で蹴る「インフロントサーブ」という３種類に分けられる。<br />
+                      サーブを打つ際に当てる位置や場所を変えることでスピードや回転に変化を持たせてエースを狙う。速いサーブだけでなく、フェイントなど緩急のあるサーブの組み立ても見どころのひとつ。
+                    </p>
+                  </li>
+                  <li class="es-League-about__technicItem">
+                    <p class="es-League-about__itechnicTitle">トス</p>
+                    <img
+                      src="~/assets/img/about/tosser.JPG"
+                      class="es-League-about__itechnicImage"
+                      alt="アタック"
+                    />
+                    <p class="es-League-about__itemText">
+                      トスはアタッカーの強みを引き出すために、速さや高さ、距離などを考えてトスをあげている。また、相手のブロックの位置やレシーブの位置なども見ながらアタッカーが決め切れるようにコントロールをする。<br />
+                      チームメイトのみならず、相手チームのポジショニングなども見ながらトスを上げるため広い視野が必要である。
+                    </p>
+                  </li>
+                  <li class="es-League-about__technicItem">
+                    <p class="es-League-about__itechnicTitle">ブロック</p>
+                    <img
+                      src="~/assets/img/about/block.JPG"
+                      class="es-League-about__itechnicImage"
+                      alt="アタック"
+                    />
+                    <p class="es-League-about__itemText">
+                      セパタクローにもバレーと同じようにブロックをすることができる。<br />
+                      ルール上、手の使用は禁止のためブロックは写真のように足で行うか背中で止める。<br />
+                      ネット際のアタックとブロックの攻防は激しく、迫力満点。
+                    </p>
+                  </li>
+                  <li class="es-League-about__technicItem">
+                    <p class="es-League-about__itechnicTitle">レシーブ</p>
+                    <img
+                      src="~/assets/img/about/receive.JPG"
+                      class="es-League-about__itechnicImage"
+                      alt="アタック"
+                    />
+                    <p class="es-League-about__itemText">
+                      セパタクローは高速のサーブやアタックを手以外の脚や頭を使ってレシーブする。<br />
+                      ボールはプラスチックでできているため、レシーブをするだけでアザができることもあり、見た目以上に痛い。<br />
+                      サッカーボールよりも小さいボールを足でコントロールするため繊細なボール捌きが必要である。
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </template>
           </accordion>
         </li>
@@ -175,7 +240,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-about {
   margin: 0px 16px;
-  padding: 95px 0px;
+  padding: 95px 0px 40px;
   text-align: center;
   color: #000;
 
@@ -192,8 +257,6 @@ export default {
       font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
         sans-serif;
     }
-  }
-  &__container {
   }
   &__visual {
     width: 100%;
@@ -298,6 +361,28 @@ export default {
     &.sp {
       display: block;
     }
+  }
+
+  &__technicList {
+    list-style: none;
+  }
+  &__technicItem {
+    margin-top: 15px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__itechnicTitle {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  &__itechnicImage {
+    width: 100%;
+    margin-bottom: 5px;
   }
 }
 </style>
