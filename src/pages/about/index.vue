@@ -303,7 +303,7 @@ export default {
       }
     }
     & .es-League-about__itemText.shoes {
-      padding-top: 170px;
+      padding-top: 200px;
       text-align: right;
       &.sp {
         display: block;
@@ -383,6 +383,32 @@ export default {
   &__itechnicImage {
     width: 100%;
     margin-bottom: 5px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-about {
+    &__text {
+      font-size: 14px;
+    }
+    &__itemText {
+      font-size: 12px;
+    }
+    &__ruleListText {
+      font-size: 12px;
+    }
+    &__goodsItem {
+      & .es-League-about__itemText.ball {
+        padding-top: 160px;
+      }
+    }
+    &__goodsName {
+      &.left {
+        left: 25px;
+      }
+      &.right {
+        right: 25px;
+      }
+    }
   }
 }
 </style>

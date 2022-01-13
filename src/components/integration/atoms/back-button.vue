@@ -30,4 +30,9 @@ export default {}
     background: url(~/assets/img/arrow-left.svg);
   }
 }
+@media screen and (max-width: 374px) {
+  .button {
+    width: 130px;
+  }
+}
 </style>

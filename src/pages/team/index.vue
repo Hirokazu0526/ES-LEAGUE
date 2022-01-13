@@ -39,8 +39,10 @@
         </li>
       </ul>
     </div>
-
-    <es-button url="/" class="es-League-teamList__btn">Home</es-button>
+    <div class="es-League-teamList__btnWrapper">
+      <back-button />
+      <es-button url="/" class="es-League-teamList__btn">TOPへ戻る</es-button>
+    </div>
   </div>
 </template>
 
@@ -130,8 +132,27 @@ export default {
     font-size: 19px;
     font-weight: bold;
   }
-  &__btn {
-    margin: 20px auto 0;
+  &__btnWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    justify-items: center;
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-teamList {
+    &__wrapper {
+      margin: 33px 0px;
+    }
+    &__link {
+      gap: 0px;
+    }
+    &__image {
+      width: 50px;
+    }
+    &__teamName {
+      font-size: 17px;
+    }
   }
 }
 </style>

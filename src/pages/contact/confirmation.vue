@@ -217,4 +217,17 @@ export default {
     }
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-confirmation {
+    &__subject {
+      font-size: 14px;
+    }
+    &__content {
+      font-size: 14px;
+    }
+    &__submitButton {
+      width: 130px;
+    }
+  }
+}
 </style>

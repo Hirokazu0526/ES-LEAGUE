@@ -123,4 +123,11 @@ export default {
     margin: 20px 0 0;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-footer {
+    &__copyRight {
+      font-size: 12px;
+    }
+  }
+}
 </style>

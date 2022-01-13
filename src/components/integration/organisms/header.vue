@@ -45,4 +45,12 @@ export default {
     display: block;
   }
 }
+@media screen and (max-width: 374px) {
+  .header {
+    &__container {
+      padding: 5px 10px;
+      gap: 10px;
+    }
+  }
+}
 </style>

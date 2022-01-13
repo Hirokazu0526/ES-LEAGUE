@@ -201,7 +201,6 @@ export default {
     font-weight: bold;
   }
   &__sponsorArea {
-    width: 310px;
     height: 78px;
     display: flex;
     justify-content: center;

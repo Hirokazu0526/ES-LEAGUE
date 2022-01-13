@@ -107,7 +107,7 @@
           お問い合わせ内容を入力してください
         </p>
       </div>
-      <p>
+      <p class="es-League-contact__policyText">
         <nuxt-link to="/policy" target="_blank"
           >個人情報のお取り扱いについて</nuxt-link
         >に同意の上、内容を確認するボタンを押して次に進んでください。
@@ -379,5 +379,27 @@ textarea {
   margin-top: 5px;
   font-size: 16px;
   resize: none;
+}
+@media screen and (max-width: 374px) {
+  .es-League-contact {
+    &__text {
+      font-size: 14px;
+    }
+    &__label {
+      font-size: 14px;
+      &.required::after {
+        font-size: 11px;
+      }
+    }
+    &__policyText {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+  }
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'] {
+    font-size: 13px;
+  }
 }
 </style>

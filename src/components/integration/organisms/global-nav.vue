@@ -69,4 +69,11 @@ export default {}
     margin-bottom: 5px;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League {
+    &__navList {
+      gap: 10px;
+    }
+  }
+}
 </style>

@@ -69,4 +69,11 @@ export default {
     }
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-Accordion {
+    &__body {
+      padding: 0 10px;
+    }
+  }
+}
 </style>

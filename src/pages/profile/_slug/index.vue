@@ -251,4 +251,27 @@ export default {
     justify-items: center;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-profile {
+    &__image {
+      right: 0;
+    }
+    &__name {
+      font-size: 25px;
+    }
+    &__englishName {
+      font-size: 15px;
+    }
+    &__text {
+      font-size: 12px;
+    }
+    &__profileList {
+      column-gap: 5px;
+      padding: 10px 5px 10px 5px;
+    }
+    &__textTitle {
+      font-size: 12px;
+    }
+  }
+}
 </style>

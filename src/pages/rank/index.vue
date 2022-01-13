@@ -108,10 +108,6 @@ export default {
   &__contanier {
     padding: 0px 0 30px;
     color: #000;
-    background: linear-gradient(-45deg, transparent 27px, #fff 20px);
-    background-position: bottom right;
-    background-size: 100%;
-    background-repeat: no-repeat;
   }
   &__gender {
     font-size: 24px;
@@ -170,12 +166,13 @@ export default {
         font-size: 14px;
       }
       td {
-        padding: 5px;
+        padding: 5px 2px;
         font-size: 12px;
+        font-weight: bold;
       }
     }
     th {
-      padding: 8px 10px;
+      padding: 8px 8px;
     }
   }
   &__width {
@@ -187,6 +184,21 @@ export default {
     grid-template-columns: 1fr 1fr;
     column-gap: 16px;
     justify-items: center;
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-rank {
+    &__list {
+      thead {
+        font-size: 12px;
+      }
+      th {
+        padding: 8px 5px;
+      }
+    }
+    &__width {
+      width: 110px;
+    }
   }
 }
 </style>

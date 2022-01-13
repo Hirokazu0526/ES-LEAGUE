@@ -52,7 +52,6 @@ export default {
   }
   &__wrapper {
     margin-top: 24px;
-    min-height: 386px;
   }
   &__btn {
     margin: 16px auto 0;

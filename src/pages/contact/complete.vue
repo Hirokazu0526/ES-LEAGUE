@@ -77,4 +77,17 @@ export default {}
     margin: auto;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-complete {
+    &__message {
+      font-size: 20px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__attention {
+      font-size: 14px;
+    }
+  }
+}
 </style>

@@ -1,11 +1,6 @@
 <template>
   <div class="button">
-    <nuxt-link
-      :to="url"
-      :class="[color, arrow]"
-      class="button__link"
-      :style="[{ height: `${height}px` }, { width: `${width}px` }]"
-    >
+    <nuxt-link :to="url" :class="[color, arrow]" class="button__link">
       <slot />
     </nuxt-link>
   </div>
@@ -29,16 +24,16 @@ export default {
       required: false,
       default: '',
     },
-    height: {
-      type: Number,
-      required: false,
-      default: 38,
-    },
-    width: {
-      type: Number,
-      required: false,
-      default: 160,
-    },
+    // height: {
+    //   type: Number,
+    //   required: false,
+    //   default: 38,
+    // },
+    // width: {
+    //   type: Number,
+    //   required: false,
+    //   default: 160,
+    // },
   },
 }
 </script>
@@ -47,12 +42,13 @@ export default {
 .button {
   text-align: center;
   width: 160px;
+  height: 38px;
   &__link {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 38px;
+    height: 100%;
     padding: 0;
     color: white;
     font-size: 14px;
@@ -87,6 +83,11 @@ export default {
     &.gray {
       background-color: #666666;
     }
+  }
+}
+@media screen and (max-width: 374px) {
+  .button {
+    width: 130px;
   }
 }
 </style>

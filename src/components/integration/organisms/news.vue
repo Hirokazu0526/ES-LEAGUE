@@ -98,4 +98,21 @@ export default {
     margin: auto 0;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-news {
+    &__itemWrapper {
+      grid-template-columns: 40px 1fr 20px;
+    }
+    &__itemImage {
+      width: 40px;
+      height: 40px;
+    }
+    &__date {
+      font-size: 10px;
+    }
+    &__category {
+      font-size: 10px;
+    }
+  }
+}
 </style>

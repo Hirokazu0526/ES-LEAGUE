@@ -401,7 +401,7 @@ export default {
   &__temaName {
     font-size: 14px;
     font-weight: bold;
-    width: 210px;
+    max-width: 210px;
     text-align: left;
   }
 
@@ -454,6 +454,13 @@ export default {
 
   &__btn {
     margin: 30px auto 60px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-schedule-result {
+    &__temaName {
+      font-size: 12px;
+    }
   }
 }
 </style>

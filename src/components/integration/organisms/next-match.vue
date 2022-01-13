@@ -248,4 +248,11 @@ export default {
     margin: auto 0;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-schedule {
+    &__temaName {
+      font-size: 12px;
+    }
+  }
+}
 </style>
