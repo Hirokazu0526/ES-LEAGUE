@@ -11,7 +11,7 @@
         class="es-League-profile__image"
       />
       <div class="es-League-profile__nameWrapper">
-        <h1 class="es-League-profile__name">{{ name }}</h1>
+        <p class="es-League-profile__name">{{ name }}</p>
         <p class="es-League-profile__englishName">{{ english }}</p>
       </div>
       <div class="es-League-profile__positionWrapper">
@@ -26,34 +26,42 @@
     </div>
     <div class="es-League-profile__info">
       <h3 class="es-League-profile__sectionTitle">PROFILE</h3>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">誕生日</p>
-        <p class="es-League-profile__text">{{ formatData }}</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">出身地</p>
-        <p class="es-League-profile__text">{{ birthplace }}</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">出身大学</p>
-        <p class="es-League-profile__text">{{ university }}</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">スタイル</p>
-        <p class="es-League-profile__text">{{ playstyle }}</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">尊敬する人</p>
-        <p class="es-League-profile__text">{{ respect }}</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">競技を始めた理由</p>
-        <p class="es-League-profile__text">{{ reason }}</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">戦歴</p>
-        <p class="es-League-profile__text history">{{ history }}</p>
-        <!-- <p class="es-League-profile__text history">{{ formatHistory }}</p> -->
+      <div class="es-League-profile__infoWrapper">
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">誕生日</p>
+          <p class="es-League-profile__text">{{ formatData }}</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">身長</p>
+          <p class="es-League-profile__text">{{ stature }}cm</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">出身地</p>
+          <p class="es-League-profile__text">{{ birthplace }}</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">出身大学</p>
+          <p class="es-League-profile__text">{{ university }}</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">ストロング<br />ポイント</p>
+          <p class="es-League-profile__text">{{ playstyle }}</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">尊敬する人</p>
+          <p class="es-League-profile__text">{{ respect }}</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">
+            競技を<br class="pc" />始めた理由
+          </p>
+          <p class="es-League-profile__text">{{ reason }}</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">戦歴</p>
+          <p class="es-League-profile__text history">{{ history }}</p>
+          <!-- <p class="es-League-profile__text history">{{ formatHistory }}</p> -->
+        </div>
       </div>
     </div>
     <div v-if="false" class="es-League-profile__info">
@@ -143,6 +151,7 @@ export default {
     position: absolute;
     width: 160px;
     right: 16px;
+    bottom: 0;
   }
 
   &__nameWrapper {
@@ -209,6 +218,10 @@ export default {
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
   }
+  &__infoWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   &__profileList {
     display: grid;
     grid-template-columns: 112px 1fr;
@@ -230,6 +243,7 @@ export default {
     font-size: 14px;
     font-weight: bold;
     text-align: left;
+    line-height: 1.2;
   }
 
   &__text {
@@ -240,6 +254,9 @@ export default {
     &.history {
       white-space: break-spaces;
     }
+    &.pc {
+      display: none;
+    }
   }
   &__btn {
     margin: 15px auto 0;
@@ -249,6 +266,74 @@ export default {
     grid-template-columns: 1fr 1fr;
     column-gap: 16px;
     justify-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-profile {
+    max-width: 830px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+    &__visualWrapper {
+      height: 680px;
+    }
+    &__image {
+      width: 320px;
+      top: 0;
+    }
+
+    &__nameWrapper {
+      top: 120px;
+      left: 15%;
+    }
+    &__name {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+    &__englishName {
+      font-size: 35px;
+    }
+    &__positionWrapper {
+      bottom: 50px;
+      left: 15%;
+    }
+    &__uniformNumber {
+      font-size: 180px;
+    }
+    &__position {
+      font-size: 40px;
+    }
+    &__info {
+      margin: 0 32px 40px;
+    }
+    &__infoWrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+    &__text {
+      font-size: 14px;
+      &.pc {
+        display: block;
+      }
+    }
+    &__profileList {
+      column-gap: 5px;
+      padding: 10px 5px 10px 5px;
+      &:nth-last-child(2),
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    &__textTitle {
+      font-size: 14px;
+    }
+    &__btnWrapper {
+      width: 500px;
+      margin: 0 auto;
+    }
   }
 }
 @media screen and (max-width: 374px) {

@@ -7,8 +7,6 @@
     <div class="es-League-team__info">
       <img :src="image.url" :alt="teamName" class="es-League-team__uniform" />
       <p class="es-League-team__teamName">{{ teamName }}</p>
-      <h3 class="es-League-team__sectionTitle">SLOGAN</h3>
-      <p class="es-League-team__text slogan">{{ slogan }}</p>
       <h3 class="es-League-team__sectionTitle">TEAM COLOR</h3>
       <p class="es-League-team__text teamcolor" :class="`${teamcolor}`">
         {{ teamcolor }}
@@ -163,6 +161,8 @@ export default {
     }
     &.teamIntroduction {
       text-align: left;
+      white-space: break-spaces;
+      line-break: anywhere;
     }
   }
   &__memberInfo {
