@@ -67,7 +67,7 @@ export default {
     grid-template-rows: 1fr 110px 40px;
     width: 100%;
     height: 370px;
-    background: url(~/assets/img/esleague_long_white.svg) 0% -70px no-repeat;
+    background: url(~/assets/img/logo/esleague_long_white.svg) 0% -70px no-repeat;
     background-size: 70%;
     padding: 27px 16px 20px;
   }
@@ -104,16 +104,16 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
     &.twitter {
-      background-image: url('~/assets/img/twitter_icon.svg');
+      background-image: url('~/assets/img/logo/twitter_icon.svg');
     }
     &.facebook {
-      background-image: url('~/assets/img/facebook_icon.png');
+      background-image: url('~/assets/img/logo/facebook_icon.png');
     }
     &.instagram {
-      background-image: url('~/assets/img/instagram_icon.png');
+      background-image: url('~/assets/img/logo/instagram_icon.png');
     }
     &.tiktok {
-      background-image: url('~/assets/img/tiktok_icon.svg');
+      background-image: url('~/assets/img/logo/tiktok_icon.svg');
       margin-right: 0;
     }
   }

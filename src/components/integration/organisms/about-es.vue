@@ -4,7 +4,7 @@
       <img
         id="logo"
         class="es-League-aboutEs__logo"
-        src="~/assets/img/es_logo.svg"
+        src="~/assets/img/logo/es_logo.svg"
         alt="ES LEAGUE LOGO"
       />
       <p class="es-League-aboutEs__text">

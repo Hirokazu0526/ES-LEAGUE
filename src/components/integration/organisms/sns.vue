@@ -56,16 +56,16 @@ export default {}
     background-size: contain;
     background-repeat: no-repeat;
     &.twitter {
-      background-image: url('~/assets/img/twitter_icon.svg');
+      background-image: url('~/assets/img/logo/twitter_icon.svg');
     }
     &.facebook {
-      background-image: url('~/assets/img/facebook_icon.png');
+      background-image: url('~/assets/img/logo/facebook_icon.png');
     }
     &.instagram {
-      background-image: url('~/assets/img/instagram_icon.png');
+      background-image: url('~/assets/img/logo/instagram_icon.png');
     }
     &.tiktok {
-      background-image: url('~/assets/img/tiktok_icon.svg');
+      background-image: url('~/assets/img/logo/tiktok_icon.svg');
     }
   }
 }
