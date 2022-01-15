@@ -159,7 +159,7 @@ export default {
 <style lang="scss" scoped>
 .es-League-schedule {
   padding-top: 20px;
-  margin-bottom: 34px;
+  margin: 0 16px 34px;
   &__title {
     text-align: center;
     font-size: 32px;
@@ -174,7 +174,7 @@ export default {
     }
   }
   &__contanier {
-    padding: 24px 16px 0px;
+    padding: 24px 0px 0px;
     color: #000;
     text-align: center;
   }
@@ -246,6 +246,12 @@ export default {
   }
   &__linkArrow {
     margin: auto 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-schedule {
+    max-width: 600px;
+    margin: 0 auto 34px;
   }
 }
 @media screen and (max-width: 374px) {
