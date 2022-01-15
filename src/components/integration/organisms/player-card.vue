@@ -25,7 +25,7 @@
               alt=""
               class="es-League-card__img"
             />
-            <p class="es-League-card__playerNumber">10</p>
+            <span class="es-League-card__playerNumber">10</span>
             <p class="es-League-card__playerPosition">アタッカー</p>
             <h4 class="es-League-card__playerName">内藤 利貴</h4>
             <p class="es-League-card__playerKana">Naito Toshitaka</p>
@@ -38,7 +38,7 @@
               alt=""
               class="es-League-card__img"
             />
-            <p class="es-League-card__playerNumber">10</p>
+            <span class="es-League-card__playerNumber">10</span>
             <p class="es-League-card__playerPosition">アタッカー</p>
             <h4 class="es-League-card__playerName">内藤 利貴</h4>
             <p class="es-League-card__playerKana">Naito Toshitaka</p>
@@ -139,6 +139,22 @@ export default {
   }
   &__btn {
     margin: 16px auto 0;
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-card {
+    &__playerNumber {
+      font-size: 25px;
+    }
+    &__playerName {
+      font-size: 14px;
+    }
+    &__item {
+      &:after {
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid #a37b30;
+      }
+    }
   }
 }
 </style>
