@@ -89,6 +89,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+    justify-content: center;
   }
   &__item {
     display: flex;
@@ -139,6 +140,15 @@ export default {
   }
   &__btn {
     margin: 16px auto 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-card {
+    max-width: 600px;
+    margin: 0 auto 34px;
+    &__list {
+      grid-template-columns: 238px 238px 238px;
+    }
   }
 }
 @media screen and (max-width: 374px) {
