@@ -3,18 +3,18 @@
     <div class="es-League-footer__bg">
       <ul class="es-League-footer__list">
         <li class="es-League-footer__listItem">
-          <nuxt-link to="/contact">
-            <p class="es-League-footer__listTitle">お問い合わせ</p>
+          <nuxt-link to="/news">
+            <p class="es-League-footer__listTitle">NEWS</p>
           </nuxt-link>
         </li>
-        <!-- <li class="es-League-footer__listItem">
-          <nuxt-link to="/contact">
-            <p class="es-League-footer__listTitle">体験しよう！</p>
-          </nuxt-link>
-        </li> -->
         <li class="es-League-footer__listItem">
-          <nuxt-link to="/">
-            <p class="es-League-footer__listTitle">??????????</p>
+          <nuxt-link to="/rank">
+            <p class="es-League-footer__listTitle">順位表</p>
+          </nuxt-link>
+        </li>
+        <li class="es-League-footer__listItem">
+          <nuxt-link to="/contact">
+            <p class="es-League-footer__listTitle">お問い合わせ</p>
           </nuxt-link>
         </li>
         <li class="es-League-footer__listItem">
