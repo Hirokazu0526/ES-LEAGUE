@@ -59,7 +59,15 @@
             <span>2nd</span>
             <p>{{ matchData.secondSet_A }}</p>
           </div>
-          <div class="es-League-match-result__score">
+          <div
+            v-if="
+              !(
+                matchData.thirdSet_H === undefined &&
+                matchData.thirdSet_A === undefined
+              )
+            "
+            class="es-League-match-result__score"
+          >
             <p>{{ matchData.thirdSet_H }}</p>
             <span>3rd</span>
             <p>{{ matchData.thirdSet_A }}</p>
