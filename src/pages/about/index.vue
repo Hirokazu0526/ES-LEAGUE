@@ -112,35 +112,33 @@
             </template>
             <template #body>
               <div class="es-League-about__goodsItem">
-                <p class="es-League-about__goodsName left">Ball</p>
+                <p class="es-League-about__goodsName">ボール</p>
                 <img
                   src="~/assets/img/about/ball.svg"
                   class="es-League-about__goods ball"
                   alt="セパタクローボール"
                 />
-                <p class="es-League-about__itemText ball">
-                  セパタクローのボールは、<br class="sp" />
-                  プラスチックを編んで <br class="sp" />
-                  できている為、表面は固くとても軽い。<br class="sp" />
+                <p class="es-League-about__itemText">
+                  セパタクローのボールは、プラスチックを編んで
+                  できている為、表面は固くとても軽い。
                   <br />
                   表面には12個の穴が開いていて、空洞になっている。
                   男子ボールと女子ボールは大きさと色に違いがある。
                 </p>
               </div>
               <div class="es-League-about__goodsItem">
-                <p class="es-League-about__goodsName right">shoes</p>
+                <p class="es-League-about__goodsName">シューズ</p>
                 <img
                   src="~/assets/img/about/shoes.svg"
                   class="es-League-about__goods shoes"
                   alt="セパタクローボール"
                 />
                 <p class="es-League-about__itemText shoes">
-                  セパタクローの選手の多くは<br class="sp" />
-                  ナンヤンというタイの靴を履いている。<br class="sp" />
+                  セパタクローの選手の多くは
+                  ナンヤンというタイの靴を履いている。
                   <br />
-                  比較的シンプルな作りをしていて、<br class="sp" />
-                  足の内側が平らなのでボールを<br class="sp" />
-                  安定して蹴りやすいということから<br class="sp" />
+                  比較的シンプルな作りをしていて、 足の内側が平らなのでボールを
+                  安定して蹴りやすいということから
                   長い間セパタクロー選手が愛用をしている。
                 </p>
               </div>
@@ -294,51 +292,24 @@ export default {
   }
 
   &__goodsItem {
-    position: relative;
-
-    & .es-League-about__itemText.ball {
-      padding-top: 150px;
-      &.sp {
-        display: block;
-      }
-    }
-    & .es-League-about__itemText.shoes {
-      padding-top: 200px;
-      text-align: right;
-      &.sp {
-        display: block;
-      }
+    &:nth-child(2) {
+      margin-top: 34px;
     }
   }
-  &__goodsName {
-    position: absolute;
-    top: 40px;
 
-    font-family: 'HNewYork';
-    font-size: 28px;
-    &.left {
-      left: 51px;
-    }
-    &.right {
-      right: 51px;
-    }
+  &__goodsName {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
   }
 
   &__goods {
-    position: absolute;
-    overflow-x: hidden;
+    margin-bottom: 16px;
     &.ball {
       width: 193px;
-      top: 0px;
-      right: 0px;
-      transform: translateX(20%);
     }
     &.shoes {
       width: 216px;
-      top: 0px;
-      left: 0px;
-      transform: translateX(-20%);
-      z-index: -1;
     }
   }
 
