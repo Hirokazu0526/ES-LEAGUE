@@ -3,6 +3,11 @@
     <div class="es-League-footer__bg">
       <ul class="es-League-footer__list">
         <li class="es-League-footer__listItem">
+          <nuxt-link to="/esleague">
+            <p class="es-League-footer__listTitle">ES LEAGUEとは</p>
+          </nuxt-link>
+        </li>
+        <li class="es-League-footer__listItem">
           <nuxt-link to="/news">
             <p class="es-League-footer__listTitle">NEWS</p>
           </nuxt-link>
