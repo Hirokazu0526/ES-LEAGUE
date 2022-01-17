@@ -5,6 +5,11 @@
     </h2>
     <div class="es-League-aboutEs__wrapper">
       <div class="es-League-aboutEs__story">
+        <img
+          src="~/assets/img/aboutES/about-es-kv.png"
+          class="es-League-aboutEs__bg"
+          alt="ES LEAGUE背景"
+        />
         <p class="es-League-aboutEs__storyText">
           セパタクロー競技にとって最高峰の世界大会は<br />
           4年に一度開催されるアジア競技大会である<br />
@@ -126,7 +131,7 @@
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData regulation">
-                試合開始前に各種目に出場するメンバー表を提出。また、必ず一人1種目は出場することとする
+                試合開始前に各種目に出場するメンバー表を提出。また、必ず一人1種目は出場することとする。
               </td>
             </tr>
             <tr>
@@ -240,15 +245,18 @@ export default {}
     margin-bottom: 30px;
   }
   &__story {
-    background: url(~/assets/img/aboutES/about-es-kv.png) 50% 50% no-repeat;
-    background-size: 100%;
+    position: relative;
     margin: 0 calc(50% - 50vw);
-    width: 100vw;
-    height: 563px;
+  }
+  &__bg {
+    width: 100%;
   }
   &__storyText {
-    margin: 0px 16px;
-    padding: 16px 0;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
     text-align: center;
     font-size: 13px;
     font-weight: normal;
@@ -299,6 +307,25 @@ export default {}
   }
   &__btn {
     margin: 16px auto 0;
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-aboutEs {
+    &__story {
+      height: 480px;
+    }
+    &__storyText {
+      font-size: 10px;
+    }
+    &__sectionText {
+      font-size: 12px;
+    }
+    &__tableTitle {
+      font-size: 12px;
+    }
+    &__tableData {
+      font-size: 12px;
+    }
   }
 }
 </style>
