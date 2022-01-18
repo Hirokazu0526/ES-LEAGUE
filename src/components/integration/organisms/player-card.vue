@@ -46,16 +46,14 @@
         </li>
       </ul>
     </div>
-    <es-button url="/profile" arrow="right" class="es-League-card__btn"
+    <!-- <es-button url="/profile" arrow="right" class="es-League-card__btn"
       >選手一覧</es-button
-    >
+    > -->
   </div>
 </template>
 
 <script>
-import esButton from '../atoms/es-button.vue'
 export default {
-  components: { esButton },
   props: {
     resData: {
       type: Object,
@@ -147,7 +145,6 @@ export default {
     max-width: 600px;
     margin: 0 auto 34px;
     &__list {
-      grid-template-columns: 238px 238px 238px;
     }
   }
 }
