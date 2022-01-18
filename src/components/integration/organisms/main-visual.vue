@@ -14,6 +14,7 @@ export default {}
 
 <style lang="scss" scoped>
 .es-Laegue-mainVisual {
+  margin: 0 calc(50% - 50vw);
   &__img {
     width: 100%;
     vertical-align: top;
