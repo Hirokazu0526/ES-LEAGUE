@@ -58,4 +58,10 @@ export default {
   color: #fff;
   padding-top: 80px;
 }
+@media screen and (min-width: 768px) {
+  .es-League {
+    max-width: 600px;
+    margin: 0 auto 34px;
+  }
+}
 </style>
