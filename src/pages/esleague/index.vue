@@ -50,7 +50,7 @@
         />
         <p class="es-League-aboutEs__sectionText left">
           ES LEAGUEはExtreme SepakTakraw
-          Leagueの略称です。この名称には「空中の格闘技」とも表されるセパタクローが持つ、「過激で極度の足技が人々を魅了する」想いが込められています。<br /><br />
+          Leagueの略称です。この名称には「空中の格闘技」とも称されるセパタクローが持つ「過激で極度の足技が人々を魅了する」想いが込められています。<br /><br />
           また、ロゴは大切にする３つのステークホルダーである競技者・観戦者・支援者への想いを込めたストライプにより、セパタクローのダイナミックさを表現し、本リーグのデザインアイデンティティとしています。
         </p>
       </section>
@@ -253,7 +253,7 @@ export default {}
   }
   &__storyText {
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 50%;
     width: 100%;
     transform: translateX(-50%);
