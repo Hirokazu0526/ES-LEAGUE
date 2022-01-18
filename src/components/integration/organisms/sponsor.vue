@@ -4,7 +4,7 @@
       SPONSOR<br /><span>スポンサー</span>
     </h3>
     <div class="es-League-sponsor__list">
-      <ul>
+      <ul class="es-League-sponsor__listWrapper">
         <li
           v-for="item in logoLists"
           :key="item.id"
@@ -107,6 +107,22 @@ export default {
 
   &__itemImg {
     display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-sponsor {
+    &__listWrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    &__listItem {
+      flex: 1;
+      min-width: 280px;
+      &:nth-child(2n-1) {
+        margin-right: 5px;
+      }
+    }
   }
 }
 </style>
