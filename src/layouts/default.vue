@@ -23,5 +23,6 @@ export default {
   position: fixed;
   width: 100vw;
   z-index: 100;
+  background-color: #000;
 }
 </style>

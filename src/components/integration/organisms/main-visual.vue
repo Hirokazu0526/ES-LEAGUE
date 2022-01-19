@@ -17,7 +17,15 @@ export default {}
   margin: 0 calc(50% - 50vw);
   &__img {
     width: 100%;
-    vertical-align: top;
+    display: block;
+  }
+}
+@media screen and (min-width: 950px) {
+  .es-Laegue-mainVisual {
+    &__img {
+      width: 950px;
+      margin: 0 auto;
+    }
   }
 }
 </style>

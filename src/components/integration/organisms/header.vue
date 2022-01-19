@@ -45,6 +45,14 @@ export default {
     display: block;
   }
 }
+@media screen and (min-width: 950px) {
+  .header {
+    &__container {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+  }
+}
 @media screen and (max-width: 374px) {
   .header {
     &__container {
