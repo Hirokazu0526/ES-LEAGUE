@@ -419,4 +419,11 @@ export default {
     column-gap: 16px;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-match-result {
+    &__playerName {
+      font-size: 15px;
+    }
+  }
+}
 </style>
