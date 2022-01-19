@@ -4,13 +4,25 @@
       PLAYER DETAIL<br /><span>選手詳細</span>
     </h2>
 
-    <div class="es-League-profile__visualWrapper">
+    <div
+      class="es-League-profile__visualWrapper"
+      :class="{
+        women: team.gender[0] === 'women',
+      }"
+    >
       <img
         :src="imageSilhouette.url"
         :alt="name"
         class="es-League-profile__image"
+        :class="{
+          women: team.gender[0] === 'women',
+          ms: english === 'Masuda Ryo',
+        }"
       />
-      <div class="es-League-profile__nameWrapper">
+      <div
+        class="es-League-profile__nameWrapper"
+        :class="{ women: team.gender[0] === 'women' }"
+      >
         <p class="es-League-profile__name">{{ name }}</p>
         <p class="es-League-profile__englishName">{{ english }}</p>
       </div>
@@ -152,6 +164,14 @@ export default {
     width: 160px;
     right: 16px;
     bottom: 0;
+    &.women {
+      width: 220px;
+      right: -5px;
+      bottom: -5px;
+    }
+    &.ms {
+      width: 183px;
+    }
   }
 
   &__nameWrapper {
@@ -159,6 +179,9 @@ export default {
     top: 40px;
     left: 16px;
     text-align: left;
+    &.women {
+      top: 60px;
+    }
   }
   &__name {
     font-size: 30px;
@@ -268,6 +291,42 @@ export default {
     justify-items: center;
   }
 }
+@media screen and (max-width: 374px) {
+  .es-League-profile {
+    &__visualWrapper {
+      height: 330px;
+      &.women {
+        height: 300px;
+      }
+    }
+    &__image {
+      right: 0;
+      width: 145px;
+      &.women {
+        width: 180px;
+      }
+      &.ms {
+        width: 168px;
+      }
+    }
+    &__name {
+      font-size: 25px;
+    }
+    &__englishName {
+      font-size: 15px;
+    }
+    &__text {
+      font-size: 12px;
+    }
+    &__profileList {
+      column-gap: 5px;
+      padding: 10px 5px 10px 5px;
+    }
+    &__textTitle {
+      font-size: 12px;
+    }
+  }
+}
 @media screen and (min-width: 768px) {
   .es-League-profile {
     max-width: 830px;
@@ -284,11 +343,17 @@ export default {
     &__image {
       width: 320px;
       top: 0;
+      &.women {
+        width: 400px;
+      }
     }
 
     &__nameWrapper {
       top: 120px;
       left: 15%;
+      &.women {
+        top: 120px;
+      }
     }
     &__name {
       font-size: 55px;
@@ -333,29 +398,6 @@ export default {
     &__btnWrapper {
       width: 500px;
       margin: 0 auto;
-    }
-  }
-}
-@media screen and (max-width: 374px) {
-  .es-League-profile {
-    &__image {
-      right: 0;
-    }
-    &__name {
-      font-size: 25px;
-    }
-    &__englishName {
-      font-size: 15px;
-    }
-    &__text {
-      font-size: 12px;
-    }
-    &__profileList {
-      column-gap: 5px;
-      padding: 10px 5px 10px 5px;
-    }
-    &__textTitle {
-      font-size: 12px;
     }
   }
 }

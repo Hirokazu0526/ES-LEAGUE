@@ -11,22 +11,22 @@
           alt="ES LEAGUE背景"
         />
         <p class="es-League-aboutEs__storyText">
-          セパタクロー競技にとって最高峰の世界大会は<br />
+          セパタクロー競技にとって最高峰の世界大会は<br class="pc" />
           4年に一度開催されるアジア競技大会である<br />
-          その最高峰の戦いが2026年、<br />
+          その最高峰の戦いが2026年、<br class="pc" />
           日本は愛知県名古屋市にて開催が決まった<br />
           <br />
-          日本セパタクロー界の最高成績は<br />
+          日本セパタクロー界の最高成績は<br class="pc" />
           2018年 アジア競技大会での銀メダル<br />
           金メダルにはあと一歩届いていない<br />
           <br />
-          パンデミックな時代だからといって<br />
+          パンデミックな時代だからといって<br class="pc" />
           ただ立ち止まって待っていても<br />
           金メダルが我々に手を差し伸べてくれるわけもなく<br />
           自分たちの力で勝ち取りに行かなければならない<br />
           <br />
           今ここから新たな歴史の一歩を踏み出す<br />
-          全ては2026年愛知名古屋アジア競技大会で<br />
+          全ては2026年愛知名古屋アジア競技大会で<br class="pc" />
           センターポールに日の丸を掲げるために<br />
           そしてその先の未来に向かって
         </p>
@@ -61,7 +61,7 @@
         <table class="es-League-aboutEs__table">
           <tbody>
             <tr class="es-League-aboutEs__tableRow">
-              <td class="es-League-aboutEs__tableTitle">チーム数</td>
+              <td class="es-League-aboutEs__tableTitle">大会形式</td>
               <td class="es-League-aboutEs__tableData">
                 男子5チーム、女子3チームのリーグ戦
               </td>
@@ -88,12 +88,6 @@
               </td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableTitle">セット数</td>
-              <td class="es-League-aboutEs__tableData">
-                1セット21点マッチ<br /><span>(最大25点)</span>
-              </td>
-            </tr>
-            <tr>
               <td class="es-League-aboutEs__tableTitle">シーズン</td>
               <td class="es-League-aboutEs__tableData">
                 2022年2月〜7月<br /><span
@@ -106,18 +100,20 @@
                 試合形式
               </td>
               <td class="es-League-aboutEs__tableData bottom">
-                ＜1試合 3セットゲーム＞
+                1セット21点(最大25点)
               </td>
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData regulation">
-                【男子】<br />
+                【男子】(3セットゲーム)<br />
                 &emsp;ダブル：1セットマッチ<br />
                 &emsp;&emsp;レグ：1セットマッチ<br />クワッド：1セットマッチ
               </td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableData bottom top">【女子】</td>
+              <td class="es-League-aboutEs__tableData bottom top">
+                【女子】(2セット先取)
+              </td>
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData regulation">
@@ -176,8 +172,8 @@
               <td class="es-League-aboutEs__tableData">中川 憲</td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableTitle">テキスト</td>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
+              <td class="es-League-aboutEs__tableTitle">連絡先</td>
+              <td class="es-League-aboutEs__tableData">000-0000-0000</td>
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableTitle">テキスト</td>
@@ -277,7 +273,7 @@ export default {}
   }
   &__logo {
     margin-bottom: 16px;
-    width: 100%;
+    width: 300px;
   }
   &__tableTitle {
     background-color: #f2f1f0;
@@ -325,6 +321,46 @@ export default {}
     }
     &__tableData {
       font-size: 12px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-aboutEs {
+    &__story {
+      overflow: hidden;
+      height: 700px;
+    }
+    &__bg {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    &__storyText {
+      top: 5%;
+      & .pc {
+        display: none;
+      }
+    }
+    &__section {
+      max-width: 600px;
+      margin: 40px auto 34px;
+    }
+  }
+}
+@media screen and (min-width: 950px) {
+  .es-League-aboutEs {
+    &__story {
+      height: 750px;
+    }
+    &__bg {
+      width: 950px;
+    }
+    &__storyText {
+      top: 3%;
+      font-size: 16px;
+      line-height: 1.4;
     }
   }
 }
