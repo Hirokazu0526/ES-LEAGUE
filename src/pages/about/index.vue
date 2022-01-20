@@ -5,7 +5,7 @@
     </h2>
     <div class="es-League-about__container">
       <img
-        src="~/assets/img/about/key-visual.JPG"
+        src="~/assets/img/about/key-visual.png"
         alt="セパタクローアタック"
         class="es-League-about__visual"
       />
