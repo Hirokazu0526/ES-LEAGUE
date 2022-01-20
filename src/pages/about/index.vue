@@ -31,6 +31,7 @@
                   </p>
                   <img
                     src="~/assets/img/about/hands.svg"
+                    class="es-League-about__ruleListImg hand"
                     alt="手を使ってはいけない"
                   />
                 </li>
@@ -38,7 +39,11 @@
                   <p class="es-League-about__ruleListText">
                     2. 1人で続けて3回まで<br class="sp" />ボールにタッチして良い
                   </p>
-                  <img src="~/assets/img/about/touch.svg" alt="タッチ数" />
+                  <img
+                    src="~/assets/img/about/touch.svg"
+                    class="es-League-about__ruleListImg three-touch"
+                    alt="タッチ数"
+                  />
                 </li>
                 <li class="es-League-about__ruleListItem">
                   <p class="es-League-about__ruleListText">
@@ -46,6 +51,7 @@
                   </p>
                   <img
                     src="~/assets/img/about/rotation.svg"
+                    class="es-League-about__ruleListImg rotation"
                     alt="ローテーション"
                   />
                 </li>
@@ -55,6 +61,7 @@
                   </p>
                   <img
                     src="~/assets/img/about/service-time.svg"
+                    class="es-League-about__ruleListImg three-times"
                     alt="サーブ回数"
                   />
                 </li>
@@ -154,10 +161,10 @@
               <div class="es-League-about__technic">
                 <ul class="es-League-about__technicList">
                   <li class="es-League-about__technicItem">
-                    <p class="es-League-about__itechnicTitle">アタック</p>
+                    <p class="es-League-about__technicTitle">アタック</p>
                     <img
                       src="~/assets/img/about/attack.JPG"
-                      class="es-League-about__itechnicImage"
+                      class="es-League-about__technicImage"
                       alt="アタック"
                     />
                     <p class="es-League-about__itemText">
@@ -166,10 +173,10 @@
                     </p>
                   </li>
                   <li class="es-League-about__technicItem">
-                    <p class="es-League-about__itechnicTitle">サーブ</p>
+                    <p class="es-League-about__technicTitle">サーブ</p>
                     <img
                       src="~/assets/img/about/serve.JPG"
-                      class="es-League-about__itechnicImage"
+                      class="es-League-about__technicImage"
                       alt="アタック"
                     />
                     <p class="es-League-about__itemText">
@@ -178,10 +185,10 @@
                     </p>
                   </li>
                   <li class="es-League-about__technicItem">
-                    <p class="es-League-about__itechnicTitle">トス</p>
+                    <p class="es-League-about__technicTitle">トス</p>
                     <img
                       src="~/assets/img/about/tosser.JPG"
-                      class="es-League-about__itechnicImage"
+                      class="es-League-about__technicImage"
                       alt="アタック"
                     />
                     <p class="es-League-about__itemText">
@@ -190,10 +197,10 @@
                     </p>
                   </li>
                   <li class="es-League-about__technicItem">
-                    <p class="es-League-about__itechnicTitle">ブロック</p>
+                    <p class="es-League-about__technicTitle">ブロック</p>
                     <img
                       src="~/assets/img/about/block.JPG"
-                      class="es-League-about__itechnicImage"
+                      class="es-League-about__technicImage"
                       alt="アタック"
                     />
                     <p class="es-League-about__itemText">
@@ -203,10 +210,10 @@
                     </p>
                   </li>
                   <li class="es-League-about__technicItem">
-                    <p class="es-League-about__itechnicTitle">レシーブ</p>
+                    <p class="es-League-about__technicTitle">レシーブ</p>
                     <img
                       src="~/assets/img/about/receive.JPG"
-                      class="es-League-about__itechnicImage"
+                      class="es-League-about__technicImage"
                       alt="アタック"
                     />
                     <p class="es-League-about__itemText">
@@ -344,14 +351,14 @@ export default {
     }
   }
 
-  &__itechnicTitle {
+  &__technicTitle {
     font-size: 18px;
     font-weight: bold;
     text-align: left;
     margin-bottom: 10px;
   }
 
-  &__itechnicImage {
+  &__technicImage {
     width: 100%;
     margin-bottom: 5px;
   }
@@ -379,6 +386,51 @@ export default {
       &.right {
         right: 25px;
       }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-about {
+    max-width: 600px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 35px;
+      & span {
+        font-size: 24px;
+      }
+    }
+    &__text {
+      font-size: 18px;
+    }
+    &__itemText {
+      font-size: 16px;
+    }
+    &__ruleListText {
+      font-size: 16px;
+      & .sp {
+        display: none;
+      }
+    }
+    &__ruleListImg {
+      &.hand {
+        width: 130px;
+      }
+      &.three-touch {
+        width: 140px;
+      }
+      &.rotation {
+        width: 70px;
+      }
+      &.three-times {
+        width: 90px;
+      }
+    }
+    &__technicItem {
+      margin-top: 25px;
+    }
+    &__technicTitle {
+      font-size: 24px;
     }
   }
 }

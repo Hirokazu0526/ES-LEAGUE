@@ -328,7 +328,7 @@ export default {}
   .es-League-aboutEs {
     &__title {
       font-size: 45px;
-      margin-bottom: 35px;
+      margin-bottom: 45px;
       & span {
         font-size: 24px;
       }
@@ -353,6 +353,9 @@ export default {}
     &__section {
       max-width: 600px;
       margin: 40px auto 34px;
+    }
+    &__sectionText {
+      font-size: 18px;
     }
   }
 }
