@@ -129,4 +129,17 @@ export default {
     margin: 40px auto 0;
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-newsInfomation {
+    max-width: 600px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 35px;
+      & span {
+        font-size: 24px;
+      }
+    }
+  }
+}
 </style>

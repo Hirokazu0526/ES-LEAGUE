@@ -155,4 +155,32 @@ export default {
     }
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-teamList {
+    max-width: 600px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 35px;
+      & span {
+        font-size: 24px;
+      }
+    }
+    &__item {
+      margin-left: 32px;
+    }
+    &__link {
+      gap: 30px;
+    }
+    &__img {
+      width: 80px;
+    }
+    &__teamName {
+      font-size: 30px;
+    }
+    &__btnWrapper {
+      margin-top: 70px;
+    }
+  }
+}
 </style>

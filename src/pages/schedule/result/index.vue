@@ -463,4 +463,10 @@ export default {
     }
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-schedule-result {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
 </style>

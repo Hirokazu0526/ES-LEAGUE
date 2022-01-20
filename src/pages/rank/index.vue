@@ -119,7 +119,6 @@ export default {
     text-align: center;
     margin: 10px auto 35px;
     width: 100%;
-    font-size: 16px;
     border-collapse: collapse;
     border-spacing: 0;
     thead {
@@ -131,6 +130,7 @@ export default {
       }
       th {
         border-right: 1px solid #fff;
+        font-size: 14px;
         &:last-child {
           border-right: none;
         }
@@ -198,6 +198,40 @@ export default {
     }
     &__width {
       width: 110px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-rank {
+    max-width: 600px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 35px;
+      & span {
+        font-size: 24px;
+      }
+    }
+
+    &__gender {
+      font-size: 32px;
+    }
+
+    &__list {
+      thead {
+        th {
+          font-size: 20px;
+        }
+      }
+      tbody {
+        th {
+          font-size: 24px;
+        }
+        td {
+          padding: 10px 2px 10px 5px;
+          font-size: 24px;
+        }
+      }
     }
   }
 }

@@ -426,4 +426,23 @@ export default {
     }
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-match-result {
+    max-width: 700px;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+    &__teamMemberLink {
+      padding-left: 100px;
+    }
+    &__member {
+      margin-bottom: 30px;
+    }
+  }
+}
 </style>

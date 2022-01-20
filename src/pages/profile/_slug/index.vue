@@ -17,6 +17,7 @@
         :class="{
           women: team.gender[0] === 'women',
           ms: english === 'Masuda Ryo',
+          ht: english === 'Hogawa Tasuku',
         }"
       />
       <div
@@ -172,6 +173,9 @@ export default {
     &.ms {
       width: 183px;
     }
+    &.ht {
+      width: 180px;
+    }
   }
 
   &__nameWrapper {
@@ -308,6 +312,9 @@ export default {
       &.ms {
         width: 168px;
       }
+      &.ht {
+        width: 160px;
+      }
     }
     &__name {
       font-size: 25px;
@@ -329,7 +336,7 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .es-League-profile {
-    max-width: 830px;
+    max-width: 700px;
     margin: 0 auto;
     &__title {
       font-size: 45px;
@@ -338,13 +345,19 @@ export default {
       }
     }
     &__visualWrapper {
-      height: 680px;
+      height: 580px;
     }
     &__image {
-      width: 320px;
+      width: 250px;
       top: 0;
       &.women {
-        width: 400px;
+        width: 340px;
+      }
+      &.ms {
+        width: 295px;
+      }
+      &.ht {
+        width: 290px;
       }
     }
 

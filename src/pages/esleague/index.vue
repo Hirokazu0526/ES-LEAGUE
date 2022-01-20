@@ -326,6 +326,13 @@ export default {}
 }
 @media screen and (min-width: 768px) {
   .es-League-aboutEs {
+    &__title {
+      font-size: 45px;
+      margin-bottom: 35px;
+      & span {
+        font-size: 24px;
+      }
+    }
     &__story {
       overflow: hidden;
       height: 700px;

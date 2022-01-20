@@ -43,6 +43,7 @@
             :src="sponsorLogo.url"
             :alt="sponsor"
             class="es-League-team__sponsorImg"
+            :class="{ bvd: sponsor === 'BVD' }"
           />
         </div>
       </div>
@@ -215,6 +216,50 @@ export default {
     grid-template-columns: 1fr 1fr;
     column-gap: 16px;
     justify-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .es-League-team {
+    max-width: 600px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 35px;
+      & span {
+        font-size: 24px;
+      }
+    }
+    &__uniform {
+      width: 180px;
+    }
+    &__teamName {
+      font-size: 32px;
+    }
+    &__sectionTitle {
+      font-size: 24px;
+    }
+    &__memberList {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    &__memberImg {
+      width: 130px;
+    }
+    &__memberName {
+      font-size: 18px;
+    }
+    &__sponsorImg {
+      width: 300px;
+      &.bvd {
+        width: 200px;
+      }
+    }
+    &__sponsorArea {
+      height: 100px;
+      &.bvd {
+        height: 160px;
+      }
+    }
   }
 }
 </style>

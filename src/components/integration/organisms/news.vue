@@ -115,4 +115,27 @@ export default {
     }
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-news {
+    &__itemWrapper {
+      grid-template-columns: 85px 1fr 20px;
+      gap: 10px;
+    }
+    &__itemImage {
+      width: 85px;
+      height: 85px;
+    }
+    &__date {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    &__category {
+      padding: 5px 8px;
+      font-size: 15px;
+    }
+    &__title {
+      font-size: 18px;
+    }
+  }
+}
 </style>
