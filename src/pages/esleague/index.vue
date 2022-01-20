@@ -127,7 +127,7 @@
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData regulation">
-                試合開始前に各種目に出場するメンバー表を提出。また、必ず一人1種目は出場することとする。
+                試合開始前に各種目に出場するメンバー表を提出。<br />また、必ず一人1種目は出場することとする。
               </td>
             </tr>
             <tr>
@@ -277,7 +277,7 @@ export default {}
   }
   &__tableTitle {
     background-color: #f2f1f0;
-    min-width: 120px;
+    min-width: 100px;
     vertical-align: middle;
     font-size: 14px;
     font-weight: bold;
@@ -285,7 +285,7 @@ export default {}
   &__tableData {
     text-align: left;
     vertical-align: middle;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
     padding: 8px 5px;
     &.bottom {
@@ -356,6 +356,16 @@ export default {}
     }
     &__sectionText {
       font-size: 18px;
+    }
+    &__logo {
+      width: 350px;
+    }
+    &__tableTitle {
+      font-size: 18px;
+      min-width: 120px;
+    }
+    &__tableData {
+      font-size: 16px;
     }
   }
 }
