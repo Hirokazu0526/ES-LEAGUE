@@ -129,7 +129,7 @@ export default {
   }
 
   &__teamName {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
   }
   &__btnWrapper {
