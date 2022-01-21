@@ -19,6 +19,7 @@ export default {}
   background-color: #666666;
   border-radius: 2px;
   position: relative;
+  border: none;
   &::after {
     position: absolute;
     content: '';
