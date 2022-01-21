@@ -467,6 +467,13 @@ export default {
   .es-League-schedule-result {
     max-width: 500px;
     margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
   }
 }
 </style>

@@ -90,4 +90,17 @@ export default {}
     }
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-complete {
+    max-width: 500px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+  }
+}
 </style>

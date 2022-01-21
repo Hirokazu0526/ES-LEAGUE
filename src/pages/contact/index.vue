@@ -402,4 +402,17 @@ textarea {
     font-size: 13px;
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-contact {
+    max-width: 500px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+  }
+}
 </style>
