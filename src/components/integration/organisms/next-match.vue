@@ -23,28 +23,28 @@
         <ul class="es-League-schedule__list">
           <li>
             <nuxt-link
-              :to="`/match/${isThisWeek.id}?fields=coat1`"
+              :to="`/match/${isThisWeek.id}?fields=game1`"
               class="es-League-schedule__item"
             >
               <div class="es-League-schedule__teamInfo">
                 <div class="es-League-schedule__team">
                   <img
-                    :src="isThisWeek.competition.coat1H.image.url"
+                    :src="isThisWeek.competition.game1H.image.url"
                     alt=""
                     class="es-League-schedule__teamImage"
                   />
                   <p class="es-League-schedule__temaName">
-                    {{ isThisWeek.competition.coat1H.teamName }}
+                    {{ isThisWeek.competition.game1H.teamName }}
                   </p>
                 </div>
                 <div class="es-League-schedule__team">
                   <img
-                    :src="isThisWeek.competition.coat1A.image.url"
+                    :src="isThisWeek.competition.game1A.image.url"
                     alt=""
                     class="es-League-schedule__teamImage"
                   />
                   <p class="es-League-schedule__temaName">
-                    {{ isThisWeek.competition.coat1A.teamName }}
+                    {{ isThisWeek.competition.game1A.teamName }}
                   </p>
                 </div>
               </div>
@@ -54,28 +54,28 @@
           </li>
           <li>
             <nuxt-link
-              :to="`/match/${isThisWeek.id}?fields=coat2`"
+              :to="`/match/${isThisWeek.id}?fields=game2`"
               class="es-League-schedule__item"
             >
               <div class="es-League-schedule__teamInfo">
                 <div class="es-League-schedule__team">
                   <img
-                    :src="isThisWeek.competition.coat2H.image.url"
+                    :src="isThisWeek.competition.game2H.image.url"
                     alt=""
                     class="es-League-schedule__teamImage"
                   />
                   <p class="es-League-schedule__temaName">
-                    {{ isThisWeek.competition.coat2H.teamName }}
+                    {{ isThisWeek.competition.game2H.teamName }}
                   </p>
                 </div>
                 <div class="es-League-schedule__team">
                   <img
-                    :src="isThisWeek.competition.coat2A.image.url"
+                    :src="isThisWeek.competition.game2A.image.url"
                     alt=""
                     class="es-League-schedule__teamImage"
                   />
                   <p class="es-League-schedule__temaName">
-                    {{ isThisWeek.competition.coat2A.teamName }}
+                    {{ isThisWeek.competition.game2A.teamName }}
                   </p>
                 </div>
               </div>
@@ -85,28 +85,28 @@
           </li>
           <li>
             <nuxt-link
-              :to="`/match/${isThisWeek.id}?fields=coat3`"
+              :to="`/match/${isThisWeek.id}?fields=game3`"
               class="es-League-schedule__item"
             >
               <div class="es-League-schedule__teamInfo">
                 <div class="es-League-schedule__team">
                   <img
-                    :src="isThisWeek.competition.coat3H.image.url"
+                    :src="isThisWeek.competition.game3H.image.url"
                     alt=""
                     class="es-League-schedule__teamImage"
                   />
                   <p class="es-League-schedule__temaName">
-                    {{ isThisWeek.competition.coat3H.teamName }}
+                    {{ isThisWeek.competition.game3H.teamName }}
                   </p>
                 </div>
                 <div class="es-League-schedule__team">
                   <img
-                    :src="isThisWeek.competition.coat3A.image.url"
+                    :src="isThisWeek.competition.game3A.image.url"
                     alt=""
                     class="es-League-schedule__teamImage"
                   />
                   <p class="es-League-schedule__temaName">
-                    {{ isThisWeek.competition.coat3A.teamName }}
+                    {{ isThisWeek.competition.game3A.teamName }}
                   </p>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default {
     isThisWeek() {
       if (this.firstWeek) {
         return this.getCompetitionList[0]
-      } else if (!this.secondWeek) {
+      } else if (this.secondWeek) {
         return this.getCompetitionList[1]
       } else if (this.thirdWeek) {
         return this.getCompetitionList[2]
@@ -150,7 +150,7 @@ export default {
       } else if (this.fifthWeek) {
         return this.getCompetitionList[4]
       }
-      return ''
+      return this.getCompetitionList[0]
     },
   },
 }

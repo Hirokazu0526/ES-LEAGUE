@@ -162,35 +162,35 @@ export default {
     },
     matchData() {
       // URLパラメータを見て試合データを取得
-      if (this.$route.query.fields === 'coat1') {
-        return this.results.coat1
-      } else if (this.$route.query.fields === 'coat2') {
-        return this.results.coat2
+      if (this.$route.query.fields === 'game1') {
+        return this.results.game1
+      } else if (this.$route.query.fields === 'game2') {
+        return this.results.game2
       } else {
-        return this.results.coat3
+        return this.results.game3
       }
     },
     homeTeam() {
       // URLパラメータを見てhomeチーム名を取得
-      if (this.$route.query.fields === 'coat1') {
-        const res = this.competition.coat1H.teamName.split(' ').join('\n')
+      if (this.$route.query.fields === 'game1') {
+        const res = this.competition.game1H.teamName.split(' ').join('\n')
         return res
-      } else if (this.$route.query.fields === 'coat2') {
-        const res = this.competition.coat2H.teamName.split(' ').join('\n')
+      } else if (this.$route.query.fields === 'game2') {
+        const res = this.competition.game2H.teamName.split(' ').join('\n')
         return res
       } else {
-        const res = this.competition.coat3H.teamName.split(' ').join('\n')
+        const res = this.competition.game3H.teamName.split(' ').join('\n')
         return res
       }
     },
     awayTeam() {
       // URLパラメータを見てawayチーム名を取得
-      if (this.$route.query.fields === 'coat1') {
-        return this.competition.coat1A.teamName.split(' ').join('\n')
-      } else if (this.$route.query.fields === 'coat2') {
-        return this.competition.coat2A.teamName.split(' ').join('\n')
+      if (this.$route.query.fields === 'game1') {
+        return this.competition.game1A.teamName.split(' ').join('\n')
+      } else if (this.$route.query.fields === 'game2') {
+        return this.competition.game2A.teamName.split(' ').join('\n')
       } else {
-        return this.competition.coat3A.teamName.split(' ').join('\n')
+        return this.competition.game3A.teamName.split(' ').join('\n')
       }
     },
     homeTeamMember() {

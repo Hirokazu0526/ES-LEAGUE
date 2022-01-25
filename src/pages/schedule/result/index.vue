@@ -23,36 +23,44 @@
           <li>
             <nuxt-link
               class="es-League-schedule-result__item"
-              :to="`/match/${isThisWeek.id}?fields=coat1`"
+              :to="`/match/${isThisWeek.id}?fields=game1`"
             >
               <div class="es-League-schedule-result__teamInfo">
                 <div class="es-League-schedule-result__team">
                   <img
-                    :src="isThisWeek.competition.coat1H.image.url"
+                    :src="
+                      isThisWeek.competition.game1H === null
+                        ? noImage
+                        : isThisWeek.competition.game1H.image.url
+                    "
                     alt=""
                     class="es-League-schedule-result__teamImage"
                   />
                   <p class="es-League-schedule-result__temaName">
-                    {{ isThisWeek.competition.coat1H.teamName }}
+                    {{ isThisWeek.competition.game1H.teamName }}
                   </p>
                   <div class="es-League-schedule-result__scoreWrapper">
                     <span class="es-League-schedule-result__score">{{
-                      isThisWeek.results.coat1.getSet_H
+                      isThisWeek.results.game1.getSet_H
                     }}</span>
                   </div>
                 </div>
                 <div class="es-League-schedule-result__team">
                   <img
-                    :src="isThisWeek.competition.coat1A.image.url"
+                    :src="
+                      isThisWeek.competition.game1A === null
+                        ? noImage
+                        : isThisWeek.competition.game1A.image.url
+                    "
                     alt=""
                     class="es-League-schedule-result__teamImage"
                   />
                   <p class="es-League-schedule-result__temaName">
-                    {{ isThisWeek.competition.coat1A.teamName }}
+                    {{ isThisWeek.competition.game1A.teamName }}
                   </p>
                   <div class="es-League-schedule-result__scoreWrapper">
                     <span class="es-League-schedule-result__score">{{
-                      isThisWeek.results.coat1.getSet_A
+                      isThisWeek.results.game1.getSet_A
                     }}</span>
                   </div>
                 </div>
@@ -63,36 +71,44 @@
           <li>
             <nuxt-link
               class="es-League-schedule-result__item"
-              :to="`/match/${isThisWeek.id}?fields=coat2`"
+              :to="`/match/${isThisWeek.id}?fields=game2`"
             >
               <div class="es-League-schedule-result__teamInfo">
                 <div class="es-League-schedule-result__team">
                   <img
-                    :src="isThisWeek.competition.coat2H.image.url"
+                    :src="
+                      isThisWeek.competition.game2H === null
+                        ? noImage
+                        : isThisWeek.competition.game2H.image.url
+                    "
                     alt=""
                     class="es-League-schedule-result__teamImage"
                   />
                   <p class="es-League-schedule-result__temaName">
-                    {{ isThisWeek.competition.coat2H.teamName }}
+                    {{ isThisWeek.competition.game2H.teamName }}
                   </p>
                   <div class="es-League-schedule-result__scoreWrapper">
                     <span class="es-League-schedule-result__score">{{
-                      isThisWeek.results.coat2.getSet_H
+                      isThisWeek.results.game2.getSet_H
                     }}</span>
                   </div>
                 </div>
                 <div class="es-League-schedule-result__team">
                   <img
-                    :src="isThisWeek.competition.coat2A.image.url"
+                    :src="
+                      isThisWeek.competition.game2A === null
+                        ? noImage
+                        : isThisWeek.competition.game2A.image.url
+                    "
                     alt=""
                     class="es-League-schedule-result__teamImage"
                   />
                   <p class="es-League-schedule-result__temaName">
-                    {{ isThisWeek.competition.coat2A.teamName }}
+                    {{ isThisWeek.competition.game2A.teamName }}
                   </p>
                   <div class="es-League-schedule-result__scoreWrapper">
                     <span class="es-League-schedule-result__score">{{
-                      isThisWeek.results.coat2.getSet_A
+                      isThisWeek.results.game2.getSet_A
                     }}</span>
                   </div>
                 </div>
@@ -103,36 +119,44 @@
           <li>
             <nuxt-link
               class="es-League-schedule-result__item"
-              :to="`/match/${isThisWeek.id}?fields=coat3`"
+              :to="`/match/${isThisWeek.id}?fields=game3`"
             >
               <div class="es-League-schedule-result__teamInfo">
                 <div class="es-League-schedule-result__team">
                   <img
-                    :src="isThisWeek.competition.coat3H.image.url"
+                    :src="
+                      isThisWeek.competition.game3H === null
+                        ? noImage
+                        : isThisWeek.competition.game3H.image.url
+                    "
                     alt=""
                     class="es-League-schedule-result__teamImage"
                   />
                   <p class="es-League-schedule-result__temaName">
-                    {{ isThisWeek.competition.coat3H.teamName }}
+                    {{ isThisWeek.competition.game3H.teamName }}
                   </p>
                   <div class="es-League-schedule-result__scoreWrapper">
                     <span class="es-League-schedule-result__score">{{
-                      isThisWeek.results.coat3.getSet_H
+                      isThisWeek.results.game3.getSet_H
                     }}</span>
                   </div>
                 </div>
                 <div class="es-League-schedule-result__team">
                   <img
-                    :src="isThisWeek.competition.coat3A.image.url"
+                    :src="
+                      isThisWeek.competition.game3A === null
+                        ? noImage
+                        : isThisWeek.competition.game3A.image.url
+                    "
                     alt=""
                     class="es-League-schedule-result__teamImage"
                   />
                   <p class="es-League-schedule-result__temaName">
-                    {{ isThisWeek.competition.coat3A.teamName }}
+                    {{ isThisWeek.competition.game3A.teamName }}
                   </p>
                   <div class="es-League-schedule-result__scoreWrapper">
                     <span class="es-League-schedule-result__score">{{
-                      isThisWeek.results.coat3.getSet_A
+                      isThisWeek.results.game3.getSet_A
                     }}</span>
                   </div>
                 </div>
@@ -161,11 +185,9 @@
           <h3 class="es-League-schedule-result__matchDate">
             <span class="left">{{ item.clause }}</span
             >{{ item.date
-            }}<span
-              v-if="item.startTime === '未定' ? '' : item.startTime"
-              class="right"
-              >{{ item.startTime }}</span
-            >
+            }}<span class="right">{{
+              item.startTime === '未定' ? '予定' : item.startTime
+            }}</span>
           </h3>
           <p
             v-if="item.stadium === '未定' ? '' : item.stadium"
@@ -185,27 +207,43 @@
                 <!-- <nuxt-link
                   class="es-League-schedule-result"
                   :class="{ 'is-disabled': item.date < isThisWeek }"
-                  :to="`/match/${isThisWeek.id}?fields=coat3`"
+                  :to="`/match/${isThisWeek.id}?fields=game3`"
                 > -->
                 <div class="es-League-schedule-result__teamInfo">
                   <div class="es-League-schedule-result__team">
                     <img
-                      :src="item.competition.coat1H.image.url"
+                      :src="
+                        item.competition.game1H === null
+                          ? noImage
+                          : item.competition.game1H.image.url
+                      "
                       alt=""
                       class="es-League-schedule-result__teamImage"
                     />
                     <p class="es-League-schedule-result__temaName">
-                      {{ item.competition.coat1H.teamName }}
+                      {{
+                        item.competition.game1H !== null
+                          ? item.competition.game1H.teamName
+                          : ''
+                      }}
                     </p>
                   </div>
                   <div class="es-League-schedule-result__team">
                     <img
-                      :src="item.competition.coat1A.image.url"
+                      :src="
+                        item.competition.game1A === null
+                          ? noImage
+                          : item.competition.game1A.image.url
+                      "
                       alt=""
                       class="es-League-schedule-result__teamImage"
                     />
                     <p class="es-League-schedule-result__temaName">
-                      {{ item.competition.coat1A.teamName }}
+                      {{
+                        item.competition.game1A !== null
+                          ? item.competition.game1A.teamName
+                          : ''
+                      }}
                     </p>
                   </div>
                 </div>
@@ -216,22 +254,38 @@
                 <div class="es-League-schedule-result__teamInfo">
                   <div class="es-League-schedule-result__team">
                     <img
-                      :src="item.competition.coat2H.image.url"
+                      :src="
+                        item.competition.game2H === null
+                          ? noImage
+                          : item.competition.game2H.image.url
+                      "
                       alt=""
                       class="es-League-schedule-result__teamImage"
                     />
                     <p class="es-League-schedule-result__temaName">
-                      {{ item.competition.coat2H.teamName }}
+                      {{
+                        item.competition.game2H !== null
+                          ? item.competition.game2H.teamName
+                          : '女子リーグ順位1位'
+                      }}
                     </p>
                   </div>
                   <div class="es-League-schedule-result__team">
                     <img
-                      :src="item.competition.coat2A.image.url"
+                      :src="
+                        item.competition.game2A === null
+                          ? noImage
+                          : item.competition.game2A.image.url
+                      "
                       alt=""
                       class="es-League-schedule-result__teamImage"
                     />
                     <p class="es-League-schedule-result__temaName">
-                      {{ item.competition.coat2A.teamName }}
+                      {{
+                        item.competition.game2A !== null
+                          ? item.competition.game2A.teamName
+                          : '女子第4節勝者'
+                      }}
                     </p>
                   </div>
                 </div>
@@ -241,22 +295,38 @@
                 <div class="es-League-schedule-result__teamInfo">
                   <div class="es-League-schedule-result__team">
                     <img
-                      :src="item.competition.coat3H.image.url"
+                      :src="
+                        item.competition.game3H === null
+                          ? noImage
+                          : item.competition.game3H.image.url
+                      "
                       alt=""
                       class="es-League-schedule-result__teamImage"
                     />
                     <p class="es-League-schedule-result__temaName">
-                      {{ item.competition.coat3H.teamName }}
+                      {{
+                        item.competition.game3H !== null
+                          ? item.competition.game3H.teamName
+                          : '女子リーグ順位2位'
+                      }}
                     </p>
                   </div>
                   <div class="es-League-schedule-result__team">
                     <img
-                      :src="item.competition.coat3A.image.url"
+                      :src="
+                        item.competition.game3A === null
+                          ? noImage
+                          : item.competition.game3A.image.url
+                      "
                       alt=""
                       class="es-League-schedule-result__teamImage"
                     />
                     <p class="es-League-schedule-result__temaName">
-                      {{ item.competition.coat3A.teamName }}
+                      {{
+                        item.competition.game3A !== null
+                          ? item.competition.game3A.teamName
+                          : '女子リーグ順位3位'
+                      }}
                     </p>
                   </div>
                 </div>
@@ -277,7 +347,9 @@ import linkArrow from '~/components/integration/atoms/link-arrow.vue'
 export default {
   components: { linkArrow },
   data() {
-    return {}
+    return {
+      noImage: require('~/assets/img/news-logo.png'),
+    }
   },
   computed: {
     ...mapGetters([
