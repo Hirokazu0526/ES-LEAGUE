@@ -184,8 +184,9 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .es-League-footer {
+    height: 258px;
     &__wrapper {
-      padding: 40px 10px 20px 0;
+      padding: 30px 10px 50px 0;
     }
     &__bgImg {
       top: -53px;
@@ -196,17 +197,17 @@ export default {
       }
       &.pc {
         padding-left: 145px;
-        display: grid;
-        grid-template-columns: 0.8fr 1fr;
-        justify-items: start;
+        display: block;
+        // grid-template-columns: 0.8fr 1fr;
+        // justify-items: start;
         width: 600px;
         margin: 0 auto 0;
-        align-items: center;
+        // align-items: center;
         list-style: none;
       }
     }
     &__listItem {
-      text-align: left;
+      text-align: right;
       &:nth-child(2n + 1) {
         margin-left: 0px;
       }
