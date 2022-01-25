@@ -34,7 +34,7 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://es-league.jp' },
       { hid: 'og:title', property: 'og:title', content: 'ES LEAGUE 公式サイト' },
       { hid: 'og:description', property: 'og:description', content: '日本初のセパタクロー国内リーグ ES LEAGUE 公式サイトです' },
-      { hid: 'og:image', property: 'og:image', content: '~/assets/img/ogp/ogp.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://es-league.jp/_nuxt/img/ogp/ogp.png' },
       { hid: 'og:locale', content: 'ja_JP' },
 
       // { hid: 'fb:app_id', property: 'fb:app_id', content: 'App-ID' },
@@ -93,7 +93,15 @@ export default {
       easing: "ease-in"
     }],
     'nuxt-webfontloader',
+    '@nuxtjs/sitemap',
   ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://es-league.jp',
+    exclude: [
+      '/error',
+    ]
+  },
   webfontloader: {
     google: {
       families: ['Noto+Sans+JP:400,700'] 
