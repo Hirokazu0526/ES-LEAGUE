@@ -50,8 +50,8 @@
         <nuxt-link to="/rank" class="es-League__link">
           <img
             class="es-League__icon"
-            src="~/assets/img/header/calendar.svg"
-            alt="カレンダー"
+            src="~/assets/img/header/trophy.svg"
+            alt="トロフィー"
           />
           順位表
         </nuxt-link>
@@ -71,18 +71,18 @@
         <nuxt-link to="/esleague" class="es-League__link">
           <img
             class="es-League__icon"
-            src="~/assets/img/header/site-logo.svg"
-            alt="セパタクローボール"
+            src="~/assets/img/header/es_logo-white.svg"
+            alt="esleagueロゴ"
           />
-          ES リーグについて
+          リーグについて
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <nuxt-link to="/news" class="es-League__link">
           <img
             class="es-League__icon"
-            src="~/assets/img/header/site-logo.svg"
-            alt="セパタクローボール"
+            src="~/assets/img/header/news.svg"
+            alt="ニュース"
           />
           NEWS
         </nuxt-link>
