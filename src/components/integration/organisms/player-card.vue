@@ -8,33 +8,33 @@
         <li class="es-League-card__item">
           <nuxt-link to="/profile/ltex82bj2">
             <img
-              src="~/assets/dummy/naito_dummy.png"
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/0d912fee6a7944d090768d44aef58541/takano_B.png"
               alt=""
               class="es-League-card__img"
             />
-            <span class="es-League-card__playerNumber">10</span>
-            <p class="es-League-card__playerPosition">アタッカー</p>
-            <h4 class="es-League-card__playerName">内藤 利貴</h4>
-            <p class="es-League-card__playerKana">Naito Toshitaka</p>
+            <span class="es-League-card__playerNumber">2</span>
+            <p class="es-League-card__playerPosition">トサー</p>
+            <h4 class="es-League-card__playerName">高野 征也</h4>
+            <p class="es-League-card__playerKana">Takano Seiya</p>
           </nuxt-link>
         </li>
         <li class="es-League-card__item">
-          <nuxt-link to="/profile/ltex82bj2">
+          <nuxt-link to="/profile/577">
             <img
-              src="~/assets/dummy/naito_dummy.png"
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/156e5f5b23d2475fa402d2b99e1ba34e/kawamata_B.png"
               alt=""
               class="es-League-card__img"
             />
-            <span class="es-League-card__playerNumber">10</span>
+            <span class="es-League-card__playerNumber">1</span>
             <p class="es-League-card__playerPosition">アタッカー</p>
-            <h4 class="es-League-card__playerName">内藤 利貴</h4>
-            <p class="es-League-card__playerKana">Naito Toshitaka</p>
+            <h4 class="es-League-card__playerName">川又 ゆうみ</h4>
+            <p class="es-League-card__playerKana">Kawamata Yuumi</p>
           </nuxt-link>
         </li>
         <li class="es-League-card__item">
-          <nuxt-link to="/profile/ltex82bj2">
+          <nuxt-link to="/profile/758">
             <img
-              src="~/assets/dummy/naito_dummy.png"
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/526e89eb245d4f75b119601b908f2435/naito_B.png"
               alt=""
               class="es-League-card__img"
             />
@@ -144,8 +144,6 @@ export default {
   .es-League-card {
     max-width: 600px;
     margin: 0 auto 34px;
-    &__list {
-    }
   }
 }
 @media screen and (max-width: 374px) {
