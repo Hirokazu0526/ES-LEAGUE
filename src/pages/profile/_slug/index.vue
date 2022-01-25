@@ -346,16 +346,16 @@ export default {
       }
     }
     &__visualWrapper {
-      height: 580px;
+      min-height: 580px;
     }
     &__image {
       width: 250px;
-      top: 0;
+      bottom: 0;
       &.women {
         width: 340px;
       }
       &.ms {
-        width: 295px;
+        width: 285px;
       }
       &.ht {
         width: 290px;

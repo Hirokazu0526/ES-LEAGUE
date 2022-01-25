@@ -48,4 +48,16 @@ export default {
     margin: 10px 0;
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-policy {
+    max-width: 700px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+  }
+}
 </style>
