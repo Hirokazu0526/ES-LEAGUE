@@ -18,7 +18,8 @@ export default {
   head: {
     title: 'ES LEAGUE 公式サイト',
     htmlAttrs: {
-      lang: 'ja'
+      lang: 'ja',
+      prefix: 'og: http://ogp.me/ns#',
     },
     meta: [
       { charset: 'utf-8' },
