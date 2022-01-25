@@ -157,7 +157,9 @@ export default {
     position: relative;
     margin: 24px 0 0;
     height: 365px;
-    overflow: hidden;
+    &.women {
+      height: 350px;
+    }
   }
 
   &__image {
@@ -166,9 +168,8 @@ export default {
     right: 16px;
     bottom: 0;
     &.women {
-      width: 220px;
+      width: 200px;
       right: -5px;
-      bottom: -5px;
     }
     &.ms {
       width: 183px;

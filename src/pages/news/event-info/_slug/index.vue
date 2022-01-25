@@ -91,4 +91,34 @@ export default {
     justify-items: center;
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-news {
+    max-width: 600px;
+    margin: 0 auto;
+    &__title {
+      font-size: 45px;
+      margin-bottom: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+    &__date {
+      font-size: 16px;
+      span {
+        font-size: 14px;
+      }
+    }
+    &__contanier {
+      min-height: 600px;
+    }
+    &__btnWrapper {
+      margin-bottom: 30px;
+    }
+    ::v-deep &__newsText {
+      p {
+        line-height: 1.5;
+      }
+    }
+  }
+}
 </style>

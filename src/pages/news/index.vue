@@ -140,6 +140,13 @@ export default {
         font-size: 24px;
       }
     }
+    &__contents {
+      min-height: 372px;
+    }
+    &__btn {
+      margin-top: 100px;
+      margin-bottom: 45px;
+    }
   }
 }
 </style>

@@ -119,6 +119,12 @@ export default {
         font-size: 14px;
       }
     }
+    &__contanier {
+      min-height: 600px;
+    }
+    &__btnWrapper {
+      margin-bottom: 30px;
+    }
     ::v-deep &__newsText {
       p {
         line-height: 1.5;

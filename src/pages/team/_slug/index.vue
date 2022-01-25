@@ -7,10 +7,10 @@
     <div class="es-League-team__info">
       <img :src="image.url" :alt="teamName" class="es-League-team__uniform" />
       <p class="es-League-team__teamName">{{ teamName }}</p>
-      <h3 class="es-League-team__sectionTitle">TEAM COLOR</h3>
+      <!-- <h3 class="es-League-team__sectionTitle">TEAM COLOR</h3>
       <p class="es-League-team__text teamcolor" :class="`${teamcolor}`">
         {{ teamcolor }}
-      </p>
+      </p> -->
       <h3 class="es-League-team__sectionTitle">INTRODUCTION</h3>
       <p class="es-League-team__text teamIntroduction">{{ text }}</p>
       <div class="es-League-team__memberInfo">
@@ -39,12 +39,14 @@
           class="es-League-team__sponsorArea"
           :class="{ bvd: sponsor === 'BVD' }"
         >
-          <img
-            :src="sponsorLogo.url"
-            :alt="sponsor"
-            class="es-League-team__sponsorImg"
-            :class="{ bvd: sponsor === 'BVD' }"
-          />
+          <a :href="sponsorLink" target="_blank">
+            <img
+              :src="sponsorLogo.url"
+              :alt="sponsor"
+              class="es-League-team__sponsorImg"
+              :class="{ bvd: sponsor === 'BVD' }"
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -251,13 +253,13 @@ export default {
     &__sponsorImg {
       width: 300px;
       &.bvd {
-        width: 200px;
+        width: 160px;
       }
     }
     &__sponsorArea {
       height: 100px;
       &.bvd {
-        height: 160px;
+        height: 120px;
       }
     }
   }
