@@ -7,7 +7,8 @@
         alt="ES LEAGUE LOGO"
       />
       <div class="es-League-footer__container">
-        <ul class="es-League-footer__list">
+        <!-- sp版フッター -->
+        <ul class="es-League-footer__list sp">
           <li class="es-League-footer__listItem">
             <nuxt-link to="/esleague">
               <p class="es-League-footer__listTitle">ES LEAGUEとは</p>
@@ -28,10 +29,25 @@
               <p class="es-League-footer__listTitle">お問い合わせ</p>
             </nuxt-link>
           </li>
-          <li class="es-League-footer__listItem">
+          <li class="es-League-footer__listItem pc">
             <a href="http://jstaf.jp/" target="_blank">
               <p class="es-League-footer__listTitle">
                 一般社団法人<br />日本セパタクロー協会
+              </p>
+            </a>
+          </li>
+        </ul>
+        <!-- pc版のフッター -->
+        <ul class="es-League-footer__list pc">
+          <li class="es-League-footer__listItem">
+            <nuxt-link to="/contact">
+              <p class="es-League-footer__listTitle">お問い合わせ</p>
+            </nuxt-link>
+          </li>
+          <li class="es-League-footer__listItem">
+            <a href="http://jstaf.jp/" target="_blank">
+              <p class="es-League-footer__listTitle">
+                一般社団法人 日本セパタクロー協会
               </p>
             </a>
           </li>
@@ -100,7 +116,12 @@ export default {
   }
 
   &__list {
-    list-style: none;
+    &.sp {
+      list-style: none;
+    }
+    &.pc {
+      display: none;
+    }
   }
   &__listItem {
     text-align: right;
@@ -170,13 +191,19 @@ export default {
       top: -53px;
     }
     &__list {
-      padding-left: 145px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      justify-items: start;
-      width: 600px;
-      margin: 0 auto 0;
-      align-items: center;
+      &.sp {
+        display: none;
+      }
+      &.pc {
+        padding-left: 145px;
+        display: grid;
+        grid-template-columns: 0.8fr 1fr;
+        justify-items: start;
+        width: 600px;
+        margin: 0 auto 0;
+        align-items: center;
+        list-style: none;
+      }
     }
     &__listItem {
       text-align: left;
