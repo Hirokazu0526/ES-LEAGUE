@@ -70,11 +70,11 @@
       <li class="es-League__item">
         <nuxt-link to="/esleague" class="es-League__link">
           <img
-            class="es-League__icon"
+            class="es-League__icon es"
             src="~/assets/img/header/es_logo-white.svg"
             alt="esleagueロゴ"
           />
-          リーグについて
+          ES LEAGUEとは
         </nuxt-link>
       </li>
       <li class="es-League__item">
@@ -146,6 +146,13 @@ export default {}
       &.pc {
         display: grid;
         grid-template-columns: 65px 50px 65px 120px 50px 107px;
+      }
+    }
+    &__icon {
+      &.es {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 1px;
       }
     }
   }
