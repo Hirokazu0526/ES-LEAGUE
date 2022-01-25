@@ -155,10 +155,12 @@ export default {
 
   &__visualWrapper {
     position: relative;
-    margin: 24px 0 0;
+    margin: 24px auto 0;
     height: 365px;
+    max-width: 330px;
     &.women {
-      height: 350px;
+      height: 330px;
+      max-width: 343px;
     }
   }
 
@@ -300,6 +302,7 @@ export default {
   .es-League-profile {
     &__visualWrapper {
       height: 330px;
+      max-width: 288px;
       &.women {
         height: 300px;
       }
@@ -347,6 +350,7 @@ export default {
     }
     &__visualWrapper {
       min-height: 580px;
+      max-width: 700px;
     }
     &__image {
       width: 250px;
@@ -412,6 +416,15 @@ export default {
     &__btnWrapper {
       width: 500px;
       margin: 0 auto;
+    }
+  }
+}
+@media screen and (min-width: 950px) {
+  .es-League-profile {
+    max-width: 850px;
+    &__visualWrapper {
+      max-width: 700px;
+      margin: auto;
     }
   }
 }
