@@ -219,31 +219,31 @@ export const state = () => ({
     // ※TODO:リリース時点では期間を修正すること
     firstWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2021-11-15', '2022-02-28', undefined, '[]')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-14', '2022-03-12', undefined, '[)')
       
     },
     // 第2週目の期間
     secondWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-03-01', '2022-03-31', undefined, '[]')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-03-14', '2022-05-21', undefined, '[)')
       
     },
     // 第3週目の期間
     thirdWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-04-01', '2022-04-30', undefined, '[]')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-05-23', '2022-06-30', undefined, '[)')
       
     },
     // 第4週目の期間
     fourthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-05-01', '2022-05-31', undefined, '[]')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-07-01', '2022-07-23', undefined, '[)')
       
     },
     // 第5週目の期間
     fifthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-06-01', '2022-06-30', undefined, '[]')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-07-25', '2022-08-30', undefined, '[)')
       
     },
     getNewsList(state) {
