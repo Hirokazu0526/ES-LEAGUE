@@ -98,6 +98,7 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://es-league.jp',
+    lastmod: '2022-01-28',
     exclude: [
       '/error',
     ]
