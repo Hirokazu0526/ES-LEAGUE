@@ -145,7 +145,7 @@
           </tbody>
         </table>
       </section>
-      <section class="es-League-aboutEs__section">
+      <section v-if="false" class="es-League-aboutEs__section">
         <h3 class="es-League-aboutEs__title">
           Organization<br /><span>組織概要</span>
         </h3>
