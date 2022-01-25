@@ -167,7 +167,7 @@ export default {
       padding: 40px 10px 20px 0;
     }
     &__bgImg {
-      top: -50px;
+      top: -53px;
     }
     &__list {
       padding-left: 145px;
@@ -188,7 +188,7 @@ export default {
       text-align: center;
     }
     &__copyRight {
-      font-size: 18px;
+      font-size: 14px;
       text-align: center;
     }
   }
