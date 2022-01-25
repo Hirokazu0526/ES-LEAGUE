@@ -10,12 +10,14 @@
           :key="item.id"
           class="es-League-sponsor__listItem"
         >
-          <img
-            :src="item.imgUrl"
-            :alt="item.alt"
-            :class="item.name"
-            class="es-League-sponsor__itemImg"
-          />
+          <a :href="item.url" target="_blank">
+            <img
+              :src="item.imgUrl"
+              :alt="item.alt"
+              :class="item.name"
+              class="es-League-sponsor__itemImg"
+            />
+          </a>
         </li>
       </ul>
     </div>
@@ -32,36 +34,42 @@ export default {
           name: 'saraya',
           imgUrl: require('~/assets/img/logo/saraya.svg'),
           alt: 'SARAYA',
+          url: 'https://www.saraya.com/',
         },
         {
           id: 2,
           name: 'libgate',
           imgUrl: require('~/assets/img/logo/libgate.svg'),
           alt: 'LibGate',
+          url: 'https://lib-gate.co.jp/',
         },
         {
           id: 3,
           name: 'bvd',
           imgUrl: require('~/assets/img/logo/bvd.svg'),
-          alt: 'BVD',
+          alt: 'B.V.D.',
+          url: 'https://www.bvd.jp/',
         },
         {
           id: 4,
           name: 'svolme',
           imgUrl: require('~/assets/img/logo/svolme.svg'),
           alt: 'SVOLME',
+          url: 'https://www.svolme.net/',
         },
         {
           id: 5,
           name: 'xyou',
           imgUrl: require('~/assets/img/logo/xyou.svg'),
           alt: 'XYOU',
+          url: 'https://xyou.co.jp/',
         },
         {
           id: 6,
           name: 'liberty',
           imgUrl: require('~/assets/img/logo/liberty.svg'),
           alt: 'リバティーエステート',
+          url: 'https://www.liberty-estate.co.jp/',
         },
       ],
     }
