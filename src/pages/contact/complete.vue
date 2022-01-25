@@ -24,7 +24,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: 'お問い合わせ/完了ページ',
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

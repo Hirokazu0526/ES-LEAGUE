@@ -55,6 +55,11 @@ export default {
       processing: false,
     }
   },
+  head() {
+    return {
+      title: 'お問い合わせ/確認ページ',
+    }
+  },
   computed: {
     ...mapState([
       'userName',

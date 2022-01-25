@@ -11,6 +11,11 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  head() {
+    return {
+      title: 'プライバシーポリシー',
+    }
+  },
   computed: {
     ...mapGetters(['getPolicy']),
   },

@@ -50,6 +50,11 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  head() {
+    return {
+      title: 'チーム一覧',
+    }
+  },
   computed: {
     ...mapGetters(['getTeamList']),
     menTeamLists() {

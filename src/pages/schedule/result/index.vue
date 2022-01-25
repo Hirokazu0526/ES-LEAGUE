@@ -351,6 +351,11 @@ export default {
       noImage: require('~/assets/img/news-logo.png'),
     }
   },
+  head() {
+    return {
+      title: '日程・結果',
+    }
+  },
   computed: {
     ...mapGetters([
       'getCompetitionList',

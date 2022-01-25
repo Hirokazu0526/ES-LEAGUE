@@ -40,6 +40,11 @@ import news from '~/components/integration/organisms/news.vue'
 
 export default {
   components: { news },
+  head() {
+    return {
+      title: 'ニュース一覧/試合レポート',
+    }
+  },
   computed: {
     ...mapGetters(['getNewsList']),
     reportCategory() {

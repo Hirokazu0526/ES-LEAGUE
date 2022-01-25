@@ -239,6 +239,11 @@ export default {
   components: {
     accordion,
   },
+  head() {
+    return {
+      title: 'セパタクローとは',
+    }
+  },
 }
 </script>
 

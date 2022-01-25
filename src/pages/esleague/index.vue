@@ -213,7 +213,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: 'ES LEAGUE とは',
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
