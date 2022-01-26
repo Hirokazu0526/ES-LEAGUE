@@ -171,10 +171,9 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">アタック</p>
                     <nuxt-img
-                      src="/img/about/attack.JPG"
+                      src="/img/about/attack.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
-                      quality="100"
                     />
                     <p class="es-League-about__itemText">
                       アタックは主にサッカーのオーバーヘッドシュートのような「ローリングアタック」と足をハサミのようにして打つ「シザースアタック」の2種類がある。<br />
@@ -184,10 +183,9 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">サーブ</p>
                     <nuxt-img
-                      src="/img/about/serve.JPG"
+                      src="/img/about/serve.png"
                       class="es-League-about__technicImage"
                       alt="サーブ"
-                      quality="20"
                     />
                     <p class="es-League-about__itemText">
                       サーブは主に足の内側で蹴る「インサイドサーブ」、足の甲で蹴る「インステップサーブ」、インサイドとインフロントの中間で蹴る「インフロントサーブ」という３種類に分けられる。<br />
@@ -197,10 +195,9 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">トス</p>
                     <nuxt-img
-                      src="/img/about/tosser.JPG"
+                      src="/img/about/tosser.png"
                       class="es-League-about__technicImage"
                       alt="トス"
-                      quality="20"
                     />
                     <p class="es-League-about__itemText">
                       トスはアタッカーの強みを引き出すために、速さや高さ、距離などを考えてトスをあげている。また、相手のブロックの位置やレシーブの位置なども見ながらアタッカーが決め切れるようにコントロールをする。<br />
@@ -210,10 +207,9 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">ブロック</p>
                     <nuxt-img
-                      src="/img/about/block.JPG"
+                      src="/img/about/block.png"
                       class="es-League-about__technicImage"
                       alt="ブロック"
-                      quality="20"
                     />
                     <p class="es-League-about__itemText">
                       セパタクローにもバレーと同じようにブロックをすることができる。<br />
@@ -224,10 +220,9 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">レシーブ</p>
                     <nuxt-img
-                      src="/img/about/receive.JPG"
+                      src="/img/about/receive.png"
                       class="es-League-about__technicImage"
                       alt="レシーブ"
-                      quality="20"
                     />
                     <p class="es-League-about__itemText">
                       セパタクローは高速のサーブやアタックを手以外の脚や頭を使ってレシーブする。<br />
