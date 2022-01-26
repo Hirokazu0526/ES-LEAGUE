@@ -104,12 +104,16 @@ export default {
   &__listItem {
     margin-bottom: 16px;
     height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid #999999;
     &:last-child {
       margin-bottom: 0;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
     }
   }
 
