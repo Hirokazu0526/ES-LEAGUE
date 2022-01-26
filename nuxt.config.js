@@ -73,7 +73,8 @@ export default {
     '@nuxtjs/eslint-module',
     'nuxt-microcms-module',
     'nuxt-animejs',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxt/image'
   ],
   microcms: {
     options: {
@@ -162,6 +163,20 @@ export default {
   },
   googleAnalytics: {
     id: GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
+  },
+
+  // 画像の最適化モジュールの設定
+  image: {
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 320,
+      sm: 375,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536
+    },
   },
 
   generate: {

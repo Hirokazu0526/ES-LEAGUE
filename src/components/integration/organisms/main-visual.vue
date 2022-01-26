@@ -1,8 +1,9 @@
 <template>
   <div class="es-Laegue-mainVisual">
-    <img
-      src="~/assets/img/thumbnail.png"
-      alt=""
+    <nuxt-img
+      src="/img/top/thumbnail.png"
+      alt="ES LEAGUEメインビジュアル"
+      quality="30"
       class="es-Laegue-mainVisual__img"
     />
   </div>
