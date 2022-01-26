@@ -5,6 +5,7 @@ import Fiber from 'fibers'
 require("dotenv").config();
 const { API_KEY } = process.env;
 const { API_URL } = process.env;
+const { GOOGLE_ANALYTICS_ID } = process.env;
 
 const baseDir = process.env.BASE_DIR || '/'
 
@@ -72,6 +73,7 @@ export default {
     '@nuxtjs/eslint-module',
     'nuxt-microcms-module',
     'nuxt-animejs',
+    '@nuxtjs/google-analytics'
   ],
   microcms: {
     options: {
@@ -135,55 +137,20 @@ export default {
   
   env: {
     API_KEY ,
-    API_URL
+    API_URL,
+    GOOGLE_ANALYTICS_ID,
   },
   privateRuntimeConfig: {
     apiKey: API_KEY,
     apiUrl: API_URL,
+    googleAnalytics: {
+      id: GOOGLE_ANALYTICS_ID
+    }
+  },
+  googleAnalytics: {
+    id: GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
   },
 
   generate: {
-    // async routes() {
-    //   const apiKey = API_KEY
-    //   const generates = []
-    //   await axios
-    //     .get('https://es-league.microcms.io/api/v1/player-details?limit=100', {
-    //       headers: { 'X-MICROCMS-API-KEY': apiKey }
-    //     })
-    //     .then((res) =>
-    //       res.data.contents.map((profile) => ({
-    //         route: `/profile/${profile.id}`,
-    //         payload: profile
-    //       }))
-    //     )
-    //     .catch(() => {
-    //       this.errored = true
-    //     })
-    //   await axios
-    //     .get('https://es-league.microcms.io/api/v1/team-details?limit=100', {
-    //       headers: { 'X-MICROCMS-API-KEY': apiKey }
-    //     })
-    //     .then((res) =>
-    //       res.data.contents.map((content) => ({
-    //         route: `/team/${content.id}`,
-    //         payload: content
-    //       }))
-    //     )
-    //     .catch(() => {
-    //     })
-    //   await axios
-    //   .get('https://es-league.microcms.io/api/v1/news?limit=100', {
-    //     headers: { 'X-MICROCMS-API-KEY': apiKey }
-    //   })
-    //   .then((res) =>
-    //     res.data.contents.map((content) => ({
-    //       route: [`/info/${content.id}`, `/report/${content.id}`, `/event/${content.id}`],
-    //       payload: content
-    //     }))
-    //   )
-    //   .catch(() => {
-    //   })
-    //   return generates
-    // }
   }
 }
