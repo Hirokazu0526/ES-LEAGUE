@@ -164,7 +164,7 @@ export const state = () => ({
       const resNews = await this.$axios.$get(`${$config.apiUrl}news`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
-      const resPlayers = await this.$axios.$get(`${$config.apiUrl}player-details?limit=40`, {
+      const resPlayers = await this.$axios.$get(`${$config.apiUrl}player-details?limit=50`, {
        headers: { "X-MICROCMS-API-KEY": $config.apiKey }
       });
       const resTeams = await this.$axios.$get(`${$config.apiUrl}team-details`, {
