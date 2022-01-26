@@ -1,6 +1,6 @@
 import Sass from 'sass'
 import Fiber from 'fibers'
-// import axios from 'axios'
+import axios from 'axios'
 
 require("dotenv").config();
 const { API_KEY } = process.env;
@@ -100,10 +100,24 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://es-league.jp',
-    lastmod: '2022-01-28',
+    defaults: {
+      lastmod: new Date(),
+      changefreq: 'daily'
+    },
     exclude: [
       '/error',
-    ]
+    ],
+    routes() {
+      return Promise.all([
+        axios.get(`${process.env.API_URL}/player-details?limit=50`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
+        axios.get(`${process.env.API_URL}/team-details`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
+      ]).then(([players, teams]) => {
+        const urls = []
+        players.map((player) => urls.push(`/profile/${player.id}`))
+        teams.map((team) => urls.push(`/team/${team.id}`))
+        return urls
+      })
+    }
   },
   webfontloader: {
     google: {
