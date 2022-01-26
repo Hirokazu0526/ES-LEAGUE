@@ -58,7 +58,11 @@
             target="_blank"
             class="es-League-footer__icon twitter"
           ></a>
-          <a href="" class="es-League-footer__icon facebook"></a>
+          <a
+            href="https://www.facebook.com/es.league.japan/"
+            target="_blank"
+            class="es-League-footer__icon facebook"
+          ></a>
           <a
             href="https://www.instagram.com/es_league_japan/"
             target="_blank"
@@ -68,6 +72,11 @@
             href="https://www.tiktok.com/@es_league?lang=ja"
             target="_blank"
             class="es-League-footer__icon tiktok"
+          ></a>
+          <a
+            href="https://liff.line.me/1645278921-kWRPP32q/?accountId=533aczqy"
+            target="_blank"
+            class="es-League-footer__icon line"
           ></a>
         </div>
         <div class="es-League-footer__copyRight">
@@ -144,12 +153,14 @@ export default {
   &__snsList {
     margin: 20px 0px 20px;
     text-align: right;
+    position: relative;
+    z-index: 10;
   }
   &__icon {
     display: inline-block;
-    width: 38px;
-    height: 38px;
-    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
     background-size: contain;
     background-repeat: no-repeat;
     &.twitter {
@@ -163,6 +174,10 @@ export default {
     }
     &.tiktok {
       background-image: url('~/assets/img/logo/tiktok_icon.svg');
+      margin-right: 0;
+    }
+    &.line {
+      background-image: url('~/assets/img/logo/line.png');
       margin-right: 0;
     }
   }
@@ -218,6 +233,9 @@ export default {
     &__copyRight {
       font-size: 14px;
       text-align: center;
+    }
+    &__icon {
+      margin: 0 10px;
     }
   }
 }

@@ -10,7 +10,11 @@
         target="_blank"
         class="es-League-sns__icon twitter"
       ></a>
-      <a href="" class="es-League-sns__icon facebook"></a>
+      <a
+        href="https://www.facebook.com/es.league.japan"
+        target="_blank"
+        class="es-League-sns__icon facebook"
+      ></a>
       <a
         href="https://www.instagram.com/es_league_japan/"
         target="_blank"
