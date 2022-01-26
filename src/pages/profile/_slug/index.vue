@@ -351,6 +351,9 @@ export default {
     &__visualWrapper {
       min-height: 580px;
       max-width: 700px;
+      &.women {
+        max-width: 700px;
+      }
     }
     &__image {
       width: 250px;
@@ -423,7 +426,6 @@ export default {
   .es-League-profile {
     max-width: 850px;
     &__visualWrapper {
-      max-width: 700px;
       margin: auto;
     }
   }
