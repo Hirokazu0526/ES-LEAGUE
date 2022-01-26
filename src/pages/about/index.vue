@@ -101,7 +101,7 @@
                 ンはなく、基本的に自分のポジションの役割をそれぞれが行う。
               </p>
               <img
-                src="~/assets/img/coat_position.svg"
+                src="~/assets/img/about/coat_position.svg"
                 class="es-League-about__itemImage"
                 alt="セパタクローコート"
               />
