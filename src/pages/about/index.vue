@@ -163,7 +163,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">アタック</p>
                     <img
-                      src="~/assets/img/about/attack.JPG"
+                      src="~/assets/img/about/attack.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
                     />
@@ -175,7 +175,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">サーブ</p>
                     <img
-                      src="~/assets/img/about/serve.JPG"
+                      src="~/assets/img/about/serve.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
                     />
@@ -187,7 +187,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">トス</p>
                     <img
-                      src="~/assets/img/about/tosser.JPG"
+                      src="~/assets/img/about/tosser.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
                     />
@@ -199,7 +199,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">ブロック</p>
                     <img
-                      src="~/assets/img/about/block.JPG"
+                      src="~/assets/img/about/block.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
                     />
@@ -212,7 +212,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">レシーブ</p>
                     <img
-                      src="~/assets/img/about/receive.JPG"
+                      src="~/assets/img/about/receive.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
                     />
