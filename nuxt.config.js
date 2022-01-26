@@ -35,7 +35,7 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://es-league.jp' },
       { hid: 'og:title', property: 'og:title', content: 'ES LEAGUE 公式サイト' },
       { hid: 'og:description', property: 'og:description', content: '日本初のセパタクロー国内リーグ ES LEAGUE 公式サイトです' },
-      { hid: 'og:image', property: 'og:image', content: 'https://es-league.jp/_nuxt/img/ogp/ogp.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://es-league.jp/img/ogp/ogp.png' },
       { hid: 'og:locale', content: 'ja_JP' },
 
       // { hid: 'fb:app_id', property: 'fb:app_id', content: 'App-ID' },
@@ -107,17 +107,16 @@ export default {
     exclude: [
       '/error',
     ],
-    // routes() {
-    //   return Promise.all([
-    //     axios.get(`${process.env.API_URL}/player-details?limit=50`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
-    //     axios.get(`${process.env.API_URL}/team-details`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
-    //   ]).then(([players, teams]) => {
-    //     const urls = []
-    //     players.map((player) => urls.push(`/profile/${player.id}`))
-    //     teams.map((team) => urls.push(`/team/${team.id}`))
-    //     return urls
-    //   })
-    // }
+    routes:[
+      '/match/752',
+      '/team/483',
+      '/team/493',
+      '/team/202',
+      '/team/703',
+      '/team/292',
+      '/team/18288jq802t',
+      '/team/506',
+    ]
   },
   webfontloader: {
     google: {
@@ -141,7 +140,7 @@ export default {
           fiber: Fiber
         }
       }
-    }
+    },
   },
   // トランジション設定
   transition: {
@@ -166,5 +165,6 @@ export default {
   },
 
   generate: {
+    fallback: true,
   }
 }
