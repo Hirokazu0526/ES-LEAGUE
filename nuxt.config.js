@@ -107,17 +107,17 @@ export default {
     exclude: [
       '/error',
     ],
-    routes() {
-      return Promise.all([
-        axios.get(`${process.env.API_URL}/player-details?limit=50`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
-        axios.get(`${process.env.API_URL}/team-details`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
-      ]).then(([players, teams]) => {
-        const urls = []
-        players.map((player) => urls.push(`/profile/${player.id}`))
-        teams.map((team) => urls.push(`/team/${team.id}`))
-        return urls
-      })
-    }
+    // routes() {
+    //   return Promise.all([
+    //     axios.get(`${process.env.API_URL}/player-details?limit=50`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
+    //     axios.get(`${process.env.API_URL}/team-details`, { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },}),
+    //   ]).then(([players, teams]) => {
+    //     const urls = []
+    //     players.map((player) => urls.push(`/profile/${player.id}`))
+    //     teams.map((team) => urls.push(`/team/${team.id}`))
+    //     return urls
+    //   })
+    // }
   },
   webfontloader: {
     google: {
