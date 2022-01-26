@@ -54,4 +54,16 @@ export default {}
     margin: 15px auto 0;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .es-League-pv {
+    &__title {
+      margin-top: 50px;
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+  }
+}
 </style>

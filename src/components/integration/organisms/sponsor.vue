@@ -135,6 +135,12 @@ export default {
         margin-right: 5px;
       }
     }
+    &__title {
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
   }
 }
 </style>

@@ -248,16 +248,24 @@ export default {
     margin: auto 0;
   }
 }
-@media screen and (min-width: 768px) {
-  .es-League-schedule {
-    max-width: 600px;
-    margin: 0 auto 34px;
-  }
-}
+
 @media screen and (max-width: 374px) {
   .es-League-schedule {
     &__temaName {
       font-size: 12px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-schedule {
+    max-width: 600px;
+    margin: 0 auto 34px;
+    &__title {
+      margin-top: 30px;
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
     }
   }
 }

@@ -57,4 +57,18 @@ export default {
     margin: 16px auto 0;
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-info {
+    &__title {
+      margin-top: 50px;
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+    &__btn {
+      margin: 30px auto 0;
+    }
+  }
+}
 </style>

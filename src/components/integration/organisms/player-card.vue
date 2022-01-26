@@ -140,12 +140,7 @@ export default {
     margin: 16px auto 0;
   }
 }
-@media screen and (min-width: 768px) {
-  .es-League-card {
-    max-width: 600px;
-    margin: 0 auto 34px;
-  }
-}
+
 @media screen and (max-width: 374px) {
   .es-League-card {
     &__playerNumber {
@@ -158,6 +153,19 @@ export default {
       &:after {
         border-left: 10px solid transparent;
         border-bottom: 10px solid #a37b30;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .es-League-card {
+    max-width: 600px;
+    margin: 0 auto 34px;
+    &__title {
+      margin-top: 50px;
+      font-size: 45px;
+      & span {
+        font-size: 24px;
       }
     }
   }
