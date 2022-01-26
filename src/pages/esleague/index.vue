@@ -5,11 +5,10 @@
     </h2>
     <div class="es-League-aboutEs__wrapper">
       <div class="es-League-aboutEs__story">
-        <nuxt-img
-          src="/img/about-es/about-es-kv.png"
+        <img
+          src="~/assets/img/aboutES/about-es-kv.png"
           class="es-League-aboutEs__bg"
           alt="ES LEAGUE背景"
-          quality="30"
         />
         <p class="es-League-aboutEs__storyText">
           セパタクロー競技にとって最高峰の世界大会は<br class="pc" />

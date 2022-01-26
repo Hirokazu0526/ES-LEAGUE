@@ -4,10 +4,9 @@
       WHAT'S SEPAKTAKRAW<br /><span>セパタクローとは</span>
     </h2>
     <div class="es-League-about__container">
-      <nuxt-img
-        src="/img/about/key-visual.png"
+      <img
+        src="~/assets/img/about/key-visual.png"
         alt="セパタクローアタック"
-        quality="30"
         class="es-League-about__visual"
       />
       <p class="es-League-about__text">
@@ -30,44 +29,40 @@
                   <p class="es-League-about__ruleListText">
                     1. 腕、手を使ってはいけない
                   </p>
-                  <nuxt-img
-                    src="/img/about/hands.svg"
+                  <img
+                    src="~/assets/img/about/hands.svg"
                     class="es-League-about__ruleListImg hand"
                     alt="手を使ってはいけない"
-                    quality="30"
                   />
                 </li>
                 <li class="es-League-about__ruleListItem">
                   <p class="es-League-about__ruleListText">
                     2. 1人で続けて3回まで<br class="sp" />ボールにタッチして良い
                   </p>
-                  <nuxt-img
-                    src="/img/about/touch.svg"
+                  <img
+                    src="~/assets/img/about/touch.svg"
                     class="es-League-about__ruleListImg three-touch"
                     alt="タッチ数"
-                    quality="30"
                   />
                 </li>
                 <li class="es-League-about__ruleListItem">
                   <p class="es-League-about__ruleListText">
                     3. 守備位置のローテーションはない
                   </p>
-                  <nuxt-img
-                    src="/img/about/rotation.svg"
+                  <img
+                    src="~/assets/img/about/rotation.svg"
                     class="es-League-about__ruleListImg rotation"
                     alt="ローテーション"
-                    quality="30"
                   />
                 </li>
                 <li class="es-League-about__ruleListItem">
                   <p class="es-League-about__ruleListText">
                     4. サーブは3本ずつ交代でする
                   </p>
-                  <nuxt-img
-                    src="/img/about/service-time.svg"
+                  <img
+                    src="~/assets/img/about/service-time.svg"
                     class="es-League-about__ruleListImg three-times"
                     alt="サーブ回数"
-                    quality="30"
                   />
                 </li>
               </ul>
@@ -105,11 +100,10 @@
                 バレーボールのようにポジションのローテーショ
                 ンはなく、基本的に自分のポジションの役割をそれぞれが行う。
               </p>
-              <nuxt-img
-                src="/img/about/coat_position.svg"
+              <img
+                src="~/assets/img/about/coat_position.svg"
                 class="es-League-about__itemImage"
                 alt="セパタクローコート"
-                quality="30"
               />
               <p class="es-League-about__itemText">
                 バドミントンと同じ広さのコート、
@@ -126,11 +120,10 @@
             <template #body>
               <div class="es-League-about__goodsItem">
                 <p class="es-League-about__goodsName">ボール</p>
-                <nuxt-img
-                  src="/img/about/ball.svg"
+                <img
+                  src="~/assets/img/about/ball.svg"
                   class="es-League-about__goods ball"
                   alt="セパタクローボール"
-                  quality="30"
                 />
                 <p class="es-League-about__itemText">
                   セパタクローのボールは、プラスチックを編んで
@@ -142,11 +135,10 @@
               </div>
               <div class="es-League-about__goodsItem">
                 <p class="es-League-about__goodsName">シューズ</p>
-                <nuxt-img
-                  src="/img/about/shoes.svg"
+                <img
+                  src="~/assets/img/about/shoes.svg"
                   class="es-League-about__goods shoes"
                   alt="セパタクローボール"
-                  quality="30"
                 />
                 <p class="es-League-about__itemText shoes">
                   セパタクローの選手の多くは
@@ -170,8 +162,8 @@
                 <ul class="es-League-about__technicList">
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">アタック</p>
-                    <nuxt-img
-                      src="/img/about/attack.png"
+                    <img
+                      src="~/assets/img/about/attack.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
                     />
@@ -182,8 +174,8 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">サーブ</p>
-                    <nuxt-img
-                      src="/img/about/serve.png"
+                    <img
+                      src="~/assets/img/about/serve.png"
                       class="es-League-about__technicImage"
                       alt="サーブ"
                     />
@@ -194,8 +186,8 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">トス</p>
-                    <nuxt-img
-                      src="/img/about/tosser.png"
+                    <img
+                      src="~/assets/img/about/tosser.png"
                       class="es-League-about__technicImage"
                       alt="トス"
                     />
@@ -206,8 +198,8 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">ブロック</p>
-                    <nuxt-img
-                      src="/img/about/block.png"
+                    <img
+                      src="~/assets/img/about/block.png"
                       class="es-League-about__technicImage"
                       alt="ブロック"
                     />
@@ -219,8 +211,8 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">レシーブ</p>
-                    <nuxt-img
-                      src="/img/about/receive.png"
+                    <img
+                      src="~/assets/img/about/receive.png"
                       class="es-League-about__technicImage"
                       alt="レシーブ"
                     />
