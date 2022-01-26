@@ -120,13 +120,7 @@
         </div>
       </div>
       <div class="es-League-match-result__btnWrapper">
-        <es-button
-          url="/schedule/result"
-          color="gray"
-          arrow="left"
-          class="es-League-match-result__btn"
-          >戻る</es-button
-        >
+        <back-button />
         <es-button url="/rank" class="es-League-match-result__btn"
           >順位表</es-button
         >
