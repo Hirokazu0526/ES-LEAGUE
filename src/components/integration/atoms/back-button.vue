@@ -20,6 +20,7 @@ export default {}
   border-radius: 2px;
   position: relative;
   border: none;
+  cursor: pointer;
   &::after {
     position: absolute;
     content: '';
