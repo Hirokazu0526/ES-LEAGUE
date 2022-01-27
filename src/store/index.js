@@ -81,8 +81,14 @@ export const state = () => ({
         // 前の配列がundefinedでない場合に勝ち点を比べる
         if (beforeArry !== undefined) {
           if (item.winningPoint === beforeArry.winningPoint) {
-            // 同じであればindexの値が順位
-            item.ranking = index
+            // 勝ち点が０だった場合
+            if(item.winningPoint === 0 && beforeArry.ranking === 1) {
+              item.ranking = 1
+            }
+            // 
+            else if (item.winningPoints !== 0 && beforeArry.ranking >= 1) {
+              item.ranking = index
+            }
           } else {
             // 違う場合はindexに+1をした値が順位
             item.ranking = index + 1
@@ -109,13 +115,23 @@ export const state = () => ({
       womenRanking.forEach(function (item, index, arry) {
         const beforeArry = arry[index - 1]
 
-        if (beforeArry !== undefined) {
+         // 前の配列がundefinedでない場合に勝ち点を比べる
+         if (beforeArry !== undefined) {
           if (item.winningPoint === beforeArry.winningPoint) {
-            item.ranking = index
+            // 勝ち点が０だった場合
+            if(item.winningPoint === 0 && beforeArry.ranking === 1) {
+              item.ranking = 1
+            }
+            // 
+            else if (item.winningPoints !== 0 && beforeArry.ranking >= 1) {
+              item.ranking = index
+            }
           } else {
+            // 違う場合はindexに+1をした値が順位
             item.ranking = index + 1
           }
         } else {
+          // 配列の最初は1位
           item.ranking = 1
         }
       })
