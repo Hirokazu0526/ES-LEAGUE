@@ -38,7 +38,7 @@
               alt=""
               class="es-League-card__img"
             />
-            <span class="es-League-card__playerNumber">10</span>
+            <span class="es-League-card__playerNumber">4</span>
             <p class="es-League-card__playerPosition">アタッカー</p>
             <h4 class="es-League-card__playerName">内藤 利貴</h4>
             <p class="es-League-card__playerKana">Naito Toshitaka</p>
