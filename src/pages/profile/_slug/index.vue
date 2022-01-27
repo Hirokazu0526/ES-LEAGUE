@@ -16,7 +16,7 @@
         class="es-League-profile__image"
         :class="{
           women: team.gender[0] === 'women',
-          ms: english === 'Masuda Ryo' || 'Oyama Koki',
+          ms: isHight,
           ht: english === 'Hogawa Tasuku',
         }"
       />
@@ -127,6 +127,12 @@ export default {
     // formatHistory() {
     //   return this.history.split(' ').join('\n')
     // },
+    isHight() {
+      if (this.english === 'Masuda Ryo' || this.english === 'Oyama Koki') {
+        return true
+      }
+      return false
+    },
   },
 }
 </script>
@@ -169,15 +175,16 @@ export default {
     width: 160px;
     right: 16px;
     bottom: 0;
-    &.women {
-      width: 200px;
-      right: -5px;
-    }
+
     &.ms {
       width: 183px;
     }
     &.ht {
       width: 180px;
+    }
+    &.women {
+      width: 200px;
+      right: -5px;
     }
   }
 
@@ -310,14 +317,15 @@ export default {
     &__image {
       right: 0;
       width: 145px;
-      &.women {
-        width: 180px;
-      }
+
       &.ms {
         width: 168px;
       }
       &.ht {
         width: 160px;
+      }
+      &.women {
+        width: 180px;
       }
     }
     &__name {
@@ -358,14 +366,15 @@ export default {
     &__image {
       width: 250px;
       bottom: 0;
-      &.women {
-        width: 340px;
-      }
+
       &.ms {
         width: 285px;
       }
       &.ht {
         width: 290px;
+      }
+      &.women {
+        width: 340px;
       }
     }
 
