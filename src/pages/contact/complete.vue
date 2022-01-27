@@ -7,7 +7,7 @@
       <div class="es-League-complete__contents">
         <h3 class="es-League-complete__message">送信完了</h3>
         <p class="es-League-complete__text">
-          お問い合わせいただき<br class="sp" />ありがとうございました
+          お問い合わせいただき<br class="sp" />ありがとうございました。
         </p>
         <p class="es-League-complete__attention">
           内容を確認次第、ご入力いただきました<br

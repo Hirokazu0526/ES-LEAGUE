@@ -4,7 +4,7 @@
       CONTACT<br /><span>お問い合わせ</span>
     </h2>
     <p class="es-League-contact__text">
-      ES LEAGUEに関するお問い合わせは<br />下記からお願いたします。
+      ES LEAGUEに関するお問い合わせは<br />下記よりお願いいたします。
     </p>
     <form class="es-League-contact__form">
       <div class="es-League-contact__container">
