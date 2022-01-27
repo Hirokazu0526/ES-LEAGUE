@@ -16,7 +16,7 @@
         class="es-League-profile__image"
         :class="{
           women: team.gender[0] === 'women',
-          ms: english === 'Masuda Ryo',
+          ms: english === 'Masuda Ryo' || 'Oyama Koki',
           ht: english === 'Hogawa Tasuku',
         }"
       />
