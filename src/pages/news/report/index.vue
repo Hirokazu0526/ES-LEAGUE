@@ -7,7 +7,10 @@
     <div class="es-League-newsReport__contents">
       <news :news-data="reportCategory" />
     </div>
-    <div class="es-League-newsReport__categoryLists">
+    <div
+      v-if="infoLinkBtn.length && eventLinkBtn.length"
+      class="es-League-newsReport__categoryLists"
+    >
       <p class="es-League-newsReport__categoryTitle">カテゴリ</p>
       <div class="es-League-newsReport__categoryWrapper">
         <es-button
