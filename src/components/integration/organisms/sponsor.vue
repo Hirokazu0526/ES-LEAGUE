@@ -105,6 +105,7 @@ export default {
     margin-bottom: 16px;
     height: 100px;
     border: 1px solid #999999;
+    line-height: 0; //svgによるずれを修正
     &:last-child {
       margin-bottom: 0;
     }
