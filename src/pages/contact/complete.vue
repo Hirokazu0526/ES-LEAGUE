@@ -100,12 +100,16 @@ export default {
   .es-League-complete {
     max-width: 500px;
     margin: 0 auto 20px;
+    min-height: 450px;
     &__title {
       font-size: 45px;
       margin-bottom: 45px;
       & span {
         font-size: 24px;
       }
+    }
+    &__container {
+      margin-top: 50px;
     }
   }
 }
