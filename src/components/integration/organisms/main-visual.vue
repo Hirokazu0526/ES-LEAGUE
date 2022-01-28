@@ -4,6 +4,8 @@
       src="~/assets/img/top/thumbnail.png"
       alt="ES LEAGUEメインビジュアル"
       class="es-Laegue-mainVisual__img"
+      width="750"
+      height="422"
     />
   </div>
 </template>
@@ -17,6 +19,7 @@ export default {}
   margin: 0 calc(50% - 50vw);
   &__img {
     width: 100%;
+    height: auto;
     display: block;
   }
 }

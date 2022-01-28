@@ -9,6 +9,8 @@
           src="~/assets/img/aboutES/about-es-kv.png"
           class="es-League-aboutEs__bg"
           alt="ES LEAGUE背景"
+          width="1125"
+          height="1689"
         />
         <p class="es-League-aboutEs__storyText">
           セパタクロー競技にとって最高峰の世界大会は<br class="pc" />
@@ -252,6 +254,7 @@ export default {
   }
   &__bg {
     width: 100%;
+    height: auto;
   }
   &__storyText {
     position: absolute;

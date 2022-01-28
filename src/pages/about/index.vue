@@ -8,6 +8,8 @@
         src="~/assets/img/about/key-visual.png"
         alt="セパタクローアタック"
         class="es-League-about__visual"
+        width="500"
+        height="333"
       />
       <p class="es-League-about__text">
         セパタクローとは、ネットをはさんで足や腿または頭を使ってボールを相手コートに返しあう競技でバレーボールに似たゲームです。
@@ -33,6 +35,8 @@
                     src="~/assets/img/about/hands.svg"
                     class="es-League-about__ruleListImg hand"
                     alt="手を使ってはいけない"
+                    width="90"
+                    height="43"
                   />
                 </li>
                 <li class="es-League-about__ruleListItem">
@@ -43,6 +47,8 @@
                     src="~/assets/img/about/touch.svg"
                     class="es-League-about__ruleListImg three-touch"
                     alt="タッチ数"
+                    width="117"
+                    height="51"
                   />
                 </li>
                 <li class="es-League-about__ruleListItem">
@@ -53,6 +59,8 @@
                     src="~/assets/img/about/rotation.svg"
                     class="es-League-about__ruleListImg rotation"
                     alt="ローテーション"
+                    width="53"
+                    height="66"
                   />
                 </li>
                 <li class="es-League-about__ruleListItem">
@@ -63,6 +71,8 @@
                     src="~/assets/img/about/service-time.svg"
                     class="es-League-about__ruleListImg three-times"
                     alt="サーブ回数"
+                    width="66"
+                    height="66"
                   />
                 </li>
               </ul>
@@ -95,6 +105,8 @@
                 src="~/assets/img/about/coat_position.svg"
                 class="es-League-about__itemImage"
                 alt="セパタクローコート"
+                width="312"
+                height="156"
               />
               <p class="es-League-about__itemText">
                 バドミントンと同じ広さのコート、同じ高さ(女子は10cm低い)のネットを使用します。
@@ -114,6 +126,8 @@
                   src="~/assets/img/about/ball.svg"
                   class="es-League-about__goods ball"
                   alt="セパタクローボール"
+                  width="190"
+                  height="190"
                 />
                 <p class="es-League-about__itemText">
                   セパタクローのボールは、プラスチックを編んでできている為、表面は固くとても軽い。
@@ -126,7 +140,9 @@
                 <img
                   src="~/assets/img/about/shoes.svg"
                   class="es-League-about__goods shoes"
-                  alt="セパタクローボール"
+                  alt="セパタクローシューズ"
+                  width="209"
+                  height="209"
                 />
                 <p class="es-League-about__itemText shoes">
                   セパタクローの選手の多くはナンヤンというタイの靴を履いている。
@@ -151,6 +167,8 @@
                       src="~/assets/img/about/attack.png"
                       class="es-League-about__technicImage"
                       alt="アタック"
+                      width="400"
+                      height="267"
                     />
                     <p class="es-League-about__itemText">
                       アタックは主にサッカーのオーバーヘッドシュートのような「ローリングアタック」と足をハサミのようにして打つ「シザースアタック」の2種類がある。<br />
@@ -163,6 +181,8 @@
                       src="~/assets/img/about/serve.png"
                       class="es-League-about__technicImage"
                       alt="サーブ"
+                      width="400"
+                      height="267"
                     />
                     <p class="es-League-about__itemText">
                       サーブは主に足の内側で蹴る「インサイドサーブ」、足の甲で蹴る「インステップサーブ」、インサイドとインフロントの中間で蹴る「インフロントサーブ」という３種類に分けられる。<br />
@@ -175,6 +195,8 @@
                       src="~/assets/img/about/tosser.png"
                       class="es-League-about__technicImage"
                       alt="トス"
+                      width="400"
+                      height="267"
                     />
                     <p class="es-League-about__itemText">
                       トスはアタッカーの強みを引き出すために、速さや高さ、距離などを考えてトスをあげている。また、相手のブロックの位置やレシーブの位置なども見ながらアタッカーが決め切れるようにコントロールをする。<br />
@@ -187,6 +209,8 @@
                       src="~/assets/img/about/block.png"
                       class="es-League-about__technicImage"
                       alt="ブロック"
+                      width="400"
+                      height="267"
                     />
                     <p class="es-League-about__itemText">
                       セパタクローにもバレーと同じようにブロックをすることができる。<br />
@@ -200,6 +224,8 @@
                       src="~/assets/img/about/receive.png"
                       class="es-League-about__technicImage"
                       alt="レシーブ"
+                      width="400"
+                      height="267"
                     />
                     <p class="es-League-about__itemText">
                       セパタクローは高速のサーブやアタックを手以外の脚や頭を使ってレシーブする。<br />
@@ -255,6 +281,7 @@ export default {
   }
   &__visual {
     width: 100%;
+    height: auto;
   }
   &__text {
     text-align: left;
@@ -285,6 +312,7 @@ export default {
   }
   &__itemImage {
     width: 100%;
+    height: auto;
     margin-top: 24px;
   }
 
@@ -304,9 +332,11 @@ export default {
     margin-bottom: 16px;
     &.ball {
       width: 193px;
+      height: auto;
     }
     &.shoes {
       width: 216px;
+      height: auto;
     }
   }
 
@@ -350,6 +380,7 @@ export default {
 
   &__technicImage {
     width: 100%;
+    height: auto;
     margin-bottom: 5px;
   }
 }
@@ -403,6 +434,7 @@ export default {
       }
     }
     &__ruleListImg {
+      height: auto;
       &.hand {
         width: 130px;
       }
