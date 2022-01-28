@@ -5,7 +5,7 @@
     </h2>
     <div class="es-League-about__container">
       <img
-        src="~/assets/img/about/key-visual.png"
+        src="~/assets/img/about/key-visual.jpg"
         alt="セパタクローアタック"
         class="es-League-about__visual"
         width="500"
@@ -164,7 +164,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">アタック</p>
                     <img
-                      src="~/assets/img/about/attack.png"
+                      src="~/assets/img/about/attack.jpg"
                       class="es-League-about__technicImage"
                       alt="アタック"
                       width="400"
@@ -178,7 +178,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">サーブ</p>
                     <img
-                      src="~/assets/img/about/serve.png"
+                      src="~/assets/img/about/serve.jpg"
                       class="es-League-about__technicImage"
                       alt="サーブ"
                       width="400"
@@ -192,7 +192,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">トス</p>
                     <img
-                      src="~/assets/img/about/tosser.png"
+                      src="~/assets/img/about/tosser.jpg"
                       class="es-League-about__technicImage"
                       alt="トス"
                       width="400"
@@ -206,7 +206,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">ブロック</p>
                     <img
-                      src="~/assets/img/about/block.png"
+                      src="~/assets/img/about/block.jpg"
                       class="es-League-about__technicImage"
                       alt="ブロック"
                       width="400"
@@ -221,7 +221,7 @@
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">レシーブ</p>
                     <img
-                      src="~/assets/img/about/receive.png"
+                      src="~/assets/img/about/receive.jpg"
                       class="es-League-about__technicImage"
                       alt="レシーブ"
                       width="400"
@@ -229,8 +229,8 @@
                     />
                     <p class="es-League-about__itemText">
                       セパタクローは高速のサーブやアタックを手以外の脚や頭を使ってレシーブする。<br />
-                      ボールはプラスチックでできているため、レシーブをするだけでアザができることもあり、見た目以上に痛い。<br />
-                      サッカーボールよりも小さいボールを足でコントロールするため繊細なボール捌きが必要である。
+                      サッカーボールよりも小さいボールを足でコントロールするため繊細なボール捌きが必要である。<br />
+                      いかにボールの勢いを殺し、次のプレーに繋げられるかが見どころの一つ。
                     </p>
                   </li>
                 </ul>

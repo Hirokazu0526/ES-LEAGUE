@@ -6,7 +6,7 @@
     <div class="es-League-aboutEs__wrapper">
       <div class="es-League-aboutEs__story">
         <img
-          src="~/assets/img/aboutES/about-es-kv.png"
+          src="~/assets/img/aboutES/about-es-kv.jpg"
           class="es-League-aboutEs__bg"
           alt="ES LEAGUE背景"
           width="1125"

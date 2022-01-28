@@ -1,7 +1,7 @@
 <template>
   <div class="es-Laegue-mainVisual">
     <img
-      src="~/assets/img/top/thumbnail.png"
+      src="~/assets/img/top/thumbnail.jpg"
       alt="ES LEAGUEメインビジュアル"
       class="es-Laegue-mainVisual__img"
       width="750"
