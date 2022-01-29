@@ -26,7 +26,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '日本初のセパタクロー国内リーグ ES LEAGUE 公式サイトです' || '' },
+      { hid: 'description', name: 'description', content: '日本初のセパタクロー国内リーグ ES LEAGUE 公式サイトです。' || '' },
       { name: 'format-detection', content: 'telephone=no' },
       { hid: 'keywords', name: 'keywords', content: 'セパタクロー,セパタクローリーグ,エス リーグ,SEPAKTAKRAW,ES LEAGUE,日本初' },
 
