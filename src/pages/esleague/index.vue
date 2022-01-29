@@ -333,6 +333,13 @@ export default {
     }
   }
 }
+@media screen and (width: 360px) {
+  .es-League-aboutEs {
+    &__bg {
+      height: 480px;
+    }
+  }
+}
 @media screen and (min-width: 768px) {
   .es-League-aboutEs {
     &__title {
