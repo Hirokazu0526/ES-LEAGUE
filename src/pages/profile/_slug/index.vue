@@ -172,25 +172,19 @@ export default {
 
   &__image {
     position: absolute;
-    width: 160px;
-    right: 16px;
+    width: 220px;
+    right: 15px;
     bottom: 0;
 
-    &.ms {
-      width: 183px;
-    }
-    &.ht {
-      width: 180px;
-    }
     &.women {
       width: 200px;
-      right: -5px;
+      right: 0px;
     }
   }
 
   &__nameWrapper {
     position: absolute;
-    top: 40px;
+    top: 60px;
     left: 16px;
     text-align: left;
     &.women {
@@ -316,16 +310,11 @@ export default {
     }
     &__image {
       right: 0;
-      width: 145px;
+      width: 200px;
 
-      &.ms {
-        width: 168px;
-      }
-      &.ht {
-        width: 160px;
-      }
       &.women {
         width: 180px;
+        right: -10px;
       }
     }
     &__name {
@@ -364,15 +353,10 @@ export default {
       }
     }
     &__image {
-      width: 250px;
+      width: 345px;
       bottom: 0;
+      right: 70px;
 
-      &.ms {
-        width: 285px;
-      }
-      &.ht {
-        width: 290px;
-      }
       &.women {
         width: 340px;
       }
