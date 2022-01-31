@@ -31,14 +31,14 @@ export const state = () => ({
     setNewsLists(state, newsLists) {
       state.newsLists = newsLists
       for (const item of state.newsLists) {
-        const itemDate = moment(item.date).format('YYYY年MM月DD日')
+        const itemDate = moment(item.date, state.TZ || TZ).format('YYYY年MM月DD日')
         item.date = itemDate
       }
     },
     setPlayerLists(state, playerLists) {
       state.playerLists = playerLists
       for (const item of state.playerLists) {
-        const itemDate = moment(item.birth).format('YYYY年MM月DD日')
+        const itemDate = moment(item.birth, state.TZ || TZ).format('YYYY年MM月DD日')
         item.date = itemDate
       }
       state.playerLists.sort(function(a, b) {
@@ -48,7 +48,7 @@ export const state = () => ({
     setTeamLists(state, teamLists) {
       state.teamLists = teamLists.reverse()
       for (const item of state.teamLists) {
-        const itemDate = moment(item.date).format('YYYY年MM月DD日')
+        const itemDate = moment(item.date, state.TZ || TZ).format('YYYY年MM月DD日')
         item.date = itemDate
       }
     },
