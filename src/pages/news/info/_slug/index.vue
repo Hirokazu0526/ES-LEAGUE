@@ -101,6 +101,11 @@ export default {
     column-gap: 16px;
     justify-items: center;
   }
+  ::v-deep &__newsText {
+    p {
+      line-height: 1.5;
+    }
+  }
 }
 @media screen and (min-width: 768px) {
   .es-League-news {
@@ -124,11 +129,6 @@ export default {
     }
     &__btnWrapper {
       margin-bottom: 30px;
-    }
-    ::v-deep &__newsText {
-      p {
-        line-height: 1.5;
-      }
     }
   }
 }
