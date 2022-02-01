@@ -3,7 +3,7 @@ const TZ = 'Asia/Tokyo'
 
 export const state = () => ({
   currentTime: Date.now(),
-  TZ: process.env.TZ || 'Asia/Tokyo',
+  // TZ: process.env.TZ || 'Asia/Tokyo',
   route: {},
   newsLists: [],
   playerLists: [],
@@ -32,7 +32,7 @@ export const state = () => ({
       state.newsLists = newsLists
       for (const item of state.newsLists) {
         moment.locale("ja")
-        const itemDate = moment(item.date, state.TZ || TZ).format('YYYY年MM月DD日')
+        const itemDate = moment(item.date).format('YYYY年MM月DD日')
         item.date = itemDate
       }
     },
@@ -40,7 +40,7 @@ export const state = () => ({
       state.playerLists = playerLists
       for (const item of state.playerLists) {
         moment.locale("ja")
-        const itemDate = moment(item.birth, state.TZ || TZ).format('YYYY年MM月DD日')
+        const itemDate = moment(item.birth).format('YYYY年MM月DD日')
         item.date = itemDate
       }
       state.playerLists.sort(function(a, b) {
@@ -51,7 +51,7 @@ export const state = () => ({
       state.teamLists = teamLists.reverse()
       for (const item of state.teamLists) {
         moment.locale("ja")
-        const itemDate = moment(item.date, state.TZ || TZ).format('YYYY年MM月DD日')
+        const itemDate = moment(item.date).format('YYYY年MM月DD日')
         item.date = itemDate
       }
     },
@@ -59,7 +59,7 @@ export const state = () => ({
       state.competitionLists = competitionLists
       for (const item of state.competitionLists) {
         moment.locale("ja")
-        const itemDate = moment.tz(item.date, state.TZ || TZ).format('YYYY.M.D(ddd)')
+        const itemDate = moment(item.date).format('YYYY.M.D(ddd)')
         item.date = itemDate
       }
       state.competitionLists.sort(function(a, b) {
