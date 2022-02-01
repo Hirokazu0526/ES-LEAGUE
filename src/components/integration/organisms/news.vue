@@ -28,6 +28,7 @@
 </template>
 
 <script>
+// import moment from 'moment-timezone'
 // import { mapGetters } from 'vuex'
 import linkArrow from '~/components/integration/atoms/link-arrow.vue'
 
@@ -43,10 +44,13 @@ export default {
     return {}
   },
   // computed: {
-  //   ...mapGetters(['getNewsList']),
-  //   newsLists() {
-  //     return this.getNewsList.slice(0, 5)
-  //   },
+  // ...mapGetters(['getNewsList']),
+  // newsLists() {
+  //   return this.getNewsList.slice(0, 5)
+  // },
+  // formatDate() {
+  //   return moment(this.date).format('YYYY年M月D日')
+  // },
   // },
 }
 </script>
