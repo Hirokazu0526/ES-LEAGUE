@@ -25,6 +25,11 @@
             </nuxt-link>
           </li>
           <li class="es-League-footer__listItem">
+            <nuxt-link to="/spectating">
+              <p class="es-League-footer__listTitle">観戦ガイドライン</p>
+            </nuxt-link>
+          </li>
+          <li class="es-League-footer__listItem">
             <nuxt-link to="/contact">
               <p class="es-League-footer__listTitle">お問い合わせ</p>
             </nuxt-link>
@@ -39,6 +44,11 @@
         </ul>
         <!-- pc版のフッター -->
         <ul class="es-League-footer__list pc">
+          <li class="es-League-footer__listItem">
+            <nuxt-link to="/spectating">
+              <p class="es-League-footer__listTitle">観戦ガイドライン</p>
+            </nuxt-link>
+          </li>
           <li class="es-League-footer__listItem">
             <nuxt-link to="/contact">
               <p class="es-League-footer__listTitle">お問い合わせ</p>
