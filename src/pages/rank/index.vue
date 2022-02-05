@@ -192,10 +192,10 @@ export default {
   .es-League-rank {
     &__list {
       thead {
-        font-size: 12px;
+        font-size: 11px;
       }
       th {
-        padding: 8px 5px;
+        padding: 8px 3px;
       }
     }
     &__width {
