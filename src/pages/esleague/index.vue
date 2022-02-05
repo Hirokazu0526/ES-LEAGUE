@@ -113,9 +113,7 @@
               </td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableData bottom top">
-                【女子】(2セット先取)
-              </td>
+              <td class="es-League-aboutEs__tableData bottom top">【女子】</td>
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData regulation">
@@ -129,13 +127,13 @@
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData regulation">
-                試合開始前に各種目に出場するメンバー表を提出。<br />また、必ず一人1種目は出場することとする。
+                試合開始前に各種目に出場するメンバー表を提出すること。
               </td>
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableTitle">配点</td>
               <td class="es-League-aboutEs__tableData">
-                勝ち = 2ポイント<br />負け = 0ポイント
+                1セットにつき1ポイントを獲得する。
               </td>
             </tr>
             <tr>
