@@ -10,7 +10,7 @@
               <th>順位</th>
               <th>チーム</th>
               <th>得失セット</th>
-              <th>勝ち点</th>
+              <th>ポイント</th>
             </tr>
           </thead>
           <tbody>
@@ -37,7 +37,7 @@
               <th>順位</th>
               <th>チーム</th>
               <th>得失セット</th>
-              <th>勝ち点</th>
+              <th>ポイント</th>
             </tr>
           </thead>
           <tbody>
@@ -132,7 +132,7 @@ export default {
       }
       th {
         border-right: 1px solid #fff;
-        font-size: 14px;
+        font-size: 12px;
         &:last-child {
           border-right: none;
         }
@@ -174,7 +174,7 @@ export default {
       }
     }
     th {
-      padding: 8px 8px;
+      padding: 8px 4px;
     }
   }
   &__width {
