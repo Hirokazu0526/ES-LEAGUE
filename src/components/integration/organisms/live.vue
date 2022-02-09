@@ -54,7 +54,6 @@ export default {
 <style lang="scss" scoped>
 .es-League-live {
   margin: 0 16px 34px;
-  padding-top: 20px;
   &__title {
     text-align: center;
     font-size: 32px;
