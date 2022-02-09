@@ -37,7 +37,7 @@
       ></iframe>
     </div>
     <es-button url="/live" arrow="right" class="es-League-live__btn"
-      >本日の配信一覧</es-button
+      >配信一覧</es-button
     >
   </div>
 </template>
