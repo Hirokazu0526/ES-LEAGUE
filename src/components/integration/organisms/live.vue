@@ -1,33 +1,60 @@
 <template>
   <div class="es-League-live">
-    <h3 class="es-League-live__title live">
+    <h3 class="es-League-live__title">
       LIVE STREAMING<br /><span>ライブ配信</span>
     </h3>
-    <div class="es-League-live__info">
+    <div v-if="firstGame" class="es-League-live__info">
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/b5K1rJdY5nI"
+        src="https://www.youtube.com/embed/1EP55eCL--4"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
-    <h3 class="es-League-live__title howto">
-      HOW TO WATCH<br /><span>観戦方法</span>
-    </h3>
-    <es-button url="/howto" class="es-League-live__btn">詳しく見る</es-button>
+    <div v-else-if="secondGame" class="es-League-live__info">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/WJcVpsYG7u8"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div v-else-if="thirdGame" class="es-League-live__info">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/t5MSmq312WY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <es-button url="/live" arrow="right" class="es-League-live__btn"
+      >本日の配信一覧</es-button
+    >
   </div>
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters(['firstGame', 'secondGame', 'thirdGame']),
+  },
+}
 </script>
 
 <style lang="scss" scoped>
 .es-League-live {
-  padding: 20px 16px 0;
+  margin: 0 16px 34px;
+  padding-top: 20px;
   &__title {
     text-align: center;
     font-size: 32px;
@@ -40,18 +67,6 @@ export default {}
       font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
         sans-serif;
       color: #000;
-    }
-    &.live {
-      color: #ff1d1d;
-      & span {
-        color: #ff1d1d;
-        font-size: 16px;
-        font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
-          sans-serif;
-      }
-    }
-    &.howto {
-      margin-top: 37px;
     }
   }
   &__info {
@@ -69,7 +84,7 @@ export default {}
     }
   }
   &__btn {
-    margin: 15px auto 0;
+    margin: 16px auto 0;
   }
 }
 </style>

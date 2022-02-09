@@ -1,10 +1,10 @@
 <template>
   <div class="es-League">
     <main-visual />
+    <live id="live" />
     <next-match />
     <player-card :player-data="getPlayerList" />
     <pv />
-    <live v-if="firstWeek" id="live" />
     <!-- <about-es /> -->
     <info-list />
     <!-- <movie /> -->
