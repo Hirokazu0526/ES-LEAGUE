@@ -86,4 +86,17 @@ export default {
     margin: 16px auto 0;
   }
 }
+@media screen and (min-width: 768px) {
+  .es-League-live {
+    max-width: 600px;
+    margin: 0 auto 34px;
+    &__title {
+      margin-top: 30px;
+      font-size: 45px;
+      & span {
+        font-size: 24px;
+      }
+    }
+  }
+}
 </style>

@@ -244,11 +244,11 @@ export const state = () => ({
     },
     secondGame(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-11 14:40', '2022-02-11 16:00', undefined, '[)')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-11 14:45', '2022-02-11 16:00', undefined, '[)')
     },
     thirdGame(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-09 15:55', '2022-02-11 17:00', undefined, '[)')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-09 15:50', '2022-02-11 17:00', undefined, '[)')
     },
     // 第1週目の期間
     // ※TODO:リリース時点では期間を修正すること
