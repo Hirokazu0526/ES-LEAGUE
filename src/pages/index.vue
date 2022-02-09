@@ -3,8 +3,8 @@
     <main-visual />
     <next-match />
     <player-card :player-data="getPlayerList" />
+    <live id="live" />
     <pv />
-    <live v-if="firstWeek" id="live" />
     <!-- <about-es /> -->
     <info-list />
     <!-- <movie /> -->
