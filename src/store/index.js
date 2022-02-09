@@ -234,6 +234,21 @@ export const state = () => ({
       const now = state.currentTime
       return [20].includes(moment.tz(now, state.TZ || TZ).date())
     },
+    firstGame(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-09 11:00', '2022-02-11 14:45', undefined, '[)')
+      
+    },
+    secondGame(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-11 14:40', '2022-02-11 16:00', undefined, '[)')
+      
+    },
+    thirdGame(state) {
+      const now = state.currentTime
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-09 15:55', '2022-02-11 17:00', undefined, '[)')
+      
+    },
     // 第1週目の期間
     // ※TODO:リリース時点では期間を修正すること
     firstWeek(state) {
