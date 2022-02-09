@@ -30,6 +30,13 @@
             </nuxt-link>
           </li>
           <li class="es-League-footer__listItem">
+            <a href="https://esleague2022.peatix.com/" target="_blank">
+              <p class="es-League-footer__listTitle">
+                観戦のお申し込み<br />(外部リンク)
+              </p>
+            </a>
+          </li>
+          <li class="es-League-footer__listItem">
             <nuxt-link to="/contact">
               <p class="es-League-footer__listTitle">お問い合わせ</p>
             </nuxt-link>
@@ -48,6 +55,13 @@
             <nuxt-link to="/spectating">
               <p class="es-League-footer__listTitle">観戦ガイドライン</p>
             </nuxt-link>
+          </li>
+          <li class="es-League-footer__listItem">
+            <a href="https://esleague2022.peatix.com/" target="_blank">
+              <p class="es-League-footer__listTitle">
+                観戦のお申し込み(外部リンク)
+              </p>
+            </a>
           </li>
           <li class="es-League-footer__listItem">
             <nuxt-link to="/contact">
