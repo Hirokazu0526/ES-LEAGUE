@@ -11,21 +11,12 @@
           class="es-League-sponsor__listItem"
         >
           <a :href="item.url" target="_blank">
-            <picture>
-              <source
-                :srcset="`${item.imgUrl}?webp')`"
-                type="image/webp"
-                :alt="item.alt"
-                :class="item.name"
-                class="es-League-sponsor__itemImg"
-              />
-              <img
-                :src="item.imgUrl"
-                :alt="item.alt"
-                :class="item.name"
-                class="es-League-sponsor__itemImg"
-              />
-            </picture>
+            <img
+              :src="item.imgUrl"
+              :alt="item.alt"
+              :class="item.name"
+              class="es-League-sponsor__itemImg"
+            />
           </a>
         </li>
       </ul>
