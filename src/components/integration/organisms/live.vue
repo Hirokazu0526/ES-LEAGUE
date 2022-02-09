@@ -37,7 +37,7 @@
       ></iframe>
     </div>
     <es-button url="/live" arrow="right" class="es-League-live__btn"
-      >本日の配信一覧</es-button
+      >配信一覧</es-button
     >
   </div>
 </template>
@@ -54,7 +54,6 @@ export default {
 <style lang="scss" scoped>
 .es-League-live {
   margin: 0 16px 34px;
-  padding-top: 20px;
   &__title {
     text-align: center;
     font-size: 32px;

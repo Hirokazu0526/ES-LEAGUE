@@ -1,6 +1,9 @@
 <template>
   <div v-if="isThisWeek" class="es-League-schedule">
-    <h3 class="es-League-schedule__title">
+    <h3 v-if="isToday" class="es-League-schedule__title">
+      TODAY MATCH<br /><span>本日の試合</span>
+    </h3>
+    <h3 v-else class="es-League-schedule__title">
       NEXT MATCH<br /><span>試合予定</span>
     </h3>
     <div class="es-League-schedule__contanier">
@@ -132,6 +135,7 @@ export default {
   computed: {
     ...mapGetters([
       'getCompetitionList',
+      'isToday',
       'firstWeek',
       'secondWeek',
       'thirdWeek',
@@ -158,7 +162,6 @@ export default {
 
 <style lang="scss" scoped>
 .es-League-schedule {
-  padding-top: 20px;
   margin: 0 16px 34px;
   &__title {
     text-align: center;
