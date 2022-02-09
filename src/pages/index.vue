@@ -1,10 +1,11 @@
 <template>
   <div class="es-League">
     <main-visual />
+    <live v-if="isToday" id="live" />
     <next-match />
     <player-card :player-data="getPlayerList" />
+    <live v-if="!isToday" id="live" />
     <pv />
-    <live v-if="firstWeek" id="live" />
     <!-- <about-es /> -->
     <info-list />
     <!-- <movie /> -->
@@ -40,7 +41,7 @@ export default {
     pv,
   },
   computed: {
-    ...mapGetters(['getPlayerList', 'firstWeek']),
+    ...mapGetters(['getPlayerList', 'isToday', 'firstWeek']),
   },
   mounted() {
     // ここから追加

@@ -223,12 +223,12 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .es-League-footer {
-    height: 258px;
+    height: 295px;
     &__wrapper {
-      padding: 30px 10px 50px 0;
+      padding: 30px 10px 20px 0;
     }
     &__bgImg {
-      top: -53px;
+      top: -20px;
     }
     &__list {
       &.sp {
