@@ -12,22 +12,38 @@
         <div class="es-League-match-result__team">
           <div class="es-League-match-result__teamInfo">
             <nuxt-link :to="homeTeamUrl">
-              <img
-                :src="homeTeamImage"
-                alt=""
-                class="es-League-match-result__teamImage"
-              />
+              <picture>
+                <source
+                  :srcset="`${homeTeamImage}?webp')`"
+                  type="image/webp"
+                  :alt="homeTeam"
+                  class="es-League-match-result__teamImage"
+                />
+                <img
+                  :src="homeTeamImage"
+                  :alt="homeTeam"
+                  class="es-League-match-result__teamImage"
+                />
+              </picture>
             </nuxt-link>
             <p class="es-League-match-result__teamName">{{ homeTeam }}</p>
           </div>
           <div class="es-League-match-result__versus"><span>VS</span></div>
           <div class="es-League-match-result__teamInfo">
             <nuxt-link :to="awayTeamUrl">
-              <img
-                :src="awayTeamImage"
-                alt=""
-                class="es-League-match-result__teamImage"
-              />
+              <picture>
+                <source
+                  :srcset="`${awayTeamImage}?webp')`"
+                  type="image/webp"
+                  :alt="awayTeam"
+                  class="es-League-match-result__teamImage"
+                />
+                <img
+                  :src="awayTeamImage"
+                  :alt="awayTeam"
+                  class="es-League-match-result__teamImage"
+                />
+              </picture>
             </nuxt-link>
             <p class="es-League-match-result__teamName">{{ awayTeam }}</p>
           </div>

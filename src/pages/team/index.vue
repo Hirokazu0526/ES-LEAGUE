@@ -10,11 +10,19 @@
           class="es-League-teamList__item"
         >
           <nuxt-link :to="`/team/${item.id}`" class="es-League-teamList__link">
-            <img
-              :src="item.image.url"
-              class="es-League-teamList__image"
-              :alt="item.teamName"
-            />
+            <picture>
+              <source
+                :srcset="`${item.image.url}?webp')`"
+                type="image/webp"
+                class="es-League-teamList__image"
+                :alt="item.teamName"
+              />
+              <img
+                :src="item.image.url"
+                class="es-League-teamList__image"
+                :alt="item.teamName"
+              />
+            </picture>
             <p class="es-League-teamList__teamName">{{ item.teamName }}</p>
           </nuxt-link>
         </li>
@@ -29,11 +37,19 @@
           class="es-League-teamList__item"
         >
           <nuxt-link :to="`/team/${item.id}`" class="es-League-teamList__link">
-            <img
-              :src="item.image.url"
-              class="es-League-teamList__image"
-              :alt="item.teamName"
-            />
+            <picture>
+              <source
+                :srcset="`${item.image.url}?webp')`"
+                type="image/webp"
+                class="es-League-teamList__image"
+                :alt="item.teamName"
+              />
+              <img
+                :src="item.image.url"
+                class="es-League-teamList__image"
+                :alt="item.teamName"
+              />
+            </picture>
             <p class="es-League-teamList__teamName">{{ item.teamName }}</p>
           </nuxt-link>
         </li>

@@ -4,32 +4,56 @@
     <ul class="es-League__navList sp">
       <li class="es-League__item">
         <nuxt-link to="/schedule/result" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/calendar.svg"
-            alt="カレンダー"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/calendar.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="カレンダー"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/calendar.svg')"
+              alt="カレンダー"
+            />
+          </picture>
           日程・結果
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <!-- <nuxt-link v-scroll-to="'#live'" to="/#live" class="es-League__link"> -->
         <nuxt-link to="/team" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/shorts.svg"
-            alt="ユニフォーム"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/shorts.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="ユニフォーム"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/shorts.svg')"
+              alt="ユニフォーム"
+            />
+          </picture>
           チーム紹介
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <nuxt-link to="/about" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/site-logo.svg"
-            alt="セパタクローボール"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/site-logo.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="セパタクローボール"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/site-logo.svg')"
+              alt="セパタクローボール"
+            />
+          </picture>
           セパタクローとは
         </nuxt-link>
       </li>
@@ -38,62 +62,110 @@
     <ul class="es-League__navList pc">
       <li class="es-League__item">
         <nuxt-link to="/schedule/result" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/calendar.svg"
-            alt="カレンダー"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/calendar.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="カレンダー"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/calendar.svg')"
+              alt="カレンダー"
+            />
+          </picture>
           日程・結果
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <nuxt-link to="/rank" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/trophy.svg"
-            alt="トロフィー"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/trophy.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="トロフィー"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/trophy.svg')"
+              alt="トロフィー"
+            />
+          </picture>
           順位表
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <!-- <nuxt-link v-scroll-to="'#live'" to="/#live" class="es-League__link"> -->
         <nuxt-link to="/team" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/shorts.svg"
-            alt="ユニフォーム"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/shorts.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="ユニフォーム"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/shorts.svg')"
+              alt="ユニフォーム"
+            />
+          </picture>
           チーム紹介
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <nuxt-link to="/esleague" class="es-League__link">
-          <img
-            class="es-League__icon es"
-            src="~/assets/img/header/es_logo-white.svg"
-            alt="esleagueロゴ"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/es_logo-white.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="esleagueロゴ"
+            />
+            <img
+              class="es-League__icon es"
+              :src="require('~/assets/img/header/es_logo-white.svg')"
+              alt="esleagueロゴ"
+            />
+          </picture>
           ES LEAGUEとは
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <nuxt-link to="/news" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/news.svg"
-            alt="ニュース"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/news.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="ニュース"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/news.svg')"
+              alt="ニュース"
+            />
+          </picture>
           NEWS
         </nuxt-link>
       </li>
       <li class="es-League__item">
         <nuxt-link to="/about" class="es-League__link">
-          <img
-            class="es-League__icon"
-            src="~/assets/img/header/site-logo.svg"
-            alt="セパタクローボール"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/header/site-logo.svg')"
+              type="image/webp"
+              class="es-League__icon"
+              alt="セパタクローボール"
+            />
+            <img
+              class="es-League__icon"
+              :src="require('~/assets/img/header/site-logo.svg')"
+              alt="セパタクローボール"
+            />
+          </picture>
           セパタクローとは
         </nuxt-link>
       </li>

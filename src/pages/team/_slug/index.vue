@@ -5,7 +5,16 @@
     </h2>
 
     <div class="es-League-team__info">
-      <img :src="image.url" :alt="teamName" class="es-League-team__uniform" />
+      <picture>
+        <source
+          :srcset="`${image.url}?webp')`"
+          type="image/webp"
+          :alt="teamName"
+          class="es-League-team__uniform"
+        />
+        <img :src="image.url" :alt="teamName" class="es-League-team__uniform" />
+      </picture>
+
       <p class="es-League-team__teamName">{{ teamName }}</p>
       <!-- <h3 class="es-League-team__sectionTitle">TEAM COLOR</h3>
       <p class="es-League-team__text teamcolor" :class="`${teamcolor}`">
@@ -25,11 +34,19 @@
               :to="`/profile/${member.id}`"
               class="es-League-team__link"
             >
-              <img
-                :src="member.imageSquare.url"
-                :alt="member.name"
-                class="es-League-team__memberImg"
-              />
+              <picture>
+                <source
+                  :srcset="`${member.imageSquare.url}?webp')`"
+                  type="image/webp"
+                  :alt="member.name"
+                  class="es-League-team__memberImg"
+                />
+                <img
+                  :src="member.imageSquare.url"
+                  :alt="member.name"
+                  class="es-League-team__memberImg"
+                />
+              </picture>
               <p class="es-League-team__memberName">{{ member.name }}</p>
             </nuxt-link>
           </li>
@@ -40,12 +57,21 @@
           :class="{ bvd: sponsor === 'BVD' }"
         >
           <a :href="sponsorLink" target="_blank">
-            <img
-              :src="sponsorLogo.url"
-              :alt="sponsor"
-              class="es-League-team__sponsorImg"
-              :class="{ bvd: sponsor === 'BVD' }"
-            />
+            <picture>
+              <source
+                :srcset="`${sponsorLogo.url}?webp')`"
+                type="image/webp"
+                :alt="sponsor"
+                class="es-League-team__sponsorImg"
+                :class="{ bvd: sponsor === 'BVD' }"
+              />
+              <img
+                :src="sponsorLogo.url"
+                :alt="sponsor"
+                class="es-League-team__sponsorImg"
+                :class="{ bvd: sponsor === 'BVD' }"
+              />
+            </picture>
           </a>
         </div>
       </div>

@@ -10,16 +10,26 @@
         women: gender === 'women',
       }"
     >
-      <img
-        :src="silhouette"
-        :alt="data.name"
-        class="es-League-profile__image"
-        :class="{
-          women: gender === 'women',
-          ms: data.english === 'Masuda Ryo',
-          ht: data.english === 'Hogawa Tasuku',
-        }"
-      />
+      <picture>
+        <source
+          :srcset="`${silhouette}?webp')`"
+          type="image/webp"
+          :alt="data.name"
+          class="es-League-profile__image"
+          :class="{
+            women: gender === 'women',
+          }"
+        />
+        <img
+          :src="silhouette"
+          :alt="data.name"
+          class="es-League-profile__image"
+          :class="{
+            women: gender === 'women',
+          }"
+        />
+      </picture>
+
       <div
         class="es-League-profile__nameWrapper"
         :class="{ women: gender === 'women' }"

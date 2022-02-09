@@ -10,16 +10,26 @@
         women: team.gender[0] === 'women',
       }"
     >
-      <img
-        :src="imageSilhouette.url"
-        :alt="name"
-        class="es-League-profile__image"
-        :class="{
-          women: team.gender[0] === 'women',
-          ms: isHight,
-          ht: english === 'Hogawa Tasuku',
-        }"
-      />
+      <picture>
+        <source
+          :srcset="`${imageSilhouette.url}?webp')`"
+          type="image/webp"
+          :alt="name"
+          class="es-League-profile__image"
+          :class="{
+            women: team.gender[0] === 'women',
+          }"
+        />
+        <img
+          :src="imageSilhouette.url"
+          :alt="name"
+          class="es-League-profile__image"
+          :class="{
+            women: team.gender[0] === 'women',
+          }"
+        />
+      </picture>
+
       <div
         class="es-League-profile__nameWrapper"
         :class="{ women: team.gender[0] === 'women' }"
@@ -123,15 +133,6 @@ export default {
   computed: {
     formatData() {
       return moment(this.birth).format('YYYY年M月D日')
-    },
-    // formatHistory() {
-    //   return this.history.split(' ').join('\n')
-    // },
-    isHight() {
-      if (this.english === 'Masuda Ryo' || this.english === 'Oyama Koki') {
-        return true
-      }
-      return false
     },
   },
 }

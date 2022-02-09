@@ -1,11 +1,20 @@
 <template>
   <div class="es-League-footer">
     <div class="es-League-footer__wrapper">
-      <img
-        src="~/assets/img/logo/esleague_long_white.svg"
-        class="es-League-footer__bgImg"
-        alt="ES LEAGUE LOGO"
-      />
+      <picture>
+        <source
+          :srcset="require('~/assets/img/logo/esleague_long_white.svg')"
+          type="image/webp"
+          class="es-League-footer__bgImg"
+          alt="ES LEAGUE LOGO"
+        />
+        <img
+          :src="require('~/assets/img/logo/esleague_long_white.svg')"
+          class="es-League-footer__bgImg"
+          alt="ES LEAGUE LOGO"
+        />
+      </picture>
+
       <div class="es-League-footer__container">
         <!-- sp版フッター -->
         <ul class="es-League-footer__list sp">

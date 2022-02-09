@@ -3,12 +3,20 @@
     <div class="header__container">
       <nuxt-link to="/">
         <h1>
-          <img
-            id="logo"
-            class="header__logo"
-            src="~/assets/img/logo/es_logo.svg"
-            alt="ES LEAGUE LOGO"
-          />
+          <picture>
+            <source
+              :srcset="require('~/assets/img/logo/es_logo.svg')"
+              type="image/webp"
+              class="header__logo"
+              alt="ES LEAGUE LOGO"
+            />
+            <img
+              id="logo"
+              class="header__logo"
+              src="~/assets/img/logo/es_logo.svg"
+              alt="ES LEAGUE LOGO"
+            />
+          </picture>
         </h1>
       </nuxt-link>
       <global-nav />

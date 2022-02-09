@@ -74,6 +74,7 @@ export default {
     'nuxt-microcms-module',
     'nuxt-animejs',
     '@nuxtjs/google-analytics',
+    '@aceforth/nuxt-optimized-images',
   ],
   microcms: {
     options: {
@@ -164,6 +165,10 @@ export default {
     id: GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
   },
 
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: true,
+  },
 
   generate: {
     fallback: true,

@@ -1,12 +1,20 @@
 <template>
   <div class="es-League-aboutEs">
     <div class="es-League-aboutEs__container">
-      <img
-        id="logo"
-        class="es-League-aboutEs__logo"
-        src="~/assets/img/logo/es_logo.svg"
-        alt="ES LEAGUE LOGO"
-      />
+      <picture>
+        <source
+          :srcset="require('~/assets/img/logo/es_logo.svg')"
+          type="image/webp"
+          class="es-League-aboutEs__logo"
+          alt="ES LEAGUE LOGO"
+        />
+        <img
+          id="logo"
+          class="es-League-aboutEs__logo"
+          :src="require('~/assets/img/logo/es_logo.svg')"
+          alt="ES LEAGUE LOGO"
+        />
+      </picture>
       <p class="es-League-aboutEs__text">
         <nuxt-link to="/about">
           <span class="es-League-aboutEs__title">ES LEAGUE</span> に<br />

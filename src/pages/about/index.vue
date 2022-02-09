@@ -4,13 +4,23 @@
       WHAT'S SEPAKTAKRAW<br /><span>セパタクローとは</span>
     </h2>
     <div class="es-League-about__container">
-      <img
-        src="~/assets/img/about/key-visual.jpg"
-        alt="セパタクローアタック"
-        class="es-League-about__visual"
-        width="500"
-        height="333"
-      />
+      <picture>
+        <source
+          :srcset="require('~/assets/img/about/key-visual.jpg?webp')"
+          type="image/webp"
+          alt="セパタクローアタック"
+          class="es-League-about__visual"
+          width="500"
+          height="333"
+        />
+        <img
+          src="~/assets/img/about/key-visual.jpg"
+          alt="セパタクローアタック"
+          class="es-League-about__visual"
+          width="500"
+          height="333"
+        />
+      </picture>
       <p class="es-League-about__text">
         セパタクローとは、ネットをはさんで足や腿または頭を使ってボールを相手コートに返しあう競技でバレーボールに似たゲームです。
         別名「空中の格闘技」と言われるほど、アクロバティックで見応えのあるスポーツです。
@@ -31,49 +41,89 @@
                   <p class="es-League-about__ruleListText">
                     1. 腕、手を使ってはいけない
                   </p>
-                  <img
-                    src="~/assets/img/about/hands.svg"
-                    class="es-League-about__ruleListImg hand"
-                    alt="手を使ってはいけない"
-                    width="90"
-                    height="43"
-                  />
+                  <picture>
+                    <source
+                      :srcset="require('~/assets/img/about/hands.svg')"
+                      type="image/webp"
+                      class="es-League-about__ruleListImg hand"
+                      alt="手を使ってはいけない"
+                      width="90"
+                      height="43"
+                    />
+                    <img
+                      src="~/assets/img/about/hands.svg"
+                      class="es-League-about__ruleListImg hand"
+                      alt="手を使ってはいけない"
+                      width="90"
+                      height="43"
+                    />
+                  </picture>
                 </li>
                 <li class="es-League-about__ruleListItem">
                   <p class="es-League-about__ruleListText">
                     2. 1人で続けて3回まで<br class="sp" />ボールにタッチして良い
                   </p>
-                  <img
-                    src="~/assets/img/about/touch.svg"
-                    class="es-League-about__ruleListImg three-touch"
-                    alt="タッチ数"
-                    width="117"
-                    height="51"
-                  />
+                  <picture>
+                    <source
+                      :srcset="require('~/assets/img/about/touch.svg')"
+                      type="image/webp"
+                      class="es-League-about__ruleListImg three-touch"
+                      alt="タッチ数"
+                      width="117"
+                      height="51"
+                    />
+                    <img
+                      src="~/assets/img/about/touch.svg"
+                      class="es-League-about__ruleListImg three-touch"
+                      alt="タッチ数"
+                      width="117"
+                      height="51"
+                    />
+                  </picture>
                 </li>
                 <li class="es-League-about__ruleListItem">
                   <p class="es-League-about__ruleListText">
                     3. 守備位置のローテーションはない
                   </p>
-                  <img
-                    src="~/assets/img/about/rotation.svg"
-                    class="es-League-about__ruleListImg rotation"
-                    alt="ローテーション"
-                    width="53"
-                    height="66"
-                  />
+                  <picture>
+                    <source
+                      :srcset="require('~/assets/img/about/rotation.svg')"
+                      type="image/webp"
+                      class="es-League-about__ruleListImg rotation"
+                      alt="ローテーション"
+                      width="53"
+                      height="66"
+                    />
+                    <img
+                      src="~/assets/img/about/rotation.svg"
+                      class="es-League-about__ruleListImg rotation"
+                      alt="ローテーション"
+                      width="53"
+                      height="66"
+                    />
+                  </picture>
                 </li>
                 <li class="es-League-about__ruleListItem">
                   <p class="es-League-about__ruleListText">
                     4. サーブは3本ずつ交代でする
                   </p>
-                  <img
-                    src="~/assets/img/about/service-time.svg"
-                    class="es-League-about__ruleListImg three-times"
-                    alt="サーブ回数"
-                    width="66"
-                    height="66"
-                  />
+                  <picture>
+                    <source
+                      :srcset="require('~/assets/img/about/service-time.svg')"
+                      type="image/webp"
+                      class="es-League-about__ruleListImg three-times"
+                      alt="サーブ回数"
+                      width="66"
+                      height="66"
+                    />
+                    <img
+                      src="~/assets/img/about/service-time.svg"
+                      class="es-League-about__ruleListImg three-times"
+                      alt="サーブ回数"
+                      width="66"
+                      height="66"
+                    />
+                  </picture>
                 </li>
               </ul>
             </template>
@@ -101,13 +151,23 @@
               <p class="es-League-about__itemText">
                 セパタクローとは基本的にポジションごとに役職が別れており、アタックを打つ「アタッカー」、サーブを打つ「サーバー」、トスを上げる「トサー」の３つのポジションに分かれる。バレーボールのようにポジションのローテーションはなく、基本的に自分のポジションの役割をそれぞれが行う。
               </p>
-              <img
-                src="~/assets/img/about/coat_position.svg"
-                class="es-League-about__itemImage"
-                alt="セパタクローコート"
-                width="312"
-                height="156"
-              />
+              <picture>
+                <source
+                  :srcset="require('~/assets/img/about/coat_position.svg')"
+                  type="image/webp"
+                  class="es-League-about__itemImage"
+                  alt="セパタクローコート"
+                  width="312"
+                  height="156"
+                />
+                <img
+                  src="~/assets/img/about/coat_position.svg"
+                  class="es-League-about__itemImage"
+                  alt="セパタクローコート"
+                  width="312"
+                  height="156"
+                />
+              </picture>
               <p class="es-League-about__itemText">
                 バドミントンと同じ広さのコート、同じ高さ(女子は10cm低い)のネットを使用します。
               </p>
@@ -122,13 +182,23 @@
             <template #body>
               <div class="es-League-about__goodsItem">
                 <p class="es-League-about__goodsName">ボール</p>
-                <img
-                  src="~/assets/img/about/ball.svg"
-                  class="es-League-about__goods ball"
-                  alt="セパタクローボール"
-                  width="190"
-                  height="190"
-                />
+                <picture>
+                  <source
+                    :srcset="require('~/assets/img/about/ball.svg')"
+                    type="image/webp"
+                    class="es-League-about__goods ball"
+                    alt="セパタクローボール"
+                    width="190"
+                    height="190"
+                  />
+                  <img
+                    src="~/assets/img/about/ball.svg"
+                    class="es-League-about__goods ball"
+                    alt="セパタクローボール"
+                    width="190"
+                    height="190"
+                  />
+                </picture>
                 <p class="es-League-about__itemText">
                   セパタクローのボールは、プラスチックを編んでできている為、表面は固くとても軽い。
                   <br />
@@ -137,13 +207,23 @@
               </div>
               <div class="es-League-about__goodsItem">
                 <p class="es-League-about__goodsName">シューズ</p>
-                <img
-                  src="~/assets/img/about/shoes.svg"
-                  class="es-League-about__goods shoes"
-                  alt="セパタクローシューズ"
-                  width="209"
-                  height="209"
-                />
+                <picture>
+                  <source
+                    :srcset="require('~/assets/img/about/shoes.svg')"
+                    type="image/webp"
+                    class="es-League-about__goods shoes"
+                    alt="セパタクローシューズ"
+                    width="209"
+                    height="209"
+                  />
+                  <img
+                    src="~/assets/img/about/shoes.svg"
+                    class="es-League-about__goods shoes"
+                    alt="セパタクローシューズ"
+                    width="209"
+                    height="209"
+                  />
+                </picture>
                 <p class="es-League-about__itemText shoes">
                   セパタクローの選手の多くはナンヤンというタイの靴を履いている。
                   <br />
@@ -163,13 +243,23 @@
                 <ul class="es-League-about__technicList">
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">アタック</p>
-                    <img
-                      src="~/assets/img/about/attack.jpg"
-                      class="es-League-about__technicImage"
-                      alt="アタック"
-                      width="400"
-                      height="267"
-                    />
+                    <picture>
+                      <source
+                        :srcset="require('~/assets/img/about/attack.jpg?webp')"
+                        type="image/webp"
+                        class="es-League-about__technicImage"
+                        alt="アタック"
+                        width="400"
+                        height="267"
+                      />
+                      <img
+                        src="~/assets/img/about/attack.jpg"
+                        class="es-League-about__technicImage"
+                        alt="アタック"
+                        width="400"
+                        height="267"
+                      />
+                    </picture>
                     <p class="es-League-about__itemText">
                       アタックは主にサッカーのオーバーヘッドシュートのような「ローリングアタック」と足をハサミのようにして打つ「シザースアタック」の2種類がある。<br />
                       ネット際でのアタッカーの攻防は、とてもアクロバティックで相手のブロックやレシーブを交わすためにコースをついたり、緩急をつけて攻撃する。
@@ -177,13 +267,23 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">サーブ</p>
-                    <img
-                      src="~/assets/img/about/serve.jpg"
-                      class="es-League-about__technicImage"
-                      alt="サーブ"
-                      width="400"
-                      height="267"
-                    />
+                    <picture>
+                      <source
+                        :srcset="require('~/assets/img/about/serve.jpg?webp')"
+                        type="image/webp"
+                        class="es-League-about__technicImage"
+                        alt="サーブ"
+                        width="400"
+                        height="267"
+                      />
+                      <img
+                        src="~/assets/img/about/serve.jpg"
+                        class="es-League-about__technicImage"
+                        alt="サーブ"
+                        width="400"
+                        height="267"
+                      />
+                    </picture>
                     <p class="es-League-about__itemText">
                       サーブは主に足の内側で蹴る「インサイドサーブ」、足の甲で蹴る「インステップサーブ」、インサイドとインフロントの中間で蹴る「インフロントサーブ」という３種類に分けられる。<br />
                       サーブを打つ際に当てる位置や場所を変えることでスピードや回転に変化を持たせてエースを狙う。速いサーブだけでなく、フェイントなど緩急のあるサーブの組み立ても見どころのひとつ。
@@ -191,13 +291,24 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">トス</p>
-                    <img
-                      src="~/assets/img/about/tosser.jpg"
-                      class="es-League-about__technicImage"
-                      alt="トス"
-                      width="400"
-                      height="267"
-                    />
+                    <picture>
+                      <source
+                        :srcset="require('~/assets/img/about/tosser.jpg?webp')"
+                        type="image/webp"
+                        class="es-League-about__technicImage"
+                        alt="トス"
+                        width="400"
+                        height="267"
+                      />
+                      <img
+                        src="~/assets/img/about/tosser.jpg"
+                        class="es-League-about__technicImage"
+                        alt="トス"
+                        width="400"
+                        height="267"
+                      />
+                    </picture>
+
                     <p class="es-League-about__itemText">
                       トスはアタッカーの強みを引き出すために、速さや高さ、距離などを考えてトスをあげている。また、相手のブロックの位置やレシーブの位置なども見ながらアタッカーが決め切れるようにコントロールをする。<br />
                       チームメイトのみならず、相手チームのポジショニングなども見ながらトスを上げるため広い視野が必要である。
@@ -205,13 +316,23 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">ブロック</p>
-                    <img
-                      src="~/assets/img/about/block.jpg"
-                      class="es-League-about__technicImage"
-                      alt="ブロック"
-                      width="400"
-                      height="267"
-                    />
+                    <picture>
+                      <source
+                        :srcset="require('~/assets/img/about/block.jpg?webp')"
+                        type="image/webp"
+                        class="es-League-about__technicImage"
+                        alt="ブロック"
+                        width="400"
+                        height="267"
+                      />
+                      <img
+                        src="~/assets/img/about/block.jpg"
+                        class="es-League-about__technicImage"
+                        alt="ブロック"
+                        width="400"
+                        height="267"
+                      />
+                    </picture>
                     <p class="es-League-about__itemText">
                       セパタクローにもバレーと同じようにブロックをすることができる。<br />
                       ルール上、手の使用は禁止のためブロックは写真のように足で行うか背中で止める。<br />
@@ -220,13 +341,23 @@
                   </li>
                   <li class="es-League-about__technicItem">
                     <p class="es-League-about__technicTitle">レシーブ</p>
-                    <img
-                      src="~/assets/img/about/receive.jpg"
-                      class="es-League-about__technicImage"
-                      alt="レシーブ"
-                      width="400"
-                      height="267"
-                    />
+                    <picture>
+                      <source
+                        :srcset="require('~/assets/img/about/receive.jpg?webp')"
+                        type="image/webp"
+                        class="es-League-about__technicImage"
+                        alt="レシーブ"
+                        width="400"
+                        height="267"
+                      />
+                      <img
+                        src="~/assets/img/about/receive.jpg"
+                        class="es-League-about__technicImage"
+                        alt="レシーブ"
+                        width="400"
+                        height="267"
+                      />
+                    </picture>
                     <p class="es-League-about__itemText">
                       セパタクローは高速のサーブやアタックを手以外の脚や頭を使ってレシーブする。<br />
                       サッカーボールよりも小さいボールを足でコントロールするため繊細なボール捌きが必要である。<br />

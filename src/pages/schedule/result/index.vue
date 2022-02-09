@@ -11,11 +11,20 @@
       </h3>
       <p class="es-League-schedule-result__stadium">
         {{ isThisWeek.stadium }}(<a :href="isThisWeek.access" target="_blank"
-          >会場アクセス<img
-            src="~/assets/img/external-link.svg"
-            alt=""
-            class="es-League-schedule-result__linkImg"
-          /> </a
+          >会場アクセス
+          <picture>
+            <source
+              :srcset="require('~/assets/img/external-link.svg')"
+              type="image/webp"
+              alt=""
+              class="es-League-schedule-result__linkImg"
+            />
+            <img
+              src="~/assets/img/external-link.svg"
+              alt=""
+              class="es-League-schedule-result__linkImg"
+            />
+          </picture> </a
         >)
       </p>
       <div class="es-League-schedule-result__resultList">
@@ -27,15 +36,27 @@
             >
               <div class="es-League-schedule-result__teamInfo">
                 <div class="es-League-schedule-result__team">
-                  <img
-                    :src="
-                      isThisWeek.competition.game1H === null
-                        ? noImage
-                        : isThisWeek.competition.game1H.image.url
-                    "
-                    alt=""
-                    class="es-League-schedule-result__teamImage"
-                  />
+                  <picture>
+                    <source
+                      :srcset="`${
+                        isThisWeek.competition.game1H === null
+                          ? noImage
+                          : isThisWeek.competition.game1H.image.url
+                      }?webp')`"
+                      type="image/webp"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <img
+                      :src="
+                        isThisWeek.competition.game1H === null
+                          ? noImage
+                          : isThisWeek.competition.game1H.image.url
+                      "
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                  </picture>
                   <p class="es-League-schedule-result__temaName">
                     {{ isThisWeek.competition.game1H.teamName }}
                   </p>
@@ -46,15 +67,27 @@
                   </div>
                 </div>
                 <div class="es-League-schedule-result__team">
-                  <img
-                    :src="
-                      isThisWeek.competition.game1A === null
-                        ? noImage
-                        : isThisWeek.competition.game1A.image.url
-                    "
-                    alt=""
-                    class="es-League-schedule-result__teamImage"
-                  />
+                  <picture>
+                    <source
+                      :srcset="`${
+                        isThisWeek.competition.game1A === null
+                          ? noImage
+                          : isThisWeek.competition.game1A.image.url
+                      }?webp')`"
+                      type="image/webp"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <img
+                      :src="
+                        isThisWeek.competition.game1A === null
+                          ? noImage
+                          : isThisWeek.competition.game1A.image.url
+                      "
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                  </picture>
                   <p class="es-League-schedule-result__temaName">
                     {{ isThisWeek.competition.game1A.teamName }}
                   </p>
@@ -75,15 +108,27 @@
             >
               <div class="es-League-schedule-result__teamInfo">
                 <div class="es-League-schedule-result__team">
-                  <img
-                    :src="
-                      isThisWeek.competition.game2H === null
-                        ? noImage
-                        : isThisWeek.competition.game2H.image.url
-                    "
-                    alt=""
-                    class="es-League-schedule-result__teamImage"
-                  />
+                  <picture>
+                    <source
+                      :srcset="`${
+                        isThisWeek.competition.game2H === null
+                          ? noImage
+                          : isThisWeek.competition.game2H.image.url
+                      }?webp')`"
+                      type="image/webp"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <img
+                      :src="
+                        isThisWeek.competition.game2H === null
+                          ? noImage
+                          : isThisWeek.competition.game2H.image.url
+                      "
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                  </picture>
                   <p class="es-League-schedule-result__temaName">
                     {{ isThisWeek.competition.game2H.teamName }}
                   </p>
@@ -94,15 +139,27 @@
                   </div>
                 </div>
                 <div class="es-League-schedule-result__team">
-                  <img
-                    :src="
-                      isThisWeek.competition.game2A === null
-                        ? noImage
-                        : isThisWeek.competition.game2A.image.url
-                    "
-                    alt=""
-                    class="es-League-schedule-result__teamImage"
-                  />
+                  <picture>
+                    <source
+                      :srcset="`${
+                        isThisWeek.competition.game2A === null
+                          ? noImage
+                          : isThisWeek.competition.game2A.image.url
+                      }?webp')`"
+                      type="image/webp"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <img
+                      :src="
+                        isThisWeek.competition.game2A === null
+                          ? noImage
+                          : isThisWeek.competition.game2A.image.url
+                      "
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                  </picture>
                   <p class="es-League-schedule-result__temaName">
                     {{ isThisWeek.competition.game2A.teamName }}
                   </p>
@@ -123,15 +180,27 @@
             >
               <div class="es-League-schedule-result__teamInfo">
                 <div class="es-League-schedule-result__team">
-                  <img
-                    :src="
-                      isThisWeek.competition.game3H === null
-                        ? noImage
-                        : isThisWeek.competition.game3H.image.url
-                    "
-                    alt=""
-                    class="es-League-schedule-result__teamImage"
-                  />
+                  <picture>
+                    <source
+                      :srcset="`${
+                        isThisWeek.competition.game3H === null
+                          ? noImage
+                          : isThisWeek.competition.game3H.image.url
+                      }?webp')`"
+                      type="image/webp"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <img
+                      :src="
+                        isThisWeek.competition.game3H === null
+                          ? noImage
+                          : isThisWeek.competition.game3H.image.url
+                      "
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                  </picture>
                   <p class="es-League-schedule-result__temaName">
                     {{ isThisWeek.competition.game3H.teamName }}
                   </p>
@@ -142,15 +211,27 @@
                   </div>
                 </div>
                 <div class="es-League-schedule-result__team">
-                  <img
-                    :src="
-                      isThisWeek.competition.game3A === null
-                        ? noImage
-                        : isThisWeek.competition.game3A.image.url
-                    "
-                    alt=""
-                    class="es-League-schedule-result__teamImage"
-                  />
+                  <picture>
+                    <source
+                      :srcset="`${
+                        isThisWeek.competition.game3A === null
+                          ? noImage
+                          : isThisWeek.competition.game3A.image.url
+                      }?webp')`"
+                      type="image/webp"
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                    <img
+                      :src="
+                        isThisWeek.competition.game3A === null
+                          ? noImage
+                          : isThisWeek.competition.game3A.image.url
+                      "
+                      alt=""
+                      class="es-League-schedule-result__teamImage"
+                    />
+                  </picture>
                   <p class="es-League-schedule-result__temaName">
                     {{ isThisWeek.competition.game3A.teamName }}
                   </p>
@@ -194,11 +275,20 @@
             class="es-League-schedule-result__stadium"
           >
             {{ item.stadium }}(<a :href="item.access" target="_blank"
-              >会場アクセス<img
-                src="~/assets/img/external-link.svg"
-                alt=""
-                class="es-League-schedule-result__linkImg"
-              /> </a
+              >会場アクセス
+              <picture>
+                <source
+                  :srcset="require('~/assets/img/external-link.svg')"
+                  type="image/webp"
+                  alt=""
+                  class="es-League-schedule-result__linkImg"
+                />
+                <img
+                  src="~/assets/img/external-link.svg"
+                  alt=""
+                  class="es-League-schedule-result__linkImg"
+                />
+              </picture> </a
             >)
           </p>
           <div class="es-League-schedule-result__matchInfo">
@@ -211,15 +301,27 @@
                 > -->
                 <div class="es-League-schedule-result__teamInfo">
                   <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game1H === null
-                          ? noImage
-                          : item.competition.game1H.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
+                    <picture>
+                      <source
+                        :srcset="`${
+                          item.competition.game1H === null
+                            ? noImage
+                            : item.competition.game1H.image.url
+                        }?webp')`"
+                        type="image/webp"
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <img
+                        :src="
+                          item.competition.game1H === null
+                            ? noImage
+                            : item.competition.game1H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                    </picture>
                     <p class="es-League-schedule-result__temaName">
                       {{
                         item.competition.game1H !== null
@@ -229,15 +331,27 @@
                     </p>
                   </div>
                   <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game1A === null
-                          ? noImage
-                          : item.competition.game1A.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
+                    <picture>
+                      <source
+                        :srcset="`${
+                          item.competition.game1A === null
+                            ? noImage
+                            : item.competition.game1A.image.url
+                        }?webp')`"
+                        type="image/webp"
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <img
+                        :src="
+                          item.competition.game1A === null
+                            ? noImage
+                            : item.competition.game1A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                    </picture>
                     <p class="es-League-schedule-result__temaName">
                       {{
                         item.competition.game1A !== null
@@ -253,15 +367,27 @@
               <li class="es-League-schedule-result__item">
                 <div class="es-League-schedule-result__teamInfo">
                   <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game2H === null
-                          ? noImage
-                          : item.competition.game2H.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
+                    <picture>
+                      <source
+                        :srcset="`${
+                          item.competition.game2H === null
+                            ? noImage
+                            : item.competition.game2H.image.url
+                        }?webp')`"
+                        type="image/webp"
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <img
+                        :src="
+                          item.competition.game2H === null
+                            ? noImage
+                            : item.competition.game2H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                    </picture>
                     <p class="es-League-schedule-result__temaName">
                       {{
                         item.competition.game2H !== null
@@ -271,15 +397,27 @@
                     </p>
                   </div>
                   <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game2A === null
-                          ? noImage
-                          : item.competition.game2A.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
+                    <picture>
+                      <source
+                        :srcset="`${
+                          item.competition.game2A === null
+                            ? noImage
+                            : item.competition.game2A.image.url
+                        }?webp')`"
+                        type="image/webp"
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <img
+                        :src="
+                          item.competition.game2A === null
+                            ? noImage
+                            : item.competition.game2A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                    </picture>
                     <p class="es-League-schedule-result__temaName">
                       {{
                         item.competition.game2A !== null
@@ -294,15 +432,27 @@
               <li class="es-League-schedule-result__item">
                 <div class="es-League-schedule-result__teamInfo">
                   <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game3H === null
-                          ? noImage
-                          : item.competition.game3H.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
+                    <picture>
+                      <source
+                        :srcset="`${
+                          item.competition.game3H === null
+                            ? noImage
+                            : item.competition.game3H.image.url
+                        }?webp')`"
+                        type="image/webp"
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <img
+                        :src="
+                          item.competition.game3H === null
+                            ? noImage
+                            : item.competition.game3H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                    </picture>
                     <p class="es-League-schedule-result__temaName">
                       {{
                         item.competition.game3H !== null
@@ -312,15 +462,27 @@
                     </p>
                   </div>
                   <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game3A === null
-                          ? noImage
-                          : item.competition.game3A.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
+                    <picture>
+                      <source
+                        :srcset="`${
+                          item.competition.game3A === null
+                            ? noImage
+                            : item.competition.game3A.image.url
+                        }?webp')`"
+                        type="image/webp"
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <img
+                        :src="
+                          item.competition.game3A === null
+                            ? noImage
+                            : item.competition.game3A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                    </picture>
                     <p class="es-League-schedule-result__temaName">
                       {{
                         item.competition.game3A !== null

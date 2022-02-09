@@ -4,11 +4,19 @@
       <li v-for="item in newsData" :key="item.id" class="es-League-news__item">
         <nuxt-link :to="`/news/${item.categoryId[0]}/${item.id}`">
           <div class="es-League-news__itemWrapper">
-            <img
-              src="~/assets/img/news-logo.png"
-              class="es-League-news__itemImage"
-              alt=""
-            />
+            <picture>
+              <source
+                :srcset="require('~/assets/img/news-logo.png?webp')"
+                type="image/webp"
+                class="es-League-news__itemImage"
+                alt="ES LEAGUEメインビジュアル"
+              />
+              <img
+                src="~/assets/img/news-logo.png"
+                class="es-League-news__itemImage"
+                alt=""
+              />
+            </picture>
             <div class="es-League-news__dateInfo">
               <p class="es-League-news__date">
                 {{ item.date

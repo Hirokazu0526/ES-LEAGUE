@@ -5,13 +5,23 @@
     </h2>
     <div class="es-League-aboutEs__wrapper">
       <div class="es-League-aboutEs__story">
-        <img
-          src="~/assets/img/aboutES/about-es-kv.jpg"
-          class="es-League-aboutEs__bg"
-          alt="ES LEAGUE背景"
-          width="1125"
-          height="1689"
-        />
+        <picture>
+          <source
+            :srcset="require('~/assets/img/aboutES/about-es-kv.jpg?webp')"
+            type="image/webp"
+            class="es-League-aboutEs__bg"
+            alt="ES LEAGUE背景"
+            width="1125"
+            height="1689"
+          />
+          <img
+            src="~/assets/img/aboutES/about-es-kv.jpg"
+            class="es-League-aboutEs__bg"
+            alt="ES LEAGUE背景"
+            width="1125"
+            height="1689"
+          />
+        </picture>
         <p class="es-League-aboutEs__storyText">
           セパタクロー競技にとって最高峰の世界大会は<br class="pc" />
           4年に一度開催されるアジア競技大会である<br />
@@ -45,11 +55,19 @@
         <h3 class="es-League-aboutEs__title">
           League Identitiy<br /><span>名称とロゴに込めた想い</span>
         </h3>
-        <img
-          src="~/assets/img/aboutES/about-es-logo.svg"
-          alt="ES LEAGUE LOGO"
-          class="es-League-aboutEs__logo"
-        />
+        <picture>
+          <source
+            :srcset="require('~/assets/img/aboutES/about-es-logo.svg')"
+            type="image/webp"
+            alt="ES LEAGUE LOGO"
+            class="es-League-aboutEs__logo"
+          />
+          <img
+            src="~/assets/img/aboutES/about-es-logo.svg"
+            alt="ES LEAGUE LOGO"
+            class="es-League-aboutEs__logo"
+          />
+        </picture>
         <p class="es-League-aboutEs__sectionText left">
           ES LEAGUEはExtreme SepakTakraw
           Leagueの略称です。この名称には「空中の格闘技」とも称されるセパタクローが持つ「過激で極度の足技が人々を魅了する」想いが込められています。<br /><br />
