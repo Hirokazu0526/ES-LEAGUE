@@ -4,7 +4,7 @@
       TODAY MATCH<br /><span>本日の試合</span>
     </h3>
     <h3 v-else class="es-League-schedule__title">
-      NEXT MATCH<br /><span>試合予定</span>
+      MATCH schedule<br /><span>試合予定</span>
     </h3>
     <div class="es-League-schedule__contanier">
       <h3 class="es-League-schedule__matchDate">
