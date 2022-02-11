@@ -1,10 +1,10 @@
 <template>
   <div class="es-League">
     <main-visual />
-    <live v-if="isToday" id="live" />
+    <live id="live" />
     <next-match />
     <player-card :player-data="getPlayerList" />
-    <live v-if="!isToday" id="live" />
+    <!-- <live v-if="!isToday" id="live" /> -->
     <pv />
     <!-- <about-es /> -->
     <info-list />
