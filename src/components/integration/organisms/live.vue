@@ -34,9 +34,9 @@
         allowfullscreen
       ></iframe>
     </div>
-    <es-button url="/live" arrow="right" class="es-League-live__btn"
+    <!-- <es-button url="/live" arrow="right" class="es-League-live__btn"
       >配信一覧</es-button
-    >
+    > -->
   </div>
 </template>
 
