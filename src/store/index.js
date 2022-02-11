@@ -232,44 +232,44 @@ export const state = () => ({
   export const getters = {
     isDay6(state) {
       const now = state.currentTime
-      return [20].includes(moment.tz(now, state.TZ || TZ).date())
+      return [20].includes(moment.tz(now, TZ).date())
     },
     isToday(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-11 00:00', '2022-02-12 00:00', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-02-11 00:00', '2022-02-12 00:00', undefined, '[)')
     },
     firstGame(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-09 11:00', '2022-02-11 14:45', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-02-09 11:00', '2022-02-11 14:45', undefined, '[)')
     },
     secondGame(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-11 14:45', '2022-02-11 16:00', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-02-11 14:45', '2022-02-11 16:00', undefined, '[)')
     },
     thirdGame(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-09 15:50', '2022-02-11 17:00', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-02-09 15:50', '2022-02-12 00:00', undefined, '[)')
     },
     // 第1週目の期間
     // ※TODO:リリース時点では期間を修正すること
     firstWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-02-14', '2022-03-12', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-02-14', '2022-03-12', undefined, '[)')
     },
     // 第2週目の期間
     secondWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-03-14', '2022-05-21', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-03-14', '2022-05-21', undefined, '[)')
     },
     // 第3週目の期間
     thirdWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-05-23', '2022-06-30', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-05-23', '2022-06-30', undefined, '[)')
     },
     // 第4週目の期間
     fourthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-07-01', '2022-07-23', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-07-01', '2022-07-23', undefined, '[)')
     },
     // 第5週目の期間
     fifthWeek(state) {
