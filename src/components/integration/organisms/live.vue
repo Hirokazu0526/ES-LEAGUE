@@ -1,9 +1,7 @@
 <template>
   <div class="es-League-live">
-    <h3 class="es-League-live__title">
-      LIVE STREAMING<br /><span>ライブ配信</span>
-    </h3>
-    <div v-if="firstGame" class="es-League-live__info">
+    <h3 class="es-League-live__title">Recording<br /><span>録画配信</span></h3>
+    <div class="es-League-live__info">
       <iframe
         width="560"
         height="315"
@@ -14,7 +12,7 @@
         allowfullscreen
       ></iframe>
     </div>
-    <div v-else-if="secondGame" class="es-League-live__info">
+    <div class="es-League-live__info">
       <iframe
         width="560"
         height="315"
@@ -25,7 +23,7 @@
         allowfullscreen
       ></iframe>
     </div>
-    <div v-else-if="thirdGame" class="es-League-live__info">
+    <div class="es-League-live__info">
       <iframe
         width="560"
         height="315"
