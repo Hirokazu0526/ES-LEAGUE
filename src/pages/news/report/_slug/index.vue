@@ -33,6 +33,11 @@ export default {
       })
     }
   },
+  head() {
+    return {
+      title: `${this.newsTitle} | 試合レポート`,
+    }
+  },
   computed: {
     formatData() {
       return moment(this.date).format('YYYY/MM/DD')
