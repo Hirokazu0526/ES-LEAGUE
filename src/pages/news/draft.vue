@@ -96,8 +96,9 @@ export default {
     }
   }
   &__newsTitle {
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 0 0;
+    text-align: left;
   }
   &__newsText {
     margin-top: 20px;
@@ -127,6 +128,10 @@ export default {
       span {
         font-size: 14px;
       }
+    }
+    &__newsTitle {
+      font-size: 20px;
+      text-align: center;
     }
     ::v-deep &__newsText {
       p {

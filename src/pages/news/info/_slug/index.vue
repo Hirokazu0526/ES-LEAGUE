@@ -92,8 +92,9 @@ export default {
     }
   }
   &__newsTitle {
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 0 0;
+    text-align: left;
   }
   &__newsText {
     margin-top: 20px;
@@ -131,6 +132,10 @@ export default {
     }
     &__contanier {
       min-height: 600px;
+    }
+    &__newsTitle {
+      font-size: 20px;
+      text-align: center;
     }
     &__btnWrapper {
       margin-bottom: 30px;
