@@ -104,8 +104,8 @@ export default {
       position: absolute;
       bottom: 0;
       right: 0;
-      border-left: 20px solid transparent;
-      border-bottom: 20px solid #a37b30;
+      border-left: 15px solid transparent;
+      border-bottom: 15px solid #a37b30;
       content: '';
     }
     a {
