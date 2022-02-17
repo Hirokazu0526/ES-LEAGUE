@@ -1,7 +1,7 @@
 <template>
   <div class="es-League-sponsor">
     <h3 class="es-League-sponsor__title">
-      SPONSOR<br /><span>スポンサー</span>
+      LEAGUE PARTNERS<br /><span>リーグパートナー</span>
     </h3>
     <div class="es-League-sponsor__list">
       <h4 class="es-League-sponsor__partnerTitle">Title Partner</h4>
