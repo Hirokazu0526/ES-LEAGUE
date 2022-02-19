@@ -7,34 +7,33 @@
     <div
       class="es-League-profile__visualWrapper"
       :class="{
-        women: team.gender[0] === 'women',
+        women: playerData.team.gender[0] === 'women',
       }"
     >
       <img
-        :src="imageSilhouette.url"
-        :alt="name"
+        :src="playerData.imageSilhouette.url"
+        :alt="playerData.name"
         class="es-League-profile__image"
         :class="{
-          women: team.gender[0] === 'women',
+          women: playerData.team.gender[0] === 'women',
           ms: isHight,
-          ht: english === 'Hogawa Tasuku',
         }"
       />
       <div
         class="es-League-profile__nameWrapper"
-        :class="{ women: team.gender[0] === 'women' }"
+        :class="{ women: playerData.team.gender[0] === 'women' }"
       >
-        <p class="es-League-profile__name">{{ name }}</p>
-        <p class="es-League-profile__englishName">{{ english }}</p>
+        <p class="es-League-profile__name">{{ playerData.name }}</p>
+        <p class="es-League-profile__englishName">{{ playerData.english }}</p>
       </div>
       <div class="es-League-profile__positionWrapper">
         <p
           class="es-League-profile__uniformNumber"
-          :class="`${team.teamcolor}`"
+          :class="`${playerData.team.teamcolor}`"
         >
-          {{ number }}
+          {{ playerData.number }}
         </p>
-        <p class="es-League-profile__position">{{ position[0] }}</p>
+        <p class="es-League-profile__position">{{ playerData.position[0] }}</p>
       </div>
     </div>
     <div class="es-League-profile__info">
@@ -46,54 +45,67 @@
         </div>
         <div class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">身長</p>
-          <p class="es-League-profile__text">{{ stature }}cm</p>
+          <p class="es-League-profile__text">{{ playerData.stature }}cm</p>
         </div>
         <div class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">出身地</p>
-          <p class="es-League-profile__text">{{ birthplace }}</p>
+          <p class="es-League-profile__text">{{ playerData.birthplace }}</p>
         </div>
         <div class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">出身大学</p>
-          <p class="es-League-profile__text">{{ university }}</p>
+          <p class="es-League-profile__text">{{ playerData.university }}</p>
         </div>
         <div class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">ストロング<br />ポイント</p>
-          <p class="es-League-profile__text">{{ playstyle }}</p>
+          <p class="es-League-profile__text">{{ playerData.playstyle }}</p>
         </div>
         <div class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">尊敬する人</p>
-          <p class="es-League-profile__text">{{ respect }}</p>
+          <p class="es-League-profile__text">{{ playerData.respect }}</p>
         </div>
         <div class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">
             競技を<br class="pc" />始めた理由
           </p>
-          <p class="es-League-profile__text">{{ reason }}</p>
+          <p class="es-League-profile__text">{{ playerData.reason }}</p>
         </div>
         <div class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">戦歴</p>
-          <p class="es-League-profile__text history">{{ history }}</p>
+          <p class="es-League-profile__text history">
+            {{ playerData.history }}
+          </p>
           <!-- <p class="es-League-profile__text history">{{ formatHistory }}</p> -->
         </div>
       </div>
     </div>
-    <div v-if="false" class="es-League-profile__info">
+    <div v-if="true" class="es-League-profile__info stats">
       <h3 class="es-League-profile__sectionTitle">PERSONAL DATA</h3>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">レシーブ成功率</p>
-        <p class="es-League-profile__text">75%</p>
+      <!-- <stats :player-data="playerData" /> -->
+      <div ref="stats" class="es-League-profile__statsWrapper">
+        <img :src="statsBaseUrl" class="es-League-profile__img" alt="" />
+        <img
+          :src="playerData.stats.url"
+          class="es-League-profile__img anime"
+          alt=""
+        />
       </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">サービス成功率</p>
-        <p class="es-League-profile__text">75%</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">サービスエース</p>
-        <p class="es-League-profile__text">75%</p>
-      </div>
-      <div class="es-League-profile__profileList">
-        <p class="es-League-profile__textTitle">アタックレシーブ</p>
-        <p class="es-League-profile__text">75%</p>
+      <div class="es-League-profile__infoWrapper">
+        <div class="es-League-profile__profileList first">
+          <p class="es-League-profile__textTitle">レシーブ成功率</p>
+          <p class="es-League-profile__text stats">75%</p>
+        </div>
+        <div class="es-League-profile__profileList second">
+          <p class="es-League-profile__textTitle">サービス成功率</p>
+          <p class="es-League-profile__text stats">75%</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">サービスエース</p>
+          <p class="es-League-profile__text stats">75%</p>
+        </div>
+        <div class="es-League-profile__profileList">
+          <p class="es-League-profile__textTitle">アタックレシーブ</p>
+          <p class="es-League-profile__text stats">75%</p>
+        </div>
       </div>
     </div>
 
@@ -106,13 +118,14 @@
 
 <script>
 import moment from 'moment-timezone'
+
 export default {
   async asyncData({ params, $microcms, error }) {
     try {
       const data = await $microcms.get({
         endpoint: `player-details/${params.slug}`,
       })
-      return data
+      return { playerData: data }
     } catch (err) {
       error({
         statusCode: err.response.status,
@@ -120,18 +133,62 @@ export default {
       })
     }
   },
+  data() {
+    return {
+      animeFlag: false,
+      isClient: process.client,
+    }
+  },
   computed: {
     formatData() {
-      return moment(this.birth).format('YYYY年M月D日')
+      return moment(this.playerData.birth).format('YYYY年M月D日')
     },
     // formatHistory() {
     //   return this.history.split(' ').join('\n')
     // },
     isHight() {
-      if (this.english === 'Masuda Ryo' || this.english === 'Oyama Koki') {
+      if (
+        this.playerData.english === 'Masuda Ryo' ||
+        this.playerData.english === 'Oyama Koki'
+      ) {
         return true
       }
       return false
+    },
+    statsBaseUrl() {
+      if (this.playerData.position[0] === 'ATTACKER') {
+        return require('~/assets/img/stats/stats-base_a.svg')
+      } else if (this.playerData.position[0] === 'TOSSER') {
+        return require('~/assets/img/stats/stats-base_t.svg')
+      } else {
+        return require('~/assets/img/stats/stats-base_s.svg')
+      }
+    },
+  },
+  mounted() {
+    if (this.isClient) {
+      window.addEventListener('scroll', this.setAnimation)
+    }
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.setAnimation)
+  },
+  methods: {
+    setAnimation() {
+      const scroll = window.document.documentElement.scrollTop
+      if (scroll > 900) {
+        if (!this.animeFlag) {
+          this.$anime({
+            targets: '.anime',
+            // translateX: 50,
+            scale: [0, 1.0],
+            opacity: [0, 1],
+            duration: 800,
+            easing: 'easeInOutSine',
+          })
+          this.animeFlag = true
+        }
+      }
     },
   },
 }
@@ -239,7 +296,9 @@ export default {
   }
 
   &__info {
-    margin-bottom: 40px;
+    &.stats {
+      margin-bottom: 40px;
+    }
   }
 
   &__sectionTitle {
@@ -263,11 +322,31 @@ export default {
     font-size: 24px;
     font-weight: bold;
     border-bottom: 1px dashed #000;
+    &.first {
+      border-top: 1px dashed #000;
+    }
     &:last-child {
       border-bottom: none;
     }
     span {
       font-weight: normal;
+    }
+  }
+  &__statsWrapper {
+    width: 300px;
+    height: 270px;
+    margin: 0 auto;
+    position: relative;
+  }
+  &__img {
+    display: block;
+    line-height: 0;
+    width: 100%;
+    height: 100%;
+    &.anime {
+      position: absolute;
+      top: 0;
+      opacity: 0;
     }
   }
   &__textTitle {
@@ -288,6 +367,9 @@ export default {
     &.pc {
       display: none;
     }
+    &.stats {
+      padding-left: 50px;
+    }
   }
   &__btn {
     margin: 15px auto 0;
@@ -299,6 +381,7 @@ export default {
     justify-items: center;
   }
 }
+
 @media screen and (max-width: 374px) {
   .es-League-profile {
     &__visualWrapper {
@@ -322,6 +405,12 @@ export default {
     }
     &__englishName {
       font-size: 15px;
+    }
+    &__statsWrapper {
+      width: 280px;
+      height: 270px;
+      margin: 0 auto;
+      position: relative;
     }
     &__text {
       font-size: 12px;
@@ -404,6 +493,9 @@ export default {
       &:nth-last-child(2),
       &:last-child {
         border-bottom: none;
+      }
+      &.second {
+        border-top: 1px dashed #000;
       }
     }
     &__textTitle {
