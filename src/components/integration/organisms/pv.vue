@@ -23,6 +23,9 @@
         allowfullscreen
       ></iframe>
     </div>
+    <es-button url="/movie" arrow="right" class="es-League-pv__btn"
+      >動画一覧</es-button
+    >
   </div>
 </template>
 
