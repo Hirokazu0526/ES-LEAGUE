@@ -96,21 +96,19 @@ export default {
     margin: 20px 0 0;
     text-align: left;
   }
-  &__newsText {
+  ::v-deep &__newsText {
     margin-top: 20px;
     font-size: 16px;
     text-align: left;
+    p {
+      line-height: 1.5;
+    }
   }
   &__btnWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 16px;
     justify-items: center;
-  }
-  ::v-deep &__newsText {
-    p {
-      line-height: 1.5;
-    }
   }
 }
 @media screen and (min-width: 768px) {
@@ -139,6 +137,11 @@ export default {
     }
     &__btnWrapper {
       margin-bottom: 30px;
+    }
+    ::v-deep &__newsText {
+      img {
+        max-width: 400px;
+      }
     }
   }
 }

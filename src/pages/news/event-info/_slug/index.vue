@@ -85,10 +85,13 @@ export default {
     margin: 20px 0 0;
     text-align: left;
   }
-  &__newsText {
+  ::v-deep &__newsText {
     margin-top: 20px;
     font-size: 16px;
     text-align: left;
+    p {
+      line-height: 1.5;
+    }
   }
   &__btnWrapper {
     display: grid;
@@ -125,8 +128,8 @@ export default {
       margin-bottom: 30px;
     }
     ::v-deep &__newsText {
-      p {
-        line-height: 1.5;
+      img {
+        max-width: 400px;
       }
     }
   }
