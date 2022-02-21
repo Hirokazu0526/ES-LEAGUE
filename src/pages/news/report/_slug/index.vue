@@ -79,11 +79,18 @@ export default {
     font-size: 20px;
     margin: 20px 0 0;
   }
-  &__newsText {
+  ::v-deep &__newsText {
     margin-top: 20px;
     font-size: 16px;
     text-align: left;
+    p {
+      line-height: 1.5;
+    }
+    img {
+      width: 100%;
+    }
   }
+
   &__btnWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -91,6 +98,11 @@ export default {
     justify-items: center;
   }
 }
+// .es-League-news__newsText[data-v-3831432e] {
+//   p {
+//     font-size: 30px;
+//   }
+// }
 @media screen and (min-width: 768px) {
   .es-League-news {
     max-width: 600px;
@@ -115,8 +127,8 @@ export default {
       margin-bottom: 30px;
     }
     ::v-deep &__newsText {
-      p {
-        line-height: 1.5;
+      img {
+        max-width: 400px;
       }
     }
   }
