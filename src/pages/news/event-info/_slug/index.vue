@@ -33,6 +33,11 @@ export default {
       })
     }
   },
+  head() {
+    return {
+      title: `${this.newsTitle} | イベント`,
+    }
+  },
   computed: {
     formatData() {
       return moment(this.date).format('YYYY/MM/DD')
@@ -76,8 +81,9 @@ export default {
     font-size: 12px;
   }
   &__newsTitle {
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 0 0;
+    text-align: left;
   }
   ::v-deep &__newsText {
     margin-top: 20px;
@@ -113,6 +119,10 @@ export default {
     }
     &__contanier {
       min-height: 600px;
+    }
+    &__newsTitle {
+      font-size: 20px;
+      text-align: center;
     }
     &__btnWrapper {
       margin-bottom: 30px;
