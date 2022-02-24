@@ -1,18 +1,18 @@
 <template>
   <div class="es-League-pv">
     <h3 class="es-League-pv__title">OFFICAL PV<br /><span>公式動画</span></h3>
-    <!-- <div class="es-League-pv__info">
+    <div class="es-League-pv__info">
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/KEPl2b2gkG8"
+        src="https://www.youtube.com/embed/EKeycdY0-ww"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-    </div> -->
-    <div class="es-League-pv__info">
+    </div>
+    <!-- <div class="es-League-pv__info">
       <iframe
         width="560"
         height="315"
@@ -22,7 +22,10 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-    </div>
+    </div> -->
+    <es-button url="/movie" arrow="right" class="es-League-pv__btn"
+      >動画一覧</es-button
+    >
   </div>
 </template>
 
@@ -62,7 +65,7 @@ export default {}
     }
   }
   &__btn {
-    margin: 15px auto 0;
+    margin: 30px auto 0;
   }
 }
 
