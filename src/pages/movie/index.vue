@@ -26,6 +26,22 @@
           <iframe
             width="560"
             height="315"
+            src="https://www.youtube.com/embed/u1BDg3HIVgY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="es-League-movie__infoText">
+          【ES LEAGUE opening VTR《about ES LEAGUE》】
+        </p>
+      </div>
+      <div class="es-League-movie__infoContainer">
+        <div class="es-League-movie__info">
+          <iframe
+            width="560"
+            height="315"
             src="https://www.youtube.com/embed/xdNQ7SD4Eqk?loop=1&playlist=xdNQ7SD4Eqk"
             title="YouTube video player"
             frameborder="0"
