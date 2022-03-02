@@ -54,6 +54,9 @@
         </p>
       </div>
     </div>
+    <es-button url="/live" arrow="right" class="es-League-movie__btn"
+      >試合配信一覧へ</es-button
+    >
   </section>
 </template>
 
@@ -98,7 +101,7 @@
     font-size: 13px;
   }
   &__btn {
-    margin: 16px auto 0;
+    margin: 30px auto 0;
   }
 }
 @media screen and (max-width: 374px) {
