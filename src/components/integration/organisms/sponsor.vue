@@ -67,6 +67,25 @@
         </li>
       </ul>
     </div>
+    <div class="es-League-sponsor__list">
+      <h4 class="es-League-sponsor__partnerTitle">Wellness Partner</h4>
+      <ul class="es-League-sponsor__listWrapper">
+        <li
+          v-for="item in WellnessPartner"
+          :key="item.id"
+          class="es-League-sponsor__listItem center"
+        >
+          <a :href="item.url" target="_blank">
+            <img
+              :src="item.imgUrl"
+              :alt="item.alt"
+              :class="item.name"
+              class="es-League-sponsor__itemImg"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -144,6 +163,15 @@ export default {
           imgUrl: require('~/assets/img/logo/mysports.svg'),
           alt: 'MYSPORTS',
           url: 'https://sportsvektor.com/',
+        },
+      ],
+      WellnessPartner: [
+        {
+          id: 1,
+          name: 'basefood',
+          imgUrl: require('~/assets/img/logo/basefood.svg'),
+          alt: 'BASEFOOD',
+          url: 'https://basefood.co.jp/',
         },
       ],
     }
@@ -226,6 +254,20 @@ export default {
       font-size: 45px;
       & span {
         font-size: 24px;
+      }
+    }
+    &__itemImg {
+      &.basefood {
+        width: 90%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-sponsor {
+    &__itemImg {
+      &.basefood {
+        width: 90%;
       }
     }
   }
