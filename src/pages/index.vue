@@ -1,7 +1,7 @@
 <template>
   <div class="es-League">
     <main-visual />
-    <!-- <live id="live" /> -->
+    <live id="live" />
     <info-list />
     <next-match />
     <player-card :player-data="getPlayerList" />
@@ -20,7 +20,7 @@ import infoList from '~/components/integration/organisms/info-list.vue'
 import sponsor from '~/components/integration/organisms/sponsor.vue'
 import mainVisual from '~/components/integration/organisms/main-visual.vue'
 import nextMatch from '~/components/integration/organisms/next-match.vue'
-// import live from '~/components/integration/organisms/live.vue'
+import live from '~/components/integration/organisms/live.vue'
 import playerCard from '~/components/integration/organisms/player-card.vue'
 // import aboutEs from '~/components/integration/organisms/about-es.vue'
 // import sns from '~/components/integration/organisms/sns.vue'
@@ -33,7 +33,7 @@ export default {
     sponsor,
     mainVisual,
     nextMatch,
-    // live,
+    live,
     playerCard,
     // aboutEs,
     // sns,
