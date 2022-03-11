@@ -1,11 +1,13 @@
 <template>
   <div class="es-League-live">
-    <h3 class="es-League-live__title">Recording<br /><span>録画配信</span></h3>
+    <h3 class="es-League-live__title">
+      LIVE streaming<br /><span>ライブ配信</span>
+    </h3>
     <div class="es-League-live__info">
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/1EP55eCL--4"
+        src="https://www.youtube.com/embed/OZGdyALIhfk"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -16,14 +18,14 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/WJcVpsYG7u8"
+        src="https://www.youtube.com/embed/awFyT1hx68o"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
-    <div class="es-League-live__info">
+    <!-- <div class="es-League-live__info">
       <iframe
         width="560"
         height="315"
@@ -33,7 +35,7 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-    </div>
+    </div> -->
     <!-- <es-button url="/live" arrow="right" class="es-League-live__btn"
       >配信一覧</es-button
     > -->

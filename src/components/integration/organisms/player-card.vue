@@ -6,16 +6,16 @@
     <div class="es-League-card__listWrapper">
       <ul class="es-League-card__list">
         <li class="es-League-card__item">
-          <nuxt-link to="/profile/729">
+          <nuxt-link to="/profile/952">
             <img
-              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/3791d481ed4c44ffb6aa813ad03e9a51/terashima_B.png"
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/d9a731adc3f548aba6cec987974017a8/ichikawa_B.png"
               alt=""
               class="es-League-card__img"
             />
             <span class="es-League-card__playerNumber">1</span>
             <p class="es-League-card__playerPosition">アタッカー</p>
-            <h4 class="es-League-card__playerName">寺島 武志</h4>
-            <p class="es-League-card__playerKana">Terashima Takeshi</p>
+            <h4 class="es-League-card__playerName">市川 遥太</h4>
+            <p class="es-League-card__playerKana">Ichikawa Yota</p>
           </nuxt-link>
         </li>
         <li class="es-League-card__item">
