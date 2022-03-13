@@ -1,7 +1,10 @@
 <template>
   <div class="es-League-live">
-    <h3 class="es-League-live__title">
-      LIVE streaming<br /><span>ライブ配信</span>
+    <h3 v-if="false" class="es-League-live__title">
+      LIVE STREAMING<br /><span>ライブ配信</span>
+    </h3>
+    <h3 v-else class="es-League-live__title">
+      ARCHIVING<br /><span>アーカイブ配信</span>
     </h3>
     <div class="es-League-live__info">
       <iframe

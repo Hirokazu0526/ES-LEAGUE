@@ -2,11 +2,11 @@
   <div class="es-League">
     <main-visual />
     <live id="live" />
-    <info-list />
     <next-match />
     <player-card :player-data="getPlayerList" />
     <!-- <live v-if="!isToday" id="live" /> -->
     <pv />
+    <info-list />
     <!-- <about-es /> -->
     <!-- <movie /> -->
     <sponsor />
