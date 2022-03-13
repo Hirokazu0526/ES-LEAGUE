@@ -85,7 +85,7 @@ export const state = () => ({
         if (beforeArry !== undefined) {
           if (item.winningPoint === beforeArry.winningPoint) {
             // 勝ち点が０だった場合
-            if(item.winningPoint === 0 && beforeArry.ranking === 1) {
+            if((item.winningPoint === 0 || item.winningPoint === beforeArry.winningPoint )&& beforeArry.ranking === 1) {
               item.ranking = 1
             }
             // 
@@ -122,7 +122,7 @@ export const state = () => ({
          if (beforeArry !== undefined) {
           if (item.winningPoint === beforeArry.winningPoint) {
             // 勝ち点が０だった場合
-            if(item.winningPoint === 0 && beforeArry.ranking === 1) {
+            if((item.winningPoint === 0 || item.winningPoint === beforeArry.winningPoint ) && beforeArry.ranking === 1) {
               item.ranking = 1
             }
             // 
