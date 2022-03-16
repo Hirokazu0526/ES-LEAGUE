@@ -87,7 +87,7 @@ export default {
   &__title {
     font-size: 12px;
     font-weight: normal;
-    line-height: 12px;
+    line-height: 1.2;
     word-break: break-all;
   }
   &__category {
