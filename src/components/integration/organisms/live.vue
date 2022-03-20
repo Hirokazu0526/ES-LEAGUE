@@ -28,17 +28,17 @@
         allowfullscreen
       ></iframe>
     </div>
-    <!-- <div class="es-League-live__info">
+    <div class="es-League-live__info">
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/t5MSmq312WY"
+        src="https://www.youtube.com/embed/9vEJlrbNn0Y"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-    </div> -->
+    </div>
     <!-- <es-button url="/live" arrow="right" class="es-League-live__btn"
       >配信一覧</es-button
     > -->
