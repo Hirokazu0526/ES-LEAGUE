@@ -259,17 +259,17 @@ export const state = () => ({
     // 第2週目の期間
     secondWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-02-13', '2022-03-14', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-02-13', '2022-04-21', undefined, '[)')
     },
     // 第3週目の期間
     thirdWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-03-14', '2022-05-23', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-04-21', '2022-06-21', undefined, '[)')
     },
     // 第4週目の期間
     fourthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-05-23', '2022-06-27', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-06-21', '2022-08-30', undefined, '[)')
     },
     // 第5週目の期間
     fifthWeek(state) {
