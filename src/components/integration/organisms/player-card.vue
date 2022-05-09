@@ -6,42 +6,42 @@
     <div class="es-League-card__listWrapper">
       <ul class="es-League-card__list">
         <li class="es-League-card__item">
-          <nuxt-link to="/profile/952">
+          <nuxt-link to="/profile/341">
             <img
-              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/d9a731adc3f548aba6cec987974017a8/ichikawa_B.png"
-              alt=""
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/7a2b383fd1d44f73be9783e7b87e5a92/narawa_B.png"
+              alt="奈良輪航"
               class="es-League-card__img"
             />
-            <span class="es-League-card__playerNumber">1</span>
-            <p class="es-League-card__playerPosition">アタッカー</p>
-            <h4 class="es-League-card__playerName">市川 遥太</h4>
-            <p class="es-League-card__playerKana">Ichikawa Yota</p>
-          </nuxt-link>
-        </li>
-        <li class="es-League-card__item">
-          <nuxt-link to="/profile/442">
-            <img
-              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/ca3c0f02010e48ec8602df0212dac78d/tanaka_B.png"
-              alt=""
-              class="es-League-card__img"
-            />
-            <span class="es-League-card__playerNumber">2</span>
+            <span class="es-League-card__playerNumber">4</span>
             <p class="es-League-card__playerPosition">サーバー</p>
-            <h4 class="es-League-card__playerName">田中 結理</h4>
-            <p class="es-League-card__playerKana">Tanaka Yuri</p>
+            <h4 class="es-League-card__playerName">奈良輪 航</h4>
+            <p class="es-League-card__playerKana">Narawa Wataru</p>
           </nuxt-link>
         </li>
         <li class="es-League-card__item">
-          <nuxt-link to="/profile/550">
+          <nuxt-link to="/profile/656">
             <img
-              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/7c5aa22459294d58949b86269088c299/masuda_B.png"
-              alt=""
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/2406e849ea204e9690a2d992b58b475c/sato_c_B.png"
+              alt="佐藤千夏"
               class="es-League-card__img"
             />
             <span class="es-League-card__playerNumber">1</span>
             <p class="es-League-card__playerPosition">サーバー</p>
-            <h4 class="es-League-card__playerName">増田 稜</h4>
-            <p class="es-League-card__playerKana">Masuda Ryo</p>
+            <h4 class="es-League-card__playerName">佐藤 千夏</h4>
+            <p class="es-League-card__playerKana">Sato Chinatsu</p>
+          </nuxt-link>
+        </li>
+        <li class="es-League-card__item">
+          <nuxt-link to="/profile/661">
+            <img
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/e12543283db140fe87f2171b09011895/tamaki_B.png"
+              alt="玉置大嗣"
+              class="es-League-card__img"
+            />
+            <span class="es-League-card__playerNumber">5</span>
+            <p class="es-League-card__playerPosition">サーバー</p>
+            <h4 class="es-League-card__playerName">玉置 大嗣</h4>
+            <p class="es-League-card__playerKana">Tamaki Daishi</p>
           </nuxt-link>
         </li>
       </ul>
