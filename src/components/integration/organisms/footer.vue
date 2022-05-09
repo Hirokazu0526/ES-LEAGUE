@@ -30,7 +30,7 @@
             </nuxt-link>
           </li>
           <li class="es-League-footer__listItem">
-            <a href="https://esleague0312.peatix.com/" target="_blank">
+            <a href="https://esleague3.peatix.com" target="_blank">
               <p class="es-League-footer__listTitle">
                 観戦のお申し込み<br />(外部リンク)
               </p>
