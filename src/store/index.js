@@ -236,7 +236,7 @@ export const state = () => ({
     },
     isToday(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-03-12 00:00', '2022-03-13 00:00', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-05-21 00:00', '2022-05-21 24:00', undefined, '[)')
     },
     firstGame(state) {
       const now = state.currentTime
@@ -318,4 +318,8 @@ export const state = () => ({
     getPolicy(state) {
       return state.policy
     },
+    isAfterGames(state) {
+      const now = state.currentTime
+      return moment.tz(now, TZ).isSameOrAfter('2022-05-22 00:00')
+    }
   }
