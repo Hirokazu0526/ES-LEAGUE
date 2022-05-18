@@ -136,13 +136,20 @@ export default {
         },
         {
           id: 5,
+          name: '文化シヤッター',
+          imgUrl: require('~/assets/img/logo/bunkashata.svg'),
+          alt: '文化シヤッター',
+          url: 'https://www.bunka-s.co.jp/',
+        },
+        {
+          id: 6,
           name: '阪神酒販',
           imgUrl: require('~/assets/img/logo/hanshin.svg'),
           alt: '阪神酒販',
           url: 'https://hanshinshuhan.co.jp/',
         },
         {
-          id: 6,
+          id: 7,
           name: 'parksports',
           imgUrl: require('~/assets/img/logo/parksports.svg'),
           alt: 'PARKSPORTS',
