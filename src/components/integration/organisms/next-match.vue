@@ -145,6 +145,7 @@ export default {
       'thirdWeek',
       'fourthWeek',
       'fifthWeek',
+      'isAfterGames',
     ]),
     isThisWeek() {
       if (this.firstWeek) {
