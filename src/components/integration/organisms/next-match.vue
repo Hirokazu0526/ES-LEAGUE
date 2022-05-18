@@ -3,12 +3,13 @@
     <h3 v-if="isToday" class="es-League-schedule__title">
       TODAY MATCH<br /><span>本日の試合</span>
     </h3>
-    <h3 v-if="true" class="es-League-schedule__title">
+    <h3 v-else-if="isAfterGames" class="es-League-schedule__title">
       MATCH RESULT<br /><span>試合結果</span>
     </h3>
     <h3 v-else class="es-League-schedule__title">
       NEXT MATCH<br /><span>試合予定</span>
     </h3>
+
     <div class="es-League-schedule__contanier">
       <h3 class="es-League-schedule__matchDate">
         <span class="left">{{ isThisWeek.clause }}</span
