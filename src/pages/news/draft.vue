@@ -6,11 +6,11 @@
     </h2>
     <div class="es-League-news__contanier">
       <p class="es-League-news__date">
-        {{ formatData }}<span>{{ category }}</span>
+        {{ formatData }}<span>{{ category[0] }}</span>
       </p>
-      <h3 class="es-League-news__newsTitle">{{ data.newsTitle }}</h3>
+      <h3 class="es-League-news__newsTitle">{{ newsTitle }}</h3>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="es-League-news__newsText" v-html="data.newsText"></div>
+      <div class="es-League-news__newsText" v-html="newsText"></div>
     </div>
     <div class="es-League-news__btnWrapper">
       <back-button />
@@ -100,10 +100,16 @@ export default {
     margin: 20px 0 0;
     text-align: left;
   }
-  &__newsText {
+  ::v-deep &__newsText {
     margin-top: 20px;
     font-size: 16px;
     text-align: left;
+    p {
+      line-height: 1.5;
+    }
+    img {
+      width: 100%;
+    }
   }
   &__btnWrapper {
     display: grid;
@@ -129,14 +135,20 @@ export default {
         font-size: 14px;
       }
     }
+    &__contanier {
+      min-height: 600px;
+    }
     &__newsTitle {
       font-size: 20px;
       text-align: center;
     }
     ::v-deep &__newsText {
-      p {
-        line-height: 1.5;
+      img {
+        max-width: 400px;
       }
+    }
+    &__btnWrapper {
+      margin-bottom: 30px;
     }
   }
 }

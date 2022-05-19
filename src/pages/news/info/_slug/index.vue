@@ -103,6 +103,9 @@ export default {
     p {
       line-height: 1.5;
     }
+    img {
+      width: 100%;
+    }
   }
   &__btnWrapper {
     display: grid;
