@@ -1,6 +1,6 @@
 <template>
   <div class="es-League-live">
-    <h3 v-if="true" class="es-League-live__title">
+    <h3 v-if="false" class="es-League-live__title">
       LIVE STREAMING<br /><span>ライブ配信</span>
     </h3>
     <h3 v-else class="es-League-live__title">

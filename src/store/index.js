@@ -75,7 +75,13 @@ export const state = () => ({
         item.ranking = 0
       })
       menRanking.sort(function(a, b) {
-        return (a.winningPoint > b.winningPoint) ? -1: 1;
+        if(a.winningPoint > b.winningPoint) return -1
+        if(a.winningPoint < b.winningPoint) return 1
+        const setPoint = a.getSet - a.lostSet
+        const beforeSetPoint = b.getSet - b.lostSet
+        if(setPoint > beforeSetPoint) return -1
+        if(setPoint < beforeSetPoint) return 1
+        return 0
       })
       menRanking.forEach(function (item, index, arry) {
         // 前の配列を格納
@@ -113,7 +119,13 @@ export const state = () => ({
         item.ranking = 0
       })
       womenRanking.sort(function(a, b) {
-        return (a.winningPoint > b.winningPoint) ? -1: 1;
+        if(a.winningPoint > b.winningPoint) return -1
+        if(a.winningPoint < b.winningPoint) return 1
+        const setPoint = a.getSet - a.lostSet
+        const beforeSetPoint = b.getSet - b.lostSet
+        if(setPoint > beforeSetPoint) return -1
+        if(setPoint < beforeSetPoint) return 1
+        return 0
       })
       womenRanking.forEach(function (item, index, arry) {
         const beforeArry = arry[index - 1]
@@ -264,17 +276,17 @@ export const state = () => ({
     // 第3週目の期間
     thirdWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-04-21', '2022-06-21', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-04-21', '2022-05-31', undefined, '[)')
     },
     // 第4週目の期間
     fourthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-06-21', '2022-08-30', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-06-01', '2022-06-30', undefined, '[)')
     },
     // 第5週目の期間
     fifthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-06-27', '2022-08-30', undefined, '[)')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-07-01', '2022-08-30', undefined, '[)')
     },
     getNewsList(state) {
       return state.newsLists
@@ -320,6 +332,6 @@ export const state = () => ({
     },
     isAfterGames(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isSameOrAfter('2022-05-22 00:00')
+      return moment.tz(now, TZ).isSameOrAfter('2022-05-22 00:00:00')
     }
   }
