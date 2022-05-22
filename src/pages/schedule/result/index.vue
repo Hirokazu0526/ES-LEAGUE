@@ -266,7 +266,7 @@
                       {{
                         item.competition.game2H !== null
                           ? item.competition.game2H.teamName
-                          : '女子リーグ順位1位'
+                          : '女子 リーグ順位1位'
                       }}
                     </p>
                   </div>
@@ -284,7 +284,7 @@
                       {{
                         item.competition.game2A !== null
                           ? item.competition.game2A.teamName
-                          : '女子第4節勝者'
+                          : '女子 第4節勝者'
                       }}
                     </p>
                   </div>
@@ -307,7 +307,7 @@
                       {{
                         item.competition.game3H !== null
                           ? item.competition.game3H.teamName
-                          : '女子リーグ順位2位'
+                          : ''
                       }}
                     </p>
                   </div>
@@ -325,7 +325,7 @@
                       {{
                         item.competition.game3A !== null
                           ? item.competition.game3A.teamName
-                          : '女子リーグ順位3位'
+                          : ''
                       }}
                     </p>
                   </div>
