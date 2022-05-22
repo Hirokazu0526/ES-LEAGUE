@@ -332,6 +332,6 @@ export const state = () => ({
     },
     isAfterGames(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isSameOrAfter('2022-05-22 00:00')
+      return moment.tz(now, TZ).isSameOrAfter('2022-05-22 00:00:00')
     }
   }
