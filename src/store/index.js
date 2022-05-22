@@ -75,7 +75,13 @@ export const state = () => ({
         item.ranking = 0
       })
       menRanking.sort(function(a, b) {
-        return (a.winningPoint > b.winningPoint) ? -1: 1;
+        if(a.winningPoint > b.winningPoint) return -1
+        if(a.winningPoint < b.winningPoint) return 1
+        const setPoint = a.getSet - a.lostSet
+        const beforeSetPoint = b.getSet - b.lostSet
+        if(setPoint > beforeSetPoint) return -1
+        if(setPoint < beforeSetPoint) return 1
+        return 0
       })
       menRanking.forEach(function (item, index, arry) {
         // 前の配列を格納
@@ -113,7 +119,13 @@ export const state = () => ({
         item.ranking = 0
       })
       womenRanking.sort(function(a, b) {
-        return (a.winningPoint > b.winningPoint) ? -1: 1;
+        if(a.winningPoint > b.winningPoint) return -1
+        if(a.winningPoint < b.winningPoint) return 1
+        const setPoint = a.getSet - a.lostSet
+        const beforeSetPoint = b.getSet - b.lostSet
+        if(setPoint > beforeSetPoint) return -1
+        if(setPoint < beforeSetPoint) return 1
+        return 0
       })
       womenRanking.forEach(function (item, index, arry) {
         const beforeArry = arry[index - 1]
