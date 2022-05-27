@@ -48,108 +48,11 @@ export default {
     )
     this.data = res
     this.category = res.category[0]
+    console.log(this.data)
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.es-League-news {
-  margin: 0px 16px;
-  padding: 80px 0px 40px;
-  text-align: center;
-  color: #fff;
-
-  &__title {
-    margin: 24px 0;
-    text-align: center;
-    font-size: 32px;
-    color: #000;
-    font-family: 'HNewYork';
-    & span {
-      margin-top: 5px;
-      display: block;
-      font-size: 18px;
-      color: #030012;
-      font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
-        sans-serif;
-    }
-  }
-  &__contanier {
-    padding: 0 16px 30px;
-    color: #000;
-    background: linear-gradient(-45deg, transparent 27px, #fff 20px);
-    background-position: bottom right;
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
-  &__date {
-    text-align: left;
-    font-size: 12px;
-    span {
-      display: inline-block;
-      margin-left: 10px;
-      background-color: #fff;
-      color: #a37b30;
-      padding: 3px 8px;
-      border: 1px solid #a37b30;
-      font-size: 12px;
-    }
-  }
-  &__newsTitle {
-    font-size: 18px;
-    margin: 20px 0 0;
-    text-align: left;
-  }
-  ::v-deep &__newsText {
-    margin-top: 20px;
-    font-size: 16px;
-    text-align: left;
-    p {
-      line-height: 1.5;
-    }
-    img {
-      width: 100%;
-    }
-  }
-  &__btnWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 16px;
-    justify-items: center;
-  }
-}
-@media screen and (min-width: 768px) {
-  .es-League-news {
-    max-width: 600px;
-    margin: 0 auto;
-    &__title {
-      font-size: 45px;
-      margin-bottom: 45px;
-      & span {
-        font-size: 24px;
-      }
-    }
-    &__date {
-      font-size: 16px;
-      span {
-        font-size: 14px;
-      }
-    }
-    &__contanier {
-      min-height: 600px;
-    }
-    &__newsTitle {
-      font-size: 20px;
-      text-align: center;
-    }
-    ::v-deep &__newsText {
-      img {
-        max-width: 400px;
-      }
-    }
-    &__btnWrapper {
-      margin-bottom: 30px;
-    }
-  }
-}
+@import '~/assets/styles/news_detail';
 </style>
