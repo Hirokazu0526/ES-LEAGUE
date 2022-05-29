@@ -6,11 +6,11 @@
     </h2>
     <div class="es-League-news__contanier">
       <p class="es-League-news__date">
-        {{ formatData }}<span>{{ category[0] }}</span>
+        {{ formatData }}<span>{{ category }}</span>
       </p>
-      <h3 class="es-League-news__newsTitle">{{ newsTitle }}</h3>
+      <h3 class="es-League-news__newsTitle">{{ data.newsTitle }}</h3>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="es-League-news__newsText" v-html="newsText"></div>
+      <div class="es-League-news__newsText" v-html="data.newsText"></div>
     </div>
     <div class="es-League-news__btnWrapper">
       <back-button />
@@ -48,7 +48,6 @@ export default {
     )
     this.data = res
     this.category = res.category[0]
-    console.log(this.data)
   },
 }
 </script>
