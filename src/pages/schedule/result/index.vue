@@ -203,134 +203,203 @@
           </p>
           <div class="es-League-schedule-result__matchInfo">
             <ul class="es-League-schedule-result__list">
-              <li class="es-League-schedule-result__item">
-                <!-- <nuxt-link
-                  class="es-League-schedule-result"
-                  :class="{ 'is-disabled': item.date < isThisWeek }"
-                  :to="`/match/${isThisWeek.id}?fields=game3`"
-                > -->
-                <div class="es-League-schedule-result__teamInfo">
-                  <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game1H === null
-                          ? noImage
-                          : item.competition.game1H.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
-                    <p class="es-League-schedule-result__temaName">
-                      {{
-                        item.competition.game1H !== null
-                          ? item.competition.game1H.teamName
-                          : ''
-                      }}
-                    </p>
+              <li>
+                <nuxt-link
+                  class="es-League-schedule-result__item"
+                  :class="{ 'is-disabled': item.date > nowDate }"
+                  :to="`/match/${item.id}?fields=game1`"
+                >
+                  <div class="es-League-schedule-result__teamInfo">
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game1H === null
+                            ? noImage
+                            : item.competition.game1H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game1H !== null
+                            ? item.competition.game1H.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game1.getSet_H
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game1A === null
+                            ? noImage
+                            : item.competition.game1A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game1A !== null
+                            ? item.competition.game1A.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game1.getSet_A
+                        }}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game1A === null
-                          ? noImage
-                          : item.competition.game1A.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
-                    <p class="es-League-schedule-result__temaName">
-                      {{
-                        item.competition.game1A !== null
-                          ? item.competition.game1A.teamName
-                          : ''
-                      }}
-                    </p>
-                  </div>
-                </div>
-                <div></div>
-                <!-- </nuxt-link> -->
+                  <link-arrow
+                    v-show="item.date < nowDate"
+                    class="es-League-schedule-result__linkArrow"
+                  />
+                </nuxt-link>
               </li>
-              <li class="es-League-schedule-result__item">
-                <div class="es-League-schedule-result__teamInfo">
-                  <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game2H === null
-                          ? noImage
-                          : item.competition.game2H.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
-                    <p class="es-League-schedule-result__temaName">
-                      {{
-                        item.competition.game2H !== null
-                          ? item.competition.game2H.teamName
-                          : '女子 リーグ順位1位'
-                      }}
-                    </p>
+              <li>
+                <nuxt-link
+                  class="es-League-schedule-result__item"
+                  :class="{ 'is-disabled': item.date > nowDate }"
+                  :to="`/match/${item.id}?fields=game2`"
+                >
+                  <div class="es-League-schedule-result__teamInfo">
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game2H === null
+                            ? noImage
+                            : item.competition.game2H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game2H !== null
+                            ? item.competition.game2H.teamName
+                            : '女子 リーグ順位1位'
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game2.getSet_H
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game2A === null
+                            ? noImage
+                            : item.competition.game2A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game2A !== null
+                            ? item.competition.game2A.teamName
+                            : '女子 第4節勝者'
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game2.getSet_A
+                        }}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game2A === null
-                          ? noImage
-                          : item.competition.game2A.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
-                    <p class="es-League-schedule-result__temaName">
-                      {{
-                        item.competition.game2A !== null
-                          ? item.competition.game2A.teamName
-                          : '女子 第4節勝者'
-                      }}
-                    </p>
-                  </div>
-                </div>
-                <div></div>
+                  <link-arrow
+                    v-show="item.date < nowDate"
+                    class="es-League-schedule-result__linkArrow"
+                  />
+                </nuxt-link>
               </li>
-              <li class="es-League-schedule-result__item">
-                <div class="es-League-schedule-result__teamInfo">
-                  <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game3H === null
-                          ? noImage
-                          : item.competition.game3H.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
-                    <p class="es-League-schedule-result__temaName">
-                      {{
-                        item.competition.game3H !== null
-                          ? item.competition.game3H.teamName
-                          : ''
-                      }}
-                    </p>
+              <li>
+                <nuxt-link
+                  class="es-League-schedule-result__item"
+                  :class="{ 'is-disabled': item.date > nowDate }"
+                  :to="`/match/${item.id}?fields=game3`"
+                >
+                  <div class="es-League-schedule-result__teamInfo">
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game3H === null
+                            ? noImage
+                            : item.competition.game3H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game3H !== null
+                            ? item.competition.game3H.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game3.getSet_H
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game3A === null
+                            ? noImage
+                            : item.competition.game3A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game3A !== null
+                            ? item.competition.game3A.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game3.getSet_A
+                        }}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="es-League-schedule-result__team">
-                    <img
-                      :src="
-                        item.competition.game3A === null
-                          ? noImage
-                          : item.competition.game3A.image.url
-                      "
-                      alt=""
-                      class="es-League-schedule-result__teamImage"
-                    />
-                    <p class="es-League-schedule-result__temaName">
-                      {{
-                        item.competition.game3A !== null
-                          ? item.competition.game3A.teamName
-                          : ''
-                      }}
-                    </p>
-                  </div>
-                </div>
-                <div></div>
+                  <link-arrow
+                    v-show="item.date < nowDate"
+                    class="es-League-schedule-result__linkArrow"
+                  />
+                </nuxt-link>
               </li>
             </ul>
           </div>
@@ -342,6 +411,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import moment from 'moment-timezone'
 import linkArrow from '~/components/integration/atoms/link-arrow.vue'
 
 export default {
@@ -364,6 +434,7 @@ export default {
       'thirdWeek',
       'fourthWeek',
       'fifthWeek',
+      'isAfterGames',
     ]),
     isThisWeek() {
       if (this.firstWeek) {
@@ -378,6 +449,12 @@ export default {
         return this.getCompetitionList[4]
       }
       return ''
+    },
+    nowDate() {
+      moment.locale('ja')
+      const now = new Date()
+      const itemDate = moment(now.date).format('YYYY.M.D(ddd)')
+      return itemDate
     },
   },
   methods: {},
@@ -454,9 +531,9 @@ export default {
     margin-bottom: 2px;
     text-decoration: none;
     color: #000;
-    // &.is-disabled {
-    //   pointer-events: none;
-    // }
+    &.is-disabled {
+      pointer-events: none;
+    }
   }
 
   &__team {
