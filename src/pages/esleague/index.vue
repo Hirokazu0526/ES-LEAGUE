@@ -145,7 +145,7 @@
           </tbody>
         </table>
       </section>
-      <section v-if="false" class="es-League-aboutEs__section">
+      <section class="es-League-aboutEs__section">
         <h3 class="es-League-aboutEs__title">
           Organization<br /><span>組織概要</span>
         </h3>
@@ -155,6 +155,16 @@
               <td class="es-League-aboutEs__tableTitle">法人名称</td>
               <td class="es-League-aboutEs__tableData">
                 一般社団法人ES LEAGUE
+              </td>
+            </tr>
+            <tr class="es-League-aboutEs__tableRow">
+              <td class="es-League-aboutEs__tableTitle">設立日</td>
+              <td class="es-League-aboutEs__tableData">2022年3月30日</td>
+            </tr>
+            <tr class="es-League-aboutEs__tableRow">
+              <td class="es-League-aboutEs__tableTitle">所在地</td>
+              <td class="es-League-aboutEs__tableData">
+                東京都足立区西新井二丁目26番11号
               </td>
             </tr>
             <tr>
@@ -170,37 +180,6 @@
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData">中川 憲</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableTitle">連絡先</td>
-              <td class="es-League-aboutEs__tableData">000-0000-0000</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableTitle">テキスト</td>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableTitle" rowspan="4">
-                テキスト
-              </td>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableTitle">テキスト</td>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableTitle">テキスト</td>
-              <td class="es-League-aboutEs__tableData">テキスト</td>
             </tr>
           </tbody>
         </table>
