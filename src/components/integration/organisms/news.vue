@@ -5,7 +5,7 @@
         <nuxt-link :to="`/news/${item.categoryId[0]}/${item.id}`">
           <div class="es-League-news__itemWrapper">
             <img
-              src="~/assets/img/news-logo.png"
+              :src="item.image === undefined ? defaultImg : item.image.url"
               class="es-League-news__itemImage"
               alt=""
             />
@@ -41,7 +41,9 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      defaultImg: require('~/assets/img/news-logo.png'),
+    }
   },
   // computed: {
   // ...mapGetters(['getNewsList']),
