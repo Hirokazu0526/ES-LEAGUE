@@ -29,7 +29,7 @@ export const state = () => ({
       state.route = value
     },
     setNewsLists(state, newsLists) {
-      state.newsLists = newsLists
+      state.newsLists = newsLists.filter((item) => item.publishedAt !== undefined)
       for (const item of state.newsLists) {
         moment.locale("ja")
         const itemDate = moment(item.date).format('YYYY年MM月DD日')
