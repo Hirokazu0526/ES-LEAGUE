@@ -1,6 +1,6 @@
 <template>
   <div v-if="isThisWeek" class="es-League-schedule">
-    <h3 v-if="isToday" class="es-League-schedule__title">
+    <h3 v-if="true" class="es-League-schedule__title">
       TODAY MATCH<br /><span>本日の試合</span>
     </h3>
     <h3 v-else-if="false" class="es-League-schedule__title">
