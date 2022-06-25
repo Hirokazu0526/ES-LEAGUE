@@ -32,16 +32,16 @@
           </nuxt-link>
         </li>
         <li class="es-League-card__item">
-          <nuxt-link to="/profile/147">
+          <nuxt-link to="/profile/550">
             <img
-              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/dbfae7b9917b45a28af8d5122a0d195a/sato_B.png"
-              alt="佐藤優樹"
+              src="https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/7c5aa22459294d58949b86269088c299/masuda_B.png"
+              alt="増田稜"
               class="es-League-card__img"
             />
-            <span class="es-League-card__playerNumber">3</span>
-            <p class="es-League-card__playerPosition">アタッカー</p>
-            <h4 class="es-League-card__playerName">佐藤 優樹</h4>
-            <p class="es-League-card__playerKana">Sato Yuki</p>
+            <span class="es-League-card__playerNumber">1</span>
+            <p class="es-League-card__playerPosition">サーバー</p>
+            <h4 class="es-League-card__playerName">増田 稜</h4>
+            <p class="es-League-card__playerKana">Masuda Ryo</p>
           </nuxt-link>
         </li>
       </ul>
