@@ -4,7 +4,7 @@
     <!-- <live id="live" /> -->
     <next-match />
     <player-card :player-data="getPlayerList" />
-    <live v-if="false" id="live" />
+    <live v-if="true" id="live" />
     <pv />
     <info-list />
     <!-- <about-es /> -->
