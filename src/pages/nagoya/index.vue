@@ -143,7 +143,51 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: 'ES LEAGUE SPECIAL FINAL IN NAGOYA 特設ページ',
+      meta: [
+        {
+          name: description,
+          content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
+        },
+        {
+          property: 'og:site_name',
+          content: 'ES LEAGUE',
+        },
+        {
+          property: 'og:title',
+          content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
+        },
+        {
+          property: 'og:url',
+          content: 'https://es-league.jp/nagoya',
+        },
+        {
+          property: 'og:img',
+          content: 'https://es-league.jp/img/ogp/nagoya_esl_kv.png',
+        },
+        {
+          property: 'og:type',
+          content: 'website',
+        },
+        {
+          property: 'og:locale',
+          content: 'ja_JP',
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:site',
+          content: 'summary_large_image',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss">
