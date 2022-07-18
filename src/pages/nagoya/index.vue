@@ -37,7 +37,7 @@
           SNS<br />
           <span>公式アカウント</span>
         </h3>
-        <p class="es-Laegue-Nagoya__text">詳細情報はSNSにて発信中！！</p>
+        <p class="es-Laegue-Nagoya__snsText">詳細情報はSNSにて発信中！！</p>
         <div class="es-Laegue-Nagoya__list">
           <a
             href="https://twitter.com/es_league_japan"
@@ -148,13 +148,13 @@ export default {}
 
 <style lang="scss">
 .es-Laegue-Nagoya {
-  padding: 80px 0px 40px;
+  padding: 80px 0px 0px;
   text-align: center;
   color: #000;
   background-color: #000;
 
   &__wrapper {
-    margin: 0 auto 30px;
+    margin: 0 auto;
     padding-bottom: 30px;
     width: 100%;
     background-image: linear-gradient(
@@ -212,7 +212,7 @@ export default {}
       font-family: 'Noto Serif JP', sans-serif;
     }
   }
-  &__text {
+  &__snsText {
     font-size: 18px;
     color: white;
     font-family: 'Noto Serif JP', sans-serif;
@@ -290,12 +290,9 @@ export default {}
 }
 
 @media screen and (min-width: 768px) {
-  .es-League-Nagoya {
-    max-width: 600px;
-    margin: 0 auto 34px;
-
+  .es-Laegue-Nagoya {
     &__img {
-      max-width: 950px;
+      max-width: 100%;
     }
 
     &__storyText {
@@ -305,6 +302,9 @@ export default {}
     &__movieContainer {
       margin: 30px auto;
       width: 600px;
+    }
+    &__snsText {
+      font-size: 20px;
     }
     &__icon {
       width: 80px;
@@ -319,11 +319,20 @@ export default {}
     }
     &__tableTitle {
       min-width: 150px;
+      font-size: 18px;
     }
     &__tableData {
+      font-size: 18px;
       & a {
-        font-size: 16px;
+        font-size: 18px;
       }
+    }
+  }
+}
+@media screen and (min-width: 950px) {
+  .es-Laegue-Nagoya {
+    &__img {
+      max-width: 950px;
     }
   }
 }
