@@ -149,7 +149,8 @@ export default {
       title: 'ES LEAGUE SPECIAL FINAL IN NAGOYA 特設ページ',
       meta: [
         {
-          name: description,
+          hid: 'og:description',
+          property: 'og:description',
           content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
         },
         {
