@@ -153,26 +153,32 @@ export default {
           content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
         },
         {
+          hid: 'og:site_name',
           property: 'og:site_name',
           content: 'ES LEAGUE',
         },
         {
+          hid: 'og:title',
           property: 'og:title',
           content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
         },
         {
+          hid: 'og:url',
           property: 'og:url',
           content: 'https://es-league.jp/nagoya',
         },
         {
+          hid: 'og:img',
           property: 'og:img',
           content: 'https://es-league.jp/img/ogp/nagoya_esl_kv.png',
         },
         {
+          hid: 'og:type',
           property: 'og:type',
           content: 'website',
         },
         {
+          hid: 'og:locale',
           property: 'og:locale',
           content: 'ja_JP',
         },
