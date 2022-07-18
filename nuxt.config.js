@@ -120,7 +120,7 @@ export default {
   },
   webfontloader: {
     google: {
-      families: ['Noto+Sans+JP:400,700'] 
+      families: ['Noto+Sans+JP:400,700', 'Noto+Serif+JP:200'] 
     }
   },
 
