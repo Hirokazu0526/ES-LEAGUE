@@ -149,24 +149,19 @@ export default {
       title: 'ES LEAGUE SPECIAL FINAL IN NAGOYA 特設ページ',
       meta: [
         {
-          hid: 'og:description',
-          property: 'og:description',
-          content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
+          hid: 'description',
+          property: 'escription',
+          content: 'ES LEAGUE SPECIAL FINAL IN NAGOYAの特設ページです。',
         },
         {
-          hid: 'og:site_name',
-          property: 'og:site_name',
-          content: 'ES LEAGUE',
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'ES LEAGUE SPECIAL FINAL IN NAGOYAの特設ページです。',
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: 'https://es-league.jp/nagoya',
+          content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA 特設ページ',
         },
         {
           hid: 'og:img',
@@ -176,17 +171,7 @@ export default {
         {
           hid: 'og:type',
           property: 'og:type',
-          content: 'website',
-        },
-        {
-          hid: 'og:locale',
-          property: 'og:locale',
-          content: 'ja_JP',
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image',
+          content: 'article',
         },
       ],
     }
