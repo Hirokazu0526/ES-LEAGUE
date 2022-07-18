@@ -1,7 +1,7 @@
 <template>
   <div class="es-League-sponsor">
     <h3 class="es-League-sponsor__title">
-      SPONSOR<br /><span>スポンサー</span>
+      LEAGUE PARTNERS<br /><span>リーグパートナー</span>
     </h3>
     <div class="es-League-sponsor__list">
       <h4 class="es-League-sponsor__partnerTitle">Title Partner</h4>
@@ -67,6 +67,25 @@
         </li>
       </ul>
     </div>
+    <div class="es-League-sponsor__list">
+      <h4 class="es-League-sponsor__partnerTitle">Wellness Partner</h4>
+      <ul class="es-League-sponsor__listWrapper">
+        <li
+          v-for="item in WellnessPartner"
+          :key="item.id"
+          class="es-League-sponsor__listItem center"
+        >
+          <a :href="item.url" target="_blank">
+            <img
+              :src="item.imgUrl"
+              :alt="item.alt"
+              :class="item.name"
+              class="es-League-sponsor__itemImg"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -117,13 +136,20 @@ export default {
         },
         {
           id: 5,
+          name: '文化シヤッター',
+          imgUrl: require('~/assets/img/logo/bunkashata.svg'),
+          alt: '文化シヤッター',
+          url: 'https://www.bunka-s.co.jp/',
+        },
+        {
+          id: 6,
           name: '阪神酒販',
           imgUrl: require('~/assets/img/logo/hanshin.svg'),
           alt: '阪神酒販',
           url: 'https://hanshinshuhan.co.jp/',
         },
         {
-          id: 6,
+          id: 7,
           name: 'parksports',
           imgUrl: require('~/assets/img/logo/parksports.svg'),
           alt: 'PARKSPORTS',
@@ -144,6 +170,15 @@ export default {
           imgUrl: require('~/assets/img/logo/mysports.svg'),
           alt: 'MYSPORTS',
           url: 'https://sportsvektor.com/',
+        },
+      ],
+      WellnessPartner: [
+        {
+          id: 1,
+          name: 'basefood',
+          imgUrl: require('~/assets/img/logo/basefood.svg'),
+          alt: 'BASEFOOD',
+          url: 'https://basefood.co.jp/',
         },
       ],
     }
@@ -226,6 +261,20 @@ export default {
       font-size: 45px;
       & span {
         font-size: 24px;
+      }
+    }
+    &__itemImg {
+      &.basefood {
+        width: 90%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 374px) {
+  .es-League-sponsor {
+    &__itemImg {
+      &.basefood {
+        width: 90%;
       }
     }
   }

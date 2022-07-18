@@ -5,13 +5,27 @@
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/xdNQ7SD4Eqk?loop=1&playlist=xdNQ7SD4Eqk"
+        src="https://www.youtube.com/embed/EKeycdY0-ww"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
+    <!-- <div class="es-League-pv__info">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/xdNQ7SD4Eqk?loop=1&playlist=xdNQ7SD4Eqk"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div> -->
+    <es-button url="/movie" arrow="right" class="es-League-pv__btn"
+      >動画一覧</es-button
+    >
   </div>
 </template>
 
@@ -51,7 +65,7 @@ export default {}
     }
   }
   &__btn {
-    margin: 15px auto 0;
+    margin: 30px auto 0;
   }
 }
 

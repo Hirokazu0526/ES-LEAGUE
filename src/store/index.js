@@ -29,7 +29,7 @@ export const state = () => ({
       state.route = value
     },
     setNewsLists(state, newsLists) {
-      state.newsLists = newsLists
+      state.newsLists = newsLists.filter((item) => item.publishedAt !== undefined)
       for (const item of state.newsLists) {
         moment.locale("ja")
         const itemDate = moment(item.date).format('YYYY年MM月DD日')
@@ -75,7 +75,13 @@ export const state = () => ({
         item.ranking = 0
       })
       menRanking.sort(function(a, b) {
-        return (a.winningPoint > b.winningPoint) ? -1: 1;
+        if(a.winningPoint > b.winningPoint) return -1
+        if(a.winningPoint < b.winningPoint) return 1
+        const setPoint = a.getSet - a.lostSet
+        const beforeSetPoint = b.getSet - b.lostSet
+        if(setPoint > beforeSetPoint) return -1
+        if(setPoint < beforeSetPoint) return 1
+        return 0
       })
       menRanking.forEach(function (item, index, arry) {
         // 前の配列を格納
@@ -83,14 +89,16 @@ export const state = () => ({
 
         // 前の配列がundefinedでない場合に勝ち点を比べる
         if (beforeArry !== undefined) {
+          const point = item.getSet - item.lostSet
+          const beforeArryPoint = beforeArry.getSet - beforeArry.lostSet
+          // ポイントが同じだった場合
           if (item.winningPoint === beforeArry.winningPoint) {
-            // 勝ち点が０だった場合
-            if(item.winningPoint === 0 && beforeArry.ranking === 1) {
-              item.ranking = 1
-            }
-            // 
-            else if (item.winningPoints !== 0 && beforeArry.ranking >= 1) {
-              item.ranking = index
+            // 得失ポイントが同じだった場合
+            if(point === beforeArryPoint ) {
+              item.ranking = beforeArry.ranking
+            } else if  (point < beforeArryPoint) {
+              item.ranking = index + 1
+              
             }
           } else {
             // 違う場合はindexに+1をした値が順位
@@ -113,21 +121,29 @@ export const state = () => ({
         item.ranking = 0
       })
       womenRanking.sort(function(a, b) {
-        return (a.winningPoint > b.winningPoint) ? -1: 1;
+        if(a.winningPoint > b.winningPoint) return -1
+        if(a.winningPoint < b.winningPoint) return 1
+        const setPoint = a.getSet - a.lostSet
+        const beforeSetPoint = b.getSet - b.lostSet
+        if(setPoint > beforeSetPoint) return -1
+        if(setPoint < beforeSetPoint) return 1
+        return 0
       })
       womenRanking.forEach(function (item, index, arry) {
         const beforeArry = arry[index - 1]
 
-         // 前の配列がundefinedでない場合に勝ち点を比べる
-         if (beforeArry !== undefined) {
+        // 前の配列がundefinedでない場合に勝ち点を比べる
+        if (beforeArry !== undefined) {
+          const point = item.getSet - item.lostSet
+          const beforeArryPoint = beforeArry.getSet - beforeArry.lostSet
+          // ポイントが同じだった場合
           if (item.winningPoint === beforeArry.winningPoint) {
-            // 勝ち点が０だった場合
-            if(item.winningPoint === 0 && beforeArry.ranking === 1) {
-              item.ranking = 1
-            }
-            // 
-            else if (item.winningPoints !== 0 && beforeArry.ranking >= 1) {
-              item.ranking = index
+            // 得失ポイントが同じだった場合
+            if(point === beforeArryPoint ) {
+              item.ranking = beforeArry.ranking
+            } else if  (point < beforeArryPoint) {
+              item.ranking = index + 1
+              
             }
           } else {
             // 違う場合はindexに+1をした値が順位
@@ -236,7 +252,7 @@ export const state = () => ({
     },
     isToday(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-03-12 00:00', '2022-03-13 00:00', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-05-21 00:00', '2022-05-21 24:00', undefined, '[)')
     },
     firstGame(state) {
       const now = state.currentTime
@@ -259,22 +275,22 @@ export const state = () => ({
     // 第2週目の期間
     secondWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-02-13', '2022-03-14', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-02-13', '2022-04-21', undefined, '[)')
     },
     // 第3週目の期間
     thirdWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-03-14', '2022-05-23', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-04-21', '2022-06-01', undefined, '[)')
     },
     // 第4週目の期間
     fourthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-05-23', '2022-06-27', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2022-06-01', '2022-07-01', undefined, '[)')
     },
     // 第5週目の期間
     fifthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-06-27', '2022-08-30', undefined, '[)')
+      return moment.tz(now, state.TZ || TZ).isBetween('2022-07-01', '2022-08-30', undefined, '[)')
     },
     getNewsList(state) {
       return state.newsLists
@@ -318,4 +334,8 @@ export const state = () => ({
     getPolicy(state) {
       return state.policy
     },
+    isAfterGames(state) {
+      const now = state.currentTime
+      return moment.tz(now, TZ).isSameOrAfter('2022-05-22 00:00:00')
+    }
   }

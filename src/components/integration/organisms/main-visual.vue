@@ -1,8 +1,8 @@
 <template>
   <div class="es-Laegue-mainVisual">
     <img
-      src="~/assets/img/top/thumbnail.jpg"
-      alt="ES LEAGUEメインビジュアル"
+      src="~/assets/img/top/nagoya_esl_kv.png"
+      alt="ES LEAGUE IN 名古屋"
       class="es-Laegue-mainVisual__img"
       width="750"
       height="422"

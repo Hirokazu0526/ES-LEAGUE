@@ -15,8 +15,8 @@
         :alt="playerData.name"
         class="es-League-profile__image"
         :class="{
-          women: playerData.team.gender[0] === 'women',
-          ms: isHight,
+          women: team.gender[0] === 'women',
+          se: english === 'Sato Erika',
         }"
       />
       <div
@@ -146,50 +146,12 @@ export default {
     // formatHistory() {
     //   return this.history.split(' ').join('\n')
     // },
-    isHight() {
-      if (
-        this.playerData.english === 'Masuda Ryo' ||
-        this.playerData.english === 'Oyama Koki'
-      ) {
-        return true
-      }
-      return false
-    },
-    statsBaseUrl() {
-      if (this.playerData.position[0] === 'ATTACKER') {
-        return require('~/assets/img/stats/stats-base_a.svg')
-      } else if (this.playerData.position[0] === 'TOSSER') {
-        return require('~/assets/img/stats/stats-base_t.svg')
-      } else {
-        return require('~/assets/img/stats/stats-base_s.svg')
-      }
-    },
-  },
-  mounted() {
-    if (this.isClient) {
-      window.addEventListener('scroll', this.setAnimation)
-    }
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.setAnimation)
-  },
-  methods: {
-    setAnimation() {
-      const scroll = window.document.documentElement.scrollTop
-      if (scroll > 900) {
-        if (!this.animeFlag) {
-          this.$anime({
-            targets: '.anime',
-            // translateX: 50,
-            scale: [0, 1.0],
-            opacity: [0, 1],
-            duration: 800,
-            easing: 'easeInOutSine',
-          })
-          this.animeFlag = true
-        }
-      }
-    },
+    // isHight() {
+    //   if (this.english === 'Masuda Ryo' || this.english === 'Oyama Koki') {
+    //     return true
+    //   }
+    //   return false
+    // },
   },
 }
 </script>
@@ -236,6 +198,11 @@ export default {
     &.women {
       width: 200px;
       right: 0px;
+    }
+
+    &.se {
+      width: 210px;
+      right: -15px;
     }
   }
 
@@ -399,6 +366,10 @@ export default {
         width: 180px;
         right: -10px;
       }
+
+      &.se {
+        right: -17px;
+      }
     }
     &__name {
       font-size: 25px;
@@ -448,6 +419,11 @@ export default {
 
       &.women {
         width: 340px;
+      }
+
+      &.se {
+        width: 360px;
+        right: -20px;
       }
     }
 

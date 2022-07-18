@@ -5,43 +5,96 @@
       <span>ライブ配信</span>
     </h2>
     <div class="es-League-live__wrapper">
-      <div class="es-League-live__info">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/1EP55eCL--4"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="es-League-live__info">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/WJcVpsYG7u8"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="es-League-live__info">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/t5MSmq312WY"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
+        <ul>
+          <li v-for="list in movieLists" :key="list.id" >
+            <div  class="es-League-live__info">
+              <iframe
+                  width="560"
+                  height="315"
+                  :src="list.url"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+            ></iframe>
+          </div>
+          </li>
+        </ul>
     </div>
     <es-button url="/" class="es-League-live__btn">TOPページへ</es-button>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      movieLists: [
+        {
+          id: 1,
+          url: 'https://www.youtube.com/embed/1EP55eCL--4',
+        },
+        {
+          id: 2,
+          url: 'https://www.youtube.com/embed/WJcVpsYG7u8',
+        },
+        {
+          id: 3,
+          url: 'https://www.youtube.com/embed/t5MSmq312WY',
+        },
+        {
+          id: 4,
+          url: 'https://www.youtube.com/embed/VXhe1KJ8gYE',
+        },
+        {
+          id: 5,
+          url: 'https://www.youtube.com/embed/awFyT1hx68o',
+        },
+        {
+          id: 6,
+          url: 'https://www.youtube.com/embed/9vEJlrbNn0Y',
+        },
+        {
+          id: 7,
+          url: 'https://www.youtube.com/embed/FCak6WQgJNo',
+        },
+        {
+          id: 8,
+          url: 'https://www.youtube.com/embed/L_SXDNhkDLU',
+        },
+        {
+          id: 9,
+          url: 'https://www.youtube.com/embed/83PI3F-mBkY',
+        },
+        {
+          id: 10,
+          url: 'https://www.youtube.com/embed/W9Giamq-9Dg',
+        },
+        {
+          id: 11,
+          url: 'https://www.youtube.com/embed/DRO75qts4po',
+        },
+        {
+          id: 12,
+          url: 'https://www.youtube.com/embed/EAIOkZK4zuQ',
+        },
+        // {
+        //   id: 13,
+        //   url: '',
+        // },
+        // {
+        //   id: 14,
+        //   url: '',
+        // },
+        // {
+        //   id: 15,
+        //   url: '',
+        // },
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .es-League-live {
@@ -64,6 +117,10 @@
 
   &__wrapper {
     margin: 0 16px;
+
+    ul,li {
+      list-style: none;
+    }
   }
   &__info {
     margin-top: 40px;
