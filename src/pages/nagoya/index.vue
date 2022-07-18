@@ -184,11 +184,8 @@ export default {
           content: 'ja_JP',
         },
         {
+          hid: 'twitter:card',
           name: 'twitter:card',
-          content: 'summary_large_image',
-        },
-        {
-          name: 'twitter:site',
           content: 'summary_large_image',
         },
       ],
