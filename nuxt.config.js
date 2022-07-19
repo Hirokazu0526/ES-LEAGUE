@@ -39,8 +39,8 @@ export default {
       { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
 
       // { hid: 'fb:app_id', property: 'fb:app_id', content: 'App-ID' },
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@ES_LEAGUE_Japan' }
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@ES_LEAGUE_Japan' }
     ],
     link: [
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },

@@ -29,13 +29,13 @@
               <p class="es-League-footer__listTitle">観戦ガイドライン</p>
             </nuxt-link>
           </li>
-          <li class="es-League-footer__listItem">
+          <!--<li class="es-League-footer__listItem">
             <a href="https://esleague0625.peatix.com/" target="_blank">
               <p class="es-League-footer__listTitle">
                 観戦のお申し込み<br />(外部リンク)
               </p>
             </a>
-          </li>
+          </li>-->
           <li class="es-League-footer__listItem">
             <nuxt-link to="/contact">
               <p class="es-League-footer__listTitle">お問い合わせ</p>
@@ -48,6 +48,8 @@
               </p>
             </a>
           </li>
+          <!-- 観戦申し込みを非表示にしたので高さを調整する-->
+          <li style="height: 14px"></li>
         </ul>
         <!-- pc版のフッター -->
         <ul class="es-League-footer__list pc">
@@ -56,13 +58,13 @@
               <p class="es-League-footer__listTitle">観戦ガイドライン</p>
             </nuxt-link>
           </li>
-          <li class="es-League-footer__listItem">
+          <!-- <li class="es-League-footer__listItem">
             <a href="https://esleague0625.peatix.com/" target="_blank">
               <p class="es-League-footer__listTitle">
                 観戦のお申し込み(外部リンク)
               </p>
             </a>
-          </li>
+          </li> -->
           <li class="es-League-footer__listItem">
             <nuxt-link to="/contact">
               <p class="es-League-footer__listTitle">お問い合わせ</p>
@@ -75,6 +77,8 @@
               </p>
             </a>
           </li>
+          <!-- 観戦申し込みを非表示にしたので高さを調整する-->
+          <li style="height: 14px"></li>
         </ul>
         <div class="es-League-footer__snsList">
           <a
@@ -225,7 +229,7 @@ export default {
   .es-League-footer {
     height: 295px;
     &__wrapper {
-      padding: 30px 10px 20px 0;
+      padding: 30px 10px 30px 0;
     }
     &__bgImg {
       top: -20px;
