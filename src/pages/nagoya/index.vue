@@ -3,7 +3,7 @@
     <div class="es-Laegue-Nagoya__wrapper">
       <div class="es-Laegue-Nagoya__story">
         <img
-          src="~/assets/img/top/nagoya_esl_kv.png"
+          src="~/assets/img/top/nagoya_esl_kv.jpg"
           alt="ES LEAGUE IN 名古屋"
           class="es-Laegue-Nagoya__img"
         />
@@ -180,7 +180,7 @@ export default {
       {
         hid: 'og:img',
         property: 'og:img',
-        content: 'https://es-league.jp/img/ogp/ogp.png',
+        content: 'https://es-league.jp/img/ogp/ogp.jpg',
       },
       {
         hid: 'og:locale',
