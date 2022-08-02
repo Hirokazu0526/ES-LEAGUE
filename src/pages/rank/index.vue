@@ -28,6 +28,9 @@
             </tr>
           </tbody>
         </table>
+        <p class="es-League-rank__caution">
+          ※2〜4位に関しては同ポイント同得失セットのため、得失点差にて順位を決定
+        </p>
       </div>
       <div class="es-League-rank__womenInfo">
         <h3 class="es-League-rank__gender women">WOMEN</h3>
@@ -111,6 +114,10 @@ export default {
     padding: 0px 0 30px;
     color: #000;
   }
+  &__menInfo,
+  &__womenInfo {
+    margin-bottom: 35px;
+  }
   &__gender {
     font-size: 24px;
     &.women {
@@ -119,7 +126,7 @@ export default {
   }
   &__list {
     text-align: center;
-    margin: 10px auto 35px;
+    margin: 10px auto 5px;
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
@@ -176,6 +183,11 @@ export default {
     th {
       padding: 8px 4px;
     }
+  }
+  &__caution {
+    font-size: 12px;
+    text-align: left;
+    line-height: 1.2;
   }
   &__width {
     min-width: 135px;
@@ -237,6 +249,9 @@ export default {
     }
     &__width {
       width: 320px;
+    }
+    &__caution {
+      font-size: 14px;
     }
   }
 }
