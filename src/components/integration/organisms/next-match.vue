@@ -3,7 +3,7 @@
     <h3 v-if="false" class="es-League-schedule__title">
       TODAY MATCH<br /><span>本日の試合</span>
     </h3>
-    <h3 v-else-if="!true" class="es-League-schedule__title">
+    <h3 v-else-if="true" class="es-League-schedule__title">
       MATCH RESULT<br /><span>試合結果</span>
     </h3>
     <h3 v-else class="es-League-schedule__title">
