@@ -1,12 +1,12 @@
 <template>
   <div class="es-League-live">
-    <h3 v-if="false" class="es-League-live__title">
-      LIVE STREAMING<br /><span>ライブ配信</span>
+    <h3 v-if="true" class="es-League-live__title">
+      SEASON 2022<br /><span>2022 シーズン</span>
     </h3>
     <h3 v-else class="es-League-live__title">
       ARCHIVING<br /><span>アーカイブ配信</span>
     </h3>
-    <div class="es-League-live__info">
+    <!-- <div class="es-League-live__info">
       <iframe
         width="560"
         height="315"
@@ -38,10 +38,10 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-    </div>
-    <!-- <es-button url="/live" arrow="right" class="es-League-live__btn"
+    </div> -->
+    <es-button url="/live" arrow="right" class="es-League-live__btn"
       >配信一覧</es-button
-    > -->
+    >
   </div>
 </template>
 

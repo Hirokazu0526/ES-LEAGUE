@@ -3,9 +3,9 @@
     <h3 v-if="false" class="es-League-schedule__title">
       TODAY MATCH<br /><span>本日の試合</span>
     </h3>
-    <h3 v-else-if="true" class="es-League-schedule__title">
+    <!-- <h3 v-else-if="false" class="es-League-schedule__title">
       MATCH RESULT<br /><span>試合結果</span>
-    </h3>
+    </h3> -->
     <h3 v-else class="es-League-schedule__title">
       NEXT MATCH<br /><span>試合予定</span>
     </h3>
@@ -148,9 +148,7 @@ export default {
       'isAfterGames',
     ]),
     isThisWeek() {
-      if (this.firstWeek) {
-        return this.getCompetitionList[0]
-      } else if (this.secondWeek) {
+      if (this.secondWeek) {
         return this.getCompetitionList[1]
       } else if (this.thirdWeek) {
         return this.getCompetitionList[2]
@@ -158,8 +156,9 @@ export default {
         return this.getCompetitionList[3]
       } else if (this.fifthWeek) {
         return this.getCompetitionList[4]
+      } else {
+        return this.getCompetitionList[0]
       }
-      return this.getCompetitionList[0]
     },
   },
 }
