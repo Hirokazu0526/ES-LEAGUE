@@ -50,6 +50,7 @@ export default {
   },
   router: {
     base: baseDir,
+    // middleware: 'maintenance'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -167,5 +168,5 @@ export default {
 
   generate: {
     fallback: true,
-  }
+  },
 }
