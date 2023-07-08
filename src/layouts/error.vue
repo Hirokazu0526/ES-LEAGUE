@@ -22,5 +22,11 @@ export default {
 <style lang="scss" scoped>
 .error {
   min-height: 600px;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
 }
 </style>

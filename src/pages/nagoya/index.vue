@@ -3,7 +3,7 @@
     <div class="es-Laegue-Nagoya__wrapper">
       <div class="es-Laegue-Nagoya__story">
         <img
-          src="~/assets/img/top/nagoya_esl_kv.png"
+          src="~/assets/img/top/nagoya_esl_kv.jpg"
           alt="ES LEAGUE IN 名古屋"
           class="es-Laegue-Nagoya__img"
         />
@@ -143,7 +143,63 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    title: 'ES LEAGUE SPECIAL FINAL IN NAGOYA 特設ページ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'ES LEAGUE SPECIAL FINAL IN NAGOYAの特設ページです。',
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA',
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'article',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://es-league.jp/nagoya',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'ES LEAGUE SPECIAL FINAL IN NAGOYA 特設ページ',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'ES LEAGUE SPECIAL FINAL IN NAGOYAの特設ページです。',
+      },
+      {
+        hid: 'og:img',
+        property: 'og:img',
+        content: 'https://es-league.jp/img/ogp/ogp.jpg',
+      },
+      {
+        hid: 'og:locale',
+        property: 'og:locale',
+        content: 'ja_JP',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@ES_LEAGUE_Japan',
+      },
+    ],
+  },
+}
 </script>
 
 <style lang="scss">

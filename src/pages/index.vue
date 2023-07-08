@@ -3,8 +3,8 @@
     <main-visual />
     <!-- <live id="live" /> -->
     <next-match />
-    <player-card :player-data="getPlayerList" />
-    <!-- <live v-if="true" id="live" /> -->
+    <!-- <player-card :player-data="getPlayerList" /> -->
+    <live v-if="true" id="live" />
     <pv />
     <info-list />
     <!-- <about-es /> -->
@@ -20,8 +20,8 @@ import infoList from '~/components/integration/organisms/info-list.vue'
 import sponsor from '~/components/integration/organisms/sponsor.vue'
 import mainVisual from '~/components/integration/organisms/main-visual.vue'
 import nextMatch from '~/components/integration/organisms/next-match.vue'
-// import live from '~/components/integration/organisms/live.vue'
-import playerCard from '~/components/integration/organisms/player-card.vue'
+import live from '~/components/integration/organisms/live.vue'
+// import playerCard from '~/components/integration/organisms/player-card.vue'
 // import aboutEs from '~/components/integration/organisms/about-es.vue'
 // import sns from '~/components/integration/organisms/sns.vue'
 // import movie from '~/components/integration/organisms/movie.vue'
@@ -33,8 +33,8 @@ export default {
     sponsor,
     mainVisual,
     nextMatch,
-    // live,
-    playerCard,
+    live,
+    // playerCard,
     // aboutEs,
     // sns,
     // movie,

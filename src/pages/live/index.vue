@@ -6,18 +6,19 @@
     </h2>
     <div class="es-League-live__wrapper">
         <ul>
-          <li v-for="list in movieLists" :key="list.id" >
-            <div  class="es-League-live__info">
+          <li v-for="movieList in movieLists" :key="movieList.clause" class="es-League-live__movieLists">
+            <p class="es-League-live__clause">第{{ movieList.clause }}節</p>
+            <div v-for="movie in movieList.movies" :key="movie.id" class="es-League-live__info">
               <iframe
                   width="560"
                   height="315"
-                  :src="list.url"
+                  :src="movie.url"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
-            ></iframe>
-          </div>
+              ></iframe>
+            </div>
           </li>
         </ul>
     </div>
@@ -31,65 +32,90 @@ export default {
     return {
       movieLists: [
         {
-          id: 1,
-          url: 'https://www.youtube.com/embed/1EP55eCL--4',
+          clause: 1,
+          movies: [
+            { 
+              id: 1,
+              url: 'https://www.youtube.com/embed/1EP55eCL--4',
+            },
+            {
+              id: 2,
+              url: 'https://www.youtube.com/embed/WJcVpsYG7u8',
+            },
+            {
+              id: 3,
+              url: 'https://www.youtube.com/embed/t5MSmq312WY',
+            },
+          ]
         },
         {
-          id: 2,
-          url: 'https://www.youtube.com/embed/WJcVpsYG7u8',
+          clause: 2,
+          movies: [
+            {
+              id: 4,
+              url: 'https://www.youtube.com/embed/VXhe1KJ8gYE',
+            },
+            {
+              id: 5,
+              url: 'https://www.youtube.com/embed/awFyT1hx68o',
+            },
+            {
+              id: 6,
+              url: 'https://www.youtube.com/embed/9vEJlrbNn0Y',
+            },
+          ]
         },
         {
-          id: 3,
-          url: 'https://www.youtube.com/embed/t5MSmq312WY',
+          clause: 3,
+          movies: [
+            {
+              id: 7,
+              url: 'https://www.youtube.com/embed/FCak6WQgJNo',
+            },
+            {
+              id: 8,
+              url: 'https://www.youtube.com/embed/L_SXDNhkDLU',
+            },
+            {
+              id: 9,
+              url: 'https://www.youtube.com/embed/83PI3F-mBkY',
+            },
+          ]
         },
         {
-          id: 4,
-          url: 'https://www.youtube.com/embed/VXhe1KJ8gYE',
+          clause: 4,
+          movies: [
+            {
+              id: 10,
+              url: 'https://www.youtube.com/embed/W9Giamq-9Dg',
+            },
+            {
+              id: 11,
+              url: 'https://www.youtube.com/embed/DRO75qts4po',
+            },
+            {
+              id: 12,
+              url: 'https://www.youtube.com/embed/EAIOkZK4zuQ',
+            },
+          ]
         },
         {
-          id: 5,
-          url: 'https://www.youtube.com/embed/awFyT1hx68o',
+          clause: 5,
+          movies: [
+            {
+              id: 13,
+              url: 'https://www.youtube.com/embed/4DgGr29jCJE',
+            },
+            {
+              id: 14,
+              url: 'https://www.youtube.com/embed/20DSU5SFodk',
+            },
+            {
+              id: 15,
+              url: 'https://www.youtube.com/embed/lxwBY8H9bUg',
+            },
+          ]
         },
-        {
-          id: 6,
-          url: 'https://www.youtube.com/embed/9vEJlrbNn0Y',
-        },
-        {
-          id: 7,
-          url: 'https://www.youtube.com/embed/FCak6WQgJNo',
-        },
-        {
-          id: 8,
-          url: 'https://www.youtube.com/embed/L_SXDNhkDLU',
-        },
-        {
-          id: 9,
-          url: 'https://www.youtube.com/embed/83PI3F-mBkY',
-        },
-        {
-          id: 10,
-          url: 'https://www.youtube.com/embed/W9Giamq-9Dg',
-        },
-        {
-          id: 11,
-          url: 'https://www.youtube.com/embed/DRO75qts4po',
-        },
-        {
-          id: 12,
-          url: 'https://www.youtube.com/embed/EAIOkZK4zuQ',
-        },
-        // {
-        //   id: 13,
-        //   url: '',
-        // },
-        // {
-        //   id: 14,
-        //   url: '',
-        // },
-        // {
-        //   id: 15,
-        //   url: '',
-        // },
       ]
     }
   }
@@ -122,8 +148,19 @@ export default {
       list-style: none;
     }
   }
+
+  &__movieLists {
+    margin-bottom: 100px;
+  }
+
+  &__clause {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
   &__info {
-    margin-top: 40px;
+    margin-top: 20px;
     width: 100%;
     padding-bottom: 56.25%;
     height: 0px;

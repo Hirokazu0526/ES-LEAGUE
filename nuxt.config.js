@@ -28,15 +28,15 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '日本初のセパタクロー国内リーグ ES LEAGUE 公式サイトです。' || '' },
       { name: 'format-detection', content: 'telephone=no' },
-      { hid: 'keywords', name: 'keywords', content: 'セパタクロー,セパタクローリーグ,エスリーグ,エス リーグ,SEPAKTAKRAW,sepaktakraw,セパ,ES LEAGUE,日本初,ESLEAGUE' },
+      { name: 'keywords', content: 'セパタクロー,セパタクローリーグ,エスリーグ,エス リーグ,SEPAKTAKRAW,sepaktakraw,セパ,ES LEAGUE,日本初,ESLEAGUE' },
 
       { hid: 'og:site_name', property: 'og:site_name', content: 'ES LEAGUE' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://es-league.jp' },
       { hid: 'og:title', property: 'og:title', content: 'ES LEAGUE 公式サイト' },
       { hid: 'og:description', property: 'og:description', content: '日本初のセパタクロー国内リーグ ES LEAGUE 公式サイトです' },
-      { hid: 'og:image', property: 'og:image', content: 'https://es-league.jp/img/ogp/ogp.png' },
-      { hid: 'og:locale', content: 'ja_JP' },
+      { hid: 'og:image', property: 'og:image', content: 'https://es-league.jp/img/ogp/ogp.jpg' },
+      { hid: 'og:locale', property: 'og:locale', content: 'ja_JP' },
 
       // { hid: 'fb:app_id', property: 'fb:app_id', content: 'App-ID' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
@@ -50,6 +50,7 @@ export default {
   },
   router: {
     base: baseDir,
+    // middleware: 'maintenance'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -167,5 +168,5 @@ export default {
 
   generate: {
     fallback: true,
-  }
+  },
 }

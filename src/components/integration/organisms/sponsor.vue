@@ -17,19 +17,6 @@
       </div>
     </div>
     <div class="es-League-sponsor__list">
-      <h4 class="es-League-sponsor__partnerTitle">Live Streaming Partner</h4>
-      <div class="es-League-sponsor__listItem center">
-        <a :href="streamingPartner.url" target="_blank">
-          <img
-            :src="streamingPartner.imgUrl"
-            :alt="streamingPartner.alt"
-            :class="streamingPartner.name"
-            class="es-League-sponsor__itemImg"
-          />
-        </a>
-      </div>
-    </div>
-    <div class="es-League-sponsor__list">
       <h4 class="es-League-sponsor__partnerTitle">Official Partner</h4>
       <ul class="es-League-sponsor__listWrapper">
         <li

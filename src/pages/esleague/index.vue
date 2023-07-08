@@ -63,42 +63,34 @@
         <table class="es-League-aboutEs__table">
           <tbody>
             <tr class="es-League-aboutEs__tableRow">
-              <td class="es-League-aboutEs__tableTitle">大会形式</td>
+              <td class="es-League-aboutEs__tableTitle" rowspan="2">大会形式</td>
               <td class="es-League-aboutEs__tableData">
-                男子5チーム、女子3チームのリーグ戦
+                男子5チームのリーグ戦
               </td>
             </tr>
             <tr>
+              <td class="es-League-aboutEs__tableData">2回総当り、1節3試合(全6節)</td>
+            </tr>
+            <tr>
               <td class="es-League-aboutEs__tableTitle">登録選手</td>
-              <td class="es-League-aboutEs__tableData">1チーム最大5名</td>
+              <td class="es-League-aboutEs__tableData">1チーム最大12名</td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableTitle" rowspan="4">種 目</td>
-              <td class="es-League-aboutEs__tableData bottom">【男子】</td>
-            </tr>
-            <tr>
+              <td class="es-League-aboutEs__tableTitle">種 目</td>
               <td class="es-League-aboutEs__tableData regulation">
                 レグ(3人制)、ダブル(2人制)、クワッド(4人制)
               </td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableData bottom top">【女子】</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableData regulation">
-                レグ(3人制)
-              </td>
-            </tr>
-            <tr>
               <td class="es-League-aboutEs__tableTitle">シーズン</td>
               <td class="es-League-aboutEs__tableData">
-                2022年2月〜7月<br /><span
+                2023年8月〜2024年3月<br /><span
                   >(国際大会等で中断する可能性あり)</span
                 >
               </td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableTitle" rowspan="6">
+              <td class="es-League-aboutEs__tableTitle" rowspan="4">
                 試合形式
               </td>
               <td class="es-League-aboutEs__tableData bottom">
@@ -107,17 +99,10 @@
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData regulation">
-                【男子】(3セットゲーム)<br />
+                3セットゲーム<br />
                 &emsp;ダブル：1セットマッチ<br />
-                &emsp;&emsp;レグ：1セットマッチ<br />クワッド：1セットマッチ
-              </td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableData bottom top">【女子】</td>
-            </tr>
-            <tr>
-              <td class="es-League-aboutEs__tableData regulation">
-                &emsp;&emsp;レグ：3セットマッチ(2セット先取)
+                &emsp;&emsp;レグ：1セットマッチ<br />
+                クワッド：1セットマッチ
               </td>
             </tr>
             <tr>
@@ -131,6 +116,17 @@
               </td>
             </tr>
             <tr>
+              <td class="es-League-aboutEs__tableTitle" rowspan="2">競技規則</td>
+              <td class="es-League-aboutEs__tableData">
+                ISTAF 競技規則に準拠し、競技を行う。
+              </td>
+            </tr>
+            <tr>
+              <td class="es-League-aboutEs__tableData regulation">
+                リーグ戦特別ルールとして1選手2セットまで出場可能とする。
+              </td>
+            </tr>
+            <tr>
               <td class="es-League-aboutEs__tableTitle">配点</td>
               <td class="es-League-aboutEs__tableData">
                 1セットにつき1ポイントを獲得する。
@@ -139,7 +135,7 @@
             <tr>
               <td class="es-League-aboutEs__tableTitle">順位</td>
               <td class="es-League-aboutEs__tableData">
-                獲得ポイントの合計が大きい順に順位を決定。<br />獲得ポイントが同じ場合は、得失セット数の大きいチームが上位となる。得失セット数が同じ場合は当該チームの勝敗により決定する。
+                獲得ポイントの合計が大きい順に順位を決定。<br />1セット勝利につき1ポイント、試合勝利ポイントとして1ポイントを付与する 合計ポイントが同じになった場合は、得失セット数、得失点の順に順位を決定する。
               </td>
             </tr>
           </tbody>
@@ -172,7 +168,7 @@
               <td class="es-League-aboutEs__tableData">寺島 武志</td>
             </tr>
             <tr>
-              <td class="es-League-aboutEs__tableTitle" rowspan="3">理事</td>
+              <td class="es-League-aboutEs__tableTitle" rowspan="4">理事</td>
               <td class="es-League-aboutEs__tableData">飯田 義隆</td>
             </tr>
             <tr>
@@ -180,6 +176,9 @@
             </tr>
             <tr>
               <td class="es-League-aboutEs__tableData">中川 憲</td>
+            </tr>
+            <tr>
+              <td class="es-League-aboutEs__tableData">玉置 大嗣</td>
             </tr>
           </tbody>
         </table>

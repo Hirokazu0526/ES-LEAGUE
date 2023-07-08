@@ -75,39 +75,41 @@ export const state = () => ({
         item.ranking = 0
       })
       menRanking.sort(function(a, b) {
-        if(a.winningPoint > b.winningPoint) return -1
-        if(a.winningPoint < b.winningPoint) return 1
-        const setPoint = a.getSet - a.lostSet
-        const beforeSetPoint = b.getSet - b.lostSet
-        if(setPoint > beforeSetPoint) return -1
-        if(setPoint < beforeSetPoint) return 1
+        if(a.rank < b.rank) return -1
+        // if(a.winningPoint > b.winningPoint) return -1
+        // if(a.winningPoint < b.winningPoint) return 1
+        // const setPoint = a.getSet - a.lostSet
+        // const beforeSetPoint = b.getSet - b.lostSet
+        // if(setPoint > beforeSetPoint) return -1
+        // if(setPoint < beforeSetPoint) return 1
         return 0
       })
       menRanking.forEach(function (item, index, arry) {
         // 前の配列を格納
-        const beforeArry = arry[index - 1]
+        // const beforeArry = arry[index - 1]
 
         // 前の配列がundefinedでない場合に勝ち点を比べる
-        if (beforeArry !== undefined) {
-          const point = item.getSet - item.lostSet
-          const beforeArryPoint = beforeArry.getSet - beforeArry.lostSet
-          // ポイントが同じだった場合
-          if (item.winningPoint === beforeArry.winningPoint) {
-            // 得失ポイントが同じだった場合
-            if(point === beforeArryPoint ) {
-              item.ranking = beforeArry.ranking
-            } else if  (point < beforeArryPoint) {
-              item.ranking = index + 1
+        // if (beforeArry !== undefined) {
+          // const point = item.getSet - item.lostSet
+          // const beforeArryPoint = beforeArry.getSet - beforeArry.lostSet
+          // // ポイントが同じだった場合
+          // if (item.winningPoint === beforeArry.winningPoint) {
+          //   // 得失ポイントが同じだった場合
+          //   if(point === beforeArryPoint ) {
+          //     item.ranking = beforeArry.ranking
+          //   } else if  (point < beforeArryPoint) {
+          //     item.ranking = index + 1
               
-            }
-          } else {
+          //   }
+          // } else {
             // 違う場合はindexに+1をした値が順位
-            item.ranking = index + 1
-          }
-        } else {
+            // item.ranking = index + 1
+          // }
+        // } else {
           // 配列の最初は1位
-          item.ranking = 1
-        }
+          // item.ranking = 1
+          item.ranking = index + 1
+        // }
       })
       state.menRankingData = menRanking
     },
@@ -196,23 +198,24 @@ export const state = () => ({
 
   export const actions = {
     async nuxtServerInit({ commit }, { $config }) {
+      const headersKey = { "X-MICROCMS-API-KEY": $config.apiKey }
       const resNews = await this.$axios.$get(`${$config.apiUrl}news`, {
-       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+       headers: headersKey
       });
       const resPlayers = await this.$axios.$get(`${$config.apiUrl}player-details?limit=50`, {
-       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+       headers: headersKey
       });
       const resTeams = await this.$axios.$get(`${$config.apiUrl}team-details`, {
-       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+       headers: headersKey
       });
       const resCompetitions = await this.$axios.$get(`${$config.apiUrl}schedule_result`, {
-       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+       headers: headersKey
       });
       const resRankingData = await this.$axios.$get(`${$config.apiUrl}rank`, {
-       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+       headers: headersKey
       });
       const resPolicy = await this.$axios.$get(`${$config.apiUrl}policy`, {
-       headers: { "X-MICROCMS-API-KEY": $config.apiKey }
+       headers: headersKey
       });
       commit("setNewsLists", resNews.contents);
       commit("setPlayerLists", resPlayers.contents);
@@ -256,41 +259,40 @@ export const state = () => ({
     },
     firstGame(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-03-12 16:30', '2022-03-12 17:30', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-08-11 13:30', '2023-08-11 14:30', undefined, '[)')
     },
     secondGame(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-03-12 17:30', '2022-02-11 18:30', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-08-11 14:30', '2023-08-11 15:30', undefined, '[)')
     },
     thirdGame(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-03-12 18:30', '2022-03-13 00:00', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-08-11 15:30', '2023-08-11 16:30', undefined, '[)')
     },
     // 第1週目の期間
-    // ※TODO:リリース時点では期間を修正すること
     firstWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-02-11', '2022-02-13', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-07-09', '2023-10-07', undefined, '[)')
     },
     // 第2週目の期間
     secondWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-02-13', '2022-04-21', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-10-08', '2023-10-27', undefined, '[)')
     },
     // 第3週目の期間
     thirdWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-04-21', '2022-06-01', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-10-28', '2023-12-20', undefined, '[)')
     },
     // 第4週目の期間
     fourthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2022-06-01', '2022-07-01', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-12-21', '2024-02-10', undefined, '[)')
     },
     // 第5週目の期間
     fifthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2022-07-01', '2022-08-30', undefined, '[)')
+      return moment.tz(now, state.TZ || TZ).isBetween('2024-02-11', '2024-03-31', undefined, '[)')
     },
     getNewsList(state) {
       return state.newsLists
