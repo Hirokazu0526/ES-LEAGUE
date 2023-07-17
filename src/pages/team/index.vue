@@ -2,7 +2,7 @@
   <div class="es-League-teamList">
     <h2 class="es-League-teamList__title">TEAM<br /><span>チーム</span></h2>
     <div class="es-League-teamList__wrapper">
-      <h3 class="es-League-teamList__gender">MEN</h3>
+      <!-- <h3 class="es-League-teamList__gender">MEN</h3> -->
       <ul>
         <li
           v-for="item in menTeamLists"
@@ -20,7 +20,7 @@
         </li>
       </ul>
     </div>
-    <div class="es-League-teamList__wrapper">
+    <!-- <div class="es-League-teamList__wrapper">
       <h3 class="es-League-teamList__gender pink">WOMEN</h3>
       <ul>
         <li
@@ -38,7 +38,7 @@
           </nuxt-link>
         </li>
       </ul>
-    </div>
+    </div> -->
     <div class="es-League-teamList__btnWrapper">
       <back-button />
       <es-button url="/" class="es-League-teamList__btn">TOPへ戻る</es-button>
