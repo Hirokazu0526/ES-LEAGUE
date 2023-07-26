@@ -6,7 +6,7 @@
     <div v-if="isThisWeek" class="es-League-schedule-result__contanier">
       <h3 class="es-League-schedule-result__matchDate">
         <span class="left">{{ isThisWeek.clause }}</span
-        >{{ isThisWeek.date
+        >{{ $formatDate(isThisWeek.date) 
         }}<span class="right">{{ isThisWeek.startTime }}</span>
       </h3>
       <p class="es-League-schedule-result__stadium">
@@ -184,8 +184,7 @@
         >
           <h3 class="es-League-schedule-result__matchDate">
             <span class="left">{{ item.clause }}</span
-            >{{ item.date
-            }}<span class="right">{{
+            >{{ $formatDate(item.date) }}<span class="right">{{
               item.startTime === '未定' ? '予定' : item.startTime
             }}</span>
           </h3>
@@ -401,6 +400,72 @@
                   />
                 </nuxt-link>
               </li>
+              <li v-if="item.competition.game4H !== null">
+                <nuxt-link
+                  class="es-League-schedule-result__item"
+                  :class="{ 'is-disabled': item.date > nowDate }"
+                  :to="`/match/${item.id}?fields=game3`"
+                >
+                  <div class="es-League-schedule-result__teamInfo">
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game4H === null
+                            ? noImage
+                            : item.competition.game4H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game4H !== null
+                            ? item.competition.game4H.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game3.getSet_H
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game4A === null
+                            ? noImage
+                            : item.competition.game4A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game4A !== null
+                            ? item.competition.game4A.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game4.getSet_A
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <link-arrow
+                    v-show="item.date < nowDate"
+                    class="es-League-schedule-result__linkArrow"
+                  />
+                </nuxt-link>
+              </li>
             </ul>
           </div>
         </li>
@@ -447,13 +512,15 @@ export default {
         return this.getCompetitionList[3]
       } else if (this.fifthWeek) {
         return this.getCompetitionList[4]
+      } else if (this.sixthWeek) {
+        return this.getCompetitionList[5]
       }
       return ''
     },
     nowDate() {
       moment.locale('ja')
       const now = new Date()
-      const itemDate = moment(now.date).format('YYYY.M.D(ddd)')
+      const itemDate = moment(now.date)
       return itemDate
     },
   },
