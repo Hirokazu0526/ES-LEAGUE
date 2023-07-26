@@ -34,20 +34,6 @@
             </nuxt-link>
           </li>
         </ul>
-        <h3 class="es-League-team__sectionTitle">SPONSOR</h3>
-        <div
-          class="es-League-team__sponsorArea"
-          :class="{ bvd: sponsor === 'BVD' }"
-        >
-          <a :href="sponsorLink" target="_blank">
-            <img
-              :src="sponsorLogo.url"
-              :alt="sponsor"
-              class="es-League-team__sponsorImg"
-              :class="{ bvd: sponsor === 'BVD' }"
-            />
-          </a>
-        </div>
       </div>
     </div>
 
