@@ -49,7 +49,7 @@
 import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['firstGame', 'secondGame', 'thirdGame']),
+    ...mapGetters(['firstGame', 'secondGame', 'thirdGame', 'fourthGame']),
   },
 }
 </script>
