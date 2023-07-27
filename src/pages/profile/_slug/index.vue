@@ -15,7 +15,7 @@
       <div
         class="es-League-profile__nameWrapper"
       >
-        <p class="es-League-profile__name">{{ name }}</p>
+        <p class="es-League-profile__name" :class="{ prewarp: name === 'SIENES WARLITO JR.' }">{{ formatName }}</p>
         <p class="es-League-profile__englishName">{{ english }}</p>
       </div>
       <div class="es-League-profile__positionWrapper">
@@ -124,6 +124,20 @@ export default {
     //   }
     //   return false
     // },
+    formatName() {
+      if(this.name === 'SIENES WARLITO JR.') {
+        const nameArray = this.name.split(' ');
+        let formattedName = nameArray[0]; // 最初の単語はそのまま残す
+
+        for (let i = 1; i < nameArray.length; i++) {
+        // 2つ目以降の単語は、前にスペースを付けた上で改行に置き換える
+          formattedName += ' ' + (i === 2 ? nameArray[i] : '\n' + nameArray[i]);
+        }
+        return formattedName;
+      } else {
+        return this.name
+      }
+    }
   },
 }
 </script>
@@ -174,6 +188,10 @@ export default {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 4px;
+
+    &.prewarp {
+      white-space: pre-wrap;
+    }
   }
   &__englishName {
     font-size: 18px;

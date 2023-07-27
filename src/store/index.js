@@ -209,7 +209,7 @@ export const state = () => ({
       const resNews = await this.$axios.$get(`${$config.apiUrl}news`, {
        headers: headersKey
       });
-      const resPlayers = await this.$axios.$get(`${$config.apiUrl}player-details?limit=50`, {
+      const resPlayers = await this.$axios.$get(`${$config.apiUrl}player-details?limit=60`, {
        headers: headersKey
       });
       const resTeams = await this.$axios.$get(`${$config.apiUrl}team-details`, {

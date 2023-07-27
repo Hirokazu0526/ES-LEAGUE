@@ -30,7 +30,7 @@
                 :alt="member.name"
                 class="es-League-team__memberImg"
               />
-              <p class="es-League-team__memberName">{{ member.name }}</p>
+              <p class="es-League-team__memberName" :class="{ preWrap: member.name === 'SIENES\nWARLITO JR.'}">{{ member.name }}</p>
             </nuxt-link>
           </li>
         </ul>
@@ -62,15 +62,36 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['getPlayerList']),
+    ...mapGetters(['getPlayerList',]),
     temaMember() {
       // チーム名とプレーヤーリストを比べて選手を抽出
-      const members = this.getPlayerList
+      const members = this.allMember
       const memberInfo = members.filter((member) => {
         return member.team.teamName === this.teamName
       })
       return memberInfo
     },
+    allMember() {
+      // チーム名とプレーヤーリストを比べて選手を抽出
+      const members = this.getPlayerList
+      const memberInfo = members.map((member) => {
+        // チーム名が一致する場合のみ処理を行う
+        if (member.team.teamName === this.teamName) {
+          if (member.name === 'SIENES WARLITO JR.') {
+            const nameArray = member.name.split(' ')
+            let formattedName = nameArray[0]; // 最初の単語はそのまま残す
+
+            for (let i = 1; i < nameArray.length; i++) {
+              // 2つ目以降の単語は、前にスペースを付けた上で改行に置き換える
+              formattedName += (i === 2 ? ' ' : '\n') + nameArray[i]
+            }
+            member.name = formattedName; // 改行処理した名前を更新
+          }
+        }
+        return member // 処理済みのメンバー情報を返す
+      });
+      return memberInfo
+    }
   },
 }
 </script>
@@ -176,6 +197,7 @@ export default {
 
   &__memberItem {
     margin: 0 auto;
+    height: 195px;
   }
   &__link {
     color: #000;
@@ -188,6 +210,10 @@ export default {
     margin-top: 10px;
     text-align: center;
     font-weight: bold;
+
+    &.preWrap {
+      white-space: pre-wrap;
+    }
   }
   &__sponsorArea {
     height: 78px;
