@@ -1,6 +1,6 @@
 import Sass from 'sass'
 import Fiber from 'fibers'
-import axios from 'axios'
+// import axios from 'axios'
 
 require("dotenv").config();
 const { API_KEY } = process.env;
@@ -50,7 +50,7 @@ export default {
   },
   router: {
     base: baseDir,
-    middleware: ['redirect']
+    // middleware: ['redirect']
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -62,7 +62,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/global.js',
-    '~/plugins/vuelidate.js'
+    '~/plugins/vuelidate.js',
+    '~/plugins/filters.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

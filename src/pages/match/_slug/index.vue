@@ -366,7 +366,7 @@ export default {
       position: absolute;
       content: '';
       width: 1px;
-      height: 85%;
+      height: 95%;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);

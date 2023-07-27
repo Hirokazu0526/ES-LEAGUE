@@ -13,7 +13,7 @@
     <div class="es-League-schedule__contanier">
       <h3 class="es-League-schedule__matchDate">
         <span class="left">{{ isThisWeek.clause }}</span
-        >{{ isThisWeek.date
+        >{{ $formatDate(isThisWeek.date)
         }}<span class="right">{{ isThisWeek.startTime }}</span>
       </h3>
       <p class="es-League-schedule__stadium">
@@ -156,6 +156,8 @@ export default {
         return this.getCompetitionList[3]
       } else if (this.fifthWeek) {
         return this.getCompetitionList[4]
+      } else if (this.sixthWeek) {
+        return this.getCompetitionList[5]
       } else {
         return this.getCompetitionList[0]
       }

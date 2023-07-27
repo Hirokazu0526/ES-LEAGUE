@@ -6,25 +6,17 @@
 
     <div
       class="es-League-profile__visualWrapper"
-      :class="{
-        women: playerData.team.gender[0] === 'women',
-      }"
     >
       <img
         :src="playerData.imageSilhouette.url"
         :alt="playerData.name"
         class="es-League-profile__image"
-        :class="{
-          women: team.gender[0] === 'women',
-          se: english === 'Sato Erika',
-        }"
       />
       <div
         class="es-League-profile__nameWrapper"
-        :class="{ women: playerData.team.gender[0] === 'women' }"
       >
-        <p class="es-League-profile__name">{{ playerData.name }}</p>
-        <p class="es-League-profile__englishName">{{ playerData.english }}</p>
+        <p class="es-League-profile__name" :class="{ prewarp: name === 'SIENES WARLITO JR.' }">{{ formatName }}</p>
+        <p class="es-League-profile__englishName">{{ english }}</p>
       </div>
       <div class="es-League-profile__positionWrapper">
         <p
@@ -152,6 +144,20 @@ export default {
     //   }
     //   return false
     // },
+    formatName() {
+      if(this.name === 'SIENES WARLITO JR.') {
+        const nameArray = this.name.split(' ');
+        let formattedName = nameArray[0]; // 最初の単語はそのまま残す
+
+        for (let i = 1; i < nameArray.length; i++) {
+        // 2つ目以降の単語は、前にスペースを付けた上で改行に置き換える
+          formattedName += ' ' + (i === 2 ? nameArray[i] : '\n' + nameArray[i]);
+        }
+        return formattedName;
+      } else {
+        return this.name
+      }
+    }
   },
 }
 </script>
@@ -183,27 +189,13 @@ export default {
     margin: 24px auto 0;
     height: 365px;
     max-width: 330px;
-    &.women {
-      height: 330px;
-      max-width: 343px;
-    }
   }
 
   &__image {
     position: absolute;
-    width: 220px;
+    width: 170px;
     right: 15px;
     bottom: 0;
-
-    &.women {
-      width: 200px;
-      right: 0px;
-    }
-
-    &.se {
-      width: 210px;
-      right: -15px;
-    }
   }
 
   &__nameWrapper {
@@ -211,14 +203,15 @@ export default {
     top: 60px;
     left: 16px;
     text-align: left;
-    &.women {
-      top: 60px;
-    }
   }
   &__name {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 4px;
+
+    &.prewarp {
+      white-space: pre-wrap;
+    }
   }
   &__englishName {
     font-size: 18px;
@@ -354,22 +347,10 @@ export default {
     &__visualWrapper {
       height: 330px;
       max-width: 288px;
-      &.women {
-        height: 300px;
-      }
     }
     &__image {
       right: 0;
-      width: 200px;
-
-      &.women {
-        width: 180px;
-        right: -10px;
-      }
-
-      &.se {
-        right: -17px;
-      }
+      width: 150px;
     }
     &__name {
       font-size: 25px;
@@ -408,31 +389,16 @@ export default {
     &__visualWrapper {
       min-height: 580px;
       max-width: 700px;
-      &.women {
-        max-width: 700px;
-      }
     }
     &__image {
-      width: 345px;
+      width: 255px;
       bottom: 0;
       right: 70px;
-
-      &.women {
-        width: 340px;
-      }
-
-      &.se {
-        width: 360px;
-        right: -20px;
-      }
     }
 
     &__nameWrapper {
       top: 120px;
       left: 15%;
-      &.women {
-        top: 120px;
-      }
     }
     &__name {
       font-size: 55px;
