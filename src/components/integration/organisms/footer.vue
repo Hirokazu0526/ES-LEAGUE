@@ -108,7 +108,7 @@
           ></a>
         </div>
         <div class="es-League-footer__copyRight">
-          <small>© 2022 ES LEAGUE All Rights Reserved.</small>
+          <small>© 2023 ES LEAGUE All Rights Reserved.</small>
         </div>
       </div>
     </div>
