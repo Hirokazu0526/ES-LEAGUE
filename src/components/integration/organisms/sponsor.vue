@@ -3,7 +3,7 @@
     <h3 class="es-League-sponsor__title">
       LEAGUE PARTNERS<br /><span>リーグパートナー</span>
     </h3>
-    <div class="es-League-sponsor__list">
+    <!-- <div class="es-League-sponsor__list">
       <h4 class="es-League-sponsor__partnerTitle">Title Partner</h4>
       <div class="es-League-sponsor__listItem center">
         <a :href="titlePartner.url" target="_blank">
@@ -15,7 +15,7 @@
           />
         </a>
       </div>
-    </div>
+    </div> -->
     <div class="es-League-sponsor__list">
       <h4 class="es-League-sponsor__partnerTitle">Official Partner</h4>
       <ul class="es-League-sponsor__listWrapper">
@@ -23,6 +23,25 @@
           v-for="item in officalPartner"
           :key="item.id"
           class="es-League-sponsor__listItem"
+        >
+          <a :href="item.url" target="_blank">
+            <img
+              :src="item.imgUrl"
+              :alt="item.alt"
+              :class="item.name"
+              class="es-League-sponsor__itemImg"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="es-League-sponsor__list">
+      <h4 class="es-League-sponsor__partnerTitle">Gear Partner</h4>
+      <ul class="es-League-sponsor__listWrapper">
+        <li
+          v-for="item in GearPartner"
+          :key="item.id"
+          class="es-League-sponsor__listItem center"
         >
           <a :href="item.url" target="_blank">
             <img
@@ -95,52 +114,61 @@ export default {
       officalPartner: [
         {
           id: 1,
+          name: 'saraya',
+        imgUrl: require('~/assets/img/logo/saraya.svg'),
+        alt: 'SARAYA',
+        url: 'https://www.saraya.com/',
+        },
+        {
+          id: 2,
           name: 'libgate',
           imgUrl: require('~/assets/img/logo/libgate.svg'),
           alt: 'LibGate',
           url: 'https://lib-gate.co.jp/',
         },
         {
-          id: 2,
+          id: 3,
           name: 'bvd',
           imgUrl: require('~/assets/img/logo/bvd.svg'),
           alt: 'B.V.D.',
           url: 'https://www.bvd.jp/',
         },
         {
-          id: 3,
+          id: 4,
           name: 'svolme',
           imgUrl: require('~/assets/img/logo/svolme.svg'),
           alt: 'SVOLME',
           url: 'https://www.svolme.net/',
         },
         {
-          id: 4,
+          id: 5,
           name: 'liberty',
           imgUrl: require('~/assets/img/logo/liberty.svg'),
           alt: 'リバティーエステート',
           url: 'https://www.liberty-estate.co.jp/',
         },
         {
-          id: 5,
+          id: 6,
           name: '文化シヤッター',
           imgUrl: require('~/assets/img/logo/bunkashata.svg'),
           alt: '文化シヤッター',
           url: 'https://www.bunka-s.co.jp/',
         },
         {
-          id: 6,
+          id: 7,
           name: '阪神酒販',
           imgUrl: require('~/assets/img/logo/hanshin.svg'),
           alt: '阪神酒販',
           url: 'https://hanshinshuhan.co.jp/',
         },
+      ],
+      GearPartner: [
         {
-          id: 7,
-          name: 'parksports',
-          imgUrl: require('~/assets/img/logo/parksports.svg'),
-          alt: 'PARKSPORTS',
-          url: 'https://parksports.co.jp/',
+          id: 1,
+          name: 'ZAMST',
+          imgUrl: require('~/assets/img/logo/zamst.svg'),
+          alt: 'ZAMST',
+          url: 'https://www.zamst-online.jp/',
         },
       ],
       MediaPartner: [

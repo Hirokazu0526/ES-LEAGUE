@@ -1,8 +1,8 @@
 <template>
   <div class="es-Laegue-mainVisual">
     <img
-      src="~/assets/img/top/nagoya_esl_kv.jpg"
-      alt="ES LEAGUE IN 名古屋"
+      src="~/assets/img/top/esleague2023_kv.png"
+      alt="ES LEAGUE 2023"
       class="es-Laegue-mainVisual__img"
       width="750"
       height="422"
