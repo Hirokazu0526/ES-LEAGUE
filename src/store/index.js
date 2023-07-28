@@ -83,40 +83,40 @@ export const state = () => ({
       })
       menRanking.sort(function(a, b) {
         if(a.rank < b.rank) return -1
-        // if(a.winningPoint > b.winningPoint) return -1
-        // if(a.winningPoint < b.winningPoint) return 1
-        // const setPoint = a.getSet - a.lostSet
-        // const beforeSetPoint = b.getSet - b.lostSet
-        // if(setPoint > beforeSetPoint) return -1
-        // if(setPoint < beforeSetPoint) return 1
+        if(a.winningPoint > b.winningPoint) return -1
+        if(a.winningPoint < b.winningPoint) return 1
+        const setPoint = a.getSet - a.lostSet
+        const beforeSetPoint = b.getSet - b.lostSet
+        if(setPoint > beforeSetPoint) return -1
+        if(setPoint < beforeSetPoint) return 1
         return 0
       })
       menRanking.forEach(function (item, index, arry) {
         // 前の配列を格納
-        // const beforeArry = arry[index - 1]
+        const beforeArry = arry[index - 1]
 
         // 前の配列がundefinedでない場合に勝ち点を比べる
-        // if (beforeArry !== undefined) {
-          // const point = item.getSet - item.lostSet
-          // const beforeArryPoint = beforeArry.getSet - beforeArry.lostSet
-          // // ポイントが同じだった場合
-          // if (item.winningPoint === beforeArry.winningPoint) {
-          //   // 得失ポイントが同じだった場合
-          //   if(point === beforeArryPoint ) {
-          //     item.ranking = beforeArry.ranking
-          //   } else if  (point < beforeArryPoint) {
-          //     item.ranking = index + 1
+        if (beforeArry !== undefined) {
+          const point = item.getSet - item.lostSet
+          const beforeArryPoint = beforeArry.getSet - beforeArry.lostSet
+          // ポイントが同じだった場合
+          if (item.winningPoint === beforeArry.winningPoint) {
+            // 得失ポイントが同じだった場合
+            if(point === beforeArryPoint ) {
+              item.ranking = beforeArry.ranking
+            } else if  (point < beforeArryPoint) {
+              item.ranking = index + 1
               
-          //   }
-          // } else {
+            }
+          } else {
             // 違う場合はindexに+1をした値が順位
-            // item.ranking = index + 1
-          // }
-        // } else {
-          // 配列の最初は1位
-          // item.ranking = 1
-          item.ranking = index + 1
-        // }
+            item.ranking = index + 1
+          }
+        } else {
+          // 配列の初回は1位
+          item.ranking = 1
+          // item.ranking = index + 1
+        }
       })
       state.menRankingData = menRanking
     },

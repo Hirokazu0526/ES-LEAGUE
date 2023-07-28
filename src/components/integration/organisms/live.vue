@@ -1,7 +1,7 @@
 <template>
   <div class="es-League-live">
     <h3 v-if="true" class="es-League-live__title">
-      SEASON 2022<br /><span>2022 シーズン</span>
+      SEASON 2022 ARCHIVE<br /><span>2022 シーズン アーカイブ</span>
     </h3>
     <h3 v-else class="es-League-live__title">
       ARCHIVING<br /><span>アーカイブ配信</span>

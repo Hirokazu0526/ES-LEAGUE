@@ -3,7 +3,6 @@
     <h2 class="es-League-rank__title">RANKING<br /><span>順位表</span></h2>
     <div class="es-League-rank__contanier">
       <div class="es-League-rank__menInfo">
-        <h3 class="es-League-rank__gender">MEN</h3>
         <table class="es-League-rank__list">
           <thead>
             <tr>
@@ -28,40 +27,9 @@
             </tr>
           </tbody>
         </table>
-        <p class="es-League-rank__caution">
+        <!-- <p class="es-League-rank__caution">
           ※2〜4位に関しては同ポイント同得失セットのため、得失点差にて順位を決定
-        </p>
-      </div>
-      <div class="es-League-rank__womenInfo">
-        <h3 class="es-League-rank__gender women">WOMEN</h3>
-        <table class="es-League-rank__list">
-          <thead class="women">
-            <tr>
-              <th>順位</th>
-              <th>チーム</th>
-              <th>得失セット</th>
-              <th>ポイント</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="item in getWomenRankingData"
-              :key="item.index"
-              class="women"
-            >
-              <th>{{ item.ranking }}</th>
-
-              <td class="es-League-rank__width">
-                <nuxt-link :to="`/team/${item.teamInfo.id}`"
-                  >{{ item.team }}
-                </nuxt-link>
-              </td>
-
-              <td>{{ item.getSet - item.lostSet }}</td>
-              <td>{{ item.winningPoint }}</td>
-            </tr>
-          </tbody>
-        </table>
+        </p> -->
       </div>
       <div class="es-League-rank__btnWrapper">
         <back-button />

@@ -4,9 +4,9 @@
     <!-- <live id="live" /> -->
     <next-match />
     <!-- <player-card :player-data="getPlayerList" /> -->
-    <live v-if="true" id="live" />
     <pv />
-    <info-list />
+    <live v-if="false" id="live" />
+    <!-- <info-list /> -->
     <!-- <about-es /> -->
     <!-- <movie /> -->
     <sponsor />
@@ -16,7 +16,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import infoList from '~/components/integration/organisms/info-list.vue'
+// import infoList from '~/components/integration/organisms/info-list.vue'
 import sponsor from '~/components/integration/organisms/sponsor.vue'
 import mainVisual from '~/components/integration/organisms/main-visual.vue'
 import nextMatch from '~/components/integration/organisms/next-match.vue'
@@ -29,7 +29,7 @@ import pv from '~/components/integration/organisms/pv.vue'
 
 export default {
   components: {
-    infoList,
+    // infoList,
     sponsor,
     mainVisual,
     nextMatch,
