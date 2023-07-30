@@ -36,10 +36,10 @@
       </ul>
     </div>
     <div class="es-League-sponsor__list">
-      <h4 class="es-League-sponsor__partnerTitle">Gear Partner</h4>
+      <h4 class="es-League-sponsor__partnerTitle">Official Supplier</h4>
       <ul class="es-League-sponsor__listWrapper">
         <li
-          v-for="item in GearPartner"
+          v-for="item in OfficialSupplier"
           :key="item.id"
           class="es-League-sponsor__listItem center"
         >
@@ -162,7 +162,7 @@ export default {
           url: 'https://hanshinshuhan.co.jp/',
         },
       ],
-      GearPartner: [
+      OfficialSupplier: [
         {
           id: 1,
           name: 'ZAMST',
