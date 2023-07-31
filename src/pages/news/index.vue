@@ -4,10 +4,10 @@
       NEWS<br />
       <span>ニュース</span>
     </h2>
-    <div class="es-League-newsInfomation__contents">
+    <div v-if="false" class="es-League-newsInfomation__contents">
       <news :news-data="getNewsList" />
     </div>
-    <div class="es-League-newsInfomation__categoryLists">
+    <div v-if="infoLinkBtn.length || reportLinkBtn.length || eventLinkBtn.length" class="es-League-newsInfomation__categoryLists">
       <p class="es-League-newsInfomation__categoryTitle">カテゴリ</p>
       <div class="es-League-newsInfomation__categoryWrapper">
         <es-button
@@ -36,6 +36,7 @@
         >
       </div>
     </div>
+    <div v-else class="es-League-newsInfomation__noNews">現在ニュースはありません</div>
     <es-button url="/" class="es-League-newsInfomation__btn team"
       >TOPページへ</es-button
     >
@@ -132,6 +133,13 @@ export default {
 
   &__btn {
     margin: 40px auto 0;
+  }
+
+  &__noNews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 210px;
   }
 }
 @media screen and (min-width: 768px) {

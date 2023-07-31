@@ -167,24 +167,24 @@ export default {
     homeTeam() {
       // URLパラメータを見てhomeチーム名を取得
       if (this.$route.query.fields === 'game1') {
-        const res = this.competition.game1H.teamName.split(' ').join('\n')
+        const res = this.competition.game1H.teamName
         return res
       } else if (this.$route.query.fields === 'game2') {
-        const res = this.competition.game2H.teamName.split(' ').join('\n')
+        const res = this.competition.game2H.teamName
         return res
       } else {
-        const res = this.competition.game3H.teamName.split(' ').join('\n')
+        const res = this.competition.game3H.teamName
         return res
       }
     },
     awayTeam() {
       // URLパラメータを見てawayチーム名を取得
       if (this.$route.query.fields === 'game1') {
-        return this.competition.game1A.teamName.split(' ').join('\n')
+        return this.competition.game1A.teamName
       } else if (this.$route.query.fields === 'game2') {
-        return this.competition.game2A.teamName.split(' ').join('\n')
+        return this.competition.game2A.teamName
       } else {
-        return this.competition.game3A.teamName.split(' ').join('\n')
+        return this.competition.game3A.teamName
       }
     },
     homeTeamMember() {

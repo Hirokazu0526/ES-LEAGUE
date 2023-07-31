@@ -171,7 +171,7 @@ export default {
       }
     }
     &.teamIntroduction {
-      text-align: left;
+      text-align: center;
       white-space: break-spaces;
       line-break: anywhere;
     }
