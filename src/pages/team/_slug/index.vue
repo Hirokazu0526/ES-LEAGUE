@@ -73,7 +73,8 @@ export default {
     },
     allMember() {
       // チーム名とプレーヤーリストを比べて選手を抽出
-      const members = this.getPlayerList
+      let members = []
+      members =  JSON.parse(JSON.stringify(this.getPlayerList))
       const memberInfo = members.map((member) => {
         // チーム名が一致する場合のみ処理を行う
         if (member.team.teamName === this.teamName) {
