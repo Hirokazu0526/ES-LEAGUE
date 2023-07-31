@@ -39,29 +39,29 @@
           <p class="es-League-profile__textTitle">身長</p>
           <p class="es-League-profile__text">{{ playerData.stature }}cm</p>
         </div>
-        <div class="es-League-profile__profileList">
+        <div v-if="false" class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">出身地</p>
           <p class="es-League-profile__text">{{ playerData.birthplace }}</p>
         </div>
-        <div class="es-League-profile__profileList">
+        <div v-if="false" class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">出身大学</p>
           <p class="es-League-profile__text">{{ playerData.university }}</p>
         </div>
-        <div class="es-League-profile__profileList">
+        <div v-if="false" class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">ストロング<br />ポイント</p>
           <p class="es-League-profile__text">{{ playerData.playstyle }}</p>
         </div>
-        <div class="es-League-profile__profileList">
+        <div v-if="false" class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">尊敬する人</p>
           <p class="es-League-profile__text">{{ playerData.respect }}</p>
         </div>
-        <div class="es-League-profile__profileList">
+        <div v-if="false" class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">
             競技を<br class="pc" />始めた理由
           </p>
           <p class="es-League-profile__text">{{ playerData.reason }}</p>
         </div>
-        <div class="es-League-profile__profileList">
+        <div v-if="false" class="es-League-profile__profileList">
           <p class="es-League-profile__textTitle">戦歴</p>
           <p class="es-League-profile__text history">
             {{ playerData.history }}
