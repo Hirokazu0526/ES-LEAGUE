@@ -17,7 +17,14 @@
               <th>{{ item.ranking }}</th>
 
               <td class="es-League-rank__width">
-                <nuxt-link :to="`/team/${item.teamInfo.id}`">{{
+                <nuxt-link :to="`/team/${item.teamInfo.id}`">
+                  <img
+                :src="item.teamInfo.image.url"
+                alt=""
+                class="es-League-rank__teamImage"
+                :class="{deestc: item.teamInfo.teamName === '阪神酒販 Dee\'sTC'}"
+              />
+                {{
                   item.team
                 }}</nuxt-link>
               </td>
@@ -161,6 +168,16 @@ export default {
     min-width: 135px;
     text-align: left;
   }
+
+  &__teamImage {
+    width: 20px;
+    vertical-align: sub;
+
+    &.deestc {
+      vertical-align: middle;
+    }
+  }
+
   &__btnWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -211,7 +228,7 @@ export default {
         }
         td {
           padding: 10px 2px 10px 5px;
-          font-size: 24px;
+          font-size: 22px;
         }
       }
     }
@@ -221,6 +238,11 @@ export default {
     &__caution {
       font-size: 14px;
     }
+
+    &__teamImage {
+      width: 30px;
+    }
+
   }
 }
 </style>

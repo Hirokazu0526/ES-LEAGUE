@@ -431,11 +431,26 @@ export default {
         font-size: 24px;
       }
     }
+
+    &__teamImage {
+      width: 200px;
+    }
+
     &__teamMemberLink {
       padding-left: 100px;
     }
     &__member {
       margin-bottom: 30px;
+    }
+
+    &__teamName {
+      font-size: 21px;
+    }
+
+    &__versus {
+      span {
+        font-size: 32px;
+      }
     }
   }
 }
