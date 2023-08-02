@@ -90,7 +90,8 @@
                   <span class="es-League-match-result__playerNumber">{{
                     member.number
                   }}</span>
-                  <p class="es-League-match-result__playerName">
+                  <p class="es-League-match-result__playerName" :class="{ textLeft: member.name === 'SIENES WARLITO JR.'}"
+                  >
                     {{ member.name }}
                   </p>
                 </nuxt-link>
@@ -405,6 +406,9 @@ export default {
     font-size: 18px;
     font-weight: bold;
     margin-left: 10px;
+    &.textLeft {
+      text-align: left;
+    }
   }
   &__btnWrapper {
     display: grid;
