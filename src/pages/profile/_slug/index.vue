@@ -44,7 +44,7 @@
           <p class="es-League-profile__text">{{ birthplace }}</p>
         </div>
         <div v-if="false" class="es-League-profile__profileList">
-          <p class="es-League-profile__textTitle">出身大学</p>
+          <p class="es-League-profile__textTitle">出身校</p>
           <p class="es-League-profile__text">{{ university }}</p>
         </div>
         <div v-if="false" class="es-League-profile__profileList">
