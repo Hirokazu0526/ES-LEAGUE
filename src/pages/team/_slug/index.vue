@@ -13,6 +13,8 @@
       </p> -->
       <h3 class="es-League-team__sectionTitle">INTRODUCTION</h3>
       <p class="es-League-team__text teamIntroduction">{{ text }}</p>
+      <h3 class="es-League-team__sectionTitle">DESCRIPTION</h3>
+      <p class="es-League-team__text teamDescription">{{ description }}</p>
       <div class="es-League-team__memberInfo">
         <h3 class="es-League-team__sectionTitle">MEMBER</h3>
         <ul class="es-League-team__memberList">
@@ -35,7 +37,16 @@
           </li>
         </ul>
       </div>
+      <template v-if="homepageLink">
+        <h3 class="es-League-team__sectionTitle">LINK</h3>
+        <div
+          class="es-League-team__linkArea"
+        >
+          <a :href="homepageLink" target="_blank">ホームページ</a>
+        </div>
+      </template>
     </div>
+    
 
     <div class="es-League-team__btnWrapper">
       <back-button />
@@ -92,6 +103,9 @@ export default {
         return member // 処理済みのメンバー情報を返す
       });
       return memberInfo
+    },
+    homepageLink() {
+      return this.link ? this.link : null 
     }
   },
 }
@@ -133,10 +147,11 @@ export default {
   &__info {
     padding: 0px 16px;
     text-align: left;
+    margin-bottom: 50px;
   }
   &__text {
     font-size: 18px;
-    margin: 10px 0;
+    margin: 10px 0 24px;
     line-height: 1.5;
     text-align: center;
     &.teamcolor {
@@ -174,6 +189,10 @@ export default {
       text-align: center;
       white-space: break-spaces;
       line-break: anywhere;
+    }
+
+    &.teamDescription {
+      text-align: left;
     }
   }
   &__memberInfo {
@@ -216,15 +235,11 @@ export default {
       white-space: pre-wrap;
     }
   }
-  &__sponsorArea {
-    height: 78px;
+  &__linkArea {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 15px auto;
-    &.bvd {
-      height: 110px;
-    }
   }
   &__btnWrapper {
     display: grid;
@@ -267,12 +282,6 @@ export default {
       width: 300px;
       &.bvd {
         width: 160px;
-      }
-    }
-    &__sponsorArea {
-      height: 100px;
-      &.bvd {
-        height: 120px;
       }
     }
   }
