@@ -189,16 +189,16 @@
             }}</span>
           </h3>
           <p
-            v-if="item.stadium === '未定' ? '' : item.stadium"
             class="es-League-schedule-result__stadium"
           >
-            {{ item.stadium }}(<a :href="item.access" target="_blank"
+            {{ item.stadium }}
+            <template v-if="item.access">(<a :href="item.access" target="_blank"
               >会場アクセス<img
                 src="~/assets/img/external-link.svg"
                 alt=""
                 class="es-League-schedule-result__linkImg"
               /> </a
-            >)
+            >)</template>
           </p>
           <div class="es-League-schedule-result__matchInfo">
             <ul class="es-League-schedule-result__list">
