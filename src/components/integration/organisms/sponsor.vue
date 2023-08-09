@@ -55,6 +55,25 @@
       </ul>
     </div>
     <div class="es-League-sponsor__list">
+      <h4 class="es-League-sponsor__partnerTitle">Creative Partner</h4>
+      <ul class="es-League-sponsor__listWrapper">
+        <li
+          v-for="item in creativePartner"
+          :key="item.id"
+          class="es-League-sponsor__listItem center"
+        >
+          <a :href="item.url" target="_blank">
+            <img
+              :src="item.imgUrl"
+              :alt="item.alt"
+              :class="item.name"
+              class="es-League-sponsor__itemImg"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="es-League-sponsor__list">
       <h4 class="es-League-sponsor__partnerTitle">Media Partner</h4>
       <ul class="es-League-sponsor__listWrapper">
         <li
@@ -197,6 +216,15 @@ export default {
           imgUrl: require('~/assets/img/logo/zamst.svg'),
           alt: 'ZAMST',
           url: 'https://www.zamst-online.jp/',
+        },
+      ],
+      creativePartner: [
+        {
+          id: 1,
+          name: 'ByGaudi',
+          imgUrl: require('~/assets/img/logo/bygaudi.svg'),
+          alt: 'ByGaudi',
+          url: 'https://bygaudi.com/',
         },
       ],
       MediaPartner: [
