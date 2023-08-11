@@ -1,11 +1,11 @@
 <template>
   <div v-if="isThisWeek" class="es-League-schedule">
-    <h3 class="es-League-schedule__title">
+    <!-- <h3 class="es-League-schedule__title">
       TODAY MATCH<br /><span>本日の試合</span>
-    </h3>
-    <!-- <h3 v-else-if="false" class="es-League-schedule__title">
-      MATCH RESULT<br /><span>試合結果</span>
     </h3> -->
+    <h3 class="es-League-schedule__title">
+      MATCH RESULT<br /><span>試合結果</span>
+    </h3>
     <!-- <h3 v-else class="es-League-schedule__title">
       NEXT MATCH<br /><span>試合予定</span>
     </h3> -->
