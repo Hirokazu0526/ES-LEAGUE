@@ -164,6 +164,54 @@
               <link-arrow class="es-League-schedule-result__linkArrow" />
             </nuxt-link>
           </li>
+          <li v-if="isThisWeek.competition.game4H !== null">
+            <nuxt-link
+              class="es-League-schedule-result__item"
+              :to="`/match/${isThisWeek.id}?fields=game4`"
+            >
+              <div class="es-League-schedule-result__teamInfo">
+                <div class="es-League-schedule-result__team">
+                  <img
+                    :src="
+                      isThisWeek.competition.game4H === null
+                        ? noImage
+                        : isThisWeek.competition.game4H.image.url
+                    "
+                    alt=""
+                    class="es-League-schedule-result__teamImage"
+                  />
+                  <p class="es-League-schedule-result__temaName">
+                    {{ isThisWeek.competition.game4H.teamName }}
+                  </p>
+                  <div class="es-League-schedule-result__scoreWrapper">
+                    <span class="es-League-schedule-result__score">{{
+                      isThisWeek.results.game4.getSet_H
+                    }}</span>
+                  </div>
+                </div>
+                <div class="es-League-schedule-result__team">
+                  <img
+                    :src="
+                      isThisWeek.competition.game4A === null
+                        ? noImage
+                        : isThisWeek.competition.game4A.image.url
+                    "
+                    alt=""
+                    class="es-League-schedule-result__teamImage"
+                  />
+                  <p class="es-League-schedule-result__temaName">
+                    {{ isThisWeek.competition.game4A.teamName }}
+                  </p>
+                  <div class="es-League-schedule-result__scoreWrapper">
+                    <span class="es-League-schedule-result__score">{{
+                      isThisWeek.results.game4.getSet_A
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+              <link-arrow class="es-League-schedule-result__linkArrow" />
+            </nuxt-link>
+              </li>
         </ul>
       </div>
       <h3 class="es-League-schedule-result__newsTitle"></h3>
@@ -404,7 +452,7 @@
                 <nuxt-link
                   class="es-League-schedule-result__item"
                   :class="{ 'is-disabled': item.date > nowDate }"
-                  :to="`/match/${item.id}?fields=game3`"
+                  :to="`/match/${item.id}?fields=game4`"
                 >
                   <div class="es-League-schedule-result__teamInfo">
                     <div class="es-League-schedule-result__team">
@@ -429,7 +477,7 @@
                         class="es-League-schedule-result__scoreWrapper"
                       >
                         <span class="es-League-schedule-result__score">{{
-                          item.results.game3.getSet_H
+                          item.results.game4.getSet_H
                         }}</span>
                       </div>
                     </div>

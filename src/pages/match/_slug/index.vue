@@ -161,8 +161,10 @@ export default {
         return this.results.game1
       } else if (this.$route.query.fields === 'game2') {
         return this.results.game2
-      } else {
+      } else if (this.$route.query.fields === 'game3') {
         return this.results.game3
+      } else {
+        return this.results.game4
       }
     },
     homeTeam() {
@@ -173,8 +175,11 @@ export default {
       } else if (this.$route.query.fields === 'game2') {
         const res = this.competition.game2H.teamName
         return res
-      } else {
+      } else if (this.$route.query.fields === 'game3') {
         const res = this.competition.game3H.teamName
+        return res
+      } else {
+        const res = this.competition.game4H.teamName
         return res
       }
     },
@@ -184,8 +189,10 @@ export default {
         return this.competition.game1A.teamName
       } else if (this.$route.query.fields === 'game2') {
         return this.competition.game2A.teamName
-      } else {
+      } else if (this.$route.query.fields === 'game3') {
         return this.competition.game3A.teamName
+      } else {
+        return this.competition.game4A.teamName
       }
     },
     homeTeamMember() {

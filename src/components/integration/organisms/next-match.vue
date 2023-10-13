@@ -3,12 +3,12 @@
     <!-- <h3 class="es-League-schedule__title">
       TODAY MATCH<br /><span>本日の試合</span>
     </h3> -->
-    <h3 class="es-League-schedule__title">
+    <!-- <h3 class="es-League-schedule__title">
       MATCH RESULT<br /><span>試合結果</span>
-    </h3>
-    <!-- <h3 v-else class="es-League-schedule__title">
-      NEXT MATCH<br /><span>試合予定</span>
     </h3> -->
+    <h3 class="es-League-schedule__title">
+      NEXT MATCH<br /><span>試合予定</span>
+    </h3>
 
     <div class="es-League-schedule__contanier">
       <h3 class="es-League-schedule__matchDate">
@@ -114,6 +114,37 @@
                   />
                   <p class="es-League-schedule__temaName">
                     {{ isThisWeek.competition.game3A.teamName }}
+                  </p>
+                </div>
+              </div>
+              <div></div>
+              <link-arrow class="es-League-schedule__linkArrow" />
+            </nuxt-link>
+          </li>
+          <li v-if="isThisWeek.competition.game4H !== null">
+            <nuxt-link
+              :to="`/match/${isThisWeek.id}?fields=game4`"
+              class="es-League-schedule__item"
+            >
+              <div class="es-League-schedule__teamInfo">
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.game4H.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.game4H.teamName }}
+                  </p>
+                </div>
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.game4A.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.game4A.teamName }}
                   </p>
                 </div>
               </div>
