@@ -61,6 +61,52 @@ export const state = () => ({
         moment.locale("ja");
         const itemDate = moment(item.date).toDate(); // Dateオブジェクトに変換
         item.date = itemDate;
+
+        if (item.competition.game4H === null) {
+          item.competition.game4H = {
+            id: "",
+            createdAt: "",
+            updatedAt: "",
+            publishedAt: "",
+            revisedAt: "",
+            teamName: "",
+            text: "",
+            description: "",
+            image: {
+                url: "",
+                height: null,
+                width: null,
+            },
+            slogan: "",
+            teamcolor: "",
+            gender: [
+                ""
+            ]
+          }
+        }
+
+        if (item.competition.game4A === null) {
+          item.competition.game4A = {
+            id: "",
+            createdAt: "",
+            updatedAt: "",
+            publishedAt: "",
+            revisedAt: "",
+            teamName: "",
+            text: "",
+            description: "",
+            image: {
+                url: "",
+                height: null,
+                width: null,
+            },
+            slogan: "",
+            teamcolor: "",
+            gender: [
+                ""
+            ]
+          }
+        }
       }
       state.competitionLists.sort(function(a, b) {
         return a.date - b.date; // Dateオブジェクト同士を比較
