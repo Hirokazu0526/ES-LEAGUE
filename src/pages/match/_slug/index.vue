@@ -60,12 +60,6 @@
             <p>{{ matchData.secondSet_A }}</p>
           </div>
           <div
-            v-if="
-              !(
-                matchData.thirdSet_H === undefined &&
-                matchData.thirdSet_A === undefined
-              )
-            "
             class="es-League-match-result__score"
           >
             <p>{{ matchData.thirdSet_H }}</p>
@@ -142,7 +136,6 @@ export default {
       })
       return data
     } catch (err) {
-      console.log(err); // デバッグ情報を表示
       error({
         statusCode: err.response.status,
         message: err.response.data.message,
