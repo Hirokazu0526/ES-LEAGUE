@@ -142,6 +142,7 @@ export default {
       })
       return data
     } catch (err) {
+      console.log(err); // デバッグ情報を表示
       error({
         statusCode: err.response.status,
         message: err.response.data.message,
