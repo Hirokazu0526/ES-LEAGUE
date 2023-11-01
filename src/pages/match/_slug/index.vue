@@ -138,7 +138,7 @@ export default {
     } catch (err) {
       error({
         statusCode: err.response,
-        message: err.response.data.message,
+        message: err.response,
       })
     }
   },
