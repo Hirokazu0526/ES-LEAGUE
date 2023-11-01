@@ -136,10 +136,18 @@ export default {
       })
       return data
     } catch (err) {
-      error({
-        statusCode: err.response.status,
-        message: err.response.data.message,
-      })
+      if (err.response && err.response.status && err.response.data && err.response.data.message) {
+        error({
+          statusCode: err.response.status,
+          message: err.response.data.message,
+        });
+      } else {
+        // エラー情報が不足している場合、一般的なエラーメッセージを設定するか、適切なエラーメッセージを選択します。
+        error({
+          statusCode: 500,
+          message: 'Internal Server Error',
+        });
+      }
     }
   },
   computed: {
