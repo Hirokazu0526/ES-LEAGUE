@@ -4,7 +4,7 @@
       NEWS<br />
       <span>ニュース</span>
     </h2>
-    <div v-if="false" class="es-League-newsInfomation__contents">
+    <div v-if="true" class="es-League-newsInfomation__contents">
       <news :news-data="getNewsList" />
     </div>
     <div v-if="infoLinkBtn.length || reportLinkBtn.length || eventLinkBtn.length" class="es-League-newsInfomation__categoryLists">

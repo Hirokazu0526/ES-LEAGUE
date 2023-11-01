@@ -55,6 +55,25 @@
       </ul>
     </div>
     <div class="es-League-sponsor__list">
+      <h4 class="es-League-sponsor__partnerTitle">Creative Partner</h4>
+      <ul class="es-League-sponsor__listWrapper">
+        <li
+          v-for="item in creativePartner"
+          :key="item.id"
+          class="es-League-sponsor__listItem center"
+        >
+          <a :href="item.url" target="_blank">
+            <img
+              :src="item.imgUrl"
+              :alt="item.alt"
+              :class="item.name"
+              class="es-League-sponsor__itemImg"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="es-League-sponsor__list">
       <h4 class="es-League-sponsor__partnerTitle">Media Partner</h4>
       <ul class="es-League-sponsor__listWrapper">
         <li
@@ -99,77 +118,91 @@
 export default {
   data() {
     return {
-      titlePartner: {
-        name: 'saraya',
-        imgUrl: require('~/assets/img/logo/saraya.svg'),
-        alt: 'SARAYA',
-        url: 'https://www.saraya.com/',
-      },
-      streamingPartner: {
-        name: 'xyou',
-        imgUrl: require('~/assets/img/logo/xyou.svg'),
-        alt: 'XYOU',
-        url: 'https://xyou.co.jp/',
-      },
+      // titlePartner: {
+      //   name: 'saraya',
+      //   imgUrl: require('~/assets/img/logo/saraya.svg'),
+      //   alt: 'SARAYA',
+      //   url: 'https://www.saraya.com/',
+      // },
+      // streamingPartner: {
+      //   name: 'xyou',
+      //   imgUrl: require('~/assets/img/logo/xyou.svg'),
+      //   alt: 'XYOU',
+      //   url: 'https://xyou.co.jp/',
+      // },
       officalPartner: [
         {
           id: 1,
-          name: 'saraya',
-        imgUrl: require('~/assets/img/logo/saraya.svg'),
-        alt: 'SARAYA',
-        url: 'https://www.saraya.com/',
-        },
-        {
-          id: 2,
           name: 'libgate',
           imgUrl: require('~/assets/img/logo/libgate.svg'),
           alt: 'LibGate',
           url: 'https://lib-gate.co.jp/',
         },
         {
-          id: 3,
-          name: 'bvd',
-          imgUrl: require('~/assets/img/logo/bvd.svg'),
-          alt: 'B.V.D.',
-          url: 'https://www.bvd.jp/',
-        },
-        {
-          id: 4,
-          name: 'svolme',
-          imgUrl: require('~/assets/img/logo/svolme.svg'),
-          alt: 'SVOLME',
-          url: 'https://www.svolme.net/',
-        },
-        {
-          id: 5,
+          id: 2,
           name: '文化シヤッター',
           imgUrl: require('~/assets/img/logo/bunkashata.svg'),
           alt: '文化シヤッター',
           url: 'https://www.bunka-s.co.jp/',
         },
         {
+          id: 3,
+          name: 'setagaya',
+          imgUrl: require('~/assets/img/logo/setagaya.svg'),
+          alt: '世田谷自然食品',
+          url: 'https://www.shizensyokuhin.jp/',
+        },
+        {
+          id: 4,
+          name: 'isuzu',
+          imgUrl: require('~/assets/img/logo/isuzu.svg'),
+          alt: 'いすゞ自動車首都圏株式会社',
+          url: 'https://www.isuzu-syutoken.co.jp/',
+        },
+        {
+          id: 5,
+          name: 'saraya',
+        imgUrl: require('~/assets/img/logo/saraya.svg'),
+        alt: 'SARAYA',
+        url: 'https://www.saraya.com/',
+        },
+        {
           id: 6,
+          name: 'pal-yakyoku',
+        imgUrl: require('~/assets/img/logo/pal.svg'),
+        alt: 'パル薬局',
+        url: 'http://www.palhonest.co.jp/',
+        },
+        {
+          id: 7,
+          name: 'svolme',
+          imgUrl: require('~/assets/img/logo/svolme.svg'),
+          alt: 'SVOLME',
+          url: 'https://www.svolme.net/',
+        },
+        {
+          id: 8,
+          name: 'bvd',
+          imgUrl: require('~/assets/img/logo/bvd.svg'),
+          alt: 'B.V.D.',
+          url: 'https://www.bvd.jp/',
+        },
+        {
+          id: 9,
           name: 'anytimefitness',
           imgUrl: require('~/assets/img/logo/anytime.svg'),
           alt: 'エニタイムフィットネス',
           url: 'https://www.anytimefitness.co.jp/',
         },
         {
-          id: 7,
-          name: 'setagaya',
-          imgUrl: require('~/assets/img/logo/setagaya.svg'),
-          alt: '世田谷自然食品',
-          url: 'https://www.shizensyokuhin.jp/',
+          id: 10,
+          name: 'shintaka',
+          imgUrl: require('~/assets/img/logo/shintaka.svg'),
+          alt: 'Shintaka Co.,Ltd.',
+          url: 'http://www.shinsuke-koi.com/',
         },
-        // {
-        //   id: 6,
-        //   name: 'liberty',
-        //   imgUrl: require('~/assets/img/logo/liberty.svg'),
-        //   alt: 'リバティーエステート',
-        //   url: 'https://www.liberty-estate.co.jp/',
-        // },
         {
-          id: 8,
+          id: 11,
           name: '阪神酒販',
           imgUrl: require('~/assets/img/logo/hanshin.svg'),
           alt: '阪神酒販',
@@ -183,6 +216,15 @@ export default {
           imgUrl: require('~/assets/img/logo/zamst.svg'),
           alt: 'ZAMST',
           url: 'https://www.zamst-online.jp/',
+        },
+      ],
+      creativePartner: [
+        {
+          id: 1,
+          name: 'ByGaudi',
+          imgUrl: require('~/assets/img/logo/bygaudi.svg'),
+          alt: 'ByGaudi',
+          url: 'https://bygaudi.com/',
         },
       ],
       MediaPartner: [

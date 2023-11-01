@@ -24,11 +24,11 @@
               <p class="es-League-footer__listTitle">順位表</p>
             </nuxt-link>
           </li>
-          <li class="es-League-footer__listItem">
+          <!-- <li class="es-League-footer__listItem">
             <nuxt-link to="/spectating">
               <p class="es-League-footer__listTitle">観戦ガイドライン</p>
             </nuxt-link>
-          </li>
+          </li> -->
           <!--<li class="es-League-footer__listItem">
             <a href="https://esleague0625.peatix.com/" target="_blank">
               <p class="es-League-footer__listTitle">
@@ -78,7 +78,7 @@
             </a>
           </li>
           <!-- 観戦申し込みを非表示にしたので高さを調整する-->
-          <li style="height: 14px"></li>
+          <li style="height: 50px"></li>
         </ul>
         <div class="es-League-footer__snsList">
           <a

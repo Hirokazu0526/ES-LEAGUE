@@ -209,7 +209,7 @@ export default {
       color: #00a39c;
     }
     &.red {
-      color: #7a0100;
+      color: #ac1e01;
     }
     &.blue {
       color: #16409c;
@@ -223,11 +223,12 @@ export default {
     &.orange {
       color: #e77427;
     }
-    &.pink {
-      color: #dc3773;
+    &.white {
+      -webkit-text-stroke: 2px #000;
+      color: white;
     }
-    &.skyblue {
-      color: #a0c8d8;
+    &.purple {
+      color: #a23be6;
     }
   }
   &__position {
