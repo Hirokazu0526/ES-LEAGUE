@@ -152,6 +152,7 @@ export default {
     matchData() {
       // URLパラメータを見て試合データを取得
       if (this.$route.query.fields === 'game1') {
+        console.log(this);
         return this.results.game1
       } else if (this.$route.query.fields === 'game2') {
         return this.results.game2
@@ -173,7 +174,7 @@ export default {
         const res = this.competition.game3H.teamName
         return res
       } else {
-        const res = this.competition.game4H.teamName
+        const res = this.competition.game4H.teamName ? this.competition.game4H.teamName : ''
         return res
       }
     },
@@ -186,7 +187,7 @@ export default {
       } else if (this.$route.query.fields === 'game3') {
         return this.competition.game3A.teamName
       } else {
-        return this.competition.game4A.teamName
+        return this.competition.game4A.teamName ? this.competition.game4A.teamName : ''
       }
     },
     homeTeamMember() {
