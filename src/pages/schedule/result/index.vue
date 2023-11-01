@@ -448,7 +448,7 @@
                   />
                 </nuxt-link>
               </li>
-              <li v-if="item.competition.game4H.teamName !== ''">
+              <li v-if="item.competition.game4H.teamName !== 'null'">
                 <nuxt-link
                   class="es-League-schedule-result__item"
                   :class="{ 'is-disabled': item.date > nowDate }"
