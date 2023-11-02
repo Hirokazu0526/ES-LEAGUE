@@ -139,7 +139,7 @@ export default {
       }
 
       const game4H =  {
-        id: '001',
+        id: '506',
         createdAt: '2021-11-30T08:29:25.308Z',
         updatedAt: '2023-08-01T15:11:57.707Z',
         publishedAt: '2021-11-30T08:32:18.714Z',
@@ -154,7 +154,7 @@ export default {
       }
 
       const game4A = {
-        id: '002',
+        id: '506',
         createdAt: '2021-11-30T08:29:25.308Z',
         updatedAt: '2023-08-01T15:11:57.707Z',
         publishedAt: '2021-11-30T08:32:18.714Z',
@@ -169,22 +169,13 @@ export default {
       }
       data.competition.game4H = game4H
       data.competition.game4A = game4A
-
       return data
       
     } catch (err) {
-      if (err.response && err.response.status && err.response.data && err.response.data.message) {
-        error({
-          statusCode: err.response.status,
-          message: err.response.data.message,
-        });
-      } else {
-        // エラー情報が不足している場合、一般的なエラーメッセージを設定するか、適切なエラーメッセージを選択します。
-        error({
-          statusCode: 500,
-          message: 'Internal Server Error',
-        });
-      }
+      error({
+        statusCode: err.response,
+        message: err.response,
+      })
     }
   },
 
@@ -253,19 +244,33 @@ export default {
     },
     homeTeamImage() {
       // homeチームメンバーの情報からチームユニを抽出
-      return this.homeTeamMember[0].team.image.url
+      if (this.homeTeamMember && this.homeTeamMember.length > 0 && this.homeTeamMember[0].team) {
+        return this.homeTeamMember[0].team.image.url
+      }
+      return 'https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/9591a55537ea411db51938f461995e82/logo_fujimi.png'
     },
     awayTeamImage() {
       // awayチームメンバーの情報からチームユニを抽出
-      return this.awayTeamMember[0].team.image.url
+      if (this.awayTeamMember && this.awayTeamMember.length > 0 && this.awayTeamMember[0].team) {
+        return this.awayTeamMember[0].team.image.url
+      }
+      return 'https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/9591a55537ea411db51938f461995e82/logo_fujimi.png'
     },
     homeTeamUrl() {
-      const id = this.homeTeamMember[0].team.id
-      return `/team/${id}`
+      if (this.homeTeamMember && this.homeTeamMember.length > 0 && this.homeTeamMember[0].team) {
+        const id = this.homeTeamMember[0].team.id;
+        return `/team/${id}`;
+      }
+      // ここにエラー処理またはデフォルトのURLを提供する処理を追加
+      return '/'; // 例: デフォルトのURLを提供
     },
     awayTeamUrl() {
-      const id = this.awayTeamMember[0].team.id
-      return `/team/${id}`
+      if (this.awayTeamMember && this.awayTeamMember.length > 0 && this.awayTeamMember[0].team) {
+        const id = this.awayTeamMember[0].team.id;
+        return `/team/${id}`;
+      }
+      // ここにエラー処理またはデフォルトのURLを提供する処理を追加
+      return '/'; // 例: デフォルトのURLを提供
     },
   },
 }
