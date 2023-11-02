@@ -252,12 +252,20 @@ console.log(data);
       return this.awayTeamMember[0].team.image.url
     },
     homeTeamUrl() {
-      const id = this.homeTeamMember[0].team.id
-      return `/team/${id}`
+      if (this.homeTeamMember && this.homeTeamMember.length > 0 && this.homeTeamMember[0].team) {
+        const id = this.homeTeamMember[0].team.id;
+        return `/team/${id}`;
+      }
+      // ここにエラー処理またはデフォルトのURLを提供する処理を追加
+      return '/'; // 例: デフォルトのURLを提供
     },
     awayTeamUrl() {
-      const id = this.awayTeamMember[0].team.id
-      return `/team/${id}`
+      if (this.awayTeamMember && this.awayTeamMember.length > 0 && this.awayTeamMember[0].team) {
+        const id = this.awayTeamMember[0].team.id;
+        return `/team/${id}`;
+      }
+      // ここにエラー処理またはデフォルトのURLを提供する処理を追加
+      return '/'; // 例: デフォルトのURLを提供
     },
   },
 }
