@@ -134,7 +134,44 @@ export default {
       const data = await $microcms.get({
         endpoint: `schedule_result/${params.slug}`,
       })
+      if(data.competition.game4A !== null) {
+        return data
+      }
+
+      const game4H =  {
+        id: '001',
+        createdAt: '2021-11-30T08:29:25.308Z',
+        updatedAt: '2023-08-01T15:11:57.707Z',
+        publishedAt: '2021-11-30T08:32:18.714Z',
+        revisedAt: '2023-08-01T15:11:57.707Z',
+        teamName: '',
+        text: '',
+        description: '',
+        image: [],
+        slogan: '',
+        teamcolor: '',
+        gender: []
+      }
+
+      const game4A = {
+        id: '002',
+        createdAt: '2021-11-30T08:29:25.308Z',
+        updatedAt: '2023-08-01T15:11:57.707Z',
+        publishedAt: '2021-11-30T08:32:18.714Z',
+        revisedAt: '2023-08-01T15:11:57.707Z',
+        teamName: '',
+        text: '',
+        description: '',
+        image: [],
+        slogan: '',
+        teamcolor: '',
+        gender: []
+      }
+      data.competition.game4H = game4H
+      data.competition.game4A = game4A
+
       return data
+      
     } catch (err) {
       error({
         statusCode: err.response,
@@ -142,6 +179,7 @@ export default {
       })
     }
   },
+
   computed: {
     ...mapGetters(['getPlayerList', 'getTeamList']),
     formatData() {

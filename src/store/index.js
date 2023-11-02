@@ -107,7 +107,6 @@ export const state = () => ({
           }
         }
       }
-
       state.competitionLists.sort(function(a, b) {
         return a.date - b.date; // Dateオブジェクト同士を比較
       });
