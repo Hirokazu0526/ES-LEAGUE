@@ -169,7 +169,6 @@ export default {
       }
       data.competition.game4H = game4H
       data.competition.game4A = game4A
-console.log(data);
       return data
       
     } catch (err) {
