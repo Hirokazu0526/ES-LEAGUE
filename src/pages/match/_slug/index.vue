@@ -245,11 +245,17 @@ console.log(data);
     },
     homeTeamImage() {
       // homeチームメンバーの情報からチームユニを抽出
-      return this.homeTeamMember[0].team.image.url
+      if (this.homeTeamMember && this.homeTeamMember.length > 0 && this.homeTeamMember[0].team) {
+        return this.homeTeamMember[0].team.image.url
+      }
+      return null
     },
     awayTeamImage() {
       // awayチームメンバーの情報からチームユニを抽出
-      return this.awayTeamMember[0].team.image.url
+      if (this.awayTeamMember && this.awayTeamMember.length > 0 && this.awayTeamMember[0].team) {
+        return this.awayTeamMember[0].team.image.url
+      }
+      return null
     },
     homeTeamUrl() {
       if (this.homeTeamMember && this.homeTeamMember.length > 0 && this.homeTeamMember[0].team) {
