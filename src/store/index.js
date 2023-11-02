@@ -62,6 +62,7 @@ export const state = () => ({
         const itemDate = moment(item.date).toDate(); // Dateオブジェクトに変換
         item.date = itemDate;
       }
+      
       state.competitionLists.sort(function(a, b) {
         return a.date - b.date; // Dateオブジェクト同士を比較
       });
