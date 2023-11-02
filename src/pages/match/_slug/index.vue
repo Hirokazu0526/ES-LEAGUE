@@ -248,14 +248,14 @@ console.log(data);
       if (this.homeTeamMember && this.homeTeamMember.length > 0 && this.homeTeamMember[0].team) {
         return this.homeTeamMember[0].team.image.url
       }
-      return null
+      return 'https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/9591a55537ea411db51938f461995e82/logo_fujimi.png'
     },
     awayTeamImage() {
       // awayチームメンバーの情報からチームユニを抽出
       if (this.awayTeamMember && this.awayTeamMember.length > 0 && this.awayTeamMember[0].team) {
         return this.awayTeamMember[0].team.image.url
       }
-      return null
+      return 'https://images.microcms-assets.io/assets/49c6e1c4f8404f8a83a7cf07531f0cdc/9591a55537ea411db51938f461995e82/logo_fujimi.png'
     },
     homeTeamUrl() {
       if (this.homeTeamMember && this.homeTeamMember.length > 0 && this.homeTeamMember[0].team) {
