@@ -164,7 +164,7 @@
               <link-arrow class="es-League-schedule-result__linkArrow" />
             </nuxt-link>
           </li>
-          <li v-if="isThisWeek.competition.game4H !== null ">
+          <li v-if="isThisWeek.competition.game4H.teamName !== '' ">
             <nuxt-link
               class="es-League-schedule-result__item"
               :to="`/match/${isThisWeek.id}?fields=game4`"
