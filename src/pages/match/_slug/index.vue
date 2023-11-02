@@ -139,7 +139,7 @@ export default {
       }
 
       const game4H =  {
-        id: '001',
+        id: '506',
         createdAt: '2021-11-30T08:29:25.308Z',
         updatedAt: '2023-08-01T15:11:57.707Z',
         publishedAt: '2021-11-30T08:32:18.714Z',
@@ -154,7 +154,7 @@ export default {
       }
 
       const game4A = {
-        id: '002',
+        id: '506',
         createdAt: '2021-11-30T08:29:25.308Z',
         updatedAt: '2023-08-01T15:11:57.707Z',
         publishedAt: '2021-11-30T08:32:18.714Z',
@@ -169,7 +169,7 @@ export default {
       }
       data.competition.game4H = game4H
       data.competition.game4A = game4A
-
+console.log(data);
       return data
       
     } catch (err) {
@@ -190,7 +190,6 @@ export default {
     matchData() {
       // URLパラメータを見て試合データを取得
       if (this.$route.query.fields === 'game1') {
-        console.log(this);
         return this.results.game1
       } else if (this.$route.query.fields === 'game2') {
         return this.results.game2
