@@ -5,9 +5,9 @@
     </h2>
 
     <div class="es-League-match-result__container">
-      <p class="es-League-match-result__clause">{{ clause }}</p>
+      <p class="es-League-match-result__clause">{{ data.clause }}</p>
       <h3 class="es-League-match-result__date">{{ formatData }}</h3>
-      <p class="es-League-match-result__stadium">{{ stadium }}</p>
+      <p class="es-League-match-result__stadium">{{ data.stadium }}</p>
       <div class="es-League-match-result__matchInfo">
         <div class="es-League-match-result__team">
           <div class="es-League-match-result__teamInfo">
@@ -129,53 +129,33 @@ import moment from 'moment-timezone'
 import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData({ params, $microcms, error }) {
-    try {
-      const data = await $microcms.get({
-        endpoint: `schedule_result/${params.slug}`,
-      })
-      if(data.competition.game4A !== null) {
-        return data
+  middleware: 'fetchData',
+  // eslint-disable-next-line require-await
+  async asyncData({ params }) {
+    if(params.slug  === "752") {
+      return {
+       data: params.data[0]
       }
-
-      const game4H =  {
-        id: '506',
-        createdAt: '2021-11-30T08:29:25.308Z',
-        updatedAt: '2023-08-01T15:11:57.707Z',
-        publishedAt: '2021-11-30T08:32:18.714Z',
-        revisedAt: '2023-08-01T15:11:57.707Z',
-        teamName: '',
-        text: '',
-        description: '',
-        image: [],
-        slogan: '',
-        teamcolor: '',
-        gender: []
+    } else if (params.slug  === "293") {
+      return {
+       data: params.data[1]
       }
-
-      const game4A = {
-        id: '506',
-        createdAt: '2021-11-30T08:29:25.308Z',
-        updatedAt: '2023-08-01T15:11:57.707Z',
-        publishedAt: '2021-11-30T08:32:18.714Z',
-        revisedAt: '2023-08-01T15:11:57.707Z',
-        teamName: '',
-        text: '',
-        description: '',
-        image: [],
-        slogan: '',
-        teamcolor: '',
-        gender: []
+    } else if (params.slug  === "069") {
+      return {
+       data: params.data[2]
       }
-      data.competition.game4H = game4H
-      data.competition.game4A = game4A
-      return data
-      
-    } catch (err) {
-      error({
-        statusCode: err.response,
-        message: err.response,
-      })
+    } else if (params.slug  === "573") {
+      return {
+       data: params.data[3]
+      }
+    } else if (params.slug  === "458") {
+      return {
+       data: params.data[4]
+      }
+    } else {
+      return {
+       data: params.data[5]
+      }
     }
   },
 
@@ -189,41 +169,41 @@ export default {
     matchData() {
       // URLパラメータを見て試合データを取得
       if (this.$route.query.fields === 'game1') {
-        return this.results.game1
+        return this.data.results.game1
       } else if (this.$route.query.fields === 'game2') {
-        return this.results.game2
+        return this.data.results.game2
       } else if (this.$route.query.fields === 'game3') {
-        return this.results.game3
+        return this.data.results.game3
       } else {
-        return this.results.game4
+        return this.data.results.game4
       }
     },
     homeTeam() {
       // URLパラメータを見てhomeチーム名を取得
       if (this.$route.query.fields === 'game1') {
-        const res = this.competition.game1H.teamName
+        const res = this.data.competition.game1H.teamName
         return res
       } else if (this.$route.query.fields === 'game2') {
-        const res = this.competition.game2H.teamName
+        const res = this.data.competition.game2H.teamName
         return res
       } else if (this.$route.query.fields === 'game3') {
-        const res = this.competition.game3H.teamName
+        const res = this.data.competition.game3H.teamName
         return res
       } else {
-        const res = this.competition.game4H.teamName
+        const res = this.data.competition.game4H ? this.data.competition.game4H.teamName : ''
         return res
       }
     },
     awayTeam() {
       // URLパラメータを見てawayチーム名を取得
       if (this.$route.query.fields === 'game1') {
-        return this.competition.game1A.teamName
+        return this.data.competition.game1A.teamName
       } else if (this.$route.query.fields === 'game2') {
-        return this.competition.game2A.teamName
+        return this.data.competition.game2A.teamName
       } else if (this.$route.query.fields === 'game3') {
-        return this.competition.game3A.teamName
+        return this.data.competition.game3A.teamName
       } else {
-        return this.competition.game4A.teamName
+        return this.data.competition.game4A ? this.data.competition.game4A.teamName : ''
       }
     },
     homeTeamMember() {
