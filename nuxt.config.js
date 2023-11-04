@@ -57,7 +57,8 @@ export default {
   render: {
     static: {
       // Cache-Control ヘッダーを設定
-      maxAge: 60 * 60 * 24, // キャッシュの最大有効期間（秒単位）
+      // maxAge: 60 * 60 * 24, // キャッシュの最大有効期間（秒単位）
+      cache: false, // コンポーネントキャッシュを無効化
     },
   },
 
