@@ -54,6 +54,13 @@ export default {
     trailingSlash: false, // トレイリングスラッシュを無効にする
   },
 
+  render: {
+    static: {
+      // Cache-Control ヘッダーを設定
+      maxAge: 60 * 60 * 24, // キャッシュの最大有効期間（秒単位）
+    },
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'reseter.css',
