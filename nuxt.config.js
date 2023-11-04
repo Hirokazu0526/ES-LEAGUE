@@ -177,5 +177,9 @@ export default {
 
   generate: {
     fallback: true,
+    routes: ['752', '293', '069', '573', '458', 'その他'].map((slug) => ({
+      route: `/match/${slug}`,
+      payload: { slug }, // 動的ルートパラメータを指定
+    })),
   },
 }
