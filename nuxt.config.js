@@ -50,7 +50,8 @@ export default {
   },
   router: {
     base: baseDir,
-    middleware: ['redirect']
+    middleware: ['redirect'],
+    trailingSlash: false, // トレイリングスラッシュを無効にする
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
