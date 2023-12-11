@@ -229,6 +229,7 @@
           v-for="item in getCompetitionList"
           :key="item.id"
           class="es-League-schedule-result__scheduleList"
+          :class="{ suspension: item.stadium === '中止'}"
         >
           <h3 class="es-League-schedule-result__matchDate">
             <span class="left">{{ item.clause }}</span
@@ -248,7 +249,7 @@
               /> </a
             >)</template>
           </p>
-          <div class="es-League-schedule-result__matchInfo">
+          <div v-if="item.stadium !== '中止'" class="es-League-schedule-result__matchInfo">
             <ul class="es-League-schedule-result__list">
               <li>
                 <nuxt-link
@@ -514,6 +515,72 @@
                   />
                 </nuxt-link>
               </li>
+              <li v-if="item.competition.game5H !== null">
+                <nuxt-link
+                  class="es-League-schedule-result__item"
+                  :class="{ 'is-disabled': item.date > nowDate }"
+                  :to="`/match/${item.id}?fields=game4`"
+                >
+                  <div class="es-League-schedule-result__teamInfo">
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game5H === null
+                            ? noImage
+                            : item.competition.game5H.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game5H !== null
+                            ? item.competition.game5H.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game5.getSet_H
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="es-League-schedule-result__team">
+                      <img
+                        :src="
+                          item.competition.game5A === null
+                            ? noImage
+                            : item.competition.game5A.image.url
+                        "
+                        alt=""
+                        class="es-League-schedule-result__teamImage"
+                      />
+                      <p class="es-League-schedule-result__temaName">
+                        {{
+                          item.competition.game5A !== null
+                            ? item.competition.game5A.teamName
+                            : ''
+                        }}
+                      </p>
+                      <div
+                        v-show="item.date < nowDate"
+                        class="es-League-schedule-result__scoreWrapper"
+                      >
+                        <span class="es-League-schedule-result__score">{{
+                          item.results.game5.getSet_A
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <link-arrow
+                    v-show="item.date < nowDate"
+                    class="es-League-schedule-result__linkArrow"
+                  />
+                </nuxt-link>
+              </li>
             </ul>
           </div>
         </li>
@@ -705,6 +772,10 @@ export default {
   &__scheduleList {
     list-style: none;
     margin-bottom: 30px;
+
+    &.suspension {
+      margin: 70px 0;
+    }
   }
 
   &__matchInfo {

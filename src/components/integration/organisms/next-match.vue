@@ -3,12 +3,12 @@
     <!-- <h3 class="es-League-schedule__title">
       TODAY MATCH<br /><span>本日の試合</span>
     </h3> -->
-    <!-- <h3 class="es-League-schedule__title">
-      MATCH RESULT<br /><span>試合結果</span>
-    </h3> -->
     <h3 class="es-League-schedule__title">
-      NEXT MATCH<br /><span>試合予定</span>
+      MATCH RESULT<br /><span>試合結果</span>
     </h3>
+    <!-- <h3 class="es-League-schedule__title">
+      NEXT MATCH<br /><span>試合予定</span>
+    </h3> -->
 
     <div class="es-League-schedule__contanier">
       <h3 class="es-League-schedule__matchDate">
