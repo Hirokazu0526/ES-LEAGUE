@@ -299,12 +299,12 @@ export const state = () => ({
     // 第4週目の期間
     fourthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, TZ).isBetween('2023-12-21', '2024-02-10', undefined, '[)')
+      return moment.tz(now, TZ).isBetween('2023-12-21', '2023-12-31', undefined, '[)')
     },
     // 第5週目の期間
     fifthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2024-02-11', '2024-03-11', undefined, '[)')
+      return moment.tz(now, state.TZ || TZ).isBetween('2024-01-01', '2024-03-11', undefined, '[)')
     },
     // 第6週目の期間
     sixthWeek(state) {

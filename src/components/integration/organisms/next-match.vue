@@ -152,6 +152,37 @@
               <link-arrow class="es-League-schedule__linkArrow" />
             </nuxt-link>
           </li>
+          <li v-if="isThisWeek.competition.game5H !== null">
+            <nuxt-link
+              :to="`/match/${isThisWeek.id}?fields=game4`"
+              class="es-League-schedule__item"
+            >
+              <div class="es-League-schedule__teamInfo">
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.game5H.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.game5H.teamName }}
+                  </p>
+                </div>
+                <div class="es-League-schedule__team">
+                  <img
+                    :src="isThisWeek.competition.game5A.image.url"
+                    alt=""
+                    class="es-League-schedule__teamImage"
+                  />
+                  <p class="es-League-schedule__temaName">
+                    {{ isThisWeek.competition.game5A.teamName }}
+                  </p>
+                </div>
+              </div>
+              <div></div>
+              <link-arrow class="es-League-schedule__linkArrow" />
+            </nuxt-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -183,8 +214,6 @@ export default {
         return this.getCompetitionList[1]
       } else if (this.thirdWeek) {
         return this.getCompetitionList[2]
-      } else if (this.fourthWeek) {
-        return this.getCompetitionList[3]
       } else if (this.fifthWeek) {
         return this.getCompetitionList[4]
       } else if (this.sixthWeek) {

@@ -211,6 +211,54 @@
               </div>
               <link-arrow class="es-League-schedule-result__linkArrow" />
             </nuxt-link>
+          </li>
+          <li v-if="isThisWeek.competition.game5H !== null ">
+            <nuxt-link
+              class="es-League-schedule-result__item"
+              :to="`/match/${isThisWeek.id}?fields=game5`"
+            >
+              <div class="es-League-schedule-result__teamInfo">
+                <div class="es-League-schedule-result__team">
+                  <img
+                    :src="
+                      isThisWeek.competition.game5H === null
+                        ? noImage
+                        : isThisWeek.competition.game5H.image.url
+                    "
+                    alt=""
+                    class="es-League-schedule-result__teamImage"
+                  />
+                  <p class="es-League-schedule-result__temaName">
+                    {{ isThisWeek.competition.game5H.teamName }}
+                  </p>
+                  <div class="es-League-schedule-result__scoreWrapper">
+                    <span class="es-League-schedule-result__score">{{
+                      isThisWeek.results.game5.getSet_H
+                    }}</span>
+                  </div>
+                </div>
+                <div class="es-League-schedule-result__team">
+                  <img
+                    :src="
+                      isThisWeek.competition.game5A === null
+                        ? noImage
+                        : isThisWeek.competition.game5A.image.url
+                    "
+                    alt=""
+                    class="es-League-schedule-result__teamImage"
+                  />
+                  <p class="es-League-schedule-result__temaName">
+                    {{ isThisWeek.competition.game5A.teamName }}
+                  </p>
+                  <div class="es-League-schedule-result__scoreWrapper">
+                    <span class="es-League-schedule-result__score">{{
+                      isThisWeek.results.game5.getSet_A
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+              <link-arrow class="es-League-schedule-result__linkArrow" />
+            </nuxt-link>
               </li>
         </ul>
       </div>
@@ -623,8 +671,6 @@ export default {
         return this.getCompetitionList[1]
       } else if (this.thirdWeek) {
         return this.getCompetitionList[2]
-      } else if (this.fourthWeek) {
-        return this.getCompetitionList[3]
       } else if (this.fifthWeek) {
         return this.getCompetitionList[4]
       } else if (this.sixthWeek) {

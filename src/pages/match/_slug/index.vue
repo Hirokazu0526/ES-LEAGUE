@@ -164,7 +164,7 @@ export default {
     formatData() {
       // 日付を修正
       moment.locale('ja')
-      return moment(this.date).format('YYYY.MM.DD(ddd)')
+      return moment(this.data.date).format('YYYY.MM.DD(ddd)')
     },
     matchData() {
       // URLパラメータを見て試合データを取得
@@ -174,8 +174,10 @@ export default {
         return this.data.results.game2
       } else if (this.$route.query.fields === 'game3') {
         return this.data.results.game3
-      } else {
+      } else if (this.$route.query.fields === 'game4') {
         return this.data.results.game4
+      } else {
+        return this.data.results.game5
       }
     },
     homeTeam() {
@@ -189,8 +191,11 @@ export default {
       } else if (this.$route.query.fields === 'game3') {
         const res = this.data.competition.game3H.teamName
         return res
+      } else if (this.$route.query.fields === 'game4') {
+        const res = this.data.competition.game4H.teamName
+        return res
       } else {
-        const res = this.data.competition.game4H ? this.data.competition.game4H.teamName : ''
+        const res = this.data.competition.game5H ? this.data.competition.game5H.teamName : ''
         return res
       }
     },
@@ -202,8 +207,10 @@ export default {
         return this.data.competition.game2A.teamName
       } else if (this.$route.query.fields === 'game3') {
         return this.data.competition.game3A.teamName
+      } else if (this.$route.query.fields === 'game4') {
+        return this.data.competition.game4A.teamName
       } else {
-        return this.data.competition.game4A ? this.data.competition.game4A.teamName : ''
+        return this.data.competition.game5A ? this.data.competition.game5A.teamName : ''
       }
     },
     homeTeamMember() {
