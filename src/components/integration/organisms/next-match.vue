@@ -154,7 +154,7 @@
           </li>
           <li v-if="isThisWeek.competition.game5H !== null">
             <nuxt-link
-              :to="`/match/${isThisWeek.id}?fields=game4`"
+              :to="`/match/${isThisWeek.id}?fields=game5`"
               class="es-League-schedule__item"
             >
               <div class="es-League-schedule__teamInfo">
