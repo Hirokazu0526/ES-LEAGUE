@@ -309,7 +309,7 @@ export const state = () => ({
     // 第6週目の期間
     sixthWeek(state) {
       const now = state.currentTime
-      return moment.tz(now, state.TZ || TZ).isBetween('2024-03-12', '2024-03-31', undefined, '[)')
+      return moment.tz(now, state.TZ || TZ).isBetween('2024-03-12', '2024-06-30', undefined, '[)')
     },
     getNewsList(state) {
       return state.newsLists

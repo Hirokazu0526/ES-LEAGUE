@@ -1,6 +1,7 @@
 <template>
   <section class="es-League-live">
     <h2 class="es-League-live__title">
+      2022 SEASON<br />
       LIVE STREAMING<br />
       <span>ライブ配信</span>
     </h2>
