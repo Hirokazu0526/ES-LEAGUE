@@ -567,7 +567,7 @@
                 <nuxt-link
                   class="es-League-schedule-result__item"
                   :class="{ 'is-disabled': item.date > nowDate }"
-                  :to="`/match/${item.id}?fields=game4`"
+                  :to="`/match/${item.id}?fields=game5`"
                 >
                   <div class="es-League-schedule-result__teamInfo">
                     <div class="es-League-schedule-result__team">
